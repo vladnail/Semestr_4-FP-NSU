@@ -1,0 +1,339 @@
+{
+	"begin/end": {
+		"prefix": [
+			"@beg",
+			"mbeg"
+		],
+		"body": [
+			"\\begin{${1}}",
+			"$2",
+			"\\end{${1}}",
+			"$0"
+		]
+	},
+	"begin/end equation": {
+		"prefix": [
+			"@eq",
+			"eq",
+			"meq",
+		],
+		"body": [
+			"\\begin{equation}",
+			"$1",
+			"\\end{equation}",
+			"$0"
+		]
+	},
+	"begin/end void equation": {
+		"prefix": [
+			"@eqv",
+			"eqv",
+			"meqv"
+		],
+		"body": [
+			"\\begin{equation*}",
+			"$1",
+			"\\end{equation*}",
+			"$0",
+		]
+	},
+	"begin/end aligned": {
+		"prefix": [
+			"@ali",
+			"ali",
+			"mali"
+		],
+		"body": [
+			"\\begin{aligned}",
+			"$0",
+			"\\end{aligned}"
+		]
+	},
+	"begin/end gather": {
+		"prefix": [
+			"@gat",
+			"gat",
+			"mgat",
+		],
+		"body": [
+			"\\begin{gather}",
+			"$0",
+			"\\end{gather}"
+		]
+	},
+	"begin/end gather*": {
+		"prefix": [
+			"@gatv",
+			"gatv",
+			"mgatv",
+			"gav"
+		],
+		"body": [
+			"\\begin{gather*}",
+			"$0",
+			"\\end{gather*}"
+		]
+	},
+	"begin/end cases": {
+		"prefix": [
+			"@cas",
+			"cas",
+			"mcas",
+		],
+		"body": [
+			"\\begin{cases}",
+			"$0",
+			"\\end{cases}"
+		]
+	},
+	"begin/end cases*": {
+		"prefix": [
+			"@casv",
+			"casv",
+			"mcasv",
+			"cav"
+		],
+		"body": [
+			"\\begin{cases*}",
+			"$0",
+			"\\end{cases*}"
+		]
+	},
+	"begin/end enumerate": {
+		"prefix": [
+			"@enu",
+			"enu",
+			"menu",
+			"enm",
+			"menm"
+		],
+		"body": [
+			"\\begin{enumerate}",
+			"$0",
+			"\\end{enumerate}"
+		]
+	},
+	"begin/end enumerate*": {
+		"prefix": [
+			"@enuv",
+			"enuv",
+			"menuv",
+			"enmv",
+			"menmv",
+		],
+		"body": [
+			"\\begin{enumerate*}",
+			"$0",
+			"\\end{enumerate*}"
+		]
+	},
+	"begin/end itemize": {
+		"prefix": [
+			"@itz",
+			"mitz",
+			"itz",
+		],
+		"body": [
+			"\\begin{itemize}",
+			"$0",
+			"\\end{itemize}"
+		]
+	},
+	"begin/end theorem": {
+		"prefix": [
+			"@thm",
+			"mthm",
+			"thm"
+		],
+		"body": [
+			"\\begin{theorem}",
+			"$0",
+			"\\end{theorem}"
+		]
+	},
+	"begin/end theorem* ": {
+		"prefix": [
+			"@thmv",
+			"mthmv",
+			"mthv",
+			"thmv",
+			"thv"
+		],
+		"body": [
+			"\\begin{theorem*}",
+			"$0",
+			"\\end{theorem*}"
+		]
+	},
+	"begin/end corollary": {
+		"prefix": [
+			"@cor",
+			"mcor",
+			"cor"
+		],
+		"body": [
+			"\\begin{corollary}",
+			"$0",
+			"\\end{corollary}"
+		]
+	},
+	"begin/end corollary* ": {
+		"prefix": [
+			"@corv",
+			"corv",
+			"mcorv",
+		],
+		"body": [
+			"\\begin{corollary*}",
+			"$0",
+			"\\end{corollary*}"
+		]
+	},
+	"begin/end example": {
+		"prefix": [
+			"@ex",
+			"mex",
+			"ex"
+		],
+		"body": [
+			"\\begin{example}",
+			"$0",
+			"\\end{example}"
+		]
+	},
+	"begin/end example* ": {
+		"prefix": [
+			"@exv",
+			"mexv",
+			"exv"
+		],
+		"body": [
+			"\\begin{example*}",
+			"$0",
+			"\\end{example*}"
+		]
+	},
+	"begin/end exercise": {
+		"prefix": [
+			"@exe",
+			"mexe",
+			"exe"
+		],
+		"body": [
+			"\\begin{exercise}",
+			"$0",
+			"\\end{exercise}"
+		]
+	},
+	"begin/end remark": {
+		"prefix": [
+			"@rem",
+			"rem",
+		],
+		"body": [
+			"\\begin{remark}",
+			"$0",
+			"\\end{remark}"
+		]
+	},
+	"begin/end remark* ": {
+		"prefix": [
+			"@remv",
+			"remv",
+			"rev"
+		],
+		"body": [
+			"\\begin{remark*}",
+			"$0",
+			"\\end{remark*}"
+		]
+	},
+	"begin/end definition": {
+		"prefix": [
+			"@dfn",
+			"mdfn",
+			"dfn"
+		],
+		"body": [
+			"\\begin{definition}",
+			"$0",
+			"\\end{definition}"
+		]
+	},
+	"begin/end definition*": {
+		"prefix": [
+			"@dfv",
+			"mdfv",
+			"dfv",
+			"mdfnv",
+			"dfnv"
+		],
+		"body": [
+			"\\begin{definition*}",
+			"$0",
+			"\\end{definition*}"
+		]
+	},
+	"begin/end proposition": {
+		"prefix": [
+			"@prp",
+			"mprp",
+			"prp",
+		],
+		"body": [
+			"\\begin{proposition}",
+			"$0",
+			"\\end{proposition}"
+		]
+	},
+	"begin/end proposition*": {
+		"prefix": [
+			"@prpv",
+			"@prv",
+			"prpv",
+			"prv"
+		],
+		"body": [
+			"\\begin{proposition*}",
+			"$0",
+			"\\end{proposition*}"
+		]
+	},
+	"begin/end lemma": {
+		"prefix": [
+			"@lem",
+			"mlem",
+			"lem",
+		],
+		"body": [
+			"\\begin{lemma}",
+			"$0",
+			"\\end{lemma}"
+		]
+	},
+	"begin/end lem*": {
+		"prefix": [
+			"@lemv",
+			"@lev",
+			"lemv",
+			"lev"
+		],
+		"body": [
+			"\\begin{lemma*}",
+			"$0",
+			"\\end{lemma*}"
+		]
+	},
+	"begin/end proof": {
+		"prefix": [
+			"@prf",
+			"mprf",
+			"prf"
+		],
+		"body": [
+			"\\begin{proof}",
+			"$0",
+			"\\end{proof}"
+		]
+	}
+}

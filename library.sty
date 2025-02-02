@@ -1,0 +1,113 @@
+% Подключение пакетов для русского языка и кодировки
+\usepackage[utf8]{inputenc}  % Кодировка UTF-8
+\usepackage[russian]{babel}  % Русский язык
+\usepackage[T2A]{fontenc}    % Шрифты для кириллицы
+\usepackage{caption}
+\usepackage{wrapfig}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{lipsum}  % Для генерации текста
+
+% Настройка геометрии страницы
+\usepackage[top=30mm]{geometry} % Уменьшаем верхнее поле до 15 мм
+\setlength{\textheight}{24cm}  % Высота текста на странице
+\setlength{\textwidth}{16cm}   % Ширина текста на странице
+\setlength{\oddsidemargin}{0cm} % Поле слева
+\setlength{\evensidemargin}{0cm} % Поле справа
+
+% Подключение пакетов для математики
+\usepackage{amsmath}         % Математические формулы
+\usepackage{amsfonts}        % Математические шрифты
+\usepackage{amssymb}         % Математические символы
+\usepackage{amstext}         % Для текстов в формулах
+\usepackage{mathtools}       % Дополнительные математические возможности
+\usepackage{multicol}        % Многостолбцы
+
+% Подключение пакетов для графиков
+\usepackage{graphicx}        % Вставка изображений
+\usepackage{pgfplots}        % Построение графиков
+\pgfplotsset{compat=1.18}    % Обновление до последней версии
+\usepackage{array}           % Дополнительные возможности для таблиц
+
+% Подключение пакетов для линий и разделителей
+\usepackage{tikz}            % Визуальные элементы, линии, разделители
+
+% Настройка внешнего вида заголовков
+\usepackage{titlesec}        % Изменение внешнего вида заголовков
+% Настройка заголовков
+\titleformat{\chapter}[hang]
+  {\normalfont\huge\bfseries}      % Стиль заголовка
+  {Глава \thechapter:}             % Префикс с номером главы
+  {2em}                            % Расстояние между номером и названием
+  {}                               % Окончание, ничего не добавляется
+  
+% Настройка независимой нумерации секций
+\renewcommand{\thesection}{\arabic{section}.} % Простая нумерация: 1, 2, 3...
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}} % Субсекции: 1.1, 1.2 и т.д.
+
+% Отступы для заголовков
+\titlespacing*{\chapter}{0pt}{2em}{2em}  % Отступы: 0pt слева, 2em сверху и 2em снизу для главы
+\titlespacing*{\section}{0pt}{1.5em}{1em} % Отступы для секций
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}[hang]{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Настройка верхнего колонтитула
+\pagestyle{fancy}
+\fancyhf{}  % Очищаем все стандартные заголовки
+\fancyhead[L]{\leftmark}    % В левой части верхнего колонтитула — Глава
+\fancyhead[R]{\thepage}     % В правой части — номер страницы
+\setlength{\headheight}{15pt} % Высота области верхнего колонтитула
+
+% Чтобы \leftmark обновлялся при изменении главы
+\renewcommand{\chaptermark}[1]{\markboth{Глава \thechapter: #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% Чтобы \leftmark обновлялся для глав и секций
+\titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{Глава \thechapter:}{2em}{}
+\titleformat{\section}[hang]{\normalfont\large\bfseries}{\thesection}{1em}{}
+
+% Пакет для гиперссылок с убранными рамками
+\usepackage[hidelinks]{hyperref}  % Убирает рамки у гиперссылок
+
+% Настройка нижнего колонтитулов 
+\fancyfoot[L]{\href{https://github.com/vladnail/Semestr_4-FP-NSU.git}{\texttt{Click me: GitHub Repository}}}
+\fancyfoot[R]{\thepage}     % Номер страницы в правом нижнем колонтитуле
+\setlength{\footskip}{15mm} % Поднимаем нижний колонтитул
+
+% Настройка линии под нижним колонтитулом
+\renewcommand{\footrulewidth}{0.01mm} % Толщина линии 
+
+% Для страниц с главами убираем номер страницы
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \huge \bfseries Глава \thechapter: #1\par\nobreak
+    \vskip 2\p@}%
+  \thispagestyle{empty} % Убираем номер страницы на странице главы
+}
+\makeatother
+
+% Настройка внешнего вида теорем(и тому подобное)
+\usepackage{amsthm} % Пакет для теорем, лемм, определений
+\newtheorem{theorem}{Теорема}[]   % Теоремы, обновляются с главой
+\newtheorem{definition}{Определение}[] % Определения, обновляются с главой
+\newtheorem{corollary}{Следствие}[theorem] % Следствия, нумерация от теоремы
+\newtheorem{lemma}{Лемма}[] % Следствия, нумерация от теоремы
+\newtheorem{proposition}{Утверждение}[]
+\renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Чёрный квадрат в конце доказательства
+
+% Новый счётчик для следствий, который будет обновляться с каждой теоремой
+\newcounter{corollarycounter}[theorem]
+\renewcommand{\thecorollarycounter}{\thetheorem.\arabic{corollarycounter}}
+
+% Сброс счётчика для теорем(и тому подобное) на новую главу
+\makeatletter
+\@addtoreset{corollarycounter}{chapter}
+\@addtoreset{theorem}{chapter}
+\@addtoreset{definition}{chapter}
+\@addtoreset{lemma}{chapter}
+\@addtoreset{proposition}{chapter}
+\@addtoreset{section}{chapter}
+\makeatother  
+

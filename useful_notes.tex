@@ -1,0 +1,349 @@
+\documentclass[a4paper]{article}
+\usepackage[T2A]{fontenc} % Поддержка кириллицы
+\usepackage[utf8]{inputenc} % Кодировка UTF-8
+\usepackage{cmap} % Для корректного поиска в PDF
+\usepackage[russian]{babel}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{cancel}
+\usepackage{mathrsfs}  % Для \mathscr
+\usepackage{fancyvrb}  % Для улучшенной работы с verbatim
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{courier}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\geometry{top=2cm, bottom=2cm}
+
+
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \LaTeX\ математические заметки.}
+\end{center}
+
+\tableofcontents
+
+\newpage
+
+\section{Греческие буквы}
+
+\begin{center}
+\begin{tabular}{*{19}{l}}
+\textbackslash alpha & $\alpha$ && \textbackslash beta & $\beta$ && \textbackslash gamma & $\gamma$ && \textbackslash delta & $\delta$ && \textbackslash epsilon & $\epsilon$ \\
+\textbackslash varepsilon & $\varepsilon$ && \textbackslash zeta & $\zeta$ && \textbackslash eta & $\eta$ && \textbackslash theta & $\theta$ && \textbackslash iota & $\iota$ \\
+\textbackslash kappa & $\kappa$ && \textbackslash lambda & $\lambda$ && \textbackslash mu & $\mu$ && \textbackslash nu & $\nu$ && \textbackslash xi & $\xi$ \\
+\textbackslash pi & $\pi$ && \textbackslash varpi & $\varpi$ && \textbackslash rho & $\rho$ && \textbackslash varrho & $\varrho$ && \textbackslash sigma & $\sigma$ \\
+\textbackslash varsigma & $\varsigma$ && \textbackslash tau & $\tau$ && \textbackslash upsilon & $\upsilon$ && \textbackslash phi & $\phi$ && \textbackslash varphi & $\varphi$ \\
+\textbackslash chi & $\chi$ && \textbackslash psi & $\psi$ && \textbackslash omega & $\omega$ && \textbackslash vartheta & $\vartheta$ && \textbackslash Delta & $\Delta$ \\
+\textbackslash Gamma & $\Gamma$ && \textbackslash Theta & $\Theta$ && \textbackslash Lambda & $\Lambda$ && \textbackslash Xi & $\Xi$ && \textbackslash Pi & $\Pi$ \\
+\textbackslash Sigma & $\Sigma$ && \textbackslash Upsilon & $\Upsilon$ && \textbackslash Phi & $\Phi$ && \textbackslash Psi & $\Psi$ && \textbackslash Omega & $\Omega$ \\
+\end{tabular}
+\end{center}
+
+\section{Команды для шрифтов }
+
+\begin{center}
+\begin{tabular} {*{6}{l@{\hskip 1mm}l}}
+      \textbackslash tiny      & {\tiny smallest} & \textbackslash normalsize & {\normalsize normalsize}     \\
+      \textbackslash scriptsize & {\scriptsize very small} & \textbackslash large     & {\large large}  &       \textbackslash huge      & {\huge huge}     \\
+      \textbackslash footnotesize & {\footnotesize smaller}  & \textbackslash Large     & {\Large Large}   &       \textbackslash Huge      & {\Huge Huge}   \\
+      \textbackslash small     & {\small small} & \textbackslash LARGE     & {\LARGE LARGE}      \\
+\end{tabular}
+\end{center}
+\text{ }
+
+\leftline{\textbf{Калиграфические буквы}: $\mathcal{A B C D E F G H I J K L M N O P Q R S T U V W X Y Z}$}
+
+\leftline{\textbf{Математические буквы}  $\mathbb{A B C D E F G H I J K L M N O P Q R S T U V W X Y Z }$}
+
+\section{Математические конструкции}
+
+\begin{center}
+\begin{tabular}{*{8}{l@{\hskip 1mm}l}}
+\textbackslash overline\{abc\} & $\overline{abc}$ & \textbackslash underline\{abc\} & $\underline{abc}$ & \textbackslash overrightarrow\{abc\} & $\overrightarrow{abc}$ & \textbackslash overleftarrow\{abc\} & $\overleftarrow{abc}$ \\
+\textbackslash widehat\{abc\} & $\widehat{abc}$ & \textbackslash widetilde\{abc\} & $\widetilde{abc}$ & \textbackslash overbrace\{abc\} & $\overbrace{abc}$ & \textbackslash underbrace\{abc\} & $\underbrace{abc}$ \\
+\textbackslash sqrt[n]\{abc\} & $\sqrt[n]{abc}$  & & & & \\
+\\[0.1 mm]  % Добавляет вертикальный отступ 1.5em между строками таблицы
+\textbackslash acute\{a\} & $\acute{a}$ & \textbackslash bar\{a\} & $\bar{a}$ & \textbackslash breve\{a\} & $\breve{a}$ & \textbackslash check\{a\} & $\check{a}$ \\
+\textbackslash ddot\{a\} & $\ddot{a}$ & \textbackslash dot\{a\} & $\dot{a}$ & \textbackslash grave\{a\} & $\grave{a}$ & \textbackslash hat\{a\} & $\hat{a}$ \\ 
+\textbackslash tilde\{a\} & $\tilde{a}$ & \textbackslash vec\{a\} & $\vec{a}$ & & & & \\
+\\[0.1 mm]
+\end{tabular}
+\end{center}
+
+\section{Математические символы}
+
+\begin{center}
+\begin{tabular}{*{8}{l@{\hskip 20mm}l}}
+\textbackslash cap & $\cap$ & \textbackslash cup & $\cup$ & \textbackslash top & $\top$  & \textbackslash perp & $\perp$ & \\
+\textbackslash wedge & $\wedge$ & \textbackslash vee & $\vee$ & \textbackslash sqcap  & $\sqcap $ & \textbackslash sqcup & $\sqcup$ & \\
+\textbackslash in & $\in$ & \textbackslash ni & $\ni$ & \textbackslash notin & $\notin$ & \textbackslash propto & $\propto$ & \\
+\textbackslash subset & $\subset$ & \textbackslash subseteq & $\subseteq$ & \textbackslash supseteq & $\supseteq$  & \textbackslash supset & $\supset$\\
+\\[0.1 mm]
+\textbackslash neq & $\neq$ & \textbackslash equiv & $\equiv$ & \textbackslash sim & $\sim$ & \textbackslash approx & $\approx$ & \\
+\textbackslash cong & $\cong$ & \textbackslash simeq & $\simeq$ & \textbackslash risingdotseq & $\risingdotseq$ & \textbackslash models & $\models$ & & & \\
+\\[0.1 mm]
+\textbackslash ll & $\ll$ & \textbackslash gg & $\gg$ & \textbackslash leq & $\leq$ & \textbackslash geq & $\geq$ \\
+\textbackslash nless & $\nless$ & \textbackslash ngtr & $\ngtr$ & \textbackslash nleq & $\nleq$ & \textbackslash ngeq & $\ngeq$
+\end{tabular}
+\end{center}
+
+\newpage
+
+\section{Окружения}
+\begin{longtable}{|p{5cm}|p{10cm}|}
+    \hline
+    \textbf{Снипет} & \textbf{Описание} \\
+    \hline
+    \verb|]]| & Вставляет математическое выражение в окружение \verb|\[ \]| (отдельная строка). Пример: \verb|]] x^2| $\rightarrow$ \verb|\[ x^2 \]|. \\
+    \hline
+    \verb|;;| & Вставляет математическое выражение в окружение \verb|\( \)| (встроенная формула). Пример: \verb|;; x^2| $\rightarrow$ \verb|\( x^2 \)|. \\
+    \hline
+    \verb|A;;| & Автоматически оборачивает символ или слово в \verb|\( \)|. Пример: \verb|A;;| $\rightarrow$ \verb|\( A \)|. \\
+    \hline
+    \verb|M([\ pbvBV])(\d)(\d)(.)([bn])| & Создает матрицу. Пример: \verb|Mp34xb| $\rightarrow$ 
+    \begin{verbatim}
+    \begin{pmatrix}
+    x & x & x \\
+    x & x & x \\
+    x & x & x
+    \end{pmatrix}
+    \end{verbatim} \\
+    \hline
+    \verb|lr([\)\]\>\}vV])| & Вставляет скобки с автоматическим масштабированием (\verb|\left| и \verb|\right|). Пример: \verb|lr)| $\rightarrow$ \verb|\left( \right)|. \\
+    \hline
+\end{longtable}
+
+\section{Символы}
+\begin{longtable}{|p{5cm}|p{10cm}|}
+    \hline
+    \textbf{Снипет} & \textbf{Описание} \\
+    \hline
+    \verb|z([a-zA-Z])| & Вставляет греческую букву. Пример: \verb|za| $\rightarrow$ \verb|\alpha|. \\
+    \hline
+    \verb|\b([A-Z])#| & Вставляет символ в двойном штрихе (\verb|\mathbb|). Пример: \verb|R#| $\rightarrow$ \verb|\mathbb{R}|. \\
+    \hline
+    \verb|\b([A-Z])cal| & Вставляет символ в каллиграфическом стиле (\verb|\mathcal|). Пример: \verb|Acal| $\rightarrow$ \verb|\mathcal{A}|. \\
+    \hline
+    \verb|\b([A-Z])@| & Вставляет символ в стиле \verb|\mathscr|. Пример: \verb|A@| $\rightarrow$ \verb|\mathscr{A}|. \\
+    \hline
+    \verb|\\mathbb{([A-Z])}#| & Меняет стиль символа с \verb|\mathbb| на \verb|\mathcal|. Пример: \verb|\mathbb{R}#| $\rightarrow$ \verb|\mathcal{R}|. \\
+    \hline
+    \verb|\\mathcal{([A-Z])}#| & Меняет стиль символа с \verb|\mathcal| на \verb|\mathscr|. Пример: \verb|\mathcal{R}#| $\rightarrow$ \verb|\mathscr{R}|. \\
+    \hline
+    \verb|\\mathscr{([A-Z])}#| & Меняет стиль символа с \verb|\mathscr| на \verb|\mathbb|. Пример: \verb|\mathscr{R}#| $\rightarrow$ \verb|\mathbb{R}|. \\
+    \hline
+    \verb|(\\mathbb{[A-Z]})(_[+-])?(\^\*)?([+-])| & Добавляет индексы или степени к символу в стиле \verb|\mathbb|. Пример: \verb|\mathbb{R}+| $\rightarrow$ \verb|\mathbb{R}_+|. \\
+    \hline
+    \verb|(\\mathbb{[A-Z]})(_[+-])?\*| & Добавляет звездочку (например, для сопряженного пространства). Пример: \verb|\mathbb{R}*| $\rightarrow$ \verb|\mathbb{R}^*|. \\
+    \hline
+\end{longtable}
+\newpage
+
+\section{Команды и их сокращения}
+\begin{longtable}{|p{5cm}|p{10cm}|}
+    \hline
+    \textbf{Снипет} & \textbf{Описание} \\
+    \hline
+    \verb|\\not\s(in|ni)| & Вставляет \verb|\notin| или \verb|\notni|. Пример: \verb|not in| $\rightarrow$ \verb|\notin|. \\
+    \hline
+    \verb|\\in\st| & Вставляет \verb|\int|. Пример: \verb|in t| $\rightarrow$ \verb|\int|. \\
+    \hline
+    \verb|\\in\sf| & Вставляет \verb|\inf|. Пример: \verb|in f| $\rightarrow$ \verb|\inf|. \\
+    \hline
+    \verb|\\int\se| & Вставляет \verb|\interior|. Пример: \verb|int e| $\rightarrow$ \verb|\interior|. \\
+    \hline
+    \verb|\\sup\sp| & Вставляет \verb|\supp|. Пример: \verb|sup p| $\rightarrow$ \verb|\supp|. \\
+    \hline
+    \verb| \ b(?<= \\)(sim||subset|supset
+    
+    |succ|prec) \( \backslash \) s{1,2}(neq|eq)| & Добавляет \verb|eq| или \verb|neq| к команде. Пример: \verb|\sim eq| $\rightarrow$ \verb|\simeq|. \\
+    \hline
+    \verb|(le||ge|div|to|not|in|sup|dim|deg
+    |ker|range|grad|rot|Div|rank|diag
+    |det|arg|max|min|argmax|argmin
+    |sin|cos|tan|cot|ln|log|exp|perp
+    |cup|cap|sim|pm|iff|mid|succ|prec
+    |circ|neq|ni|lim|sum|prod|const) & Вставляет команду с пробелом. Пример: \verb|ker| $\rightarrow$ \verb|\ker|. \\
+    \hline
+    \verb|(lhs||rhs|imp|imb|uuto|ddto|ssb
+    
+    |ssp|sbn|stm|app|oo|mpt|ee|fa
+    |xx|oxx|o+|opx|dom|codom|tr
+    |codim|Div|lra|Lra) & 
+\begin{tabular}{@{}lll@{}}
+    \textbf{Сокращение} & \textbf{Команда} & \textbf{Символ} \\
+    \hline
+    imp & \verb|\implies| & $\implies$ \\
+    imb & \verb|\impliedby| & $\impliedby$ \\
+    uuto & \verb|\upuparrows| & $\upuparrows$ \\
+    ddto & \verb|\downdownarrows| & $\downdownarrows$ \\
+    ssb & \verb|\subset| & $\subset$ \\
+    ssp & \verb|\supset| & $\supset$ \\
+    sbn & \verb|\subseteq| & $\subseteq$ \\
+    stm & \verb|\setminus| & $\setminus$ \\
+    app & \verb|\approx| & $\approx$ \\
+    oo & \verb|\infty| & $\infty$ \\
+    mpt & \verb|\mapsto| & $\mapsto$ \\
+    ee & \verb|\exists| & $\exists$ \\
+    fa & \verb|\forall| & $\forall$ \\
+    xx & \verb|\times| & $\times$ \\
+    oxx & \verb|\otimes| & $\otimes$ \\
+    o+ & \verb|\oplus| & $\oplus$ \\
+    opx & \verb|\oplus| & $\oplus$ \\
+    lra & \verb|\leftrightarrow| & $\leftrightarrow$ \\
+    Lra & \verb|\Leftrightarrow| & $\Leftrightarrow$ \\
+\end{tabular} \\
+    \hline
+    \verb|(xto||xot|ovl|mrm|eqby) & 
+    \begin{tabular}{@{}ll@{}}
+        \textbf{Сокращение} & \( \rightarrow  \)   \textbf{Команда} \\
+        \hline
+        xto & \verb|\xrightarrow{}| \\
+        xot & \verb|\xleftarrow{}| \\
+        ovl & \verb|\overline{}| \\
+        mrm & \verb|\mathrm{}| \\
+        eqby & \verb|\equalby{}| \\
+    \end{tabular} \\
+    \hline
+    \verb|(uset||oset|ff) & Вставляет команду с двумя аргументами. Пример: \verb|ff| $\rightarrow$ \verb|\frac{}{}|. \\
+    \hline
+    \verb|a(sin||cos|tan) & Вставляет обратные тригонометрические функции. Пример: \verb|asin| $\rightarrow$ \verb|\arcsin{}|. \\
+    \hline
+\end{longtable}
+
+\newpage 
+
+\section{Индексы и степени}
+\begin{longtable}{|p{3cm}|p{10cm}|}
+    \hline
+    \textbf{Снипет} & \textbf{Описание} \\
+    \hline
+    \verb|__| & Вставляет нижний индекс. Пример: \verb|x__1| $\rightarrow$ \verb|x_{1}|. \\
+    \hline
+    \verb|sq| & Вставляет квадрат. Пример: \verb|x sq| $\rightarrow$ \verb|x^2|. \\
+    \hline
+    \verb|cb| & Вставляет куб. Пример: \verb|x cb| $\rightarrow$ \verb|x^3|. \\
+    \hline
+    \verb|inv| & Вставляет обратный элемент. Пример: \verb|x inv| $\rightarrow$ \verb|x^{-1}|. \\
+    \hline
+    \verb|--|^^ & Вставляет верхний индекс. Пример: \verb|x^^2| $\rightarrow$ \verb|x^{2}|. \\
+    \hline
+    \verb |^^{}/__{} tt| & Меняет нижний индекс на верхний и наоборот. Пример: \verb|x_{i+1}tt| $\rightarrow$ \verb|x^{i+1}|. \\
+    \hline
+\end{longtable}
+
+\section{Многоточия}
+\begin{longtable}{|p{3cm}|p{10cm}|}
+    \hline
+    \textbf{Снипет} & \textbf{Описание} \\
+    \hline
+    \verb |,,| & Вставляет многоточие между повторяющимися элементами. Пример: \verb|x_{i+1},,| $\rightarrow$ \verb|x_{i+1}, \ldots, x_{i+1}|. \\
+    \hline
+    \verb|..| & Вставляет \verb|\ldots|. Пример: \verb|..| $\rightarrow$ \verb|\ldots|. \\
+    \hline
+    \verb|,.| & Вставляет \verb|, \ldots,|. Пример: \verb|,.| $\rightarrow$ \verb|, \ldots,|. \\
+    \hline
+    \verb|(sdd||sdv|sdl|sdc) & 
+    \begin{tabular}{@{}ll@{}}
+        \textbf{Сокращение} & \( \rightarrow  \)   \textbf{Команда} \\
+        \hline
+        sdd & \verb|\ddots| \\
+        sdv & \verb|\vdots| \\
+        sdl & \verb|\ldots| \\
+        sdc & \verb|\cdots| \\
+    \end{tabular} \\
+    \hline
+    \verb|dc| & Вставляет \verb|\cdot|. Пример: \verb|dc| $\rightarrow$ \verb|\cdot|. \\
+    \hline
+\end{longtable}
+
+\section{Подсказки}
+\begin{longtable}{|p{3cm}|p{10cm}|}
+    \hline
+    \textbf{Снипет} & \textbf{Описание} \\
+    \hline
+    \verb|\sum_| & Вставляет сумму с нижним пределом. Пример: \verb|\sum_| $\rightarrow$ \verb|\sum_{i=1}|. \\
+    \hline
+    \verb|\prod_| & Вставляет произведение с нижним пределом. Пример: \verb|\prod_| $\rightarrow$ \verb|\prod_{i=1}|. \\
+    \hline
+    \verb|\int_| & Вставляет интеграл с нижним пределом. Пример: \verb|\int_| $\rightarrow$ \verb|\int_{}|. \\
+    \hline
+    \verb|\lim_| & Вставляет предел. Пример: \verb|\lim_| $\rightarrow$ \verb|\lim_{x \to \infty}|. \\
+    \hline
+    \verb|\sum^| & Вставляет сумму с верхним пределом. Пример: \verb|\sum^| $\rightarrow$ \verb|\sum_{i=1}^{\infty}|. \\
+    \hline
+    \verb|\prod^| & Вставляет произведение с верхним пределом. Пример: \verb|\prod^| $\rightarrow$ \verb|\prod_{i=1}^{n}|. \\
+    \hline
+    \verb|\to^| & Вставляет стрелку с пределом. Пример: \verb|\to^| $\rightarrow$ \verb|\xrightarrow{x \to \infty}|. \\
+    \hline
+    \verb|\int^| & Вставляет интеграл с верхним пределом. Пример: \verb|\int^| $\rightarrow$ \verb|\int_{-\infty}^{\infty}|. \\
+    \hline
+\end{longtable}
+
+\section{Разное}
+\begin{longtable}{|p{3cm}|p{10cm}|}
+    \hline
+    \textbf{Снипет} & \textbf{Описание} \\
+    \hline
+    \verb|(tit||tbf) & Вставляет \verb|\textit| или \verb|\textbf|. Пример: \verb|tit| $\rightarrow$ \verb|\textit{}|. \\
+    \hline
+    \verb|dsum| & Вставляет \verb|\oplus|. Пример: \verb|dsum| $\rightarrow$ \verb|\oplus|. \\
+    \hline
+    \verb|emps| & Вставляет \verb|\emptyset|. Пример: \verb|emps| $\rightarrow$ \verb|\emptyset|. \\
+    \hline
+    \verb|ubrace| & Вставляет \verb|\underbrace|. Пример: \verb|ubrace| $\rightarrow$ \verb|\underbrace{}_{}|. \\
+    \hline
+    \verb|obrace| & Вставляет \verb|\overbrace|. Пример: \verb|obrace| $\rightarrow$ \verb|\overbrace{}^{}|. \\
+    \hline
+    \verb|0z| & Вставляет \verb|\{0\}|. Пример: \verb|0z| $\rightarrow$ \verb|\{0\}|. \\
+    \hline
+    \verb|qq| & Вставляет \verb|\quad|. Пример: \verb|qq| $\rightarrow$ \verb|\quad|. \\
+    \hline
+    \verb|dsp| & Вставляет \verb|\displaystyle|. Пример: \verb|dsp| $\rightarrow$ \verb|\displaystyle|. \\
+    \hline
+    \verb|/| & Автоматически создает дробь. Пример: \verb|1/2| $\rightarrow$ \verb|\frac{1}{2}|. \\
+    \hline
+    \verb|rt| & Автоматически создает квадратный корень. Пример: \verb|(x+y)rt| $\rightarrow$ \verb|\sqrt{x+y}|. \\
+    \hline
+    \verb|\sqrt{}n| & Автоматически создает корень n-й степени. Пример: \verb|\sqrt{x}3| $\rightarrow$ \verb|\sqrt[3]{x}|. \\
+    \hline
+    \verb|vec| & Вставляет вектор. Пример: \verb|vec| $\rightarrow$ \verb|\vec{}|. \\
+    \hline
+    \verb|par| & Вставляет \verb|\partial|. Пример: \verb|par| $\rightarrow$ \verb|\partial|. \\
+    \hline
+    \verb|mod| & Вставляет модуль. Пример: \verb|mod| $\rightarrow$ \verb|\lvert \rvert|. \\
+    \hline
+    \verb|beg| & Вставляет окружение \verb|\begin{}| и \verb|\end{}|. Пример: \verb|beg| $\rightarrow$ 
+    \begin{verbatim}
+    \begin{something}
+    \end{something}
+    \end{verbatim} \\
+    \hline
+\end{longtable}
+
+\begin{center}
+    На момент 2 февраля 2025 года это все быстрые команды, которыми я пользуюсь.
+\end{center}
+
+
+
+
+\end{document}
+
+
+
