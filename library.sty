@@ -1,19 +1,16 @@
-% Подключение пакетов для русского языка и кодировки
+% Подключение необходимых пакетов
 \usepackage[utf8]{inputenc}  % Кодировка UTF-8
 \usepackage[russian]{babel}  % Русский язык
 \usepackage[T2A]{fontenc}    % Шрифты для кириллицы
-\usepackage{caption}
-\usepackage{wrapfig}
-\usepackage{url}
-\usepackage{fancyhdr}
-\usepackage{lipsum}  % Для генерации текста
+\usepackage{url}             % Для работы с URL-ссылками
+\usepackage{lipsum}          % Для генерации текста
 
 % Настройка геометрии страницы
-\usepackage[top=30mm]{geometry} % Уменьшаем верхнее поле до 15 мм
-\setlength{\textheight}{24cm}  % Высота текста на странице
-\setlength{\textwidth}{16cm}   % Ширина текста на странице
-\setlength{\oddsidemargin}{0cm} % Поле слева
-\setlength{\evensidemargin}{0cm} % Поле справа
+\usepackage[top=30mm]{geometry}       % Уменьшаем верхнее поле до 15 мм
+\setlength{\textheight}{24cm}         % Высота текста на странице
+\setlength{\textwidth}{16cm}          % Ширина текста на странице
+\setlength{\oddsidemargin}{0cm}       % Поле слева
+\setlength{\evensidemargin}{0cm}      % Поле справа
 
 % Подключение пакетов для математики
 \usepackage{amsmath}         % Математические формулы
@@ -28,9 +25,35 @@
 \usepackage{pgfplots}        % Построение графиков
 \pgfplotsset{compat=1.18}    % Обновление до последней версии
 \usepackage{array}           % Дополнительные возможности для таблиц
-
-% Подключение пакетов для линий и разделителей
 \usepackage{tikz}            % Визуальные элементы, линии, разделители
+\usepackage{caption}         % Для настройки подписей к рисункам и таблицам
+\usepackage{wrapfig}         % Для обтекания текста вокруг фигур (например, изображений)
+
+% Настройка внешнего вида теорем(и тому подобное)
+\usepackage{amsthm} % Пакет для теорем, лемм, определений
+\newtheorem{theorem}{Теорема}[]   % Теоремы, обновляются с главой
+\newtheorem{definition}{Определение}[] % Определения, обновляются с главой
+\newtheorem{corollary}{Следствие}[theorem] % Следствия, нумерация от теоремы
+\newtheorem{lemma}{Лемма}[] % Следствия, нумерация от теоремы
+\newtheorem{proposition}{Утверждение}[]
+\renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Чёрный квадрат в конце доказательства
+
+% Новый счётчик для следствий, который будет обновляться с каждой теоремой
+\newcounter{corollarycounter}[theorem]
+\renewcommand{\thecorollarycounter}{\thetheorem.\arabic{corollarycounter}}
+
+% Сброс счётчика для теорем(и тому подобное) на новую главу
+\makeatletter
+\@addtoreset{corollarycounter}{chapter}
+\@addtoreset{theorem}{chapter}
+\@addtoreset{definition}{chapter}
+\@addtoreset{lemma}{chapter}
+\@addtoreset{proposition}{chapter}
+\@addtoreset{section}{chapter}
+\makeatother  
+
+% Для создания и настройки пользовательских заголовков и футеров
+\usepackage{fancyhdr}        
 
 % Настройка внешнего вида заголовков
 \usepackage{titlesec}        % Изменение внешнего вида заголовков
@@ -88,26 +111,5 @@
 }
 \makeatother
 
-% Настройка внешнего вида теорем(и тому подобное)
-\usepackage{amsthm} % Пакет для теорем, лемм, определений
-\newtheorem{theorem}{Теорема}[]   % Теоремы, обновляются с главой
-\newtheorem{definition}{Определение}[] % Определения, обновляются с главой
-\newtheorem{corollary}{Следствие}[theorem] % Следствия, нумерация от теоремы
-\newtheorem{lemma}{Лемма}[] % Следствия, нумерация от теоремы
-\newtheorem{proposition}{Утверждение}[]
-\renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Чёрный квадрат в конце доказательства
 
-% Новый счётчик для следствий, который будет обновляться с каждой теоремой
-\newcounter{corollarycounter}[theorem]
-\renewcommand{\thecorollarycounter}{\thetheorem.\arabic{corollarycounter}}
-
-% Сброс счётчика для теорем(и тому подобное) на новую главу
-\makeatletter
-\@addtoreset{corollarycounter}{chapter}
-\@addtoreset{theorem}{chapter}
-\@addtoreset{definition}{chapter}
-\@addtoreset{lemma}{chapter}
-\@addtoreset{proposition}{chapter}
-\@addtoreset{section}{chapter}
-\makeatother  
 
