@@ -103,10 +103,10 @@
 % Для страниц с главами убираем номер страницы
 \makeatletter
 \def\@makechapterhead#1{%
-  \vspace*{50\p@}%
+  \vspace*{00\p@}%
   {\parindent \z@ \raggedright \normalfont
     \huge \bfseries Глава \thechapter: #1\par\nobreak
-    \vskip 2\p@}%
+    \vskip 50\p@}%
   \thispagestyle{empty} % Убираем номер страницы на странице главы
 }
 \makeatother
