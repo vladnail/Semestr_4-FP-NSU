@@ -16,6 +16,8 @@
 
 \textit{Задача математического анализа: } 
 
+
+
 Есть кривая заданная функцией \( f(x) \) найти точки экстремума: 
 
 \[  f'(x)=0 \Rightarrow {x_1,x_2}-{\text{точки, подозреваемые на экстремум}  }   \] 
@@ -41,9 +43,9 @@
 \end{center}
 
 \begin{gather*}
-    mgy_0+0= mgy(x)+ \frac{m |v| ^2}{2} \\
-    \lvert v  \rvert =\sqrt{v_x ^2 + v_y ^2} = \sqrt{\left( \frac{\partial x}{\partial t} ^2  \right) +\left( \frac{\partial y }{\partial t}  \right) }= \sqrt{1+(y'(x))^2} \frac{dx}{dt} \\
-    \sqrt{2g(y_0+ y(x)) }= |v|= \sqrt{1+(y(x)')^2} \frac{dx}{dt} \\
+   \text{З.С.Э: }  mgy_0+0= mgy(x)+ \frac{m |v| ^2}{2} \\
+    \lvert v  \rvert =\sqrt{v_x ^2 + v_y ^2} = \sqrt{\left( \frac{\partial x}{\partial t}  \right) ^2 +\left( \frac{\partial y }{\partial t}  \right) ^2 }= \sqrt{1+(y'(x))^2} \frac{dx}{dt} \\
+    \sqrt{2g(y_0- y(x)) }= |v|= \sqrt{1+(y(x)')^2} \frac{dx}{dt} \\
     T= \int_{0}^{T}dt= \int_{x_0 }^{x_1} \frac{\sqrt{1+(y'(x))^2}}{\sqrt{2g(y_0+ y(x)) }} dx   
 \end{gather*}
 
@@ -64,7 +66,7 @@
 \begin{gather*}
     \Delta \delta= \sqrt{(\Delta x ) ^2 + ( \Delta y) ^2} = \sqrt{1 + \left( \frac{\Delta y}{\Delta x}  \right) ^2} \Delta x \\
     \Delta S = 2 \pi y (x) \Delta \delta \\
-    \sum  \Delta \delta \xrightarrow{\Delta x \to  0}  \int_{x_1}^{x_2}= 2 \pi y(x ) \sqrt{1+(y'(x))^2}dx  
+    \sum  \Delta S \xrightarrow{\Delta x \to  0}  \int_{x_1}^{x_2} 2 \pi y(x ) \sqrt{1+(y'(x))^2}dx  
 \end{gather*}
 
 
@@ -72,7 +74,7 @@
     Пример 3 : задача о геодезических на поверхности.
 \end{flushleft}
 
-Найти кривую, проходящую через точки А и В, лежащую на поверхности, которые имеют наименьшую длину.
+Найти кривую, проходящую через точки А и В, лежащую на поверхности, которая имеет наименьшую длину.
 
 \begin{center}
     \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ДфУ/Лекции_по_дням/image/4.png}
@@ -87,7 +89,7 @@
     \end{cases}\\
     G(x(t),y(t),z(t)) = 0 \leftarrow \text{кривая лежит на поверхности}  \\
     l= \sum  \Delta l = \sum \sqrt{(\Delta x) ^2 + ( \Delta y ) ^2 + ( \Delta z ) ^2}=\sum  \sqrt{\left( \frac{\Delta x}{\Delta t} \right) ^2 + \left( \frac{\Delta y}{\Delta t} \right) ^2 + \left( \frac{\Delta z}{\Delta t} \right) ^2} \Delta t \\
-    l= \sum  \int_{t_0}^{t_1} \sqrt{(x'(t)) ^2 + ( y'(t)) ^2 + ( z' ( t)) ^2 }dt  
+    l \xrightarrow{\Delta t \to  0}    \int_{t_0}^{t_1} \sqrt{(x'(t)) ^2 + ( y'(t)) ^2 + ( z' ( t)) ^2 }dt  
 \end{gather*}
 
 \section{Простейшая задача вариационного исчисления}
@@ -114,11 +116,11 @@
 \[ \text{Краевые условия: } y(x_0)=y_0,\text{ }  y(x_1)=y_1 \quad \quad \quad \quad (2) \] 
 
 \begin{definition}
-    Допускаемая \( \tilde{y}:[x_0,x_1] \to  \mathbb{R}  \) доставляет локальный минимум функционалу (1) при краевых условиях (2),если: 
+    Допустимая \( \tilde{y}:[x_0,x_1] \to  \mathbb{R}  \) доставляет локальный минимум функционалу (1) при краевых условиях (2),если: 
 
     1) \( \tilde{y}(x_0)=y_0, \tilde{y}(x_1)= y_1   \) 
 
-    2) \( \exists \varepsilon_0 >0 \forall   \) допустимой функции \( y(x) \), удовлетворяет (2): \( \sup _{x \in  [x_0,x_1]}|y(x)-\tilde{y}(x) |< \varepsilon_0  \) 
+    2) \( \exists \varepsilon_0 >0 \text{ }  \forall   \) допустимой функции \( y(x) \), удовлетворяющей (2): \( \sup _{x \in  [x_0,x_1]}|y(x)-\tilde{y}(x) |< \varepsilon_0  \) выполняется: \( I[\tilde{y}] \le I[y] \) 
 \end{definition}
 
 \begin{definition}
@@ -126,16 +128,18 @@
 
     1) \( \tilde{y} (x_0)=y_0, \text{ } \tilde{y} (x_1) =y_1 \)
     
-    2) \( \forall \) допустимой функции \( y(x) \), удовлетворяет (2), выполняется \( I[\tilde{y} ] \le I [y] \) 
+    2) \( \forall \) допустимой функции \( y(x) \), удовлетворяющей (2), выполняется \( I[\tilde{y} ] \le I [y] \) 
 \end{definition}
 
 \section{Необходимые условия локального экстремума}
 
+Аналог \( f'(x) = 0  \) 
+
 Пусть функция \(\tilde{y}   \) доставляет функционалу \( I[y] \) при краевых условиях (2) локальный минимум \( \Rightarrow I[\tilde{y} ] \le I[y]  \), где \( y(x) \) из определенного локального минимума.
 
-Возьмем \( \displaystyle y(x)=\tilde{y} + \varepsilon \eta(x) , \quad \varepsilon \left( \frac{\varepsilon_0}{M}, \frac{\varepsilon_0}{M}   \right), \quad  M= \max _{x \in  [x_0,x_1]} |\eta (x) |  \)
+Возьмем \( \displaystyle y(x)=\tilde{y} + \varepsilon \eta(x) , \quad \varepsilon \in \left( -\frac{\varepsilon_0}{M}, \frac{\varepsilon_0}{M}   \right), \quad  M= \max _{x \in  [x_0,x_1]} |\eta (x) |  \)
 
-\( \eta (x) \in  C ^2 ([x_0,x_1])  \) - финитные функции. 
+\( \eta (x) \in  C ^2 ([x_0,x_1])  \) - финитная функция. 
 
 \begin{minipage}{0.4\textwidth}
     \includegraphics[width=\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ДфУ/Лекции_по_дням/image/5.png}
@@ -155,7 +159,7 @@
 
 \begin{gather*}
     0 = \frac{d}{d \varepsilon}g (\varepsilon) |_{\varepsilon=0}= \frac{d}{d \varepsilon} \left[ \int_{x_0}^{x_1} F(x,\tilde{y}+ \varepsilon\eta  (x) , \tilde{y}'+\varepsilon\eta ' (x) ) dx \right] \bigg |_{\varepsilon=0} \boxed{=}   \\
-    \int_{x_0}^{x_1}= \underbrace{\int_{x_0}^{x_0+\delta} }_{(1)} +   \underbrace{\int_{x_0 +\delta}^{x_1-\delta} }_{(2)} + +\underbrace{\int_{x_1 -\delta}^{x_1} }_{(3)} \quad \frac{d}{d \varepsilon} I_1= \frac{d}{d \varepsilon} I_2=0 \\   
+    \int_{x_0}^{x_1}= \underbrace{\int_{x_0}^{x_0+\delta} }_{(1)} +   \underbrace{\int_{x_0 +\delta}^{x_1-\delta} }_{(2)}  +\underbrace{\int_{x_1 -\delta}^{x_1} }_{(3)} \quad ; \quad \frac{d}{d \varepsilon} I_1= \frac{d}{d \varepsilon} I_2=0 \\   
 \end{gather*}
 \begin{theorem}[из математического анализа]
     \( f(x, \varepsilon): [a,b] \times [c,d] \to \mathbb{R}  \) - непрерывна, \( \displaystyle \exists  \frac{df}{d \varepsilon} (x, \varepsilon)   \)  - непрерывна
@@ -165,14 +169,15 @@
 Вносим производную под знак интеграла: 
 
 \begin{gather*}
-    \boxed{=} \int_{x_0 + \delta}^{x_1- \delta}\left[ \frac{\partial F}{\partial y }(\dots) \eta (x )+ \frac{\partial F}{\partial y'} \eta '(x) dx   \right] \bigg |_{\varepsilon=0}=   \int_{x_0 + \delta}^{x_1- \delta}\frac{\partial F}{\partial y }(\dots) \eta (x )dx+ \underbrace{\frac{\partial F}{\partial y'}(x) \bigg |^{x_1- \delta}_{x_0+\delta}    }_{=0}- \\
-    -\int_{x_0 + \delta}^{x_1- \delta} \eta (x )\frac{d}{dx } \left[ \frac{\partial F}{\partial y' }(\dots) \right] dx \bigg | _{\varepsilon=0} =\int_{x_0 + \delta}^{x_1- \delta} \left[ \frac{\partial F}{\partial y}(\dots)- \frac{\partial}{\partial x} \frac{\partial F}{\partial y'}(\dots)    \right]\eta(x) dx  =0
+    \boxed{=} \int_{x_0 + \delta}^{x_1- \delta}\left[ \frac{\partial F}{\partial y }(\dots) \eta (x )+ \frac{\partial F}{\partial y'} \eta '(x)   \right] dx \bigg |_{\varepsilon=0}=   \int_{x_0 + \delta}^{x_1- \delta}\frac{\partial F}{\partial y }(\dots) \eta (x )dx+ \underbrace{\frac{\partial F}{\partial y'}(x) \eta (x) \bigg |^{x_1- \delta}_{x_0+\delta}    }_{=0}- \\
+    -\int_{x_0 + \delta}^{x_1- \delta} \eta (x )\frac{d}{dx } \left[ \frac{\partial F}{\partial y' }(\dots) \right] dx \bigg | _{\varepsilon=0} =\int_{x_0 + \delta}^{x_1- \delta} \left[ \frac{\partial F}{\partial y}(\dots)- \frac{\partial}{\partial x} \frac{\partial F}{\partial y'}(\dots)    \right]\eta(x) dx \bigg |_{\varepsilon=0}  \boxed{=}  \\
+    \boxed{=} \int_{x_0 }^{x_1} \eta(x) \left[ \frac{\partial F}{\partial y}(x,y(x),y'(x)) -  \dots \right] dx =0
 \end{gather*}
 
 \( \forall   \) финитной функции \( \eta (x)  \)
 
 \begin{lemma}[основаная леммая вариационного исчисления]
-    \( f(x) : [x_0,x_1] \to  \mathbb{R} -\) непрерывна и  \( \displaystyle \int_{x_0}^{x_1} f(x)\eta (x)dx=0, \forall   \) финитной \( f(x) \). Тогда \( f(x) \equiv 0 \text{ } \forall x \in  [x_0,x_1]   \) 
+    \( f(x) : [x_0,x_1] \to  \mathbb{R} -\) непрерывна и  \( \displaystyle \int_{x_0}^{x_1} f(x)\eta (x)dx=0, \forall   \) финитной \( \eta (x) \). Тогда \( f(x) \equiv 0 \text{ } \forall x \in  [x_0,x_1]   \) 
 \end{lemma}
 
 По лемме: \( \displaystyle \frac{\partial F}{\partial y}- \frac{d}{dx} \frac{\partial F}{\partial y '} =0     \) - необходимое условие локального экстремума( \textbf{уравнение Эйлера} )
