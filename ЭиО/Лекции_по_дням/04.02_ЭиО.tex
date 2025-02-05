@@ -49,19 +49,24 @@
 
 Далее мы будем рассматривать только вихревые поля (т.е. \( \mathrm{div} \vec{B} = 0 ,\mathrm{div} \vec{D} = 0  \))
 
-Неизвестные 3 компоненты \( \vec{E},\vec{D},\vec{B},\vec{H}\) - 12 неизвестные функций. Мы можем решить эту систему при помощи уравнений Максвелла \( + \)  материальные уравнения: \( \vec{B}=\vec{B}(H), \vec{E}=\vec{E}(D) \).
+Неизвестные 3 компоненты каждого поля: \( \vec{E},\vec{D},\vec{B},\vec{H}\) - 12 неизвестные функций. Мы можем решить эту систему при помощи уравнений Максвелла \( + \)  материальные уравнения: \( \vec{B}=\vec{B}(H), \vec{E}=\vec{E}(D) \).
 
 Простая модель среды: \( \vec{B}=\mu\vec{H}, \vec{D}=\varepsilon \vec{E} \), где \( \mu = \mathrm{const}  , \varepsilon =\mathrm{const}   \), годится для вакуума (\(\mu=1, \varepsilon=1  \)) и для многих других сред/материалов при низких значения полей \( \vec{E}, \vec{B} \)  и при невысоких частотах \( f < 10^8 \) Гц. 
  
+\newpage
+
 \textit{Волновое уравнение:} 
 
-\[ 
+Рассмотрим \(  \displaystyle  \mathrm{rot} (\mathrm{rot} \vec{E}  )= -\frac{\mu}{c}  \frac{\partial}{\partial t} \mathrm{rot } \vec{H}= - \frac{\mu \varepsilon}{ c ^2} \frac{\partial ^2}{\partial t ^2}     \vec{E} \\ \) 
+
+Распишем чему равен \( \mathrm{rot}(\mathrm{rot}\vec{E}  )   \) :
+
+\[         \displaystyle \mathrm{rot} (\mathrm{rot} \vec{E}  )= \nabla \underbrace{\mathrm{div} \vec{E}}_{\frac{1}{\varepsilon} \mathrm{div}\vec{D}=0   }    - \Delta \vec{E}   \] 
+
+Получаем нашу систему:
+
+\[
 \begin{aligned}
-    \begin{cases}{}
-        \displaystyle  \mathrm{rot} (\mathrm{rot} \vec{E}  )= -\frac{\mu}{c}  \frac{\partial}{\partial t} \mathrm{rot } \vec{H}= - \frac{\mu \varepsilon}{ c ^2} \frac{\partial ^2}{\partial t ^2}     \vec{E} \\
-        \displaystyle \mathrm{rot} (\mathrm{rot} \vec{E}  )= \nabla \underbrace{\mathrm{div} \vec{E}}_{\frac{1}{\varepsilon} \mathrm{div}\vec{D}=0   }    - \Delta \vec{E}   
-    \end{cases}
-    \Rightarrow
     \begin{cases}
         \displaystyle \Delta \vec{E}- \frac{\mu \varepsilon}{c ^2} \frac{\partial ^2 \vec{E}}{\partial t ^2} =0 \\
         \displaystyle \mathrm{div}   \vec{E}=0 
@@ -107,15 +112,14 @@
 
 \[ \frac{\partial ^2 }{\partial t^2 } \vec{E} - \frac{\mu \varepsilon}{c ^2} \frac{\partial ^2 \vec{ E}}{\partial t ^2 } =0 \text{ , для примера }  E_x : \left( \frac{\partial}{\partial z} - \frac{\sqrt{\mu \varepsilon} }{c} \frac{\partial}{\partial t }   \right) \left( \frac{\partial}{\partial z} + \frac{\sqrt{\mu \varepsilon} }{c} \frac{\partial}{\partial t } \right) E_x = 0    \] 
 
-\begin{gather*}
-    \varepsilon = z - \frac{c}{ \sqrt{\mu \varepsilon} }, \quad \eta = z + \frac{c}{ \sqrt{\mu \varepsilon} } \quad ( \text{замена переменных} )  \\
-    \frac{\partial}{\partial z } f ( \xi ( z,t), \eta ) = \frac{\partial f}{\partial \xi }  \underbrace{\frac{\partial \xi }{\partial z }}_{=1} + \frac{\partial f }{\partial \eta  }   \underbrace{\frac{\partial \eta }{\partial z }}_{=0}= \frac{\partial f}{\partial \xi } + \frac{\partial f}{ \partial \eta } \\
-\end{gather*}
+Под f подразумевается \( E_x  \) или \( E_y \)  
 
 \begin{gather*}
+    \xi = z - \frac{c t}{ \sqrt{\mu \varepsilon} }, \quad \eta = z + \frac{c t}{ \sqrt{\mu \varepsilon} } \quad ( \text{замена переменных} )  \\
+    \frac{\partial}{\partial z } f ( \xi ( z,t), \eta(z,t) ) = \frac{\partial f}{\partial \xi }  \underbrace{\frac{\partial \xi }{\partial z }}_{=1} + \frac{\partial f }{\partial \eta  }   \underbrace{\frac{\partial \eta }{\partial z }}_{=1}= \frac{\partial f}{\partial \xi } + \frac{\partial f}{ \partial \eta } \\
     \frac{\sqrt{\mu \varepsilon}}{c}  \frac{\partial f }{\partial t}      = \frac{\sqrt{\mu \varepsilon}}{c} \left( \frac{\partial f }{\partial \xi } \left( - \frac{c}{\sqrt{\mu \varepsilon}}\right) + \frac{\partial f}{\partial \eta } \left( \frac{c}{\sqrt{\mu \varepsilon}}  \right)  \right)=- \frac{\partial f}{\partial \xi } + \frac{\partial f}{ \partial \eta }  \\ 
     \frac{\partial}{\partial z } \to  \frac{\partial}{\partial \xi } + \frac{\partial}{\partial \eta }, \quad \frac{\sqrt{\mu \varepsilon}}{c}\frac{\partial}{\partial t} \to \frac{\partial}{\partial \eta }- \frac{\partial }{\partial \xi } \\
-    \to \left( \frac{\partial}{\partial \xi  } \frac{\partial}{\partial \eta } - \frac{\partial}{\partial \eta } + \frac{\partial}{\partial \xi  }     \right)\left( \frac{\partial}{\partial \xi  } \frac{\partial}{\partial \eta } +\frac{\partial}{\partial \eta } - \frac{\partial}{\partial \xi } \right) E_x ( \varepsilon,\mu)= 0 \quad 4 \frac{\partial}{ \partial\mu \partial\varepsilon}E_x ( \varepsilon,\mu)= 0  
+    \to \left( \frac{\partial t}{\partial \xi  } \frac{\partial}{\partial \eta } - \frac{\partial}{\partial \eta } + \frac{\partial}{\partial \xi  }     \right)\left( \frac{\partial t}{\partial \xi  } \frac{\partial}{\partial \eta } +\frac{\partial}{\partial \eta } - \frac{\partial}{\partial \xi } \right) E_x ( \varepsilon,\mu)= 0 \quad 4 \frac{\partial}{ \partial\mu \partial\varepsilon}E_x ( \varepsilon,\mu)= 0  
 \end{gather*} 
 
 Решения являются произвольные функции \( f(\xi) , f(\eta) \)
@@ -130,7 +134,7 @@
 
 1) \( E_z = 0 , B_z =0  \) 
 
-\[ \displaystyle  \mathrm{div}\vec{D}=\varepsilon \vec{E} =0 = \varepsilon \left( \frac{\partial E_x }{\partial x }+ \frac{\partial E_y }{\partial y }+\frac{\partial E_z }{\partial z }  \right) \text{первые два члена равны нулю.}    \]
+\[ \displaystyle  \mathrm{div}\vec{D}=\varepsilon \mathrm{div}\vec{E} =0 = \varepsilon \left( \frac{\partial E_x }{\partial x }+ \frac{\partial E_y }{\partial y }+\frac{\partial E_z }{\partial z }  \right) \text{первые два члена равны нулю.}    \]
 
 
 \( \Rightarrow  E_z\) - не зависит от z \( \Rightarrow  \) не зависит от t - этот случай не соответствует волновому полю. 
@@ -141,9 +145,9 @@
     \includegraphics[width=0.7\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/5.png}
 \end{center}
 
-В максимуме \( z - \frac{c}{ \sqrt{ \mu \varepsilon}} = 0   \) 
+В максимуме \( \displaystyle z - \frac{c t}{ \sqrt{ \mu \varepsilon}} = 0   \) 
 
-\[ \displaystyle  \underbrace{\frac{dz}{dt} }_{V_{\Phi }  }- \frac{c}{\sqrt{ \mu \varepsilon}}=0   \] 
+\[ \displaystyle \frac{\partial}{\partial t} \text{аргумент}=   \underbrace{\frac{dz}{dt} }_{V_{\Phi }  }- \frac{c}{\sqrt{ \mu \varepsilon}}=0   \] 
 
 2) Связь поперечных полей в плоской волне: 
 
@@ -153,27 +157,27 @@
 
 3) \( \displaystyle \varepsilon E ^2 = \mu [ \displaystyle \vec{H}\times  \vec{n }] ^2 = \mu H ^2 n ^2 = \mu H ^2 | : 8 \pi \Rightarrow W_E = \frac{\varepsilon E ^2 }{8 \pi} =\frac{\mu B ^2 }{8 \pi} = W_B  \) 
 
-4) \( \vec{S}= \frac{c}{4 \pi}   [ \vec{E}\times \vec{H }] \) - плотность потока энергии. 
+4) \( \displaystyle \vec{S}= \frac{c}{4 \pi}   [ \vec{E}\times \vec{H }] \) - плотность потока энергии (вектор Умова-Пойтинга). 
 
 \begin{gather*}
-    \vec{S} = \frac{c}{4 \pi} [\vec{E } \times  \sqrt{\frac{\varepsilon}{\mu} }[\vec{n }\times  \vec{E}]]= \frac{c \varepsilon}{4 \pi \sqrt{ \mu \varepsilon}} \left( \vec{n}( \vec{E}\vec{E}) - \underbrace{\vec{E}( \vec{n }\vec{E})}_{=0}   \right)= \frac{c}{\sqrt{ \mu \varepsilon}} \vec{n} \left( \underbrace{\frac{\varepsilon E ^2 }{8 \pi}}_{W_E}  +\underbrace{\frac{\mu B ^2 }{8 \pi}  }_{W_B}  \right)   
+    \displaystyle \vec{S} = \frac{c}{4 \pi} [\vec{E } \times  \sqrt{\frac{\varepsilon}{\mu} }[\vec{n }\times  \vec{E}]]= \frac{c \varepsilon}{4 \pi \sqrt{ \mu \varepsilon}} \left( \vec{n}( \vec{E}\vec{E}) - \underbrace{\vec{E}( \vec{n }\vec{E})}_{=0}   \right)= \frac{c}{\sqrt{ \mu \varepsilon}} \vec{n} \left( \underbrace{\frac{\varepsilon E ^2 }{8 \pi}}_{W_E}  +\underbrace{\frac{\mu B ^2 }{8 \pi}  }_{W_B}  \right)   
 \end{gather*}
 
 \section{Плоские монохроматические волные (ПМВ).}
 
-\( E_x, E_e, B_x, B_y \sim e^{-i \omega t}   \) 
+\( E_x, E_y, B_x, B_y \sim e^{-i \omega t}   \) 
 
 \text{ }
 
 \begin{minipage}{0.5\textwidth}
-    \includegraphics[width=0.8\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/6.png}
+    \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/6.png}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
-    \text{В плоскости } \( z = z_0 , \vec{E}( z_0,t )= \vec{E_0}e^{-i \omega t} \) 
+    \text{В плоскости } \( z = z_0 , \vec{E}( z_0,t )= \vec{E_0}e^{-i \omega t} \Rightarrow  \) 
 \end{minipage}
 
 \begin{gather*}
-  \displaystyle   \vec{E}( z,t)= \vec{E_0} e^{\frac{i \omega \sqrt{ \mu \varepsilon}}{c} \left( z- \frac{c}{\sqrt{\mu \varepsilon}} t -z_0  \right) } \underbrace{\vec{E_0}e^{-\frac{i \omega \sqrt{ \mu \varepsilon}}{c}z_0} }_{\vec{E_{00}}} \cdot \underbrace{e^{\frac{i \omega \sqrt{ \mu \varepsilon}}{c} \left( z - \frac{c}{\sqrt{ \mu \varepsilon}}t  \right)} } _{f (z - \frac{c}{\sqrt{ \mu \varepsilon}}t)}   
+  \displaystyle  \Rightarrow  \vec{E}( z,t)= \vec{E_0} e^{\frac{i \omega \sqrt{ \mu \varepsilon}}{c} \left( z- \frac{c}{\sqrt{\mu \varepsilon}} t -z_0  \right) }= \underbrace{\vec{E_0}e^{-\frac{i \omega \sqrt{ \mu \varepsilon}}{c}z_0} }_{\vec{E_{00}}} \cdot \underbrace{e^{\frac{i \omega \sqrt{ \mu \varepsilon}}{c} \left( z - \frac{c}{\sqrt{ \mu \varepsilon}}t  \right)} } _{f (z - \frac{c}{\sqrt{ \mu \varepsilon}}t)}   
 \end{gather*}
 
 \( \vec{E_0 } \perp \vec{n} = \vec{e_z} \Rightarrow \vec{E_0}=c_1 \vec{e_x}+ c_2 \vec{e_y}, c_1 \text{ и } c_2   \) - произвольные комплексные числа. 
@@ -187,7 +191,7 @@
 Универсальная запись полей ПМВ: 
 
 \begin{center}
-    \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/7.png}
+    \includegraphics[width=0.3\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/7.png}
 \end{center}
 
 \[ \begin{aligned}
@@ -196,7 +200,7 @@
         z'= (\vec{n}, \vec{r})
     \end{cases}
     \Rightarrow
-    \vec{E}( z', t)= \vec{E_0}e^{ik(\vec{n}, \vec{r}) - i \omega t }= \vec{E_0}e^{ik(\vec{k}, \vec{r}) - i \omega t }
+    \vec{E}( z', t)= \vec{E_0}e^{ik(\vec{n}, \vec{r}) - i \omega t }= \vec{E_0}e^{i(\vec{k}, \vec{r}) - i \omega t }
 \end{aligned} \] 
 %%-------------------------------%%
 
