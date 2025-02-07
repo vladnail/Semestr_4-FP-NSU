@@ -10,12 +10,12 @@
 
 %%-------------------------------%%
 
-Свойство: ПМВ как и любая плоская волна имеет две степени свободы, то е сть обладает поляризацией\dots
+Свойство: ПМВ как и любая плоская волна имеет две степени свободы, то е сть обладает поляризацией.
 
-Пример: ПМВ, бегущая по z, \( \vec{E}( z,t)= ( c_1 \vec{e_x}+ c_2 \vec{e_y} )e^{ikz- i \omega t}  (*) \), где \( c_1, c_2 \) - произвольные комплексные числа\dots
+Пример: ПМВ, бегущая по z, \( \vec{E}( z,t)= ( c_1 \vec{e_x}+ c_2 \vec{e_y} )e^{ikz- i \omega t}  (*) \), где \( c_1, c_2 \) - произвольные комплексные числа.
 
 \begin{definition}
-    Плоская волна, у которой вектор \( \vec{E} \) при \( \forall t \) во всем пространстве лежит в одной плоскости - плоскополяризованная (линейнополяризованная) волна\dots
+    Плоская волна, у которой вектор \( \vec{E} \) при \( \forall t \) во всем пространстве лежит в одной плоскости - плоскополяризованная (линейно поляризованная) волна.
 \end{definition}
 
 Выражение \( (*) \) - представляет собой сумму двух плоскополяризованных волн с поляризациями вдоль х и у. \( \forall  \)  плоскую волну можно разложить на две плоскополяризованные.
@@ -30,23 +30,25 @@
 
 \[ \Rightarrow \mathrm{Re}\vec{E }= |c_1|\vec{e_x}\cos (kz - \omega t + \varphi) + |c_2|\vec{e_y}\cos (kz - \omega t + \varphi + 2 \pi m)=   \]
 
-\[= (|c_1| \vec{e_x} + |c_2\vec{e_y}) \cos (kz - \omega t + \varphi )  \] 
+\[= (|c_1| \vec{e_x} + |c_2\vec{e_y}) \cos (kz - \omega t + \varphi ) \quad  t = \mathrm{const}    \] 
 
-% Рисунок 0
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/8.png}
+\end{center}
 
-2) \(\displaystyle  \psi = \varphi - \frac{\pi}{2}    \) 
+2) \(\displaystyle  \psi = \varphi +\frac{\pi}{2}    \) 
 
 \[ \cos  ( kz - \omega t \varphi+ \frac{\pi}{2} )= \cos( kz - \omega t \varphi)\cos \frac{\pi}{2}-\sin( kz - \omega t \varphi)\sin  \frac{\pi}{2}   \] 
 
 \[ \mathrm{Re}\vec{E }= |c_1|\vec{e_x}\cos ( kz - \omega t + \varphi)  - |c_2|\vec{e_y}\sin( kz - \omega t + \varphi)   \] 
 
-% Рисунок 1
-
-3) \( \psi=\varphi - \frac{\pi}{2}  \) 
+3) \( \displaystyle \psi=\varphi - \frac{\pi}{2}  \) 
 
 \[ \mathrm{Re}\vec{E }= |c_1|\vec{e_x}\cos ( kz - \omega t + \varphi)  + |c_2|\vec{e_y}\sin( kz - \omega t + \varphi)   \] 
 
-%Рисунок 2
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/9.png}
+\end{center}
 
 
 В случае произвольных  \( c_1, c_2 \)  эллипс повернут на некоторый угол относительно оси x (задача на семинаре).
@@ -78,6 +80,9 @@
 
 \[ I(t)= \int_{-\infty}^{\infty} e^{- i \omega t} d \omega = \lim_{\Omega \to \infty} \int_{-\Omega}^{\Omega}e^{- i \omega t} d \omega  = \lim \frac{-e^{-i \Omega t} + e^{i \Omega t}}{it 2 \Omega}  2 \Omega = \lim_{\Omega \to \infty}   2 \Omega  \cdot\mathrm{sinc}(\Omega t)    \] 
 
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/10.png}
+\end{center}
 
 \[ \int_{-\infty }^{\infty} I (t)dt =\lim \int_{-\infty}^{\infty} 2 \Omega \frac{\sin  ( \Omega t)}{\Omega t}dt = 2 \int_{- \infty }^{\infty} \frac{ \sin x}{x}dx = 2 \cdot \mathrm{Im} \left[ \int_{-\infty }^{\infty} \frac{e^{ix} }{x} dx \right]      \] 
 
@@ -89,9 +94,7 @@
 
 \[ \int_{-\infty}^{\infty}   e^{- i \omega( t - \tau)} d \omega = 2 \pi \delta ( t - \tau )\quad  \int_{-\infty}^{\infty}    e^{-i (\omega- \omega ') t} d \omega = 2 \pi \delta ( \omega- \omega' )   \] 
 
-1)\[  \delta ( t- \tau )= \frac{1}{ \sqrt{ 2 \pi }} \int_{-\infty}^{  \infty} \frac{1}{ \sqrt{2\pi }} e^{+i \omega t} e^{- i \omega t}  \] 
-
-Фурье образ \( \delta ( t - \tau) \) 
+1)\[  \delta ( t- \tau )= \frac{1}{ \sqrt{ 2 \pi }} \int_{-\infty}^{  \infty} \underbrace{\frac{1}{ \sqrt{2\pi }} e^{+i \omega t} }_{\delta ( t - \tau) }e^{- i \omega t} d \omega \] 
 
 2)\[ f(t)= \int_{-\infty}^{\infty} f(\tau ) \delta ( t - \tau)d \tau = \int_{-\infty}^{\infty} \frac{f(\tau)d \tau}{2 \pi} \int_{-\infty}^{\infty} e^{- i \omega ( t - \tau ) }d \omega = \frac{1}{ \sqrt{2 \pi}} d \omega e ^{- \omega t } \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} d \tau f( \tau) e^{i \omega \tau}       \] 
 
@@ -101,13 +104,17 @@
 
 \[ \Rightarrow \int_{-\infty}^{\infty} |f(t)| ^2 dt = \int  _{-\infty}^{\infty} |\hat{f}(\omega)| ^2 d \omega - \text{ равенство Парсеваля }   \] 
 
+\begin{center}
+    \includegraphics[width=0.2\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/12.png}
+\end{center}
+
 Прошедшая энергия за \( \infty \)  интервал времени через см\( ^2 \)
 
 \[ = \int (\vec{S}\vec{n})dt= \frac{c}{\sqrt{\mu \varepsilon}} \frac{\varepsilon}{ 4\pi }  \int_{-\infty}^{\infty} \vec{E} ^2(t)dt = \frac{c}{\sqrt{\mu \varepsilon}} ( \vec{n}\vec{n_0}) \frac{\varepsilon}{4 \pi} \int_{-\infty}^{\infty} |\hat{\vec{E}}(\omega) | ^2 d \omega  \] 
 
 Свойства Фурье-преобразования: 
 
-1)Пусть \( \displaystyle f(t) \in  \mathbb{R} \Rightarrow f(t)= f^*(t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} \hat{f^{*} }e ^{+i \omega t} d \omega =[\omega \to  - \omega ']   =  \)
+1) Пусть \( \displaystyle f(t) \in  \mathbb{R} \Rightarrow f(t)= f^*(t)= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} \hat{f^{*} }e ^{+i \omega t} d \omega =[\omega \to  - \omega ']   =  \)
 
 \[ =\frac{1}{\sqrt{ 2 \pi }}(- )\int_{-\infty}^{\infty} d \omega ' \hat{f^{*} } ( -\omega ')e^{- i \omega' t}     \] 
 
@@ -115,11 +122,19 @@
 
 \[ \hat{f^*} ( \omega) = \hat{f}(-\omega) \] 
 
+
 2) Спектр сдвинутого по времени сигнала:
 
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/11.png}
+\end{center}
 \[  \hat{F}(\omega)=\frac{1}{\sqrt{2 \pi}}\int_{-\infty}^{\infty} f(t- T)e^{+ i \omega t }dt = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t' )e^{+ i \omega t } e^{i \omega T} dt =\hat{f}(\omega)e^{i \omega T}         \]  
 
 3) \[  F( t)= f(t) e^{- i \omega_0 t  }\quad  F(\omega)= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty}   f(t) e ^{- i \omega_0 t} e ^{i \omega t}dt  = \hat{f}( \omega - \omega_0) \]  
+
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/13.png}
+\end{center}
 
 4) Спектр N повторенного сигнала: 
 
@@ -127,6 +142,12 @@
 
 Последний выделенный  множитель в правой части уравнения - это интерференционный множитель.
 
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/14.png}
+\end{center}
+\[ x=  m \pi \varepsilon, \varepsilon > 0  \] 
+
+\[ \frac{\sin ^2 (N ( m\pi+ \varepsilon))}{\sin  ^2 ( m \pi + \varepsilon )} = N ^2   \] 
 %%-------------------------------%%
 
 
