@@ -126,22 +126,21 @@
 \end{gather*} 
 Подставляем в (*):
 
-\[     \left( \frac{\partial }{\partial \xi  }+ \cancel{\frac{\partial}{\partial \eta }}  - \cancel{\frac{\partial}{\partial \eta }}  + \frac{\partial}{\partial \xi  }     \right) \left( \cancel{\frac{\partial}{\partial \xi }}  +\frac{\partial}{\partial \eta } +\frac{\partial}{\partial \eta } - \cancel{\frac{\partial}{\partial \xi }}  \right) E_x ( \varepsilon,\mu)= 0 \Rightarrow  4 \cdot \frac{\partial}{ \partial\mu \partial\varepsilon}E_x ( \varepsilon,\mu)= 0  \] 
+\[     \left( \frac{\partial }{\partial \xi  }+ \cancel{\frac{\partial}{\partial \eta }}  - \cancel{\frac{\partial}{\partial \eta }}  + \frac{\partial}{\partial \xi  }     \right) \left( \cancel{\frac{\partial}{\partial \xi }}  +\frac{\partial}{\partial \eta } +\frac{\partial}{\partial \eta } - \cancel{\frac{\partial}{\partial \xi }}  \right) E_x ( \varepsilon,\mu)= 0 \Rightarrow  4 \cdot \frac{\partial}{ \partial \xi \partial \eta }E_x ( \varepsilon,\mu)= 0 \Rightarrow   \] 
 
-Так как смешанные производные коммутируют ( \(\displaystyle  \frac{\partial}{\partial \mu \partial \varepsilon}= \frac{\partial}{\partial \varepsilon \partial \mu}   \)) и уравнение равно нулю, то \( \vec{E_x} \) можно представить в виде суммы двух функций.
+\( \Rightarrow  \) решения являются произвольные функции от своих аргументов: \( f(\xi) , f(\eta) \).
+Так как смешанные производные коммутируют ( \(\displaystyle  \frac{\partial}{\partial \xi \partial \eta}= \frac{\partial}{\partial \eta \partial \xi}   \)) и уравнение равно нулю, то \( \vec{E_x} \) можно представить в виде суммы двух функций.
 
-\[     E_x (z,t) = f \left(z- \frac{c}{\sqrt{ \mu \varepsilon }}   \right)+ g \left(  z+ \frac{c}{\sqrt{ \mu \varepsilon }} \right) \\ 
+\[     E_x (z,t) = f \left(z- \frac{ct}{\sqrt{ \mu \varepsilon }}   \right)+ g \left(  z+ \frac{ct}{\sqrt{ \mu \varepsilon }} \right) \\ 
 \] 
 
-Так же решения являются произвольные функции от своих аргументов: \( f(\xi) , f(\eta) \). В этом убеждают значения соответствующих вторых производных:
 
-\[ \frac{\partial ^2 f(\xi \backslash \eta )}{ \partial z ^2} = \frac{ d ^2 f(\xi \backslash \eta )}{d (\xi \backslash \eta ) ^2}, \text{ } \frac{\partial ^2 f(\xi \backslash \eta ) }{ \partial t ^2} = \left( \pm \frac{c}{\sqrt{\mu \varepsilon}}  \right) ^2\frac{ d ^2 f(\xi \backslash \eta)}{d (\xi \backslash \eta)  ^2}   \] 
 
 Физически это отражает принцип суперпозиции волн: любое решение может быть представлено в виде комбинации волн, движущихся в противоположных направлениях.
 
 По аналогии можем записать \( \vec{E_y} \) :
 
-\[ \displaystyle     E_y (z,t) = p \left(z- \frac{c}{\sqrt{ \mu \varepsilon }}   \right)+ h \left(  z+ \frac{c}{\sqrt{ \mu \varepsilon }} \right) \\ 
+\[ \displaystyle     E_y (z,t) = p \left(z- \frac{ct}{\sqrt{ \mu \varepsilon }}   \right)+ h \left(  z+ \frac{ct}{\sqrt{ \mu \varepsilon }} \right) \\ 
 , \text{ где } \forall p,h  \] 
 
 
