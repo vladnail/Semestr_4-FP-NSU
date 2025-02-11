@@ -1,0 +1,77 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+
+\[ \begin{aligned}
+\begin{cases}
+    \displaystyle I[y] = \int_{x_0}^{x_1} F(x,y(x),y'(x))dx \\
+    y(x_0)=y_0, \text{ } y(x_1)=y_1
+\end{cases}
+\quad (1)
+\end{aligned} \] 
+
+Найти функцию \( y(x) \)   такую, чтобы функционал \( I[y] \) принимал наибольшее или наименьшее значение. 
+
+Необходимо найти условие локального экстремума: 
+
+Если \( \tilde{y }       \)  экстремум \( \Rightarrow \tilde{y }  \frac{\partial F }{\partial y} - \frac{d}{dx }  \frac{\partial F}{\partial y '} = 0 \quad (2)   \)
+
+\begin{proof}[Докозательство формулы (2)]
+    \[ I[\tilde{y}] \le I[y] , y = \tilde{y} + \varepsilon \eta , \varepsilon \in  (- \varepsilon_1, \varepsilon_1), \eta(x) \in C^2([x_0,x_1])  - \text{финитная }    \] 
+    % рисунок 
+    \[ \underbrace{I[y]}_{= g(0)} \le \underbrace{I[\tilde{y}+ \varepsilon \eta ]}_{=g(\varepsilon)} \Rightarrow g(0) \le g(\varepsilon) \Rightarrow g'( 0) = 0\] 
+
+    \[ 0= \frac{d}{d \varepsilon} g(\varepsilon) |_{\varepsilon= 0 }= \int_{x_0}^{x_1} \left( \frac{\partial F }{\partial y } ( x , \tilde{y}(x) , \tilde{y }' (x) ) - \frac{d}{dx }  \frac{\partial F }{\partial y' } ( x , \tilde{y}(x) , \tilde{y }' (x) )  \right) \eta (x) dx , \forall \eta (x)  - \text{финитная}    \] 
+
+    \begin{lemma}[Лагранжа]     
+        Пусть \( f(x) \) - непрерывна и \( \displaystyle \int_{x_0}^{x_1} f(x) \eta (x) dx =0. \forall \eta (x) \) - финитная на \( [x_0,x_1] \). Тогда \( f(x) = 0 , \forall x \in  [x_0,x_1] \) 
+    \end{lemma}
+
+    \begin{proof}
+        От противного:
+        %рисунок 
+        Пусть для определенности \( f(\tilde{x } )> 0        \) . Тогда так как \( f(\tilde{x}) \) - непрерывна, то \( f(x)>0    \) при \( x \in (\tilde{x}- \delta_0, \tilde{x}+\delta_0) \) 
+
+        Возьмем функцию \( \eta(x) = \begin{aligned}
+            \begin{cases}
+                (\delta_0 ^2 - (x- \tilde{x})) ^ 4 , |x- \tilde{x}|< \delta   \\
+                0 , |x- \tilde{ x } | > \delta_0
+                \end{cases}
+                - \text{финитная функция} 
+        \end{aligned}\)
+        %рисунок
+
+        \[ \int_{ x_0 }^{x_1} f(x ) \eta(x ) dx = \int_{x_0 - \delta_0}^{x_1- \delta_0} \underbrace{f(x)}_{>0} \underbrace{\eta( x)}_{>0} dx >0 - \text{противоречие}    \] 
+
+        \[ \Rightarrow \forall x \in  [x_0, x_1] : f(x) = 0  \] 
+    \end{proof}
+
+    Из доказательства леммы следует, что доказана формула (2)
+\end{proof}
+
+\section{Случай понижения порядка в уравнении Эйлера}   
+
+\[ \frac{\partial F}{\partial y} - \frac{d}{d x }  \frac{\partial F}{\partial y'} = 0 \quad  F=F(x,y(x),y'(x))  \] 
+
+1) \(\displaystyle  F= f(x,y) \Rightarrow \frac{\partial F }{\partial y} (x,y) =0 \Rightarrow y= y(x)    \) 
+
+2) \( \displaystyle F= F (x, y ') \Rightarrow \frac{d}{dx }  \frac{\partial F }{\partial y'} (x,y') =0 \Rightarrow \frac{\partial F }{\partial y'} (x,y') = C    \) 
+
+
+3) \( F= F( y , y ') \) :
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi

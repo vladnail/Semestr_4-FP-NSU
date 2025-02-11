@@ -54,14 +54,14 @@ E - интеграл движения.
 Кинетическая энергия: \( T = E - U  \) 
 
 \begin{gather*}
-    E<U_m : x_1 \le  x_2 \le  x_3 - \text{финитное} \\
+    E<U_m : x_1 \le  x \le  x_2 - \text{финитное} \\
     E > Um :- \text{ движение всегда инфинитное}  \\
-    -E < U_m : x \geq x_3 \text{ - инфинитное} \\
+    E < U_m : x \geq x_3 \text{ - инфинитное} \\
     E = U_m : \\
     \frac{\partial U }{\partial x }(x_m)= 0  \quad  U_x = U_ m + \cancelto{0}{\frac{\partial U}{\partial x }( x_m)}  ( x- x_m) + \frac{1}{2} \frac{ \partial ^2 U }{\partial x ^2}  ( x- x_m ) ^2 + \dots \\
     t-t_0 = -\sqrt{\frac{m}{2} } \int_{ x_0}^{x} \frac{dx}{\sqrt{E- U_m - \frac{1}{2 } U'' (x_m)(x- x_m) ^2 }}= - \sqrt{\frac{m}{- U '' (x_m)} } \int_{ x_0}^{x} \frac{1}{x- x_m} =\\
     = - \sqrt{\frac{m}{- U _{xx} '' (x_m)} } \ln \left| \frac{x- x_m }{x_0 - x_m} \right|  \\   
-    \displaystyle  x-x_m = ( x- x_0 )e^{- \sqrt{\frac{-U''(x_m)}{m} }(t- t_0)} ; \quad  x \xrightarrow{t \to  \infty } x_m 
+    \displaystyle  x-x_m = ( x_0- x_m )e^{- \sqrt{\frac{-U''(x_m)}{m} }(t- t_0)} ; \quad  x \xrightarrow{t \to  \infty } x_m 
 \end{gather*}
 
 \section{Движение в центральном поле}
@@ -79,20 +79,20 @@ E - интеграл движения.
         \quad  
     \end{aligned} \\
     \vec{r}= \vec{e_x}x + \vec{e_y}y =  r\cos \varphi \vec{e_x} + r\sin \varphi \vec{e_y} \\  
-    \dot{\vec{r}}=\vec{e _ x}( \dot{x} \cos \varphi - \dot{y} \cos  \varphi \dot{\varphi}  ) + \vec{e_y}( \dot{x} \sin \varphi - \dot{y} \sin  \varphi \dot{\varphi}  ) = \\
-    \dot{r}( \cos \varphi \vec{e_x} + \sin \varphi \vec{e_y})+ r \dot{ \varphi}(- \vec{e_x} \sin \varphi + \vec{e_y} \cos \varphi = \dot{r} \vec{e_r}+r \dot{\varphi} \vec{e _{\varphi} } \\
+    \dot{\vec{r}}=\vec{e _ x}( \dot{r} \cos \varphi - \dot{r} \cos  \varphi \dot{\varphi}  ) + \vec{e_y}( \dot{r} \sin \varphi - \dot{r} \sin  \varphi \dot{\varphi}  ) = \\
+    =\dot{r}( \cos \varphi \vec{e_x} + \sin \varphi \vec{e_y})+ r \dot{ \varphi}(- \vec{e_x} \sin \varphi + \vec{e_y} \cos \varphi = \dot{r} \vec{e_r}+r \dot{\varphi} \vec{e _{\varphi} } \\
     E = \frac{1}{ 2} m v ^2 + U ( r) = \frac{1}{2 }m ( \dot{ r } ^2+ ( r \dot{\varphi}) ^2  ) + U ( r)     \\
     \vec{M} = [ r \vec{ e_r}\times  m \vec{ v}]= r m \dot{r } \cancelto{0}{[\vec{e_r}\times \vec{e_r}]}+ m r ^2 \dot{\varphi} \underbrace{[\vec{e_r}\times  \vec{ e _{\varphi} }]}_{\vec{e_z}}  \\
     \vec{M}=\begin{pmatrix}
     0\\
     0\\
     M
-    \end{pmatrix} \Rightarrow M = m r ^2 \dot{\varphi}  
+    \end{pmatrix} \Rightarrow M = m r ^2 \dot{\varphi}  \Rightarrow d \varphi = \frac{M}{m r ^2 } dt  \quad  (1)
 \end{gather*}
 
 \begin{gather*}
     E = \frac{1}{ 2 } m \dot{r} ^2 +  \underbrace{U(r) + \frac{M ^2}{2 mr ^2 }}_{U_{\text{эф}}}     \\
-    t-t_0 = \pm  \sqrt{\frac{m}{2} } \int_{ r_0}^{r}   \frac{dr}{\sqrt{E - U _{\text{эф}}(r) }} \quad  \varphi - \varphi_0 - \pm \frac{M}{\sqrt{2m}} \int_{r_0}^{r} \frac{dr}{r ^2 \sqrt{E - U _{\text{эф}}(r) }}   
+    t-t_0 = \pm  \sqrt{\frac{m}{2} } \int_{ r_0}^{r}   \frac{dr}{\sqrt{E - U _{\text{эф}}(r) }} \overset{(1)}{\Rightarrow }   \varphi - \varphi_0 - \pm \frac{M}{\sqrt{2m}} \int_{r_0}^{r} \frac{dr}{r ^2 \sqrt{E - U _{\text{эф}}(r) }}   
 \end{gather*}
 
 \section{Секторальная скорость}
@@ -108,6 +108,8 @@ E - интеграл движения.
 \begin{center}
     \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/АМ/Лекции_по_дням/image/3.png}
 \end{center}
+
+    \[ E \geq 0 - \text{инфинитное}  \quad  E < 0 - \text{инфинитное}  \] 
 
 \[ U = -\frac{\alpha}{r} \quad  U _{\text{эф} } = - \frac{\alpha}{r} + \frac{M ^2 }{2 mr ^2 }    \] 
 
@@ -129,7 +131,7 @@ E - интеграл движения.
 
 \( e<1 ( E<0) \) - эллипс 
 
-\( e = 0 ( E = - \frac{m} \alpha{2 M ^2} ) \) - окружность
+\( e = 0 ( E = - \frac{m\alpha} {2 M ^2} ) \) - окружность
 \end{center}
 
 
