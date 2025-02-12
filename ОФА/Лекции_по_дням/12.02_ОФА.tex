@@ -1,0 +1,202 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+
+Пример: Множество множеств P[0,1] не является замкнутым подпространством в C[0,1]
+
+\[ P_n (x )  \to  f(x ) \Leftrightarrow  \left\lVert P_n - f  \right\rVert _C \to  0 \]
+
+\[ \forall  n , p_n \in  P[0,1] , f(x ) \in  C[0,1] - \text{не является множеством} \] 
+
+\[ f(x ) = e ^{x} \quad  p_n(x) = 1+ x + \frac{x ^2 }{2 }  + \dots + \frac{x^n }{n!}  \]  
+
+\[ \left\lVert p_n -f  \right\rVert = \max_{x \in [0,1]} \max_{c \in  [0,1]} \left\lvert \frac{e^c x^{x+1 } }{(n+1)!}  \right\rvert =\frac{e}{(n+1)!} \xrightarrow{n \to  \infty } 0 ,\quad e^x \notin P[0,1]       \] 
+
+
+
+\[ L_2 (x ) :\{f: X \to  Y , \int_{x} |f| ^2 dx < \infty \} \] 
+
+\[ \left\lVert f  \right\rVert _{L_2 } = \sqrt{\int_{x }|f| ^2 dx} \] 
+
+Нуль: \( f : X \to  Y  \) 
+
+\[  0(x ) : X \to  Y \] 
+
+\[ g=0(x ) = 0 - \text{почти всюду}  \] 
+
+\[ g = \begin{cases}
+    0 , \mathbb{R}  /\mathbb{Q} \\
+    \infty , \mathbb{Q}  
+\end{cases} \] 
+
+
+Элементы (вектора) пространства \( L_2    \)  - классы функций.
+
+\begin{definition}
+    Последовательность \( (x_n )_{n \in  \mathbb{N}} , x_n \in  L \) линейно нормированное пространство называется фундаментальной, если \( \forall  \varepsilon >0 , \exists N , \forall m,n >N : \left\lVert x_m - x_n  \right\rVert < \varepsilon \) 
+\end{definition}
+
+\begin{definition}
+    Если любая фундаментальная последовательность является сходящейся в L, то L - полное пространство.
+\end{definition}
+
+\begin{definition}
+    Полное нормированное пространство - банахово пространство
+\end{definition}
+
+\section{Линейные пространства с скалярным произведением}
+
+\begin{definition}
+    Скалярное произведение в L (, ) : \( L \times L \to  \mathbb{C} \). \( \forall x_1,x_2, y \in  L, \alpha_1,\alpha_2 \in \mathbb{C}(\mathbb{R}) \) выполняется: 
+
+    1) \( (\alpha_1x1 + \alpha_2 x_2, y ) = \alpha_1(x,y )+ \alpha_2 (x,y) \) 
+
+    2) \( (x,y ) = (\overline{y,x} )\)  
+
+    3) \( (x,x ) > 0 \quad \text{и}  \quad  (x,x ) = 0 \Leftrightarrow x =0\) 
+\end{definition}
+
+Линейное пространство со скалярным произведением над \( \mathbb{R}   \) - евклидовы пространства, над \( \mathbb{C}    \) - унитарное пространства. 
+
+\[ 1) \mathbb{R} ^ n ( \mathbb{C}^ n ): (x, y ) = \sum  ^{n }  x_i \overline{y } _i   \] 
+
+\[ 2) l_2 : (x,y ) = \sum ^{\infty  } x_i \overline{y } _i   \] 
+
+\[ 3) L_2(x ) : (f,g ) \int  _{x } f \overline{g } dx   \] 
+
+\[ 4) C[a,b ] : \text{ нет скалярного произведения согласованного  с аксиомами нормы} \] 
+
+\begin{lemma}
+    Величина \( \left\lVert x  \right\rVert = \sqrt{x,x} \) удовлетворяет свойствам нормы согласованной или порожденный скалярным произведением.
+\end{lemma}
+
+
+\begin{definition}
+    Гильбертово пространство - пространство со скалярным произведением, полное относительно нормы, порожденным этим скалярным произведением.
+\end{definition}
+
+\begin{lemma}[ Неравенство Коши-Буняковского]
+    \( \forall x \in  L \quad  |(x, y )| \le  \left\lVert x  \right\rVert \left\lVert y \right\rVert \) 
+\end{lemma}
+
+\begin{proof}
+    \[ \alpha = \frac{(x,y )}{|(x,y )|} , \quad  t \in  \mathbb{R} \] 
+
+    \[ 0 \le  \left\lVert \overline{\alpha} x +  ty        \right\rVert ^2 = ( \overline{\alpha } x+ ty , \overline{\alpha } x + ty     ) = \overline{\alpha }( x, \overline{\alpha }x _ty  ) + t(y , \overline{\alpha }x + ty  )=   \] 
+
+    \[  \underbrace{|\alpha | ^2}_{=1} ( x,x ) + \overline{\alpha } t ( x,y ) + \alpha t ( y ,x ) + t ^2 ( y,y )=  \left\lVert x  \right\rVert ^2 + \overline{\alpha } t (x, y ) + \alpha t ( y ,x ) + t ^2 \left\lVert  y  \right\rVert ^2 \boxed{=}    \] 
+
+    \[t  \left( \frac{(\overline{x,y }  ) ( x,y)}{|(x,y)|}+ \frac{({x,y }  ) ( x,y)}{|(y,x)|} \right)  = 2t |(x,y)|\] 
+
+    \[ \boxed{=} \left\lVert x   \right\rVert  ^2 + 2t |(x,y)   |+ t ^2 \left\lVert y  \right\rVert ^2\] 
+
+    \[ |(x, y )| \le  \left\lVert x  \right\rVert \left\lVert y \right\rVert \] 
+\end{proof}
+
+\begin{proof} [Доказательство Леммы 1]
+
+    1) Из 3 аксиомы скалярного произведения; 
+
+    2) \( \alpha \in  \mathbb{C}, \left\lVert \alpha x    \right\rVert ^2 = |\alpha | ^2 \left\lVert x  \right\rVert ^2 =(1) \)
+    
+    \[ (\alpha x , \alpha x ) = \alpha ( x, \alpha x ) = \alpha \overline{\alpha } ( x,x)  = (1 ) \] 
+
+    3) \( \left\lVert x + y  \right\rVert \le  \left\lVert x  \right\rVert \left\lVert y \right\rVert \) 
+
+    \[ \left\lVert  x+ y  \right\rVert ^2 = ( x+ y , x+ y )  = ( x, x+ y ) + ( y , x+ y ) = ( \overline{x+ y , x }  ) + ( \overline{x+ y , y }  ) = (\overline{x,x }   ) + ( \overline{y,x }   )  +( \overline{x, y }  ) + ( \overline{y, y }  ) = \] 
+
+    \[ = \left\lVert  x  \right\rVert  ^2 +  (x, y ) + (y,x ) +  \left\lVert y  \right\rVert ^2 \le  \left\lVert x  \right\rVert ^2 + 2 |(x,y)   | + \left\lVert y  \right\rVert ^2  \le  \] 
+
+    \[ \le  \left\lVert x  \right\rVert ^2 + 2 \left\lVert x  \right\rVert \left\lVert y  \right\rVert+ \left\lVert y  \right\rVert ^2 = ( \left\lVert  x  \right\rVert + \left\lVert  y  \right\rVert) ^2  \] 
+\end{proof}
+
+
+\[ L_2 : \sqrt{ \int  _x |f(x)| ^2 dx    } = \left\lVert f  \right\rVert _{L_2}  \] 
+
+\[ \left\lvert \int  _{x }  f (x ) \overline{g }  (x ) dx        \right\rvert  \le  \left( \int_{x }|f(x ) | ^2 \right) ^{\frac{1}{2 } } \left( \int_{x } |g(x)| ^2 dx   \right) ^{\frac{1}{2} }  \] 
+
+\[ \sqrt[  p ]{|\int_{x }f(p)|dx}= \left\lVert f  \right\rVert _{L_p} \]  
+
+\begin{lemma}
+    \( \forall p \geq 1   \) линейно нормированное пространство  \( L_ p   \)  является полным.  
+\end{lemma}
+
+\begin{lemma}
+    \( \forall  p \geq 1   \)  пространство \( C^{\infty }  \) плотно в \( L_p (x) \)  
+\end{lemma}
+
+\begin{lemma}
+    \( \forall  p \ge 1  \)  пространство \( L _ p  \)  сепарабельно.
+\end{lemma}
+
+\begin{lemma}
+    Пусть L - линейно нормированное пространство со скалярным произведением и норма порождена скалярным произведением\dots
+
+    \[ \forall  x, y \in  L \quad  \left\lVert x+ y  \right\rVert ^2 + \left\lVert  x- y  \right\rVert ^2 = 2 (\left\lVert x   \right\rVert ^2 + \left\lVert y  \right\rVert ^2) - \text{равенство паралеллограма} \] 
+\end{lemma}
+
+Наоборот, если в линейно нормированном пространстве L выполняется равенство паралеллограма, то в этом пространстве можно ввести скалярное произведение, согласованной с этой нормой.
+
+\( L_1 \subset [ a, b ] \exists  f,g ,   \)  для которые не выполняется равенство паралеллограма \( \Rightarrow      \) нельзя ввести скалярное произведение, согласованное с нормой.
+
+\begin{lemma}
+    В линейно  подпространстве со скалярным пространстве  L , скалярное произведение непрерывно по первому аргументу относительно сходимости по норме порожденной скалярным произведением
+
+    \[ x_n \to  t \quad \left\lVert x_n - x           \right\rVert  \xrightarrow{n \to  \infty }  0  \] 
+
+    \[ \forall y , (x_n, y  ) \to  (x, y ) \] 
+\end{lemma}
+
+\begin{proof}
+
+    \[ |(x_n, y ) -(x,y )  | = |(x_n- x,y ) | \overset{\text{по К.Б} }{\le}  \left\lVert x_n - x  \right\rVert \left\lVert y \right\rVert \xrightarrow{x \to  \infty } 0   \] 
+\end{proof}
+
+\section{Ортогональность векторов}
+
+\begin{definition}
+    L  - пространство со скалярным произведением, \( x, y \in  L \) называется ортогональным, если \( (x,y ) = 0   \) 
+
+    
+\end{definition}
+
+\begin{definition}
+    Набор векторов \( x, \ldots, x_n, \ldots,   \in  L \) называется ортогональным, если \( \forall  ij : x_i \perp x_j  \) 
+\end{definition}
+
+
+\begin{definition}
+    Набор ортогональный ( \( x_n     \) ) называется ортнармированным, если \( \forall  i :  \left\lVert x  \right\rVert = 1   \) 
+\end{definition}
+
+Ортогонализация Грамма-Шмидта
+
+Если \( x_1, \ldots, x_n  \)  - счетная система линейно назависимый в  L , тогда новые последовательности: 
+
+\[ y_1 = x_1 \quad  z_1 = \frac{y_1}{\left\lVert y_1  \right\rVert}  \] 
+
+\[ y_2 = x_2 - ( x_2 , z_1 ) z_1  \quad  z_2 = \frac{y_2}{\left\lVert y_2  \right\rVert} \] 
+
+\[ y_n = x_n - \sum ^{n-1 }_{k =1}( x_n , z_k ) z_k  \quad  z_n = \frac{y_n}{\left\lVert y_n  \right\rVert}    \] 
+
+Обладает свойствами: 
+
+1) Система \( z_1, \ldots, z_n   \) - ортонормированна
+
+2) \( \forall n \in  N <z_1, \ldots, z_n > = <x_1, \ldots, x_n>\) 
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi
