@@ -22,7 +22,7 @@
 
 Необходимо найти условие локального экстремума: 
 
-Если \( \tilde{y }       \)  экстремум \( \Rightarrow \tilde{y }  \frac{\partial F }{\partial y} - \frac{d}{dx }  \frac{\partial F}{\partial y '} = 0 \quad (2)   \)
+Если \( \tilde{y }       \)  экстремаль \( \Rightarrow \tilde{y }  \frac{\partial F }{\partial y} - \frac{d}{dx }  \frac{\partial F}{\partial y '} = 0 \quad (2)   \)
 
 \begin{proof}[Докозательство формулы (2)]
     \[ I[\tilde{y}] \le I[y] , y = \tilde{y} + \varepsilon \eta , \varepsilon \in  (- \varepsilon_1, \varepsilon_1), \eta(x) \in C^2([x_0,x_1])  - \text{финитная }    \] 
@@ -48,17 +48,19 @@
 
         Возьмем функцию \( \eta(x) = \begin{aligned}
             \begin{cases}
-                (\delta_0 ^2 - (x- \tilde{x})) ^ 4 , |x- \tilde{x}|< \delta   \\
+                (\delta_0 ^2 - (x- \tilde{x})^2) ^ 4 , |x- \tilde{x}|< \delta   \\
                 0 , |x- \tilde{ x } | > \delta_0
                 \end{cases}
                 - \text{финитная функция} 
         \end{aligned}\)
+
+        Наша функция \( \eta (x )   \) плавно переходит к нашим точкам \( \tilde{x } - \delta_0, \tilde{x }+ \delta_0 \) 
         
         \begin{center}
             \includegraphics[width=0.3\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ДфУ/Лекции_по_дням/image/9.png}
         \end{center}
 
-        \[ \int_{ x_0 }^{x_1} f(x ) \eta(x ) dx = \int_{x_0 - \delta_0}^{x_1- \delta_0} \underbrace{f(x)}_{>0} \underbrace{\eta( x)}_{>0} dx >0 - \text{противоречие}    \] 
+        \[ \int_{ x_0 }^{x_1} f(x ) \eta(x ) dx = \int_{\tilde{x} - \delta_0}^{\tilde{x}- \delta_0} \underbrace{f(x)}_{>0} \underbrace{\eta( x)}_{>0} dx >0 - \text{противоречие}    \] 
 
         \[ \Rightarrow \forall x \in  [x_0, x_1] : f(x) = 0  \] 
     \end{proof}
@@ -70,9 +72,9 @@
 
 \[ \frac{\partial F}{\partial y} - \frac{d}{d x }  \frac{\partial F}{\partial y'} = 0 \quad  F=F(x,y(x),y'(x))  \] 
 
-1) \(\displaystyle  F= f(x,y) \Rightarrow \frac{\partial F }{\partial y} (x,y) =0 \Rightarrow y= y(x)    \) 
+1) \(\displaystyle  F= f(x,y) \Rightarrow \frac{d}{dx }  \frac{\partial F }{\partial y'} (x,y') =0 \Rightarrow y= y(x)    \) 
 
-2) \( \displaystyle F= F (x, y ') \Rightarrow \frac{d}{dx }  \frac{\partial F }{\partial y'} (x,y') =0 \Rightarrow \frac{\partial F }{\partial y'} (x,y') = C    \) 
+2) \( \displaystyle F= F (x, y ') \Rightarrow \frac{\partial F }{\partial y} (x,y) =0 \Rightarrow \frac{\partial F }{\partial y'} (x,y') = C    \) 
 
 
 3) \( F= F( y , y ') \) :
@@ -99,7 +101,7 @@
 y(x_0) = y_0, \text{ } y(x_1) = y_1
 \end{cases} \] 
 
-\[ \frac{\sqrt{1+ ( y ' ) ^2 } }{ \sqrt{2 g ( y_0 - y )} } - y ' \frac{1}{\sqrt{1+ ( y ' ) ^2 }} \frac{2 y '}{2 \sqrt{1 +( y ') ^2 } } = C    \] 
+\[ \frac{\sqrt{1+ ( y ' ) ^2 } }{ \sqrt{2 g ( y_0 - y )} } - y ' \frac{1}{\sqrt{2 g ( y_0 - y )}} \frac{2 y '}{2 \sqrt{1 +( y ') ^2 } } = C    \] 
 
 \[ \underbrace{\sqrt{1+ ( y ' ) ^2 } - (y ') ^2 \frac{1}{ \sqrt{1 + (y') ^2}}}_{\displaystyle \frac{1}{\sqrt{1+ (y ') ^2 }} } = C \sqrt{2g (y_0 - y )}  \] 
 
@@ -115,6 +117,8 @@ y(x_0) = y_0, \text{ } y(x_1) = y_1
 
 \[ y ' ( x ) \xrightarrow{x \to  x_0} \underset{{\small \text{выбор}} : - }{\pm \infty}  \Rightarrow y ' (x )  \xrightarrow{x \to  x_0} - \infty      \] 
 
+Если выбрать знак "+", то тело не сможет скатится в нужную точку 
+
 \[ y ' = - \sqrt{\frac{c_1- y_0 + y }{y_0 - y } } \] 
 
 Замена: \( \tilde{y }= y_0 - y (x) \):
@@ -129,9 +133,9 @@ y(x_0) = y_0, \text{ } y(x_1) = y_1
 
 \[ c_1 2 \sin s \cos s \cdot s' = \sqrt{ \frac{1- \sin ^2 s }{\sin ^2 s } }= \frac{\cos s }{\sin s } \text{ } (\text{знак определили из интервала s} )   \] 
 
-\[ 2 c_1 \sin ^2 s \frac{ds}{dt } =1     \] 
+\[ 2 c_1 \sin ^2 s \frac{ds}{dx } =1     \] 
 
-\[ \frac{dx }{ds }  = c_1 ( 1 - \cos (2s) ) \Rightarrow \boxed{x(s) = c_1 \left( s - \frac{1}{2 }  \sin 2s  \right)- c_2} -   \] 
+\[ \frac{dx }{ds }  = c_1 ( 1 - \cos (2s) ) \Rightarrow \boxed{x(s) = c_1 \left( s - \frac{1}{2 }  \sin 2s  \right)+c_2}   \] 
 
 \[ y(x )= y_0 - \tilde{y } (x ) = y_0 - c_1z= y_0 - c_1 \sin ^2 s = y_0 - \frac{c_1}{2} ( 1 - \cos  2s) \]  
 
@@ -192,7 +196,7 @@ y - \frac{c_1}{2}
 
 \[ \begin{aligned}
     \begin{cases}
-        x(T)  = \frac{C_1}{ 2 }  ( t- \sin t ) + x_0 \\
+        x(t)  = \frac{C_1}{ 2 }  ( t- \sin t ) + x_0 \\
         y(t ) = y_0 - \frac{c_1}{2 }  ( 1- \cos  t )            
     \end{cases}
     \quad ,\quad t \in ( 0 , 2 \pi ) \Rightarrow \text{ циклоида полная }  
@@ -204,7 +208,7 @@ y - \frac{c_1}{2}
 
 \newpage
 
-\section{ Решение задачи о поверхности вращения наименьшей площади}
+\section{Решение задачи о поверхности вращения наименьшей площади}
 
 \begin{center}
     \includegraphics[width=0.3\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ДфУ/Лекции_по_дням/image/15.png}
@@ -215,7 +219,7 @@ I[ y ] = \int_{x_0}^{x_1} 2 \pi y(x )  \sqrt{1 + (y '(x ) ^2 )} \\
 y( x_0 ) = y_0 , \text{ }  y ( x_1 ) = y_1 
 \end{cases} \] 
 
-\[ F- y; \frac{\partial  F }{\partial   y' } = C   \] 
+\[ F- y \frac{\partial  F }{\partial   y' } = C   \] 
 
 \[ 2 \pi y \sqrt{ 1 + (y' ) ^2 } - y ' 2 \pi y \frac{2 y '}{ 2 \sqrt{1 + ( y ') ^2 }} = C  \] 
 
@@ -229,9 +233,9 @@ y( x_0 ) = y_0 , \text{ }  y ( x_1 ) = y_1
 
 \[ y( x ) = \mathrm{ch}  z(x  ) c_1 , \text{ }  z> 0 \]  
 
-\[ c_1 \mathrm{sh } z \cdot z ' (x )   =\pm \underbrace{ \sqrt{\mathrm{ch} ^2 z - 1  }}_{= \mathrm{sh} z  }   \Rightarrow c_1 z = \pm 1   \] 
+\[ c_1 \mathrm{sh } z \cdot z ' (x )   =\pm \underbrace{ \sqrt{\mathrm{ch} ^2 z - 1  }}_{= \mathrm{sh} z  }   \Rightarrow c_1 z'  = \pm 1   \] 
 
-\[ z= \pm  \frac{ x- c_2 }{c_1} \Rightarrow y ( x )  = c_1 \mathrm{ch} \left( \frac{x+c_2 }{c_1}  \right)  - \text{цепная линия}  \] 
+\[ z= \pm  \frac{ x+ c_2 }{c_1} \Rightarrow y ( x )  = c_1 \mathrm{ch} \left( \frac{x+c_2 }{c_1}  \right)  - \text{цепная линия}  \] 
 
 \begin{center}
     \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ДфУ/Лекции_по_дням/image/16.png}
