@@ -14,11 +14,15 @@
 
 \[ P_n (x )  \to  f(x ) \Leftrightarrow  \left\lVert P_n - f  \right\rVert _C \to  0 \]
 
-\[ \forall  n , p_n \in  P[0,1] , f(x ) \in  C[0,1] - \text{не является множеством} \] 
+\[ \forall  n , p_n \in  P[0,1] , f(x ) \in  C[0,1] - \text{не является полиномом} \] 
 
-\[ f(x ) = e ^{x} \quad  p_n(x) = 1+ x + \frac{x ^2 }{2 }  + \dots + \frac{x^n }{n!}  \]  
+\[ p_n(x) = 1+ x + \frac{x ^2 }{2 }  + \dots + \frac{x^n }{n!}  \] 
 
-\[ \left\lVert p_n -f  \right\rVert = \max_{x \in [0,1]} \max_{c \in  [0,1]} \left\lvert \frac{e^c x^{x+1 } }{(n+1)!}  \right\rvert =\frac{e}{(n+1)!} \xrightarrow{n \to  \infty } 0 ,\quad e^x \notin P[0,1]       \] 
+\[  f(x ) = e ^{x} , \quad f(x ) = f(0 ) +\frac{f'(0)}{1!}x+\frac{f''(0 )}{2!}x^2+\dots+ \frac{f^{(n )(0)} }{n ! }x^{n } + \frac{f^{(n+1 )(c)} }{(n+1)!} x^{n+1}     \] 
+
+Замыкание \( P[0,1] \)  это \( L_2[0,1] \) 
+
+\[ \left\lVert p_n -f  \right\rVert _{L_2}  \le  \max_{x \in [0,1]} \max_{c \in  [0,1]} \left\lvert \frac{e^c x^{n+1 } }{(n+1)!}  \right\rvert  \overset{\tiny\begin{aligned} x=1 \\c=1\end{aligned}}{=}\frac{e}{(n+1)!} \xrightarrow{n \to  \infty } 0 ,\quad e^x \notin P[0,1]       \] 
 
 
 
@@ -38,10 +42,10 @@
 \end{cases} \] 
 
 
-Элементы (вектора) пространства \( L_2    \)  - классы функций.
+Элементы (вектора) пространства \( L_2    \)  - функции класса \( L_2  \) .
 
 \begin{definition}
-    Последовательность \( (x_n )_{n \in  \mathbb{N}} , x_n \in  L \) линейно нормированное пространство называется фундаментальной, если \( \forall  \varepsilon >0 , \exists N , \forall m,n >N : \left\lVert x_m - x_n  \right\rVert < \varepsilon \) 
+    Последовательность \( (x_n )_{n \in  \mathbb{N}} , x_n \in  L \) (линейно нормированное пространство) называется фундаментальной, если \( \forall  \varepsilon >0 , \exists N , \forall m,n >N : \left\lVert x_m - x_n  \right\rVert < \varepsilon \) 
 \end{definition}
 
 \begin{definition}
@@ -57,11 +61,11 @@
 \begin{definition}
     Скалярное произведение в L (, ) : \( L \times L \to  \mathbb{C} \). \( \forall x_1,x_2, y \in  L, \alpha_1,\alpha_2 \in \mathbb{C}(\mathbb{R}) \) выполняется: 
 
-    1) \( (\alpha_1x1 + \alpha_2 x_2, y ) = \alpha_1(x,y )+ \alpha_2 (x,y) \) 
+    1) \( (\alpha_1 x_1 + \alpha_2 x_2, y ) = \alpha_1(x_1,y )+ \alpha_2 (x_2,y) \) 
 
     2) \( (x,y ) = (\overline{y,x} )\)  
 
-    3) \( (x,x ) > 0 \quad \text{и}  \quad  (x,x ) = 0 \Leftrightarrow x =0\) 
+    3) \( (x,x ) \ge  0 \quad \text{и}  \quad  (x,x ) = 0 \Leftrightarrow x =0\) 
 \end{definition}
 
 Линейное пространство со скалярным произведением над \( \mathbb{R}   \) - евклидовы пространства, над \( \mathbb{C}    \) - унитарное пространства. 
@@ -70,12 +74,12 @@
 
 \[ 2) l_2 : (x,y ) = \sum ^{\infty  } x_i \overline{y } _i   \] 
 
-\[ 3) L_2(x ) : (f,g ) \int  _{x } f \overline{g } dx   \] 
+\[ 3) L_2(x ) : (f,g )= \int  _{x } f \overline{g } dx   \] 
 
 \[ 4) C[a,b ] : \text{ нет скалярного произведения согласованного  с аксиомами нормы} \] 
 
 \begin{lemma}
-    Величина \( \left\lVert x  \right\rVert = \sqrt{x,x} \) удовлетворяет свойствам нормы согласованной или порожденный скалярным произведением.
+    Величина \( \left\lVert x  \right\rVert = \sqrt{(x,x)} \) удовлетворяет свойствам нормы. Согласованная или порожденная скалярным произведением.
 \end{lemma}
 
 
@@ -90,11 +94,11 @@
 \begin{proof}
     \[ \alpha = \frac{(x,y )}{|(x,y )|} , \quad  t \in  \mathbb{R} \] 
 
-    \[ 0 \le  \left\lVert \overline{\alpha} x +  ty        \right\rVert ^2 = ( \overline{\alpha } x+ ty , \overline{\alpha } x + ty     ) = \overline{\alpha }( x, \overline{\alpha }x _ty  ) + t(y , \overline{\alpha }x + ty  )=   \] 
+    \[ 0 \le  \left\lVert \overline{\alpha} x +  ty \right\rVert ^2 = ( \overline{\alpha } x+ ty , \overline{\alpha } x + ty     ) = \overline{\alpha }( x, \overline{\alpha }x _ty  ) + t(y , \overline{\alpha }x + ty  )=   \] 
 
     \[  \underbrace{|\alpha | ^2}_{=1} ( x,x ) + \overline{\alpha } t ( x,y ) + \alpha t ( y ,x ) + t ^2 ( y,y )=  \left\lVert x  \right\rVert ^2 + \overline{\alpha } t (x, y ) + \alpha t ( y ,x ) + t ^2 \left\lVert  y  \right\rVert ^2 \boxed{=}    \] 
 
-    \[t  \left( \frac{(\overline{x,y }  ) ( x,y)}{|(x,y)|}+ \frac{({x,y }  ) ( x,y)}{|(y,x)|} \right)  = 2t |(x,y)|\] 
+    \[\overline{\alpha }t (x,y )+ \alpha t ( y ,x )  =t  \left( \frac{(\overline{x,y }  ) ( x,y)}{|(x,y)|}+ \frac{({x,y }  ) (x,y)}{|(x,y)|} \right)  = 2t |(x,y)|\] 
 
     \[ \boxed{=} \left\lVert x   \right\rVert  ^2 + 2t |(x,y)   |+ t ^2 \left\lVert y  \right\rVert ^2\] 
 
@@ -115,22 +119,22 @@
 
     \[ = \left\lVert  x  \right\rVert  ^2 +  (x, y ) + (y,x ) +  \left\lVert y  \right\rVert ^2 \le  \left\lVert x  \right\rVert ^2 + 2 |(x,y)   | + \left\lVert y  \right\rVert ^2  \le  \] 
 
-    \[ \le  \left\lVert x  \right\rVert ^2 + 2 \left\lVert x  \right\rVert \left\lVert y  \right\rVert+ \left\lVert y  \right\rVert ^2 = ( \left\lVert  x  \right\rVert + \left\lVert  y  \right\rVert) ^2  \] 
+    \[ \overset{\text{нер-во К-Б} }{\le}  \left\lVert x  \right\rVert ^2 + 2 \left\lVert x  \right\rVert \left\lVert y  \right\rVert+ \left\lVert y  \right\rVert ^2 = ( \left\lVert  x  \right\rVert + \left\lVert  y  \right\rVert) ^2  \] 
 \end{proof}
 
 
 \[ L_2 : \sqrt{ \int  _x |f(x)| ^2 dx    } = \left\lVert f  \right\rVert _{L_2}  \] 
 
-\[ \left\lvert \int  _{x }  f (x ) \overline{g }  (x ) dx        \right\rvert  \le  \left( \int_{x }|f(x ) | ^2 \right) ^{\frac{1}{2 } } \left( \int_{x } |g(x)| ^2 dx   \right) ^{\frac{1}{2} }  \] 
+\[ \left\lvert \int_{x }  f (x ) \overline{g }  (x ) dx        \right\rvert  \le  \left( \int_{x }|f(x ) | ^2 \right) ^{\frac{1}{2 } } \left( \int_{x } |g(x)| ^2 dx   \right) ^{\frac{1}{2} } - \text{ неравенство К-Б в }  L_2     \] 
 
-\[ \sqrt[  p ]{|\int_{x }f(p)|dx}= \left\lVert f  \right\rVert _{L_p} \]  
+\[ \sqrt[  p ]{\int_{x }|f(p)|dx}= \left\lVert f  \right\rVert _{L_p} \]  
 
 \begin{lemma}
     \( \forall p \geq 1   \) линейно нормированное пространство  \( L_ p   \)  является полным.  
 \end{lemma}
 
 \begin{lemma}
-    \( \forall  p \geq 1   \)  пространство \( C^{\infty }  \) плотно в \( L_p (x) \)  
+    \( \forall  p \geq 1   \)  пространство \( C^{\infty }  \) плотно в \( L_p (x) \), то есть \( \overline{C}^{\infty ^{L_p} }= L_p(x)    \)   
 \end{lemma}
 
 \begin{lemma}
@@ -145,10 +149,10 @@
 
 Наоборот, если в линейно нормированном пространстве L выполняется равенство паралеллограма, то в этом пространстве можно ввести скалярное произведение, согласованной с этой нормой.
 
-\( L_1 \subset [ a, b ] \exists  f,g ,   \)  для которые не выполняется равенство паралеллограма \( \Rightarrow      \) нельзя ввести скалярное произведение, согласованное с нормой.
+\( L_1 \subset [ a, b ] \exists  f,g ,   \)  для которых не выполняется равенство паралеллограма \( \Rightarrow      \) нельзя ввести скалярное произведение, согласованное с нормой.
 
 \begin{lemma}
-    В линейно  подпространстве со скалярным пространстве  L , скалярное произведение непрерывно по первому аргументу относительно сходимости по норме порожденной скалярным произведением
+    В линейном  пространстве со скалярным произведением  L , скалярное произведение непрерывно по первому аргументу относительно сходимости по норме порожденной скалярным произведением
 
     \[ x_n \to  t \quad \left\lVert x_n - x           \right\rVert  \xrightarrow{n \to  \infty }  0  \] 
 
@@ -157,7 +161,7 @@
 
 \begin{proof}
 
-    \[ |(x_n, y ) -(x,y )  | = |(x_n- x,y ) | \overset{\text{по К.Б} }{\le}  \left\lVert x_n - x  \right\rVert \left\lVert y \right\rVert \xrightarrow{x \to  \infty } 0   \] 
+    \[ |(x_n, y ) -(x,y )  | = |(x_n- x,y ) | \overset{\text{по К.Б} }{\le}  \left\lVert x_n - x  \right\rVert \underbrace{\left\lVert y \right\rVert}_{\text{огр.числено} } \xrightarrow{x \to  \infty } 0   \] 
 \end{proof}
 
 \section{Ортогональность векторов}
@@ -191,7 +195,7 @@
 
 1) Система \( z_1, \ldots, z_n   \) - ортонормированна
 
-2) \( \forall n \in  N <z_1, \ldots, z_n > = <x_1, \ldots, x_n>\) 
+2) \( \forall n \in  N \underset{\text{линейные оболочки } }{\underbrace{<z_1, \ldots, z_n >} = \underbrace{<x_1, \ldots, x_n>}}\) 
 %%-------------------------------%%
 
 % Закрытие документа, если файл компилируется отдельно
