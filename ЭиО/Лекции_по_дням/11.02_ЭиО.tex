@@ -12,11 +12,11 @@
 
 \section{Продолжение. Спектр свертки двух функций}
 
-\[ F(t)= \int_{-\infty}^{\infty} f(\tau)g(t- \tau)d \tau- \int_{-\infty}^{\infty} d \tau \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \hat{f} (\omega) e ^{- i \omega \tau} d \omega \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \hat{g} (\omega') e^{i \omega' (t - \tau)} d \omega'     =\] 
+\[ F(t)= \int_{-\infty}^{\infty} f(\tau)g(t- \tau)d \tau= \int_{-\infty}^{\infty} d \tau \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \hat{f} (\omega) e ^{- i \omega \tau} d \omega \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \hat{g} (\omega') e^{i \omega' (t - \tau)} d \omega'     =\] 
 
-\[ =\int_{-\infty}^{\infty}  d \omega \int_{-\infty}^{\infty} d \omega \hat{f} (\omega) \hat{g}(\omega ') e^{- \omega ' t } \frac{1}{\sqrt{2 \pi }} \int_{-\infty}^{\infty} d \tau e^{- i (\omega - \omega ' )\tau} = \int d \omega \hat{f} ( \omega) \int d \omega ' \hat{g} ( \omega ' ) \delta(\omega - \omega ') e ^{-i \omega t} =        \] 
+\[ =\int_{-\infty}^{\infty}  d \omega \int_{-\infty}^{\infty} d \omega ' \hat{f} (\omega) \hat{g}(\omega ') e^{- \omega ' t } \frac{1}{2 \pi } \int_{-\infty}^{\infty} \underbrace{d \tau e^{- i (\omega - \omega ' )\tau}}_{=2\pi \delta(\omega- \omega')} = \int_{-\infty}^{\infty}  d \omega \hat{f} ( \omega) \int_{-\infty}^{\infty}  d \omega ' \hat{g} ( \omega ' ) \delta(\omega - \omega ') e ^{-i \omega' t} =        \] 
 
-\[ = \frac{1}{\sqrt{2 \pi}} \int  \sqrt{ 2 \pi} \hat{f}( \omega ) \hat{g} (\omega   )e ^{- i\omega t}   d \omega \Rightarrow F(t) \risingdotseq \sqrt{ 2 \pi } \hat{f}( \omega ) \hat{g } ( \omega)  \] 
+\[ = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty}  \sqrt{ 2 \pi} \hat{f}( \omega ) \hat{g} (\omega   )e ^{- i\omega t}   d \omega \Rightarrow F(t) \risingdotseq \sqrt{ 2 \pi } \hat{f}( \omega ) \hat{g } ( \omega)  \] 
 
 \section{Соотношение неопределенностей}
 
@@ -41,13 +41,13 @@ E_0 , |t| \le  \frac{\tau}{2} \\
     \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/16.png}
 \end{center}
 
-Спектральная плотность энергии = \( |\hat{E } (\omega)| \) 
+Спектральная плотность энергии = \( |\hat{E } (\omega)| ^2  \) 
 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/17.png}
 \end{center}
 
-\[ \Delta \omega \sim  \frac{2 \pi}{ \tau} \Rightarrow \cancel{2 } \pi - \text{ соотношение неопределенности}     \] 
+\[ \Delta \omega \sim  \frac{2 \pi}{ \tau} \Rightarrow \Delta \omega \tau \sim \pi - \text{ соотношение неопределенности}     \] 
 
 \[ \tau \to  \infty \Rightarrow \hat{E } \sim  \delta ( \omega)  \] 
 
@@ -68,7 +68,7 @@ E_0 , |t| \le  \frac{\tau}{2} \\
 \end{center}
 
 
-\[ \hat{E_2 } ( \omega) = \frac{1}{ \sqrt{2 \pi}} \int_{-\infty}^{\infty} \frac{ e^{ i \omega_0 t } - e^{- i \omega_0 t} }{2 i} e^{i \omega t} dt  = \frac{1}{2i} \left\{ \frac{E_0 \tau}{\sqrt{2 \pi}}\mathrm{sinc} \left[ (\omega + \omega_0) \frac{\tau}{2}  \right] -   \frac{1}{2i}  \frac{E_0 \tau}{\sqrt{2 \pi}}\mathrm{sinc} \left[ (\omega - \omega_0) \frac{\tau}{2}  \right]\right\}      \] 
+\[ \hat{E_2 } ( \omega) = \frac{1}{ \sqrt{2 \pi}} \int_{-\infty}^{\infty} \frac{ e^{ i \omega_0 t } - e^{- i \omega_0 t} }{2 i} e^{i \omega t} dt  = \frac{1}{2i} \left\{ \frac{E_0 \tau}{\sqrt{2 \pi}}\mathrm{sinc} \left[ (\omega + \omega_0) \frac{\tau}{2}  \right] -    \frac{E_0 \tau}{\sqrt{2 \pi}}\mathrm{sinc} \left[ (\omega - \omega_0) \frac{\tau}{2}  \right]\right\}      \] 
 
 \begin{center}
     \includegraphics[width=0.45\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/19.png}
@@ -82,11 +82,11 @@ E_0 , |t| \le  \frac{\tau}{2} \\
 Механистическая модель атома:
 
 \[ E(t)= \begin{cases}
-E_0 e^{ -i \gamma} \cos \omega_0 t , t >0\\
+E_0 e^{ \gamma t} \cos \omega_0 t , t >0\\
 0, t < 0
 \end{cases} \] 
 
-\[ \gamma = \frac{e ^2 \omega_0 ^2 }{3 m c ^2 } \sim 10 ^9 c^{-1} \quad  \omega_0 \approx 2 \cdot 10^16 \frac{rad}{c}  \Rightarrow f \sim 3 \cdot 10^8 c^{-1}    \] 
+\[ \gamma = \frac{e ^2 \omega_0 ^2 }{3 m c ^2 } \sim 10 ^9 c^{-1} \quad  \omega_0 \approx 2 \cdot 10^{16} \frac{rad}{c}  \Rightarrow f \sim 3 \cdot 10^8 c^{-1}    \] 
 
 \[ e^{ - \gamma t} = e^{- \frac{t}{\tau} } \Rightarrow \tau \sim \frac{1}{\gamma}      \] 
 
@@ -110,21 +110,21 @@ E_0 e^{ -i \gamma} \cos \omega_0 t , t >0\\
 
 \[ |\hat{E} ( \omega ) | ^2 = |\hat{f}(\omega + \omega_0) | ^2 + |\hat{f}(\omega - \omega_0) | ^2 + \cancel{\text{поправка}}  \] 
 
-Поправка  мала, если \( 10^9 c^{-1} \sim\Delta \omega \ll \omega_0 \sim 2 \cdot 10^ 16 \frac{rad}{c}  \) 
+Поправка  мала, если \( 10^9 c^{-1} \sim\Delta \omega \ll \omega_0 \sim 2 \cdot 10^{16} \frac{rad}{c}  \) 
 
 4) Спектр гауссовой функции : \( f(x) = E_0 e^{ -\alpha x ^2} \quad  \hat{f}( x) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty}   f( x) e^{- i kx }dx =     \) 
 
 \[ \frac{1}{\sqrt{2 \pi}}E_0 \int_{-\infty}^{\infty} e^{- \alpha x ^2 - ikx } dx ; -\alpha x ^2 - ikx = -\alpha \left( x ^2 + 2x \frac{ik}{2 \alpha} - \frac{k ^2}{4 \alpha ^2}   \right) - \frac{k ^2}{4\alpha} =  - \alpha \left( x + \frac{ik}{2\alpha} \right) ^2 - \frac{k ^2}{4\alpha}    \] 
 
 \begin{center}
-    \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/23.png}
+    \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/23.png}
 \end{center}
 
 \[  \int_{C} e^{- \alpha z ^2 }dz = 0 = \int_{1} + \int_{ 2} \Rightarrow \int_{1} = \int _{-2}  \] 
 
-\[ \int_{-\infty}^{\infty} e^{-\alpha z ^2 } dz = \int_{-\infty}^{\infty} e^{ - \alpha x ^2 } dx = \sqrt{\frac{\pi}{2} }    \] 
+\[ \int_{-\infty}^{\infty} e^{-\alpha z ^2 } dz = \int_{-\infty}^{\infty} e^{ - \alpha x ^2 } dx = \sqrt{\frac{\pi}{\alpha} }    \] 
 
-\[ \hat{f} (k) = \frac{ E_0}{\sqrt{2 \pi}} \sqrt{\frac{\pi}{2}} e^{- \frac{k ^2}{4 \alpha} }    \]
+\[ \hat{f} (k) = \frac{ E_0}{\sqrt{2 \pi}} \sqrt{\frac{\pi}{\alpha}} e^{- \frac{k ^2}{4 \alpha} }    \]
 
 \begin{center}
     \includegraphics[width=0.45\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/24.png}
@@ -149,13 +149,13 @@ E_0 e^{ -i \gamma} \cos \omega_0 t , t >0\\
 
 \[ f( \vec{r},t) = \frac{1}{(2 \pi) ^2 } \iiiint \hat{f} ( \vec{k}, \omega) e^{ i( \vec{k},\vec{r})- i\omega t} d^3 k d \omega    \]  
 
-\[ \frac{\partial f( \vec{r},t)}{\partial t} = \frac{1}{( 2 \pi ) ^2} \iiiint \hat{f}(\vec{k}, \omega) ( - i \omega) e^{i \vec{k}\vec{r} - i \omega t} d^3 k d \omega \quad \frac{\partial f}{\partial t}  \risingdotseq  = - i \omega \hat{f}( \vec{k}, \omega)    \] 
+\[ \frac{\partial f( \vec{r},t)}{\partial t} = \frac{1}{( 2 \pi ) ^2} \iiiint \hat{f}(\vec{k}, \omega) ( - i \omega) e^{i \vec{k}\vec{r} - i \omega t} d^3 k d \omega \quad \frac{\partial f}{\partial t}  \risingdotseq   - i \omega \hat{f}( \vec{k}, \omega)    \] 
 
-\[ \frac{\partial f (\vec{r},t)}{\partial t} \risingdotseq i k_x \hat{f}( \vec{k}, \omega) \]
+\[ \frac{\partial f (\vec{r},t)}{\partial x} \risingdotseq i k_x \hat{f}( \vec{k}, \omega) \]
 
-\[ \mathrm{div} \vec{D}(\vec{r},t) = \frac{\partial D_x}{\partial x} + \frac{\partial D_y}{\partial y} + \frac{\partial D_z}{\partial z} \risingdotseq i k_x \hat{D_x}(\vec{k}, \omega) + i k_y \hat{D_y}(\vec{k}, \omega) + i k_z \hat{D_z}(\vec{k}, \omega)  = i (\vec{k},\hat{\vec{D}}(\vec{r}, \omega) ) \] 
+\[ \mathrm{div} \hat{\vec{D}}(\vec{r},t) = \frac{\partial \hat{\vec{D_x}}}{\partial x} + \frac{\partial \hat{\vec{D_y}}}{\partial y} + \frac{\partial \hat{\vec{D_z}}}{\partial z} \risingdotseq i k_x \hat{D_x}(\vec{k}, \omega) + i k_y \hat{D_y}(\vec{k}, \omega) + i k_z \hat{D_z}(\vec{k}, \omega)  = i (\vec{k},\hat{\vec{D}}(\vec{r}, \omega) ) \] 
 
-\[ \mathrm{rot}\vec{E} = [\nabla \times  \vec{ E} ] = \frac{1}{( 2 \pi ) ^2 } \iiiint \underbrace{\left[ (\nabla \times  \hat{\vec{E}} (\vec{k}, \omega)e^{i (\vec{k}\vec{r}) }   ) \right]}_{\nabla e^{i (\vec{k }, \vec{r })}   \times \vec{E } (\vec{k },\omega) }   e^{- i \omega t } d ^3 d \omega  =      \] 
+\[ \mathrm{rot}\hat{\vec{E}}  = [\nabla \times  \hat{\vec{E}} ] = \frac{1}{( 2 \pi ) ^2 } \iiiint \underbrace{\left[ (\nabla \times  \hat{\vec{E}} (\vec{k}, \omega)e^{i (\vec{k}\vec{r}) }   ) \right]}_{\nabla e^{i (\vec{k }, \vec{r })}   \times \vec{E } (\vec{k },\omega) }   e^{- i \omega t } d ^3 d \omega  =      \] 
 
 \begin{center}
     Где \(\nabla e^{i (\vec{k }, \vec{r })} = \vec{e_x }i k_xe^{(i (\vec{k }, \vec{r }))}+ \vec{e_y } i k_y e^{(i (\vec{k }, \vec{r }))} + \vec{e_z } i k_z e^{(i (\vec{k }, \vec{r }))}= i\vec{k } e ^{ i ( \vec{k } , \vec{r})} \)    
@@ -166,19 +166,23 @@ E_0 e^{ -i \gamma} \cos \omega_0 t , t >0\\
 
 \[ \mathrm{rot} \vec{ E }  \risingdotseq i \left[ \vec{k} \times \hat{\vec{E}}(\vec{k}, \omega) \right]   \] 
  
-\[ \mathrm{rot} \vec{ E } = - \frac{1}{c} \frac{ \partial \vec{B}}{ \partial t} \risingdotseq i \left[ \vec{k } \times \hat{\vec{E}} ( \vec{k }, \omega)  \right] = \frac{i \omega}{c} \hat{\vec{B } } ( \vec{k }, \omega)     \] 
+\[ 
+\begin{cases}
+        \displaystyle \mathrm{rot} \vec{ E } = - \frac{1}{c} \frac{ \partial \vec{B}}{ \partial t} \risingdotseq i \left[ \vec{k } \times \hat{\vec{E}} ( \vec{k }, \omega)  \right] = \frac{i \omega}{c} \hat{\vec{B } } ( \vec{k }, \omega)     \\
+        \displaystyle \mathrm{rot} \vec{H} = \frac{ 4 \pi }{ c} \vec{j } + \frac{1}{ c  }  \frac{ \partial \vec{ D } }{ \partial t } \risingdotseq  i \left[ \vec{k } \times \hat{\vec{H}} ( \vec{k }, \omega) \right] = \frac{  4 \pi }{ c } \hat{\vec{j}} ( \vec{k }, \omega)  - \frac{ i \omega }{c } \hat{ \vec{D} } ( \vec{k }, \omega)        \\
+        \displaystyle \mathrm{div} \vec{D } = 4 \pi \rho \risingdotseq i ( \vec{k }, \hat{\vec{D}} ( \vec{k }, \omega) ) = 4 \pi \hat{\rho}  ( \vec{k }, \omega)   \\
+        \displaystyle \mathrm{div} \vec{B} = 0 \Rightarrow (\vec{k },\hat{\vec{B}} ( \vec{k }, \omega)) = 0    \\
+\end{cases}
+\] 
 
-\[ \mathrm{rot} \vec{H} = \frac{ 4 \pi }{ c} \vec{j } + \frac{1}{ c  }  \frac{ \partial \vec{ D } }{ \partial t } \risingdotseq  i \left[ \vec{k } \times \hat{\vec{H}} ( \vec{k }, \omega) \right] = \frac{  4 \pi }{ c } \hat{\vec{j}} ( \vec{k }, \omega)  - \frac{ i \omega }{c } \hat{ \vec{D} } ( \vec{k }, \omega)        \] 
+В системе слева это уравнения Максвелла, а справа преобразование Фурье уравнений Максвелла.
 
-\[ \mathrm{div} \vec{D } = 4 \pi \rho \risingdotseq i ( \vec{k }, \hat{\vec{D}} ( \vec{k }, \omega) ) = 4 \pi \rho ( \vec{k }, \omega)   \] 
 
-\[ \mathrm{div} \vec{B} = 0 \Rightarrow (\vec{k },\hat{\vec{B}} ( \vec{k }, \omega)) = 0    \] 
-
-\[ \frac{ \partial \rho }{ \partial t } + \mathrm{ \div  } \vec{ j }  = 0 \Rightarrow - i \omega \hat{ \rho } ( \vec{k }, \omega) + i ( \vec{k }, \hat{\vec{j}} ( \vec{k }, \omega) ) = 0      \] 
+\[ \frac{ \partial \rho }{ \partial t } + \mathrm{ \div  } \vec{ j }  = 0 \risingdotseq - i \omega \hat{ \rho } ( \vec{k }, \omega) + i ( \vec{k }, \hat{\vec{j}} ( \vec{k }, \omega) ) = 0      \] 
 
 Если \( \vec{B} = \mu \vec{H } , \vec{D } = \varepsilon \vec{ E } , \varepsilon , \mu  - \mathrm{const}   \)
 
-\[ \underset{a}{\vec{k}} \times \left[ \underset{b}{\vec{E}} \times \underset{c}{\vec{k}} \right] = \frac{\omega \mu}{c }  \left( - \frac{\omega}{ c } \varepsilon \hat{\vec{E}}  \right)
+\[ \underset{a}{\vec{k}} \times \left[ \underset{b}{\vec{k} }\times \underset{c}{\vec{E}}  \right] = \frac{\omega \mu}{c }  \left( - \frac{\omega}{ c } \varepsilon \hat{\vec{E}}  \right)
 \] 
 \( \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad || \) 
 
@@ -193,3 +197,4 @@ E_0 e^{ -i \gamma} \cos \omega_0 t , t >0\\
 \else
     \end{document}
 \fi
+
