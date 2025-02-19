@@ -15,7 +15,7 @@
 
 \[ \frac{d \vec{p } }{dt } = - k \vec{r }_e (t )+ e \vec{r }_e (t )  \] 
 
-\( \frac{d \vec{ r } _e }{dt }= \frac{\vec{ p } }{\gamma m }   \Rightarrow B \vec{r } _e (t ) \)   в следствие инерции электрона аккумулируется история (память) о воздействии.
+\( \frac{d \vec{ r } _e }{dt }= \frac{\vec{ p } }{\gamma m }   \Rightarrow \text{ в }  \vec{r } _e (t ) \)   в следствие инерции электрона аккумулируется история (память) о воздействии.
 
 Электрическим полем в предыдущие моменты времени \( t' \)  ,  а \( \vec{r } _e        \) дает вклад в \( \vec{P } (r,t) \). В общем случае линейная связь \( \vec{D }     \)  и \( \vec{E}  \)  полей имеет вид: 
 
@@ -25,7 +25,7 @@
 
 Упрощения: 
 
-1) Если среда стационарная и ее свойства зависят только от \( \vec{E }       \)  и \( \vec{ H}  \) и от ничего другого, то \( \varepsilon ( \vec{r } ,\vec{r '} , t,t ' ) =\varepsilon ( \vec{r } ,\vec{r ' } ,t -t ')  \) 
+1) Если среда стационарная и ее свойства зависят только от \( \vec{E }       \)  и \( \vec{ H}  \) и ни от ничего другого, то \( \varepsilon ( \vec{r } ,\vec{r '} , t,t ' ) =\varepsilon ( \vec{r } ,\vec{r ' } ,t -t ')  \) 
 
 2) Если среда однородная \( \varepsilon ( \vec{r } ,\vec{r ' } ,t ,t' ) =\varepsilon ( \vec{r } - \vec{r' } , t ,t') \) 
 
@@ -33,22 +33,24 @@
 
 \[ \vec{D } ( \vec{r } ,t )= \frac{1}{(2 \pi ) ^2 } \iiiint \varepsilon ( \vec{r }- \vec{r '} , t - t' ) \vec{E }  ( \vec{r' } ,t ') d ^3 r ' d t' \text{ (свертка)}    \] 
 
-\[ \hat{\vec{D } }(\vec{k } ,\omega )=  \varepsilon( \vec{k } , \omega ) \vec{E }  ( \vec{k}, \omega ); \quad \hat{\vec{B} } ( \vec{k } , \omega ) = \mu ( \vec{k } , \omega) \vec{H } (\vec{k }  , \omega) \] 
+Используем преобразование Фурье на \( \vec{D}  \) :
+
+\[ \hat{\vec{D } }(\vec{k } ,\omega )=  \hat{\varepsilon}( \vec{k } , \omega ) \hat{\vec{E }}   ( \vec{k}, \omega ); \quad \hat{\vec{B} } ( \vec{k } , \omega ) = \hat{\mu } ( \vec{k } , \omega) \hat{\vec{H }}  (\vec{k }  , \omega) \] 
 
 % Сами в уравнение Максвелла подставите 
 
-\( \displaystyle \frac{\omega ^2 }{c ^2 }\varepsilon (\vec{k } , \omega )\mu( \vec{k } , \omega)= k ^2 \)    - дисперсионное уравнение \( \to       \)   связь \( \omega   \) и \( \vec{k }  \) в среде.
+\( \displaystyle \frac{\omega ^2 }{c ^2 }\hat{\varepsilon}  (\vec{k } , \omega )\hat{\mu} ( \vec{k } , \omega)= k ^2 \)    - дисперсионное уравнение \( \to       \)   связь \( \omega   \) и \( \vec{k }  \) в среде.
 
 Далее рассматриваем только твердое тело \( \Rightarrow  \varepsilon  \) и \( \mu     \)  зависят только от \( \omega \) 
 
 \[ \frac{\omega ^2 }{c ^2 } \varepsilon( \omega ) \mu ( \omega) = k ^2   \] 
 
-Для плазмы  \( \displaystyle \varepsilon ( \omega ) \simeq 1- \frac{\omega _p ^2 }{\omega ^2 } , \text{ } \omega _ p ^2 = \frac{4 \pi n_p e ^2 }{m } , \text{ } \mu ( \varepsilon ) = 1    \) 
+\( \underset{\text{без док-ва} }{\text{Для плазмы } } \)  \( \displaystyle \varepsilon ( \omega ) \simeq 1- \frac{\omega _p ^2 }{\omega ^2 } , \text{ } \omega _ p ^2 = \frac{4 \pi n_p e ^2 }{m } , \text{ } \mu ( \varepsilon ) = 1    \) 
 
-\[ \frac{\omega ^2 }{c ^2 } \left(  1 - \frac{\omega _p ^2}{\omega}  \right) =k ^2 \Rightarrow \omega ^2 = \omega_p + k ^2 c ^2   \] 
+\[ \frac{\omega ^2 }{c ^2 } \left(  1 - \frac{\omega _p ^2}{\omega ^2 }  \right) =k ^2 \Rightarrow \omega ^2 = \omega_p ^2  + k ^2 c ^2   \] 
 
 \begin{center}
-    \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/26.png}
+    \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/26.png}
 \end{center}
 
 \section{Частотная дисперсия показателя преломления сред. Фазовая групповая скорость}
@@ -63,9 +65,9 @@
 
 \( n ( \omega ) \) - показатель преломления среды. 
 
-Ни энергия, ни информация не передается с \( v_{\Phi  }  \), которая может быть больше \( c \) 
+Ни энергия, ни информация не передается с \( v_{\Phi  }  \) (\( v_{\Phi  }  =v_{\text{волны} } \)), которая может быть больше \( c \) 
 
-Рассмотрим немонохроматическую волну, состоящую из двух монохроматических плоских волн. 
+Рассмотрим монохроматическую волну, состоящую из двух монохроматических плоских волн, с близкой частотой: 
 
 \[ \vec{E }  (z, t ) = \vec{E_0 }(\cos (kz - \omega t )+ \cos  ( (k+ \Delta k)z - ( \omega +\Delta \omega )t))=\]
 
@@ -77,11 +79,13 @@
 
 Скорость движения огибающей: 
 
-\[ \frac{\Delta k z }{ 2 }  - \frac{\Delta \omega t }{2 }  = \mathrm{const }  \Rightarrow \frac{dz}{dt } = \frac{ \Delta \omega }{\Delta k } = \frac{d \omega }{ dk }  = v_{g} - \text{ групповая скорость}     \] 
+\[ \frac{\Delta k z }{ 2 }  - \frac{\Delta \omega t }{2 }  = \mathrm{const }  \Rightarrow \frac{dz}{dt } = \frac{ \Delta \omega }{\Delta k } = \boxed {\frac{d \omega }{ dk }  = v_{g}} - \text{ групповая скорость}     \] 
 
 Соотношения Рэлея \( \displaystyle \frac{\omega n( \omega)}{c }  = k \text{ (дисперсионное уравнение)} \Rightarrow   \) 
 
-\[ \frac{d}{d \omega} ( \omega n ( \omega)) = \frac{ dk c }{d \omega } \Rightarrow n(\omega ) + \omega \frac{dn( \omega )}{d \omega } = \frac{dk}{d \omega } c \Rightarrow   \frac{d \omega } {dk } = \frac{ c }{ n( \omega ) + \omega \frac{ dn (\omega)}{d \omega} }  =       \] 
+\[ \frac{d}{d \omega} ( \omega n ( \omega)) = \frac{ dk c }{d \omega } \] 
+
+\[  n(\omega ) + \omega \frac{dn( \omega )}{d \omega } = \frac{dk}{d \omega } c \Rightarrow   \frac{d \omega } {dk } = \frac{ c }{ n( \omega ) + \omega \frac{ dn (\omega)}{d \omega} }  =       \] 
 
 \[ =\underbrace{ \frac{c}{ n ( \omega )}}_{v_{\Phi } } \frac{1}{ 1+ \frac{\omega}{n ( \omega )}\frac{dn}{d \omega}  }  \Rightarrow v_g = \frac{v_{\Phi} } {1+ \frac{\omega}{ n } \frac{dn}{d \omega}  }   \] 
 
@@ -89,7 +93,7 @@
 
 Если  \( \displaystyle  \frac{dn}{d \omega }< 0   \) , то \( v_g>v_{\Phi}  \) - аномальная дисперсия
 
-Движение одномерного волнового пакета в среде с дисперсией \( \omega = \omega( k ) \) 
+\section{Движение одномерного волнового пакета в среде с дисперсией \( \omega = \omega( k ) \) }
 
 Известно, что он движется по \( z \) 
 
@@ -97,9 +101,11 @@
     \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/28.png}
 \end{center}
 
-\[ \vec{E } ( z, 0 )= \vec{E_0 } ( z ) e^{i k_0 z}   \] 
+\[ \vec{E } ( z, 0 )= \vec{E_0 } ( z ) e^{i k_0 z}   \]
 
-\[ \vec{E }  ( k ) =\frac{1}{\sqrt{2 \pi } } \int_{-\infty}^{\infty} \underbrace{\vec{E_0}  (z ) e^{i k_0 z }}_{=\vec{E }  (z,0)} e^{- ik z } dz =\hat{ \vec{E_0}  }( k- k_0 )      \] 
+Используем преобразование Фурье на \( \vec{E}  \): 
+
+\[ \hat{\vec{E }}   ( k ) =\frac{1}{\sqrt{2 \pi } } \int_{-\infty}^{\infty} \underbrace{\vec{E_0}  (z ) e^{i k_0 z }}_{=\vec{E }  (z,0)} e^{- ik z } dz =\hat{ \vec{E_0}  }( k- k_0 )      \] 
 
 Для электрического поля волны с \( k  \)  эволюция во времени описывается: 
 
@@ -123,15 +129,15 @@
 
 %рис
 
-\[ \omega ( k ) \simeq \underbrace{\omega( k_0 )}_{\omega_0} + \frac{d \omega }{ dk} \bigg|_{k_0}  (k- k_0 ) + \frac{1}{ 2 }  \frac{ d ^2 \omega } { d k ^2 }  \bigg|_{k_0}  (k-k_0 ) ^2    \] 
+\[ \omega ( k ) \simeq \underbrace{\omega( k_0 )}_{\omega_0} + \frac{d \omega }{ dk} \bigg|_{k_0}  (k- k_0 ) + \cancelto{0_{\text{т.к мал} } }{\frac{1}{ 2 }  \frac{ d ^2 \omega } { d k ^2 }  \bigg|_{k_0}  (k-k_0 ) ^2}     \] 
 
 1) Пусть \(\displaystyle  \omega ( k ) = \omega_0 + v_g ( k-k_0 ) ; \vec{E } ( z,t ) = \frac{1}{\sqrt{2 \pi } } \int_{-\infty}^{\infty}  \vec{E }  ( k ) e^{ikz - \omega_0t - i v_gt ( k-k_0)}  dk = \) 
 
-\[ \frac{- e^{i k_0 v_gt -i \omega t} }{\sqrt{2\pi } }\int  E(k ) e ^{i k (z- v_gt )}dk  = e^{i k_0 v_gt - i \omega_0 t} \vec{E_0} ( z- v_gt ) e^{i k_0 (z- v_gt )}= \vec{E_0} ( z- v_gt  ) e^{i k_0 z - i \omega_0 t }        \] 
+\[ \frac{ e^{i k_0 v_gt -i \omega t} }{\sqrt{2\pi } }\int_{-\infty}^{\infty}  E(k ) e ^{i k (z- v_gt )}dk  = e^{i k_0 v_gt - i \omega_0 t} \vec{E_0} ( z- v_gt ) e^{i k_0 (z- v_gt )}= \vec{E_0} ( z- v_gt  ) e^{i k_0 z - i \omega_0 t }        \] 
 
 - пакет без изменения формы движется по z 
 
-2) Учтем \( \displaystyle \frac{d ^2\omega }{dk ^2 } \bigg |_k \frac{(k-k_0 ) ^2 }{2} \ll i \frac{\pi}{2 }  \Rightarrow \Delta t = \frac{\pi}{\Delta k ^2 \omega ''}\sim \frac{ L_0 ^2 }{ \pi \omega ''}        \) 
+2) Учтем \( \displaystyle i\frac{d ^2\omega }{dk ^2 } \bigg |_{k = k_0}  \frac{(k-k_0 ) ^2 }{2} \Delta t  \ll i \frac{\pi}{2 }  \Rightarrow \Delta t = \frac{\pi}{\Delta k ^2 \omega ''}\sim \frac{ L_0 ^2 }{ \pi \omega ''}        \) 
 
 Если \( \displaystyle t \gg \Delta t    \quad  \frac{\Delta v_g }{\Delta k } \sim \frac{d v_g }{dk } = \frac{d \left( \frac{d \omega}{dk}  \right)}{dk}= \omega '' (k_0 ) \Rightarrow \Delta v_g \simeq \omega '' (k_0 )\Delta k       \) 
 
@@ -167,7 +173,10 @@
 
 \[ v_{\Phi } = tg \alpha, \text{ }  v_g = \frac{d \omega } {dk } = tg \beta , \text{ }  tg \gamma = \frac{\omega}{k }  = c   \] 
 
-\[ \alpha > \gamma , \text{ }  \beta < \gamma \Rightarrow \alpha  > \beta - \text{ нормальная дисперсия}    \] 
+\[ \alpha > \gamma , \text{ }  \beta < \gamma \Rightarrow \alpha  > \beta - \text{ нормальная дисперсия}  :  \] 
+
+\[ tg \alpha > tg \beta ,\quad v_{\Phi }> v_g  \] 
+
 
 
 
