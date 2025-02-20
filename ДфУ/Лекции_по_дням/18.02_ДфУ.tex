@@ -25,11 +25,11 @@
 
 Если функция \( \tilde{y }(x ) \)  доставляет функционалу локальному экстремум, то \( \tilde{ y }(x) \)  - решение диффернциального уравнения
 
-\[ \frac{\partial  F }{\partial  y } - \frac{d}{dx } \frac{ \partial  F }{\partial  y ' } + \frac{d ^2 }{dx ^2 } \frac{\partial  F }{\partial  y ''} + \ldots + \frac{d ^n }{dx ^n } \frac{\partial  F }{\partial  y ^{(n )}} = 0    \] 
+\[ \frac{\partial  F }{\partial  y } - \frac{d}{dx } \frac{ \partial  F }{\partial  y ' } + \frac{d ^2 }{dx ^2 } \frac{\partial  F }{\partial  y ''} + \ldots + (-1 )^{n}  \frac{d ^n }{dx ^n } \frac{\partial  F }{\partial  y ^{(n )}} = 0    \] 
 
 
 \begin{proof}
-     \[   \] 
+    \[   \] 
     Пусть \( \tilde{y }( x) \)  доставляет функционалу локальный минимум \( \Rightarrow  \exists \varepsilon_0 >0 , \text{ }  \forall  y(x )\), удовлетворяет краевым условиям, \( \displaystyle \sup_{x \in [x_0 , x_1 ] } |y(x)-\tilde{y }(x) | < \varepsilon_0  \Rightarrow I[\tilde{y }] \le  I[y] \) 
 
     Возьмем \( y(x ) = \tilde{y }( x ) + \varepsilon \eta ( x ), \eta(x) \)  финитная функция.
@@ -46,9 +46,9 @@
 
     \[ =\int_{x_0 }^{x_1}  \frac{\partial  F }{\partial  y } \eta ( x ) dx + \frac{\partial  F } {\partial  y ' } \eta  ( x ) \bigg |_{x_0 }^{x_1}   - \int_{x_0 }^{x_1} \eta( x ) \frac{d }{dx } \frac{\partial  F }{\partial  y ' } (... )dx + \frac{\partial  F }{ \partial  y ' } (... ) \eta ( x ) \bigg |_{x_0 }^{x_1} - \int_{x_0 }^{x_1}  \eta ' ( x ) \frac{d}{dx } \frac{\partial  F }{\partial  y ''} dx ... \text{ и тд}    \] 
 
-    \[ = \int_{x_0 }^{x_1} \left(  \frac{\partial  F } {\partial  y } - \frac{d}{dx } \frac{\partial F }{\partial  y '}  \right) \eta(x )dx - \eta(x ) \frac{d}{dx } \frac{\partial F }{ \partial  y '}\bigg |_{x_0 }^{x_1 } \int _{x_0 }^{x_1} \eta  ( x ) \frac{d ^2 }{dx ^2 } \frac{\partial F }{\partial y ''} dx +... \text{ и тд }       =  \] 
+    \[ \text{Для n =2:}  \int_{x_0 }^{x_1} \left(  \frac{\partial  F } {\partial  y } - \frac{d}{dx } \frac{\partial F }{\partial  y '}  \right) \eta(x )dx - \eta(x ) \frac{d}{dx } \frac{\partial F }{ \partial  y '}\bigg |_{x_0 }^{x_1 } \int _{x_0 }^{x_1} \eta  ( x ) \frac{d ^2 }{dx ^2 } \frac{\partial F }{\partial y ''} dx       =  \] 
 
-    \[ =\int_{x_0 }^{x_1} \left(  \frac{\partial  F } {\partial  y } - \frac{d}{dx } \frac{\partial F }{\partial  y '} + \frac{d ^2 }{d x ^2 } \frac{\partial F }{\partial y ''}  \right) \eta(x )dx +...  = 0 \quad \forall \text{ финитной функции  } \eta( x) \] 
+    \[ =\int_{x_0 }^{x_1} \left(  \frac{\partial  F } {\partial  y } - \frac{d}{dx } \frac{\partial F }{\partial  y '} + \frac{d ^2 }{d x ^2 } \frac{\partial F }{\partial y ''}  \right) \eta(x )dx   = 0 \quad \forall \text{ финитной функции  } \eta( x) \] 
 
     Если n = 2 , то по лемме Лагранжа: \( \displaystyle  \frac{\partial  F } {\partial  y } - \frac{d}{dx }  \frac{\partial  F } { \partial y ' } + \frac{d ^2 }{dx ^2 }  \frac{\partial  F }{ \partial  y''}  =0   \) 
 
@@ -60,8 +60,8 @@
 \section{Вариационная задача с несколькими независимыми переменными}
 
 \[ \begin{cases}
-    I [ z] = \iint_{D } F (x, y , z(x ), z_x ' ( x,y), z_y ' ( x,y )) dx dy \\
-    z  | _{(x,y ) \in  \partial D } = \varphi ( x,y)
+    \displaystyle I [ z] = \iint_{D } F (x, y , z(x ), z_x ' ( x,y), z_y ' ( x,y )) dx dy \\
+    \displaystyle z  | _{(x,y ) \in  \partial D } = \varphi ( x,y)
 \end{cases} \] 
 
 Необходимое условие локального экстремума: 
@@ -74,7 +74,7 @@
 
 T - кинетическая энергия, U - потенциальная энергия: 
 
-\[ L = T - U - \text{ Лагранжиан}  \] 
+\[ L = T - U - \text{ функция Лагранжа (Лагранжиан)}  \] 
 
 \[ S = \int_{t_0 }^{t_1} L dt - \text{функционал действия}  \] 
 
@@ -94,9 +94,9 @@ T - кинетическая энергия, U - потенциальная эн
 
 \[ - kx - \frac{d}{dt } ( m \dot{x } ) = 0  \Rightarrow m \ddot{x} + kx = 0  \] 
 
-Понижение порядка: \( \displaystyle  L - \dot{x } \frac{\partial K }{\partial  \dot{x} } = C  \) 
+Понижение порядка: \( \displaystyle  L - \dot{x } \frac{\partial L}{\partial  \dot{x} } = C  \) 
 
-\[ \frac{m \dot{x }  ^2 }{2 } - \frac{k x ^2 }{2 } - \dot{x } m \dot{x } = c \Rightarrow -\frac{m \dot{ x } ^2 }{2 } - \frac{k x ^2  }{2}  =c   \] 
+\[ \frac{m \dot{x }  ^2 }{2 } - \frac{k x ^2 }{2 } - \dot{x } m \dot{x } = c \Rightarrow -\frac{m \dot{ x } ^2 }{2 } - \frac{k x ^2  }{2}  =c  - \text{ З.С.Э.}   \] 
 
 \section{Изопериметрическая задача }
 
@@ -124,13 +124,13 @@ T - кинетическая энергия, U - потенциальная эн
 
 \[ S = \iint_D dx dy   \] 
 
-\[ \int_{ \partial D} \left( P(x,y )dx +Q(x,y )dy  \right) =\iint _D \left( - \frac{\partial P }{ \partial  y } (x,y ) + \frac{\partial Q}{\partial x }(x,y)   \right) dx dy\] 
+\[\text{ Формула Грина: }  \int_{ \partial D} \left( P(x,y )dx +Q(x,y )dy  \right) =\iint _D \left( - \frac{\partial P }{ \partial  y } (x,y ) + \frac{\partial Q}{\partial x }(x,y)   \right) dx dy\] 
 
 \[ S = \iint_D dx dy = \iint_D \left(\underbrace{ \frac{1}{2 }}_{- \frac{\partial  P}{\partial y} } + \underbrace{ \frac{1}{2 }}_{ \frac{\partial  Q}{\partial x} }       \right)dx dy = \int_{ \partial  D } \left(  - \frac{y}{2 } dx + \frac{x}{2 } dy \right)  =\frac{1}{2 } \int_{t_0 }^{t_1} (x(t )y ' (t )- x' (t )y (t))dt  \] 
 
 \[ \begin{cases}
-\frac{\partial P } {\partial y } = -\frac{1}{2 }  \quad   \\
-\frac{\partial Q }{\partial x } = \frac{1}{2 } \quad  Q = \frac{x}{2}   
+\displaystyle \frac{\partial P } {\partial y } = -\frac{1}{2 }  \quad   P = - \frac{y}{2}  \\
+\displaystyle \frac{\partial Q }{\partial x } = \frac{1}{2 } \quad  Q = \frac{x}{2}   
 \end{cases} \] 
 
 \[ l = \int_{t_0 }^{t_1} \sqrt{(x' (t ) ^2 + (y '(t ) )^2 } dt = \mathrm{const}   \] 
@@ -155,7 +155,7 @@ y_1(x_1 ) = y_1 ^1 \quad  y_n(x_1 ) = y_1 ^n \\
 
 \[ Y[y_1, \ldots, y_n ] = \int_{x_0 }^{x_1} G(x,y_1, \ldots, y_n,y_1',..., y_n')dx = \mathrm{const}    \] 
 
-Необходимое условие локального экстремума:
+\textbf{Необходимое условие локального экстремума:} 
 
 Пусть \( \tilde{y_1 }(x ),..., \tilde{y_n}(x) \) доставляет локальный экстремум функционалу \( I[y_1, \ldots, y_n] \)  и не является экстремалью функционалу \( Y[y_1, \ldots, y_n] \), тогда \( \exists  \lambda \in  \mathbb{R} \), такие, что \( \tilde{y_1}(x),..., \tilde{y_n}(x) \) доставляют экстремум функционалу \( \tilde{I } = I = \lambda Y \) 
 
@@ -202,7 +202,7 @@ S = \mathrm{const}
 \end{aligned}
 \] 
 
-№ 39.  Понизить порядок не получится так же, как в простейшей задаче.
+№ 39 (задачник Александрова-Егорова).  Понизить порядок не получится так же, как в простейшей задаче.
 
 \[ \begin{aligned}
     \begin{cases}
@@ -218,6 +218,9 @@ S = \mathrm{const}
 \[ \displaystyle (y- c_1 ) ^2 + (x- c_2 ) ^2 = \lambda ^2 \left[ \frac{(x') ^2 }{(x') ^2 + (y ' ) ^2 } + \frac{(y') ^2 }{(x') ^2 + (y ' ) ^2 } \right]  \] 
 
 \[ \displaystyle (y- c_1 ) ^2 + (x- c_2 ) ^2 = \lambda ^2 - \text{окружность}  \] 
+
+
+
 
 %%-------------------------------%%
 
