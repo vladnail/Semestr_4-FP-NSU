@@ -19,6 +19,10 @@
 \begin{definition}
     Если S - подпространство пространства со скалярным произведением \( L \), то \( x \in  S  \)  называется вектором наилучшего приближения (ближайший) для \( y \in L      \)  посредством векторов из \( S  \), если: 
 
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ОФА/Лекции_по_дням/image/2.png}
+    \end{center}
+
     \[ \forall z \in  S , \quad  \left\lVert y - z  \right\rVert \geq  \left\lVert x - y  \right\rVert \] 
 
     \[ \left\lVert x - y  \right\rVert  = \inf _{z \in  S } \left\lVert y -z  \right\rVert  \] 
@@ -44,15 +48,21 @@
 
     \[ x_m - \text{ фундаментальная }  \] 
 
-    \[ \exists  \text{ предельные последовательности }  x , x \in  S , \text{ т.к }  S - \text{ замкнутое}  \] 
+    \[ \text{существование предела последовательности }   x: \] 
 
-    \[ \left\lVert  y - x_n      \right\rVert = \sqrt{(y - x_n , y - x_n )} \xrightarrow{n \to  \infty  } \sqrt{(y - x, y -x )} = \left\lVert y -x  \right\rVert \to  d \text{ в силу ! предела}    \] 
+    \[  x \in  S , \text{ т.к }  S - \text{ замкнутое}  \] 
+
+    \[ \left\lVert  y - x_n      \right\rVert = \sqrt{(y - x_n , y - x_n )} \underset{(1)}{\xrightarrow{n \to  \infty  } }\sqrt{(y - x, y -x )} = \left\lVert y -x  \right\rVert \to  d \text{ в силу ! предела}    \] 
+
+    \begin{center}
+        (1) - непрерывность по 1-му аргументу
+    \end{center}
 
     Единственность: 
 
     \[ \text{Пусть } \tilde{x }: \left\lVert  y - \tilde{ x }\right\rVert = d , x \neq  \tilde{x } \] 
 
-    \[ \left\lVert  \tilde{ x } - x      \right\rVert ^2 = \left\lVert  (\tilde{x }- y ) - ( x + y ) \right\rVert ^2 = 2\underset{= d ^2 }{\left\lVert \underbrace{\tilde{x }  - y}  \right\rVert}  ^2 +2\underset{= d ^2 }{\left\lVert \underbrace{x  - y}  \right\rVert} ^2 - \left\lVert 2 y - x - \tilde{x } \right\rVert ^2 \le 4 d ^2 - 4 d ^2 \le  0 \] 
+    \[ \left\lVert  \tilde{ x } - x      \right\rVert ^2 = \left\lVert  (\tilde{x }- y ) - ( x - y ) \right\rVert ^2 = 2\underset{= d ^2 }{\left\lVert \underbrace{\tilde{x }  - y}  \right\rVert}  ^2 +2\underset{= d ^2 }{\left\lVert \underbrace{x  - y}  \right\rVert} ^2 - \left\lVert 2 y - x - \tilde{x } \right\rVert ^2 \le 4 d ^2 - 4 d ^2 \le  0 \] 
 
     \[ \text{т.е } \tilde{x } = x - \text{ противоречие }  \] 
 
@@ -71,14 +81,18 @@
 \end{lemma}
 
 \begin{proof}
+
+    \[  \] 
+
+    \( \boxed{\Rightarrow} :\) 
     
     \[ \forall  x, y , z \in  L \] 
 
-    \[ \left\lVert  y - x  \right\rVert ^2  = ((y -x )+ (x- z ), (y -x) + ( x - z)) =   \] 
+    \[ \left\lVert  y - z  \right\rVert ^2  = ((y -x )+ (x- z ), (y -x) + ( x - z)) =   \] 
     
     \[ \overset{(1)}{=} \left\lVert y -x    \right\rVert ^2 + 2 \mathrm{Re }( \cancelto{0 }{x- y , x -z }) + \left\lVert x -z  \right\rVert ^2 (* ) \] 
 
-    \[ (1): (a+b, a+ b ) ^2  = \left\lVert  a  \right\rVert ^2 + \left\lVert  b  \right\rVert ^2 + 2 \mathrm{Re } ( a,b ) \] 
+    \[ (1): (a+b, a+ b )   = \left\lVert  a  \right\rVert ^2 + \left\lVert  b  \right\rVert ^2 + 2 \mathrm{Re } ( a,b ) \] 
 
     \[ x \in  S - \text{ ортогональная проекция y  на }  S \Rightarrow y -x \perp  x-z   \]  
 
@@ -90,23 +104,35 @@
 
     Пусть дано: 
 
+    \( \boxed{\Leftarrow}: \) 
+
     \[ x - \text{ ближайший вектор для  } y \in S   \] 
 
-    \[ \left\lvert y -x  \right\rvert = \inf \left\lVert  y -z \right\rVert \] 
 
-    \[ f(t )  = \left\lVert  y -x + t W  \right\rVert ^2, \quad  t \in  \mathbb{R}  ^2 , \text{ }  W \in S \]  
 
-    \[ \lim_{t  \to \infty}  \frac{ \left\lVert y -x + t W  \right\rVert ^2 - \left\lVert  y -x  \right\rVert ^2 } {t } = 0   \] 
+
+
+    \[ \begin{aligned}
+        \begin{array}{l|}
+            \left\lvert y -x  \right\rvert = \inf \left\lVert  y -z \right\rVert \\
+            f(t )  = \left\lVert  y -x + t W  \right\rVert ^2, \quad  t \in  \mathbb{R}  ^2 , \text{ }  W \in S
+        \end{array}
+        \Rightarrow f' (0 ) =0 
+    \end{aligned} \] 
+
+    \[ \lim_{t  \to 0}  \frac{ \left\lVert y -x + t W  \right\rVert ^2 - \left\lVert  y -x  \right\rVert ^2 } {t } = 0   \] 
 
     \[ \text{ в } (* ): z = x - t W  \]
     
     \[ \left\lVert y - (x - tW ) \right\rVert  ^2 - \left\lvert y -x  \right\rvert  ^2 = 2 \mathrm{Re } (y - x, t W ) + \left\lVert t W  \right\rVert ^2   \] 
 
-    \[ \lim_{t  \to \infty}    t\frac{2 \mathrm{Re } (y - x , W ) }{ t } + t ^2         \cancelto{0 }{ \frac{\left\lVert W  \right\rVert ^2 }{t } } = 0      \] 
+    \[ \lim_{t  \to 0}    t\frac{2 \mathrm{Re } (y - x , W ) }{ t } + t ^2         \cancelto{0 }{ \frac{\left\lVert W  \right\rVert ^2 }{t } } = 0      \] 
 
     \[ 2 \mathrm{Re }  ( y - x, W )  = 0  \] 
 
     Если \( \mathrm{Im } ( y -x , W ) = 0 \), то x - ортогональная проекция y на S.
+
+    Доказывается аналогично: \( f(t ) = \left\lVert y -x + i t W \right\rVert ^2 \)  
 
 \end{proof}
 
@@ -124,11 +150,11 @@
 
 \begin{proof}
     
-    \[  y \in  H \quad  x - \text{ ближайший к y посредством S }  \] 
+    \[  y \in  H \quad  x - \text{ ближайший к y посредством S } \Rightarrow  \] 
 
-    \[ y -x \perp  z , \text{ }  z \in  S  \] 
+    \[ \overset{\text{Лемма 1} }{\Rightarrow} y -x \perp  z , \text{ }  z \in  S \Rightarrow  \] 
 
-    \[ W = y -x \in  S  \]  
+    \[\Rightarrow  W = y -x \in  S^{\perp }  \]  
 
     \[ y = \overset{ \in  S ^{\perp } }{W} +\overset{\in  S }{ x}  \] 
 
@@ -147,12 +173,10 @@
     То есть: \( \tilde{x } = x  \text{ и }  \tilde{W } = W  \) 
 \end{proof}
 
-S - конечномерное подпространство линейного пространства L со скалярным произведением \( x_1, \ldots, x_n    \)  - ортонормированный базис в S. 
-
 \begin{theorem}
-    \( \forall  y \in  L     \) 
+    S - конечномерное подпространство линейного пространства L со скалярным произведением \( x_1, \ldots, x_n    \)  - ортонормированный базис в S\( \forall  y \in  L     \):
 
-    \[ x = \sum_{1} ^n \lambda_n x_k , \quad  \lambda_n = (y , x_k) \] 
+    \[ x = \sum_{1} ^n \lambda_k x_k , \quad  \lambda_k = (y , x_k) \] 
 
     является ортогональной проекцией y на подпространство S. При этом: 
 
@@ -165,13 +189,13 @@ S - конечномерное подпространство линейного
 
     \[  (z, x_m ) = \sum  _1 ^1 \alpha_k (x_k , x_m ) = \alpha_m \] 
 
-    \[ \left\lVert z  \right\rVert ^2 = \left(  \sum  _ 1 ^ n \alpha_k x_k ,  \sum  _ 1 ^ n \alpha_p x_p  \right)  = \sum  _ 1 ^ n \alpha_p \left( \sum_1 ^ n \alpha_k x_k , x_p  \right) =\sum  _1 ^ n \alpha_p \left[ \sum  _1 ^ n \overline{\alpha_k } (\overline{x_p, x_k}  )   \right] =  \sum  _{k =1 }  ^{ n} \left\lvert  \alpha_k     \right\rvert  ^2 \]  
+    \[ \left\lVert z  \right\rVert ^2 = \left(  \sum  _ 1 ^ n \alpha_k x_k ,  \sum  _ 1 ^ n \alpha_p x_p  \right)  = \sum  _ 1 ^ n \alpha_p \left( \overline{\sum_1 ^ n \alpha_k x_k , x_p  }  \right) =\sum  _1 ^ n \alpha_p \left[ \sum  _1 ^ n \overline{\alpha_k } (\overline{x_p, x_k}  )   \right] =  \sum  _{k =1 }  ^{ n} \left\lvert  \alpha_k     \right\rvert  ^2 \]  
 
-    \[ \left\lVert y -z  \right\rVert ^2 = \left\lVert y   \right\rVert ^2 - ( z, y ) -  ( y , z ) + \left\lVert z   \right\rVert ^2 = \left\lVert y  \right\rVert ^2 - \sum   _ 1 ^ n \alpha_k(x_k, y ) - \sum_{ 1} ^ n \overline{\alpha_k}  =  \]
+    \[ \left\lVert y -z  \right\rVert ^2 = \left\lVert y   \right\rVert ^2 - ( z, y ) -  ( y , z ) + \left\lVert z   \right\rVert ^2 = \left\lVert y  \right\rVert ^2 - \sum   _ 1 ^ n \alpha_k(x_k, y ) - \sum_{ 1} ^ n \overline{\alpha_k} (y, x_k ) +\sum_{ 1} ^n \left\lvert \alpha_k   \right\rvert ^2  = \]
 
-    \[ \left\lVert y  \right\rVert ^2 - \sum_{ 1 } ^ n \alpha_k \overline{x_k} - \sum_{ 1 } ^ n \overline{\alpha_k }\lambda_k +\sum_{ 1 } ^ n \left\lvert \alpha_k   \right\rvert ^2 + \sum_{ 1 } ^ n \left\lvert \lambda_k      \right\rvert ^2 = \left\lvert  y  \right\rvert ^2 + \sum_{ 1 } ^ n \left\lvert  \alpha_k - \lambda_k \right\rvert ^2  -\sum_{ 1 } ^ n \left\lvert \lambda_k     \right\rvert ^2       \] 
+    \[ =\left\lVert y  \right\rVert ^2 - \sum_{ 1 } ^ n \alpha_k \lambda_k - \sum_{ 1 } ^ n \overline{\alpha_k }\lambda_k +\sum_{ 1 } ^ n \left\lvert \alpha_k   \right\rvert ^2 +  \sum_{ 1 } ^ n \left\lvert \lambda_k      \right\rvert ^2- \sum_{ 1 } ^ n \left\lvert \lambda_k      \right\rvert ^2 = \left\lVert  y  \right\rVert ^2 + \sum_{ 1 } ^ n \left\lvert  \alpha_k - \lambda_k \right\rvert ^2  -\sum_{ 1 } ^ n \left\lvert \lambda_k     \right\rvert ^2       \] 
 
-    \[ \left\lVert y  \right\rVert ^2 - \sum_{ 1 } ^ n \left\lvert \lambda_k     \right\rvert ^2 \geq 0  , \text{ при }  \alpha_k = x_k \] 
+    \[ \left\lVert y  \right\rVert ^2 - \sum_{ 1 } ^ n \left\lvert \lambda_k     \right\rvert ^2 \geq 0  , \text{ при }  \alpha_k = \lambda_k \text{ } (z = x )  \] 
 
     При z = x  достигается минимум \( \Rightarrow   \)  ортогональная проекция.
 
@@ -180,7 +204,7 @@ S - конечномерное подпространство линейного
 \begin{definition}
     \( x_1, \ldots, x_n, \ldots,  \)  - ортонормированная система в линейном пространстве со скалярным пространством L: 
 
-    \[ x \in  L \quad  \lambda_k = ( x , x_k ) - \text{ коэффициент Фурье x относительно.}  \] 
+    \[ x \in  L \quad  \lambda_k = ( x , x_k ) - \text{ коэффициент Фурье x.}  \] 
 
     \[ \sum_{ n= 1 } ^{\infty } \lambda_k x_k - \text{ ряд Фурье расходится}  \] 
 
@@ -204,7 +228,7 @@ S - конечномерное подпространство линейного
 
     \[ \left\lVert  S_n      \right\rVert  ^2 \le  \left\lVert x  \right\rVert ^2 \] 
 
-    \[ \left( \sum_{k=1} ^{n  } \lambda_k x_n , \sum_{k=1} ^{n  } \lambda_k x_n  \right) \le  \left\lVert x  \right\rVert ^2 \] 
+    \[ \left( \sum_{k=1} ^{n  } \lambda_k x_k , \sum_{k=1} ^{n  } \lambda_k x_k  \right) \le  \left\lVert x  \right\rVert ^2 \] 
 
     \[ \sum_{k=1} ^{n  } \left\lvert \lambda_k     \right\rvert ^2 \le  \left\lVert x  \right\rVert ^2 \] 
 
