@@ -39,26 +39,30 @@
 
 \[ \vec{B }  (\vec{r } , t )    = \vec{B_0 }(\vec{r } ) e^{ - i \omega t }  \] 
 
-\[ \mathrm{rot } \vec{E_0 }(\vec{r } ) e ^{ - \omega t } = \frac{i \omega }{c } \vec{B_0 }(\vec{r } ) e^{ -i \omega t}  \Rightarrow \mathrm{div } \vec{B_0 } = 0        \] 
+Из уравнений Максвелла следует, что:
+
+\[ \mathrm{rot } \vec{E_0 }(\vec{r } ) e ^{ -i\omega t } = -\frac{i \omega }{c } \vec{B_0 }(\vec{r } ) e^{ -i \omega t}  \Rightarrow \mathrm{div } \vec{B_0 } = 0        \] 
 
 \[ \mathrm{rot } \vec{H_0 }(\vec{r }  ) = - \frac{i \omega }{c } \vec{D_0 }(\vec{r} )  \Rightarrow  \mathrm{div } \vec{D_0  } = 0      \] 
 
 Если внутри резонатора вещество с \( \varepsilon ( \omega ) \) и \( \mu ( \omega ) \Rightarrow \vec{B_0 } = \vec{H_0 } \mu(\omega) ,\text{ }  \vec{D_0 } = \vec{E_0 } \varepsilon ( \omega )   \)   
 
-
 Граничные условия: 
 
-\[ E_{0 \tau} |_{\text{Г } }  = 0, \quad  B_{0 \tau} |_{\text{Г } }  = 0  \] 
+\[ E_{0 \tau} |_{\text{Г } }  = 0, \quad  B_{0 n} |_{\text{Г } }  = 0  \] 
 
 \begin{center}
     \includegraphics[width=0.2\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/44.png}
 \end{center}
 
-\[ (\mathrm{rot }  \vec{E_0})_z =  + \frac{i \omega }{c } B_{0z}     \] 
+%картинка для пояснения направлений из РУслана 
+
+
 
 \[ \begin{aligned}
     \begin{array}{l|}
-        (\mathrm{rot }  \vec{E_0})_z = \underbrace{\frac{\partial E_{0y } }{\partial  y }}_{=0} - \underbrace{\frac{\partial  E_{0x } }{\partial  y } }_{=0}  \\
+        \displaystyle (\mathrm{rot }  \vec{E_0})_z =  + \frac{i \omega }{c } B_{0z}   \\
+        (\mathrm{rot }  \vec{E_0})_z = \underbrace{\frac{\partial E_{0y } }{\partial  x}}_{=0} - \underbrace{\frac{\partial  E_{0x } }{\partial  y } }_{=0}  \\
         E_{0y } |_{\text{Г} } =0 , \text{ }  E_{0x } |_{\text{Г} } =0 
     \end{array}
     \Rightarrow  B_{0z } = 0
@@ -80,11 +84,11 @@
 
 - эта система является краевой трех мерной задачей Штурмана-Лиувиля.
 
-\textbf{Задача Штурма Лиувиля}: 
+\textbf{Задача Штурма-Лиувиля}: 
 
-1) Решение \( \exists    \)  только для бесконечного ряда чисел \( k_n \) - собственные числа, 
+1) Решение \( \exists    \)  только для бесконечного ряда чисел \( k_n \) - собственные числа; 
 
-2) Каждому \( k_n \) соответствует как минимум одна собственная функция - собственное колебания, 
+2) Каждому \( k_n \) соответствует как минимум одна собственная функция -  собственное колебание;
 
 3) Набор всех собственных  функций образует фундаментальную систему ортогональных функций, по которым можно разложить поля внешнего источника возбуждения. 
 
@@ -130,7 +134,9 @@
 
 \[ E_2( y )E_3 ( z ) \frac{d ^2 E_1 ( x ) }{dx ^2 } + E_1 ( x ) E_3 ( z ) \frac{d ^2 E_2 ( y ) }{dy ^2 } + E_1 ( x ) E_2 ( y ) \frac{d ^2 E_3 ( z ) }{dz ^2 } + k ^2 E_1 ( x ) E_2 ( y ) E_3 ( z ) = 0 | : E_1 E_2 E_3   \] 
 
-\[ \frac{E_1 '' ( x )}{E_1(x) } + \frac{E_2 '' ( y )}{E_2(y) } + \frac{E_3 '' ( z )}{E_3(z) } + k ^2 = 0  \Rightarrow \frac{E_1 ''( x )}{ E_1( x )} = \mathrm{const} , \text{ } \frac{E_2 ''( y )}{ E_2( y )} = \mathrm{const} , \text{ } \frac{E_3 ''( z )}{ E_3( z )} = \mathrm{const}     \] 
+Двигаясь вдоль \( x \)  все члены кроме \( \displaystyle \frac{E_1 ''(x)}{E_1 (x)}  \), точно константы значит используя следующее выражение:  
+
+\[ \frac{E_1 '' ( x )}{E_1(x) } + \frac{E_2 '' ( y )}{E_2(y) } + \frac{E_3 '' ( z )}{E_3(z) } + k ^2 = 0  \text{ , получаем: }  \frac{E_1 ''( x )}{ E_1( x )} = \mathrm{const} ; \underbrace{\text{ } \frac{E_2 ''( y )}{ E_2( y )} = \mathrm{const} , \text{ } \frac{E_3 ''( z )}{ E_3( z )} = \mathrm{const} }_{\text{Аналогочино} }.    \] 
 
 \[ E '' ( x ) = \alpha E (x  ) \quad  \text{ Решение ищем в виде: } E_1(x ) = c_1 e^{\lambda x} \Rightarrow c_1 \lambda ^2 e^{\lambda x } = \alpha c_1e^{\lambda x } \Rightarrow \lambda_{1,2 }  = \pm \sqrt{\alpha }       \] 
 
@@ -138,9 +144,9 @@
 
 \( 2.\text{ } \alpha = 0 \Rightarrow E (x ) =  A x + B     \) - аналогично невозможно
 
-\( 3. \text{ }  \alpha < 0 \Rightarrow E ( x )  = A e^{+ \sqrt{\left\lvert \alpha \right\rvert}x} + B e^{- \sqrt{\left\lvert \alpha \right\rvert}x}  = c_1 \sin ( \sqrt{\left\lvert \alpha \right\rvert}x + \varphi ) + \) - имеет периодически "c" 
+\( 3. \text{ }  \alpha < 0 \Rightarrow E ( x )  = A e^{+ i\sqrt{\left\lvert \alpha \right\rvert}x} + B e^{- i\sqrt{\left\lvert \alpha \right\rvert}x}  = c_1 \sin ( \sqrt{\left\lvert \alpha \right\rvert}x + \varphi )  \) - имеет периодически нули, что может удовлетворять границам
 
-Переобозначение: \(E_1(x ) = - k ^2 _x , E_2 ( y ) = - k ^2 _y , E_3 ( z ) = - k ^2 _z  \) 
+Переобозначение: \(\alpha_x = - k ^2 _x , \alpha_y = - k ^2 _y , \alpha_z = - k ^2 _z  \) 
 
 \[ E_{0x}  ( \vec{r } ) = A \sin (k_x x + \alpha_x) \sin (k_y y + \alpha_y) \sin (k_z z + \alpha_z), \alpha_x, \alpha_y, \alpha_z = \mathrm{const} \] 
 
@@ -158,11 +164,12 @@
 
     \[ z= 0 \Rightarrow E_{0x } = 0, \text{ }  E_{0y } = 0 \text{ при } \forall x,y \Rightarrow \alpha_z = \beta _z = 0  \] 
 
-    \[ z= b \Rightarrow E_{0x } = 0, \text{ }  E_{0y } = 0 \text{ при } \forall x,y \Rightarrow k_z b = n_z \pi \Rightarrow k_z = \frac{ n_z \pi } {b } , \text{ }  n_z \in  \mathbb{Z}    \] 
+    \[ z= d \Rightarrow E_{0x } = 0, \text{ }  E_{0y } = 0 \text{ при } \forall x,y \Rightarrow k_z d = n_z \pi \Rightarrow k_z = \frac{ n_z \pi } {dч } , \text{ }  n_z \in  \mathbb{Z}    \] 
 
     \[ \mathrm{div } \vec{E_0} = \frac{\partial  }{\partial  x } E_{0x} + \frac{\partial  }{\partial  y } E_{0y } + \frac{\partial  }{\partial  z }E _{0z } =       \] 
 
-    \[ =\sin (k_x x) \sin (k_y y )\sin (k_z z) \left[ \frac{k_xA \cos (k_x x + \alpha_x) }{\sin (k_x x)} + \frac{k_yB \cos (k_y y + \beta_y) }{\sin (k_y y)} + \frac{k_z D  \cos (k_z  z+ \gamma_z) }{\sin (k_z  z)}  \right]  = 0       \] 
+    \[ =\sin (k_x x) \sin (k_y y )\sin (k_z z) \bigg[ \underbrace{\frac{k_xA \cos (k_x x + \alpha_x) }{\sin (k_x x)}}_{\mathrm{const} }+ \underbrace{\frac{k_yB \cos (k_y y + \beta_y) }{\sin (k_y y)}}_{\mathrm{const}} + \underbrace{\frac{k_z D  \cos (k_z  z+ \gamma_z) }{\sin (k_z  z)}}_{\mathrm{const}}  \bigg]  = 0       \] 
+
 
     \( \text{ при } \forall  x, y , z \) 
 
@@ -172,7 +179,7 @@
 
     \[ \begin{aligned}
         E_{0x }  (\vec{r } ) &= A \cos (k_x x )\sin (k_y y )\sin (k_z z) \\
-        E_{0y}(\vec{r} ) &= B \sin (k_x x )\cos (k_y y )\sin (k_z z)  \quad  + k_x A + k_y B + k_z D = 0 + \text{ Г.У. } \vec{E} _{0 \tau } |_{\text{Г} } = 0      \\
+        E_{0y}(\vec{r} ) &= B \sin (k_x x )\cos (k_y y )\sin (k_z z)  \quad  \oplus \quad k_x A + k_y B + k_z D = 0 + \text{ Г.У. } \vec{E} _{0 \tau } |_{\text{Г} } = 0      \\
         E_{0z}(\vec{r} ) &= D \sin (k_x x )\sin (k_y y )\cos (k_z z) 
     \end{aligned} \] 
 
