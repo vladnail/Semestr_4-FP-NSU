@@ -15,10 +15,10 @@
 \[ \begin{cases}
     I [y_1, \ldots, y_n]  = \int_{t_0 }^{t_1 }F(t,y_1, \ldots, y_n, y_n ',..., y_n')dt \to  \mathrm{extz}\\
     y_i (t_0 ) = y_{i_0}, \quad y_i (t_1 ) = y_{i_1} , \text{ }  i =1, \ldots, n\\
-    G(ty1, \ldots, y_n) = 0
+    G(t,y1, \ldots, y_n) = 0
 \end{cases} \] 
 
-Пример: Задача о геодезических на поверхностях
+Пример: Задача о геодезических на поверхности
 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ДфУ/Лекции_по_дням/image/19.png}
@@ -72,7 +72,7 @@ z(t_0 ) = z_0 ,\quad z(t_1 ) = z_1
     \displaystyle (3) \cdot (-x) + (1) \cdot  z : \quad z \frac{d}{dt } \left( \frac{x' }{F} \right) -x \frac{d}{dt } \left( \frac{z' }{F} \right) = 0 
 \end{cases} \] 
 
-\[ \frac{d}{dt } \left( y \frac{x ' }{F }  - x \frac{y '}{F}  \right) = y ' \frac{x ' }{F } + y \frac{d}{dt } \left( \frac{x' }{F}  \right) - x ' \frac{y '}{F} - x \frac{d}{dt } \left( \frac{y' }{F}  \right) \] 
+\[ \frac{d}{dt } \left( y \frac{x ' }{F }  - x \frac{y '}{F}  \right) = \cancelto{0}{y ' \frac{x ' }{F }} + y \frac{d}{dt } \left( \frac{x' }{F}  \right) \cancelto{0}{- x ' \frac{y '}{F}} - x \frac{d}{dt } \left( \frac{y' }{F}  \right) \] 
 
 \[
 \begin{aligned}
@@ -276,7 +276,7 @@ m_{n_1} & ... & m_{nn}
 
     \[ \sum _{j=1}^ n \left( q_j '' (t  ) + \lambda_j q_j (t ) \right) \vec{v_j }= 0 , \text{ }  \forall  t \in  \mathbb{R}   \] 
 
-    \[ \text{Т.к} \vec{v_1 },..., \vec{v_n} \text{ линейно независимы, то }  q_j '' (t ) + \lambda_j q_j (t) =0    \] 
+    \[ \text{Т.к } \vec{v_1 },..., \vec{v_n} \text{ линейно независимы, то }  q_j '' (t ) + \lambda_j q_j (t) =0    \] 
 
 
 \end{proof}
