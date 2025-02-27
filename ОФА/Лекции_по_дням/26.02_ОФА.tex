@@ -1,0 +1,187 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+% Если это часть основного файла, не добавляем начало и конец документа
+\else
+\documentclass[12pt, a4paper]{report}
+\usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+\usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+\begin{document}
+\fi
+
+%%-------------------------------%%
+
+\textbf{Коэффициенты Фурье: } \( x_1, \ldots, x_n \)  , \text{ } \( \lambda_k = (x, x_k) \)
+
+\textbf{Неравенство Бесселя:} \( \displaystyle \sum_{k=1} ^{\infty } \left\lvert \lambda_k \right\rvert  ^2 \le  \left\lVert x \right\rVert ^2\) 
+
+\section{Пополнение ортонормированной системы}
+
+\begin{definition}
+    Ортонормированную систему \( x_1, \ldots, x_n \) называется замкнутой, если для \( \forall  x \in  H  \): 
+
+    \[ \left\lVert x  \right\rVert  ^2 = \sum _{k=1} ^{n  } \left\lvert \lambda_k     \right\rvert ^2 , \text{ где } \lambda_k = (x, x_k) - \text{ коэффициенты Фурье}   \] 
+\end{definition}
+
+Уравнение замкнутости:
+
+\[  y \in  H , \mu_k = (y, x_k) - \text{ коэффициенты Фурье } y \] 
+
+\[ (x,y ) = \left( \sum_{k=1} ^{\infty } \lambda_k x_k , \sum_{k=1} ^{\infty } \mu_k x_k  \right) = \sum _{k=1} ^{\infty } \lambda_n \overline{\mu_n }    - \text{ равенство Парсеваля} \] 
+
+\begin{definition}
+    Ортонормированная системам \( x_1, \ldots, x_n \) называется полной, если ее нельзя пополнить, то есть если ее ортогональное дополнение состоит только из \( \vec{0}  \). Другими словами, если \( \exists  x \text{ }  \forall  k : (x, x_k ) = 0 \Rightarrow x = 0 \)\dots
+
+\end{definition}
+
+\begin{definition}
+    Ортонормированная система \( x_1, \ldots, x_n \) называется базисом Гильбертова (или Гильбертовым базисом), если \( \forall  x \in  H \):
+
+    \[\underset{\text{разложение в векторный ряд Фурье} }{ x = \sum _{k=1} ^{\infty } \lambda_k x_k} \kern-35pt, \text{ где } \lambda_k - \text{ коэффициенты Фурье}  \]
+    
+    \[ \lim_{N       \to \infty}  \left\lVert x - \sum _{k=1} ^{N  } \lambda_k x_k \right\rVert = 0\] 
+
+
+\end{definition}
+
+
+\begin{theorem}
+    Во всяком ненулевом Гильбертовом сепарабельном пространстве \( \exists  \)  Гильбертов базис, состоящий из конечного или счетного числа векторов.
+\end{theorem}
+
+
+\begin{proof}
+    \[  \] 
+    \( x_1, \ldots, x_k \)  - счетное плотное подмножество (в силу сепарабельности)
+
+    \[ x_1, \ldots, x_k  \underset{\text{комбинации} }{\xrightarrow{\text{вычеркнули линейные} }} y_1, \ldots, y_k  - \text{ счетное линейно независимое число векторов РУСЛАН}  \] 
+
+    \[ y_1, \ldots, y_k \underset{\text{Грамму-Шмидта} }{\xrightarrow{\text{ ортогонализируем по} }} z_1, \ldots, z_k - \text{ счетное число ортонормированных  векторов}  \] 
+
+    \[ x \in  H , \text{ } \{x_{n_k} \} \to  x \text{ } \forall  \varepsilon > 0 \text{ } \exists  M \text{ } \exists  n_k \geq  N : \left\lVert x - x_{n_k}  \right\rVert < \varepsilon \] 
+
+    \[ x_{n_k}  - \text{ выражается через } \{z_k\} , \text{ }  x_{n_k} = \sum_{p=1} ^{n_k } \alpha_p z_p \] 
+
+    Спроектируем на \( x \)  конечно мерное подпространство \( <z_1, \ldots, z_{n_k} > \) 
+
+    Проекция: \( \displaystyle  s = \sum_{j =1} ^{n_k }\lambda_j z_j , \text{ где } s - \text{ проекция на } <z_1, \ldots, z_{n_k}>   , \quad  \lambda_j = (x , z_j) \) 
+
+    \[ \left\lVert  x - s  \right\rVert  \le  \left\lVert x -y  \right\rVert , \text{ } \forall  y \in  <z_1, \ldots, z_{n_k} > \] 
+
+
+    \[ \left\lVert x - \sum _{j=1} ^{n_k } \lambda_j z_j \right\rVert \le  \bigg\lVert  x- \underbrace{\sum_{p=1}^{n_k} \alpha_p z_p}_{x_k}  \bigg\rVert < \varepsilon\] 
+
+    \[ x = \sum_{j =1} ^{ \infty } \lambda_j z_j ,\text{ }   \lambda_j = (x , z_j) - \text{ коэффициенты Фурье}   \] 
+    
+\end{proof}
+
+\begin{theorem}
+    \( \{x_k\}_{k \in  \mathbb{N}}  \)  - ортогональная система в сепарабельном Гильбертовом пространстве, тогда следующие условия эквиваленты: 
+
+    1) \( \{x_k\} \)  - Гильбертов базис; 
+
+    2) \( \{x_k\} \) - замкнутая система; 
+
+    3) \( \{x_k\} \) - полная система.
+\end{theorem}
+
+\begin{proof}
+    \[  \] 
+
+    \( 1) \Rightarrow  2): \) 
+
+    \[ x = \sum_{k =1} ^{ \infty  } \lambda_k x_k , \text{ } \lambda_k = (x,x_k) , \text{ }  \left\lVert x  \right\rVert    ^2 = \sum_{k =1}^{\infty  } \left\lvert \lambda_k \right\rvert  ^2  \] 
+
+    \[ \left\lVert  x  \right\rVert ^2 = \left(  \sum_{k =1} ^{ \infty  } \lambda_k x_k, \sum_{k =1} ^{ \infty  } \lambda_k x_k  \right) = \lim_{N \to \infty} \sum_{m=1}^{N } \left( x_k, \sum_{m =1} ^{\infty } \lambda_m x_m \right) =\] 
+
+    \[ \lim_{N,M  \to \infty}  \sum_{k =1}^{ N } \sum_{m =1}^{ M }  \lambda_k \overline{\lambda_m } (\kern-20pt \underbrace{\overline{x_m, x_k}}_{= (x_k, x_m) =\delta_{km}  {\tiny\begin{cases} 1 \\ 0 \end{cases}}}\kern-20pt  )  = \sum_{k =1} ^{ \infty  } \lambda_k \overline{\lambda_k } = \sum_{k =1} ^{ \infty  } \left\lvert \lambda_k \right\rvert  ^2  \] 
+
+    \begin{flushright}
+        \(  \# \) 
+    \end{flushright}
+
+    \( 2) \Rightarrow 3) \):
+
+    \[ \forall  x \in  H : \left\lVert  x  \right\rVert  ^2 = \sum_{k =1}^{\infty  } \left\lvert \lambda_k \right\rvert ^2   \] 
+
+    От противного: Пусть \( y \neq 0 , \text{ } y \in  H \)  - пополнение \( \{x_k\} \): \( \mu_k = (y, x_k) = 0 \) 
+
+    \[ \left\lvert y  \right\rvert  ^2 = \sum_{k =1} ^{\infty  } \left\lvert \mu_k \right\rvert ^2 = 0 \Rightarrow y = 0 - \text{ противоречие}  \] 
+
+    \begin{flushright}
+        \(  \# \) 
+    \end{flushright}
+
+    \( 3) \Rightarrow 1) \):
+
+    Пусть \( x \in  H  \): 
+
+    \[  S_N = \sum_{n =1}^{N }  \lambda_k x_k , \text{ } \lambda_k = (x, x_k)  \] 
+
+    Фундаментальность: 
+
+    \[ \left\lVert S_N - S_M         \right\rVert  ^2 = \left\lVert \sum_{n =n +1 } ^{M } \lambda_n x_n           \right\rVert ^2 = \sum _{n =n +1 } ^{M } \left\lvert \lambda_n \right\rvert ^2 \] 
+
+    Неравенство Бесселя: \( \displaystyle  \sum_{k =1} ^{\infty  } \left\lvert \lambda_k \right\rvert  ^2 < \left\lVert x  \right\rVert  ^2  \) 
+
+    \[ \forall  \varepsilon \text{ }  \exists  N_0 \text{ }  \forall  N, M \ge N , \quad  \sum _{n =n +1 } ^{M } \left\lvert \lambda_n \right\rvert ^2 < \varepsilon \] 
+
+    Значит \( S_N \)  -  фундаментальная последовательность в Гильбертовом полном пространстве \( \Rightarrow  \) сходится. 
+
+    Обозначим предел \( S_N  \)  через \( z \). 
+
+    \(\tiny \text{ Лектор: ''хорошая буква зет, давайте обозначим''} \) 
+
+    \[ (x- z , x_k ) = \lim_{N  \to \infty} \left( x - \sum_{n =1}^ N \lambda_n x_n ,x_n \right) = \lambda_k - \lim_{N  \to \infty} \sum _{n =1}^N \lambda_n (x_n, x_k ) = \lambda_k - \lambda_k = 0 \] 
+
+    \[ x- z \perp  x_k ,\text{ }  \forall k \] 
+
+    \( \Rightarrow  \) в силу единственности системы \( \{x_k\} \): 
+
+    \[ x- z =0 , \text{  } x = \sum _{k =1} ^{\infty  } \lambda_k x_k \Rightarrow \{x_k\} - \text{Гильбертов базис}  \] 
+
+\end{proof}
+
+\begin{theorem}[Рисса-Фишера]
+    \( H \)  - сепарабельное Гильбертово пространство ортонормированной системы \( \{x_k\} \). Пусть \( \lambda_1, \ldots, \lambda_k \)  - число, такое что ряд \( \displaystyle  \sum_{n =1}^{ \infty } \left\lvert \lambda_k   \right\rvert ^2   \) - сходится.
+    Тогда \( \exists ! \text{  } x \in  H     \) такое, что \( \displaystyle \left\lVert x  \right\rVert     ^2 = \sum_{k =1} ^{\infty  } \left\lvert \lambda_k \right\rvert ^2 \). 
+
+    \[ S_N = \sum _{n =1}^N \lambda_n x_n \] 
+
+    \[ \left\lVert S_N - S_M \right\rVert ^2 = \kern-40pt \underbrace{\sum _{p =N +1 } ^{M } \left\lvert \lambda_p \right\rvert ^2}_{\text{ сходится} \Rightarrow S_N - \text{ фундаментальный}  }\kern-40pt  < \varepsilon\] 
+\end{theorem}
+
+
+\begin{proof}
+    \[  \] 
+
+    \( z  \)  - предел \( S_N \): 
+
+    \[ (z , x_k ) - \lim_{N  \to \infty} (S_N , x_k )  = \lambda_k - \text{коэффициенты Фурье дял } z \] 
+
+    \[ \left\lVert z  \right\rVert   ^2 = \left(  \sum_{k =1}^{ \infty  } \lambda_k x_k , z       \right) = \sum_{k =1}^{\lambda } \lambda_k ( \underbrace{x_k}_{=\overline{\lambda_k}  }, z ) = \sum_{k =1} ^{ \infty  } \left\lvert \lambda_k \right\rvert ^2    \] 
+
+    Единственность: Пусть \( \exists  x \in  H , \text{ }  x \neq z  \) 
+
+    \[ \left\lVert x   \right\rVert ^2 = \sum_{k =1}^{ \infty  } \left\lvert \lambda_k       \right\rvert ^2   \] 
+
+    \[ \left\lVert  x - z  \right\rVert ^2 =\underbrace{ \left\lVert x \right\rVert  ^2}_{=\sum_{k =1}^{\infty  }\left\lvert \lambda_k   \right\rvert ^2  } - \mathrm{Re } (x,z )  + \underbrace{ \left\lVert z \right\rVert  ^2}_{=\sum_{k =1}^{\infty  }\left\lvert \lambda_k   \right\rvert ^2  } - \text{ смотреть ранее} \] 
+
+    \[ (x, z ) =\left(  \sum_{k =0 }^{ \infty  } \lambda_k x_k , z   \right) - \sum _{k =1} ^{ \infty  } \lambda_k (\overline{z, x_k}  ) = \sum_{k =1}^{ \infty } \left\lvert \lambda_k      \right\rvert ^2  \]  
+
+    \[ \left\lVert x -z  \right\rVert ^2 = \sum _{k =1}^{ \infty  } \left\lvert \lambda_k \right\rvert ^2 - 2 \sum  _{k =1}^{ \infty  } \left\lvert \lambda_k    \right\rvert ^2 + \sum _{k =1} ^{ \infty  } \left\lvert \lambda_k \right\rvert ^2 = 0 \Rightarrow x = z\] 
+\end{proof}
+
+\section{Изоморфизм}
+
+\begin{definition}
+    Пусть \( H_1, H_2 \) - Гильбертова пространства. \( H_1  \) - изоморфно \( H_2 \), если \( \exists A : H_1 \to H_2 \) и \( \exists B : H_2 \to H_1 \), которые: линейные, сохраняют скалярное произведение и взаимообратны. 
+\end{definition}
+
+%%-------------------------------%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+% Если это основной файл, не нужно заканчивать документ
+\else
+\end{document}
+\fi
