@@ -54,7 +54,7 @@
 
 \[ \omega_{0,0,0} - \text{ не бывает} ,\quad \omega_{0,0,n_z} - \text{ не бывает } (\text{если два индекса равны 0, то решений нет} )   \] 
 
-\[ \omega_{1,1,0} \frac{c}{\sqrt{\varepsilon \mu } } \sqrt{\left( \frac{\pi}{a}  \right) ^2 + \left( \frac{\pi}{b}  \right) ^2}  , \quad \omega_{1,0,1} = \frac{c}{\sqrt{\varepsilon \mu } } \sqrt{\left( \frac{\pi}{a}  \right) ^2 + \left( \frac{\pi}{d}  \right) ^2} , \quad \omega_{0,1,1} = \frac{c}{\sqrt{\varepsilon \mu } } \sqrt{\left( \frac{\pi}{b}  \right) ^2 + \left( \frac{\pi}{d}  \right) ^2}  \] 
+\[ \omega_{1,1,0} =\frac{c}{\sqrt{\varepsilon \mu } } \sqrt{\left( \frac{\pi}{a}  \right) ^2 + \left( \frac{\pi}{b}  \right) ^2}  , \quad \omega_{1,0,1} = \frac{c}{\sqrt{\varepsilon \mu } } \sqrt{\left( \frac{\pi}{a}  \right) ^2 + \left( \frac{\pi}{d}  \right) ^2} , \quad \omega_{0,1,1} = \frac{c}{\sqrt{\varepsilon \mu } } \sqrt{\left( \frac{\pi}{b}  \right) ^2 + \left( \frac{\pi}{d}  \right) ^2}  \] 
 
 
 Если \( a>b>d ,  \) то \( \omega_{1,1,0}  \) - минимальная частота \( \Rightarrow  \) основная мода резонатора\dots
@@ -73,7 +73,7 @@
 
 Рассматриваем случай, когда электромагнитные поля мод проникают в стенки резонатора на глубину \(\displaystyle  \delta \sim \frac{c }{\sqrt{2 \pi \mu \sigma \omega}} \ll a, b,d  \). Найдем время затухания моды в резонаторе. 
 
-\[ E,B \sim e ^{-i \omega t } = e^{ - i (\omega ' - \omega '')t} , \text{ где } \omega' = \mathrm{Re} (\omega) , \text{ } \omega'' = \mathrm{Im} (\omega)     \] 
+\[ E,B \sim e ^{-i \omega t } = e^{ - i (\omega ' - i\omega '')t} , \text{ где } \omega' = \mathrm{Re} (\omega) , \text{ } \omega'' =-\mathrm{Im} (\omega)  \quad (\omega =\omega ' - i \omega'')   \] 
 
 Пусть \( \varepsilon = \mathrm{cosnt}, \text{ }  \mu = \mathrm{cosnt}.   \) 
 
@@ -81,13 +81,13 @@
 
 \[(\overline{\mathrm{Re}\vec{E} (\vec{r } ,t ) }  ) ^2 = \left( \overline{\frac{\vec{E }  (\vec{r } ) e^{- i (\omega ' - \omega '')t} + \vec{E } ^{* }  (\vec{r } ) e ^{ i \omega ' t - \omega ' t} }{2} }   \right)  \] 
 
-\[ \boxed{= } \int  \frac{dV \varepsilon}{8 \pi}  \left\{\overline{ \frac{(\vec{E } (\vec{r }) \vec{E } (\vec{r } ) ) e^{- 2 i \omega 't } + (\vec{E } ^{* } (\vec{r } ), \vec{E } ^{* } (\vec{r } )) e ^{ 2 i \omega ' t} + 2 (\vec{E } (\vec{r } ), \vec{E} ^{* } (\vec{r } ) }{4} }   \right\} e^{- 2 \omega ''t }  \] 
+\[ \boxed{= } \int  \frac{dV \varepsilon}{8 \pi}  \left\{\overline{ \frac{(\vec{E } (\vec{r }) \vec{E } (\vec{r } ) ) e^{- 2 i \omega 't } + (\vec{E } ^{* } (\vec{r } ), \vec{E } ^{* } (\vec{r } )) e ^{ 2 i \omega ' t} + 2 (\vec{E } (\vec{r } ), \vec{E} ^{* } (\vec{r } )) }{4} }   \right\} e^{- 2 \omega ''t }  \] 
 
 \[ \overline{e ^{ -2 i \omega ' t } }  =\overline{\cos (2 \omega ' t)- i \sin (2 \omega ' t)} = 0 \quad (\text{ за период } T =\frac{ 2\pi}{\omega'} )     \] 
 
 \[ \Rightarrow \overline{W_E} = \int dV \frac{\left\lvert \vec{E } (\vec{r } ) \right\rvert ^2 \varepsilon}{1 6\pi } e^{- 2 \omega '' t}     \] 
 
-\[ \overline{W_B} = \int dV \frac{\left\lvert \vec{B } (\vec{r } ) \right\rvert ^2 \mu}{1 6\pi } e^{- 2 \omega '' t}    \] 
+\[ \overline{W_B} = \int dV \frac{\left\lvert \vec{B } (\vec{r } ) \right\rvert ^2}{1 6\pi }\frac{1}{\mu}  e^{- 2 \omega '' t}    \] 
 
 
 \begin{center}
@@ -132,9 +132,9 @@
 
 \[ \nabla (E_z (x,y ) e^{ i k_z z } ) - \frac{\partial}{\partial z} (\vec{E } (x,y )e^{i k_z z} ) = \frac{i \omega }{c } [\vec{e_z} \times \vec{B } (x,y ) e^{ i k_z z} ]\text{  }  (z-\text{ая компонента уравнения } \equiv 0)  \] 
 
-\[ (\nabla_{\perp } E_z (x,y ) ) e^{i k_z z} - \vec{E } _{ \perp } (x,y ) e^{i k_z z} =  \frac{i \omega }{c } [\vec{e_z} \times  \vec{B} _{ \perp } (x,y )   ] e^{ i k_z z}      \] 
+\[ (\nabla_{\perp } E_z (x,y ) ) e^{i k_z z} - \vec{E } _{ \perp } (x,y ) e^{i k_z z} =  \frac{i \omega }{c } \vec{B} _{ \perp } (x,y )    e^{ i k_z z}      \] 
 
-\[ \nabla_{ \perp } H_z (x,y )  i k_z = - \frac{i \omega }{c } [\vec{e_z} \times  \vec{D} _{ \perp } (x,y )  ] \] 
+\[ \nabla_{ \perp } H_z (x,y )- H_{ \perp } (x,y ) i k_z = - \frac{ i\omega }{c } \vec{D } _{\perp  } (x,y)  \]  
 
 %%-------------------------------%%
 
