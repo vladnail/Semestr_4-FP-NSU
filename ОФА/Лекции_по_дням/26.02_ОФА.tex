@@ -17,7 +17,7 @@
 \section{Пополнение ортонормированной системы}
 
 \begin{definition}
-    Ортонормированную систему \( x_1, \ldots, x_n \) называется замкнутой, если для \( \forall  x \in  H  \): 
+    Ортонормированную систему \( x_1, \ldots, x_n \) называют замкнутой, если для \( \forall  x \in  H  \): 
 
     \[ \left\lVert x  \right\rVert  ^2 = \sum _{k=1} ^{n  } \left\lvert \lambda_k     \right\rvert ^2 , \text{ где } \lambda_k = (x, x_k) - \text{ коэффициенты Фурье}   \] 
 \end{definition}
@@ -26,7 +26,7 @@
 
 \[  y \in  H , \mu_k = (y, x_k) - \text{ коэффициенты Фурье } y \] 
 
-\[ (x,y ) = \left( \sum_{k=1} ^{\infty } \lambda_k x_k , \sum_{k=1} ^{\infty } \mu_k x_k  \right) = \sum _{k=1} ^{\infty } \lambda_n \overline{\mu_n }    - \text{ равенство Парсеваля} \] 
+\[ (x,y ) = \left( \sum_{k=1} ^{\infty } \lambda_k x_k , \sum_{k=1} ^{\infty } \mu_k x_k  \right) = \sum _{k=1} ^{\infty } \lambda_k \overline{\mu_k }    - \text{ равенство Парсеваля} \] 
 
 \begin{definition}
     Ортонормированная системам \( x_1, \ldots, x_n \) называется полной, если ее нельзя пополнить, то есть если ее ортогональное дополнение состоит только из \( \vec{0}  \). Другими словами, если \( \exists  x \text{ }  \forall  k : (x, x_k ) = 0 \Rightarrow x = 0 \)\dots
@@ -53,7 +53,7 @@
     \[  \] 
     \( x_1, \ldots, x_k \)  - счетное плотное подмножество (в силу сепарабельности)
 
-    \[ x_1, \ldots, x_k  \underset{\text{комбинации} }{\xrightarrow{\text{вычеркнули линейные} }} y_1, \ldots, y_k  - \text{ счетное линейно независимое число векторов РУСЛАН}  \] 
+    \[ x_1, \ldots, x_k  \underset{\text{комбинации} }{\xrightarrow{\text{вычеркнули линейные} }} y_1, \ldots, y_k  - \text{ счетное число линейно независимых  векторов }  \] 
 
     \[ y_1, \ldots, y_k \underset{\text{Грамму-Шмидта} }{\xrightarrow{\text{ ортогонализируем по} }} z_1, \ldots, z_k - \text{ счетное число ортонормированных  векторов}  \] 
 
@@ -68,14 +68,14 @@
     \[ \left\lVert  x - s  \right\rVert  \le  \left\lVert x -y  \right\rVert , \text{ } \forall  y \in  <z_1, \ldots, z_{n_k} > \] 
 
 
-    \[ \left\lVert x - \sum _{j=1} ^{n_k } \lambda_j z_j \right\rVert \le  \bigg\lVert  x- \underbrace{\sum_{p=1}^{n_k} \alpha_p z_p}_{x_k}  \bigg\rVert < \varepsilon\] 
+    \[ \left\lVert x - \sum _{j=1} ^{n_k } \lambda_j z_j \right\rVert \le  \bigg\lVert  x- \underbrace{\sum_{p=1}^{n_k} \alpha_p z_p}_{x_{n_k} }  \bigg\rVert < \varepsilon\] 
 
     \[ x = \sum_{j =1} ^{ \infty } \lambda_j z_j ,\text{ }   \lambda_j = (x , z_j) - \text{ коэффициенты Фурье}   \] 
     
 \end{proof}
 
 \begin{theorem}
-    \( \{x_k\}_{k \in  \mathbb{N}}  \)  - ортогональная система в сепарабельном Гильбертовом пространстве, тогда следующие условия эквиваленты: 
+    Если \( \{x_k\}_{k \in  \mathbb{N}}  \)  - ортогональная система в сепарабельном Гильбертовом пространстве, тогда следующие условия эквиваленты: 
 
     1) \( \{x_k\} \)  - Гильбертов базис; 
 
@@ -91,9 +91,9 @@
 
     \[ x = \sum_{k =1} ^{ \infty  } \lambda_k x_k , \text{ } \lambda_k = (x,x_k) , \text{ }  \left\lVert x  \right\rVert    ^2 = \sum_{k =1}^{\infty  } \left\lvert \lambda_k \right\rvert  ^2  \] 
 
-    \[ \left\lVert  x  \right\rVert ^2 = \left(  \sum_{k =1} ^{ \infty  } \lambda_k x_k, \sum_{k =1} ^{ \infty  } \lambda_k x_k  \right) = \lim_{N \to \infty} \sum_{m=1}^{N } \left( x_k, \sum_{m =1} ^{\infty } \lambda_m x_m \right) =\] 
+    \[ \left\lVert  x  \right\rVert ^2 = \left(  \sum_{k =1} ^{ \infty  } \lambda_k x_k, \sum_{k =1} ^{ \infty  } \lambda_k x_k  \right) = \lim_{N \to \infty} \sum_{m=1}^{N } \lambda_k \left( x_k, \sum_{m =1} ^{\infty } \lambda_m x_m \right) =\] 
 
-    \[ \lim_{N,M  \to \infty}  \sum_{k =1}^{ N } \sum_{m =1}^{ M }  \lambda_k \overline{\lambda_m } (\kern-20pt \underbrace{\overline{x_m, x_k}}_{= (x_k, x_m) =\delta_{km}  {\tiny\begin{cases} 1 \\ 0 \end{cases}}}\kern-20pt  )  = \sum_{k =1} ^{ \infty  } \lambda_k \overline{\lambda_k } = \sum_{k =1} ^{ \infty  } \left\lvert \lambda_k \right\rvert  ^2  \] 
+    \[ \lim_{N,M  \to \infty}  \sum_{k =1}^{ N } \sum_{m =1}^{ M }  \lambda_k \overline{\lambda_m } (\kern-30pt \underbrace{\overline{x_m, x_k}}_{= (x_k, x_m) =\delta_{km}  {\tiny\begin{cases} 1, k=m \\ 0 , k\neq m \end{cases}}}\kern-30pt  )  = \sum_{k =1} ^{ \infty  } \lambda_k \overline{\lambda_k } = \sum_{k =1} ^{ \infty  } \left\lvert \lambda_k \right\rvert  ^2  \] 
 
     \begin{flushright}
         \(  \# \) 
@@ -119,11 +119,11 @@
 
     Фундаментальность: 
 
-    \[ \left\lVert S_N - S_M         \right\rVert  ^2 = \left\lVert \sum_{n =n +1 } ^{M } \lambda_n x_n           \right\rVert ^2 = \sum _{n =n +1 } ^{M } \left\lvert \lambda_n \right\rvert ^2 \] 
+    \[ \left\lVert S_N - S_M         \right\rVert  ^2 = \left\lVert \sum_{n =N +1 } ^{M } \lambda_n x_n           \right\rVert ^2 = \sum _{n =N +1 } ^{M } \left\lvert \lambda_n \right\rvert ^2 \] 
 
     Неравенство Бесселя: \( \displaystyle  \sum_{k =1} ^{\infty  } \left\lvert \lambda_k \right\rvert  ^2 < \left\lVert x  \right\rVert  ^2  \) 
 
-    \[ \forall  \varepsilon \text{ }  \exists  N_0 \text{ }  \forall  N, M \ge N , \quad  \sum _{n =n +1 } ^{M } \left\lvert \lambda_n \right\rvert ^2 < \varepsilon \] 
+    \[ \forall  \varepsilon \text{ }  \exists  N_0 \text{ }  \forall  N, M \ge N , \quad  \sum _{n =N +1 } ^{M } \left\lvert \lambda_n \right\rvert ^2 < \varepsilon \] 
 
     Значит \( S_N \)  -  фундаментальная последовательность в Гильбертовом полном пространстве \( \Rightarrow  \) сходится. 
 
@@ -131,7 +131,7 @@
 
     \(\tiny \text{ Лектор: ''хорошая буква зет, давайте обозначим''} \) 
 
-    \[ (x- z , x_k ) = \lim_{N  \to \infty} \left( x - \sum_{n =1}^ N \lambda_n x_n ,x_n \right) = \lambda_k - \lim_{N  \to \infty} \sum _{n =1}^N \lambda_n (x_n, x_k ) = \lambda_k - \lambda_k = 0 \] 
+    \[ (x- z , x_k ) = \lim_{N  \to \infty} \left( x - \sum_{n =1}^ N \lambda_n x_n ,x_k\right) = \lambda_k - \lim_{N  \to \infty} \sum _{n =1}^N \lambda_n (x_n, x_k ) = \lambda_k - \lambda_k = 0 \] 
 
     \[ x- z \perp  x_k ,\text{ }  \forall k \] 
 
@@ -142,7 +142,7 @@
 \end{proof}
 
 \begin{theorem}[Рисса-Фишера]
-    \( H \)  - сепарабельное Гильбертово пространство ортонормированной системы \( \{x_k\} \). Пусть \( \lambda_1, \ldots, \lambda_k \)  - число, такое что ряд \( \displaystyle  \sum_{n =1}^{ \infty } \left\lvert \lambda_k   \right\rvert ^2   \) - сходится.
+    \( H \)  - сепарабельное Гильбертово пространство ортонормированной системы \( \{x_k\} \). Пусть \( \lambda_1, \ldots, \lambda_k \)  - числа, такие что ряд \( \displaystyle  \sum_{n =1}^{ \infty } \left\lvert \lambda_k   \right\rvert ^2   \) - сходится.
     Тогда \( \exists ! \text{  } x \in  H     \) такое, что \( \displaystyle \left\lVert x  \right\rVert     ^2 = \sum_{k =1} ^{\infty  } \left\lvert \lambda_k \right\rvert ^2 \). 
 
     \[ S_N = \sum _{n =1}^N \lambda_n x_n \] 
@@ -156,7 +156,7 @@
 
     \( z  \)  - предел \( S_N \): 
 
-    \[ (z , x_k ) - \lim_{N  \to \infty} (S_N , x_k )  = \lambda_k - \text{коэффициенты Фурье дял } z \] 
+    \[ (z , x_k ) =\lim_{N  \to \infty} (S_N , x_k )  = \lambda_k - \text{коэффициенты Фурье дял } z \] 
 
     \[ \left\lVert z  \right\rVert   ^2 = \left(  \sum_{k =1}^{ \infty  } \lambda_k x_k , z       \right) = \sum_{k =1}^{\lambda } \lambda_k ( \underbrace{x_k}_{=\overline{\lambda_k}  }, z ) = \sum_{k =1} ^{ \infty  } \left\lvert \lambda_k \right\rvert ^2    \] 
 
@@ -174,7 +174,7 @@
 \section{Изоморфизм}
 
 \begin{definition}
-    Пусть \( H_1, H_2 \) - Гильбертова пространства. \( H_1  \) - изоморфно \( H_2 \), если \( \exists A : H_1 \to H_2 \) и \( \exists B : H_2 \to H_1 \), которые: линейные, сохраняют скалярное произведение и взаимообратны. 
+    Пусть \( H_1, H_2 \) - Гильбертовы пространства. \( H_1  \) - изоморфно \( H_2 \), если \( \exists A : H_1 \to H_2 \) и \( \exists B : H_2 \to H_1 \), которые: линейные, сохраняют скалярное произведение и взаимообратны. 
 \end{definition}
 
 %%-------------------------------%
