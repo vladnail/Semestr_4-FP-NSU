@@ -27,7 +27,7 @@
     0 &  & \sqrt{\lambda_n(M)}
     \end{pmatrix}  U^{-1} \] 
 
-    \[ \sqrt{M} \sqrt{M}  =M\]
+    \[ \text{Видно, что: } \sqrt{M} \sqrt{M}  =M\]
 
     Пусть \( \vec{v_j}   \) - собственный вектор: \( (K- \lambda_j M ) \vec{v_j } =\vec{0}   \) 
 
@@ -39,7 +39,7 @@
 
     \[ A= A^{\top} , \quad  A^{\top } =\underbrace{ [(\sqrt{M } )^{-1} ]^{\top }}_{(\sqrt{M })^{-1} } \underbrace{K^{\top }}_{K} \underbrace{ [(\sqrt{M } )^{-1} ]^{\top }}_{(\sqrt{M })^{-1} }    \] 
 
-    Из алгебры (утверждение 2.) в \( \mathbb{R}     ^{ n }  \) существует базис из собственных векторов матрицы \( A : \sqrt{M }\vec{v_1 },..., \sqrt{M } \vec{v_n}    \). Так как \( \det \sqrt{M } \neq ,  \)  то \( v_1, \ldots, v_n \) - базис \( \mathbb{R} ^n  \). 
+    Из алгебры (утверждение 2.) в \( \mathbb{R}     ^{ n }  \) существует базис из собственных векторов матрицы \( A : \sqrt{M }\vec{v_1 },..., \sqrt{M } \vec{v_n}    \). Так как \( \det \sqrt{M }<0 ,  \)  то \( v_1, \ldots, v_n \) - базис \( \mathbb{R} ^n  \). 
     \[  \] 
 \end{proof}
  
@@ -65,12 +65,12 @@ f_n(t)
 \begin{theorem}
     Пусть \( \lambda_1, \ldots, \lambda_n \) - собственные числа, то есть \( \det (K - \lambda_j M ) = 0 \), \( v_1, \ldots, v_n  \)  - собственные вектора, то есть \( (K - \lambda_j M )v _j = 0 \) 
 
+    Пусть \( \lambda_1 \neq \lambda_2  \). Тогда \(\kern-0.8cm \underbrace{(M v_1 ,v_2 )}_{v_1,v_2 - M  \text{ - ортогональны} } =  \underbrace{(K v_1 ,v_2 )}_{v_1,v_2 - K \text{ - ортогональны} }\kern-0.8cm  = 0 \)  
 
 \end{theorem} 
 
 \begin{proof}
     \[  \] 
-    Пусть \( \lambda_1 \neq \lambda_2  \). Тогда \(\kern-0.8cm \underbrace{(M v_1 ,v_2 )}_{v_1,v_2 - M  \text{ - ортогональны} } =  \underbrace{(K v_1 ,v_2 )}_{v_1,v_2 - K \text{ - ортогональны} }\kern-0.8cm  = 0 \)  
 
     \[ \begin{aligned}
         \begin{cases}
@@ -107,11 +107,11 @@ f_n(t)
 
     \[ \vec{w_2 } = \vec{v_2 } + \alpha \vec{v_1 } , \text{ }  \alpha - ? , \text{  } ( M \vec{w_2 }, \vec{w_1 }  ) = 0    \] 
 
-    \[ \underbrace{(M \vec{w_2 }, \vec{w_1}  ) }_{0}= (M\vec{v_2 }, \vec{w_1 }  ) + \alpha (M \underset{=\vec{w_1}}{\vec{v_1 }}, \vec{w_1}   )  \Rightarrow \alpha = \frac{ (M \vec{v_2 }, \vec{w_1}  )}{(M \vec{w_1 }, \vec{w_1}  )} \] 
+    \[ \underbrace{(M \vec{w_2 }, \vec{w_1}  ) }_{0}= (M\vec{v_2 }, \vec{w_1 }  ) + \alpha (M \underset{=\vec{w_1}}{\vec{v_1 }}, \vec{w_1}   )  \Rightarrow \alpha =- \frac{ (M \vec{v_2 }, \vec{w_1}  )}{(M \vec{w_1 }, \vec{w_1}  )} \] 
 
     Пусть \( \vec{w_1 },..., \vec{w_{m-1} }    \) построены, причем \( (M \vec{w_i } , \vec{w_j}  )= 0 ,\text{ } i \neq j , \text{ } i,j= 1, \ldots, m-1 \) 
 
-    \[ \vec{w_n } = \vec{v_m }+ \sum_{j =1}^{m -1 }  \beta_j \vec{w_j } , \text{ } \beta_j -? , \text{ } (M \vec{w_m }, \vec{w_i}  ) = 0, \text{ } i=1, \ldots, m-1    \]
+    \[ \vec{w_m } = \vec{v_m }+ \sum_{j =1}^{m -1 }  \beta_j \vec{w_j } , \text{ } \beta_j -? , \text{ } (M \vec{w_m }, \vec{w_i}  ) = 0, \text{ } i=1, \ldots, m-1    \]
     
     \[ \underbrace{(M \vec{w_m } , \vec{w_i }  )}_{0} = (M \vec{v_m }, \vec{w_i} ) +\underbrace{ \sum_{j =1}^{m-1 } \beta_j (M\vec{w_j }, \vec{w_i}  )}_{\beta_i \underbrace{(M\vec{w_i }, \vec{w_i }  )}_{>0}}  \] 
 
@@ -124,6 +124,8 @@ f_n(t)
     \[ \vec{x } (t ) = \sum_{j =1}^{n } q_j \vec{w_j }  \] 
 
     \(\text{, где }  q_j (t ) \text{ - решение дифференциального уравнения: }  q_j '' + \lambda_j q_j = \tilde{f_j }(t) \) 
+
+    \[ \tilde{f }_j = \frac{(\vec{f } (t ), \vec{w_j} )}{(M \vec{w_j} , \vec{w_j} )} \] 
 \end{theorem}
 
 \begin{proof}
@@ -155,7 +157,7 @@ f_n(t)
 
 
 \begin{theorem}[Теорама Пикара]
-    Если \( f \in  C(\mathbb{D} ) , \text{  } \exists  \frac{\partial  f }{\partial  y } \in  C(\mathbb{D} ) \Rightarrow \forall  (t_0, y_0 ) \in  D \text{ } \exists !    \)  непродолжаемое  решение задачи Коши, определенной на открытом интервале \( \alpha, \omega \) 
+    Если \( f \in  C(\mathbb{D} ) , \text{  } \exists  \frac{\partial  f }{\partial  y } \in  C(\mathbb{D} ) \Rightarrow \forall  (t_0, y_0 ) \in  D \text{ } \exists !    \)  непродолжаемое  решение задачи Коши, определенной на открытом интервале \( (\alpha, \omega) \) 
 \end{theorem}
 
 Будем менять \( y_0 \)
@@ -188,6 +190,10 @@ f_n(t)
     \end{aligned}
 \end{aligned} \] 
 
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ДфУ/Лекции_по_дням/image/25.pdf}
+\end{center}
+
 \begin{theorem}
     Пусть \( f \in C(\mathbb{D}) , \text{ } \exists \frac{\partial f}{\partial y} \in C(\mathbb{D}) \). Пусть \((t_0, y_0^*) \in \mathbb{D}\). Пусть \( y(t, y_0^*) \) - решение задачи Коши, определенное на интервале \( (\alpha, \omega) \). Возьмем \( [t_1, t_2] \subset (\alpha, \omega) \). Тогда:
 
@@ -205,7 +211,7 @@ f_n(t)
 \end{center} 
 \[ 1) \text{ } y_0 > 0 ;\text{ }  T < \frac{1}{y_0 } \Leftrightarrow y_0 < \frac{1}{T } =\Delta  \] 
 
-\[ 2) \text{ } y(t,y_0 )= \frac{1}{\frac{1}{y_0 } - y    } \xrightarrow{y_0 \to  0 } 0 , \text{  }  t \in [-T,T]    \] 
+\[ 2) \text{ } y(t,y_0 )= \frac{1}{\frac{1}{y_0 } - t    } \xrightarrow{y_0 \to  0 } 0 , \text{  }  t \in [-T,T]    \] 
 
 %%-------------------------------%%
 

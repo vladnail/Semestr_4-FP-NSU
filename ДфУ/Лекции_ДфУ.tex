@@ -2,6 +2,14 @@
 % Подключение библиотеки
 \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
 
+\makeatletter
+\@addtoreset{corollarycounter}{section}
+\@addtoreset{theorem}{section}
+\@addtoreset{definition}{section}
+\@addtoreset{lemma}{section}
+\@addtoreset{proposition}{section}
+\makeatother  
+
 \begin{document}
 
 \begin{titlepage}
@@ -25,10 +33,13 @@
 \tableofcontents  % Создание оглавления
 
 \def\mainfile{}  % Определяем макрос для основного файла
+%Февраль
 \input{Лекции_по_дням/04.02_ДфУ.tex}
 \input{Лекции_по_дням/11.02_ДфУ.tex}
 \input{Лекции_по_дням/18.02_ДфУ.tex}
 \input{Лекции_по_дням/25.02_ДфУ.tex}
+%Март
+\input{Лекции_по_дням/04.03_ДфУ.tex}
 
 \vfill
 \begin{center}
