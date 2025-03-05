@@ -147,7 +147,7 @@
 
     \[ S_N = \sum _{n =1}^N \lambda_n x_n \] 
 
-    \[ \left\lVert S_N - S_M \right\rVert ^2 = \kern-40pt \underbrace{\sum _{p =N +1 } ^{M } \left\lvert \lambda_p \right\rvert ^2}_{\text{ сходится} \Rightarrow S_N - \text{ фундаментальный}  }\kern-40pt  < \varepsilon\] 
+    \[ \left\lVert S_N - S_M \right\rVert ^2 = \kern-40pt \underbrace{\sum _{p =N +1 } ^{M } \left\lvert \lambda_p \right\rvert ^2}_{\text{ сходится } \Rightarrow S_N - \text{ фундаментальный}  }\kern-40pt  < \varepsilon\] 
 \end{theorem}
 
 
@@ -175,6 +175,23 @@
 
 \begin{definition}
     Пусть \( H_1, H_2 \) - Гильбертовы пространства. \( H_1  \) - изоморфно \( H_2 \), если \( \exists A : H_1 \to H_2 \) и \( \exists B : H_2 \to H_1 \), которые: линейные, сохраняют скалярное произведение и взаимообратны. 
+
+    \[ \begin{aligned}
+        \begin{aligned}
+            \forall  x,y \in H_1 \\
+            \forall  u,v \in H_2
+        \end{aligned}
+        \forall \alpha, \beta - \text{ числа} 
+    \end{aligned} \]  
+
+    \[ A(\alpha x +\beta y ) = \alpha A(x )+ \beta A(y) \quad (A(x), A(y ))_{H_2 } = (x,y )_{H_2} \] 
+    
+    \[ B(\alpha u+\beta v ) = \alpha B(u )+ \beta B(v)\quad ( A(u), A(v ))_{H_2 } = (x,y )_{H_2} \] 
+
+    \[ \text{К.О}  \begin{cases}
+        B(A(x )) =x \\ 
+        A(B(u )) = u
+    \end{cases}\] 
 \end{definition}
 
 %%-------------------------------%

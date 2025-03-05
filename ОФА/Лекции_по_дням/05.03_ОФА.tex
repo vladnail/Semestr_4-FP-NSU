@@ -1,0 +1,223 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+
+\begin{theorem}[Теорема о изоморфизме гильбертовых пространствах]
+    Всякая сепарабельное бесконечномерное Гильбертово пространство (над \( \mathbb{R} \) или \( \mathbb{C} \)) изоморфно пространству \( l_2 \)  (над \( \mathbb{R} \) или \( \mathbb{C} \)).
+\end{theorem}
+
+\textit{Идея доказательства:} 
+
+\[ A: H \to  l_2 \] 
+
+\[ \begin{aligned}
+\begin{aligned}
+x \in  H \\ 
+\lambda \in  l_2 
+\end{aligned}
+\quad ?
+\end{aligned} \] 
+
+\[ A(x )  = (\lambda_1, \ldots, \lambda_n, \ldots): \text{ где } \lambda_k = (x, \lambda_k ) \text{ - коэффициенты Фурье} ;\text{ } A(x )\in  l_2 \text{  } ?  \] 
+
+\[ \sum_{1} ^{\infty  } \left\lvert \lambda_k        \right\rvert   ^2 \le \left\lVert x  \right\rVert ^2  \text{ - неравенство Бесселя} \] 
+
+1) \( A  \)  линейно? 
+
+2) \( A \) сохраняет скалярное произведение (это равенство Парсеваля)? 
+
+\[ B : l_2 \to  H \text{ по теореме Рисса-Фишера}  \] 
+
+3) \( B  \)  линейно? 
+
+4) \( B \) сохраняет скалярное произведение?
+
+5) \( A \)  и \( B  \)  взаимно обратны?
+
+Тригонометрическая система функция как пример полной ортонормированной системы в \( L_2 [- \pi, \pi] \) 
+
+\[ L_2[-\pi,\pi]:  \left\{ f: [-\pi, \pi ] \to  \mathbb{R}(\mathbb{C} ) \int_{-\pi }^{\pi}|f(t )  | ^2 dt < \infty   \right\}  \] 
+
+\[ (f,g )_{L_2 } = \int_{- \pi }^{\pi} f(t) \overline{g } (t ) dt    \] 
+
+Над \( \mathbb{R} \): 
+
+Ряды Фурье
+
+\[ \int_{- \pi }^{\pi } \cos (nx ) \cos (mx ) dx = \begin{cases}
+0 , \text{ } n \neq m \\ 
+\pi , \text{ } n = m \neq 0 \\ 
+2\pi , \text{ }  n = m = 0
+\end{cases}  \] 
+
+\[ \int_{- \pi }^{\pi } \sin (nx )\cos (mx )dx = \begin{cases}
+0 , \text{ } n \neq m \\ 
+\pi , \text{ } n = m 
+\end{cases}  \] 
+
+\[ \int_{- \pi }^{\pi } \cos (nx ) \sin (mx ) dx = 0  \] 
+
+Гильбертово пространство: 
+
+\[ \frac{1}{\sqrt{2 \pi }} , \frac{1}{\sqrt{\pi } } \cos x , \frac{1}{\sqrt{\pi } } \sin x ,..., \frac{1}{\sqrt{\pi } } \cos(nx) , \frac{1}{\sqrt{\pi } } \sin (nx)      \] 
+
+Ряд Фурье: 
+
+Коэффициенты Фурье
+
+\[ a_n = \frac{1}{\pi} \int_{- \pi }^{\pi}  f(x ) \cos (nx )dx \] 
+
+\[ b_n = \frac{1}{\pi }\int_{- \pi }^{\pi } f(x ) \sin (nx ) dx    \] 
+
+Гильбертово пространство: 
+
+Коэффициенты Фурье
+
+\[ \alpha_0 = \left(  f , \frac{1}{\sqrt{2 \pi } }  \right) = \frac{1}{\sqrt{2 \pi } } \int_{ - \pi }^{\pi } f (x ) dx = \sqrt{\frac{ \pi }{2 } } a_0    \] 
+
+\[ \alpha_n = \left( f ,\cos (nx ) \right) = \frac{1}{\sqrt{\pi } } \int_{- \pi }^{\pi } f(x ) \cos (nx ) dx = \sqrt{\pi } a_n   \] 
+
+\[ \beta_n = (f, \sin (nx )) =  \frac{1}{\sqrt{\pi } } \int_{- \pi }^{\pi } f(x ) \sin (nx ) dx = \sqrt{\pi } b_n   \] 
+
+\[ f(x ) \sim \frac{a_0}{2 }  + \sum_{ 1 } ^{\infty  } ( a_n \cos (nx )+ b_n \sin (nx))  \]  
+
+\[ f(x ) = \alpha_0 \frac{1}{\sqrt{2\pi } } + \alpha_1 \frac{1}{\sqrt{\pi } }\cos x + \beta \frac{1}{\sqrt{\pi } }\sin x + ... + \alpha_n \frac{1}{\sqrt{\pi } } \cos (nx ) + \beta_n \frac{1}{\sqrt{\pi } }\sin (nx ) =      \]  
+
+\[ = \frac{a_0}{2 } + a_1 \cos x + b \sin x + ...+ a_n \cos (nx )+ b_n \sin (nx)  \] 
+
+Равенство Ляпунова: 
+
+\[ \frac{a_0 ^2 }{2} + \sum_{n =1}^{\infty  } (a_n ^2 + b_n ^2 )   = \frac{1}{\pi } \int_{- \pi }^{\pi } |f(x)| ^2 dx  \] 
+
+Равенство Парсеваля: 
+
+\[ \alpha_0 ^2 + \sum ^{\infty  } (\alpha_n ^2 + \beta_0 ^2 ) = \pi \left( \frac{a_0 ^2 }{2 } + \sum_{n =1}^{\infty  }  (a_n ^2 + b_n ^2 ) \right)  = \int_{- \pi }^{\pi } f ^2 ( x ) dx  \] 
+
+
+\chapter{Классические ортогональные системы}
+
+\[ \norm{f}= \max _{t \in [ a,b]} |f(t)| \text{ - норма в }  C [ a,b]  \text{ равномерная норма.} \] 
+
+\[ f_n \xrightarrow{\text{равномерно} }  f \] 
+
+\[ \forall  \varepsilon > 0 , \text{ } \exists  N ,\text{ }  \forall  k > N: \max_{x \in [ a,b]} \left\lvert f_n(x )- f(x ) \right\rvert  < \varepsilon \Rightarrow \int_{a }^{b } \left\lvert f_n (x ) - f(x )   \right\rvert ^2 < \varepsilon ^2  \] 
+
+\[ C^{\infty  } ( \subset C)  \text{ плотны в } L_2 [a,b ] \Leftrightarrow  L_2 =  \overline{C }  ,\quad M \text{ плотно в } L \Leftrightarrow  L = \overline{M}   \] 
+
+\section{Весовое пространство Лебега }
+
+Пусть \( (a, b ) \)     - промежуток на \( \mathbb{R} \) (необязательно ограниченный)
+
+\begin{definition}
+    Функция \( h : (a,b ) \to  \mathbb{R}   \)   называется весовой иил весом, если: 
+
+    1) \( \forall  x \in  (a,b ) \text{ }  h(x )> 0  \) 
+
+    2) \( h( x ) > 0 \text{ п. вс. в }  (a,b)\) 
+
+    3) \( \displaystyle \int_{a }^{b} h(x ) dx< \infty  \) 
+\end{definition}
+
+\begin{definition}
+    Пространство функций 
+
+    \[ L_2 ^ h ( a, b ) = \left\{ f: (a,b )  \to  \mathbb{R} | \int_{ a }^{b } f ^2 ( x ) h (x ) dx < \infty \right\} \]  
+
+    назовем весовым пространством Лебега.
+\end{definition}
+
+Это пространство становится евклидовым, если на нем задано скалярное произведение
+
+\[ (f, g ) = \int_{a }^{b } f(x )g(x )h(x )dx \]  
+
+Скалярное произведение определено для любых функций \( f,g \) так как 
+
+\[ \left\lvert f(x ) g(x )h(x )\right\rvert < \frac{1}{2 }  [f ^2 (x )h(x ) + g ^2 (x ) h(x )] \] 
+
+\[ \left\lVert  f  \right\rVert = \sqrt{\int_{a }^{b } f ^2 ( x )h (x ) dx } \] 
+
+\textbf{Замечания: } 
+
+- Нулевым элементом пространства \( L^2 _h (a,b) \)  считаем такую функцию \( f  \), что выполнено \(\displaystyle  (f,f   ) = \int_{ a }^{b } f ^2 h( x )dx = 0  \) 
+
+- Весовое пространство Лебега \( L^2 _h (a,b) \)  является полным относительно нормы, порожденной скалярным произведением, то есть Гильбертовым. Для каждой функции \( h (x ) \) и промежутка \( (a, b) \) определятся специальное гильбертово пространство! 
+
+- Если интервал \( (a,b) \)  конечен, то \( \forall  n \text{ }  x^{n }  \in  L^ h _ 2 (a,b ). \) Если \( (a,b ) \) - бесконечный промежуток, то полагаем, что весовая функция убывает на бесконечности настолько быстро, что все мономы \( x^ n \in  L^2 _h (a,b ) \): 
+
+\[ \int_{a }^{b } x^{2n } h(x )dx < \infty  \] 
+
+Тогда в \( L^2 _h (a,b ) \) всегда есть последовательность мономов \( 1,x , x ^2, x ^3, \ldots, x^n, \ldots  \) 
+
+На любом интервале \( (a,b ) \) последовательность мономов \(1,x , x ^2, x ^3, \ldots, x^n, \ldots  \) образуют линейно назависимую сисстему. Применим к ней  процесс ортогнализации Грамма-Шмидта относительно скалярного произведения пространства \( L^2 _h (a,b ) \). Получим последовательность мономов: 
+
+\[ q_0,q_1, \ldots, q_n, \ldots,  \] 
+
+со свойствами:
+
+- \( \displaystyle  \int_{a }^{b } q_m (x ) q_n (x )h(x )dx = \delta _{mn}  \) 
+
+- \( \forall  n q_n  \) - многочлен степени \( n \) 
+
+Так же для удобства домножим, если это необходимо, многочлен \( q_n  \) на -1, так чтобы у каждого многочлена старший коэффициент \( a_n  \) стал положительным. 
+
+\begin{definition}
+    Последовательность полученных многочленов \( q_0,q_1, \ldots, q_n, \ldots,   \) называется последовательностью ортогональных многочленов на промежутке \( (a,b ) \) с весом \( h (x ) \)
+\end{definition}
+
+
+Ортонормированная система в Гильбертовом пространстве \( H \) полная 
+
+\[ \Rightarrow \underbrace{<\overline{\{x_k \}}  >}_{\text{замкнутое подпространство} } =H \] 
+
+Предположим противоречие \( \exists  y \in  H , \text{ } y \text{ } \cancel{\in } <\overline{\{x_k \}}  > \) 
+
+\( \exists   \) ортогональная  проекция  \( y  \) на \( <\overline{\{x_k \}}  > \) 
+
+\[ (y -z )  \perp <\overline{\{x_k \}}  > \] 
+
+\[ y- z \perp  x_k \forall  k \text{ противоречие}  \] 
+
+\[ y = z \Rightarrow y \in <\overline{\{x_k \}}  > \] 
+
+- Для конечного промежутка: полиномы плотны в \( L_2 ^h (a,b ) \) , значит, конечными линейными комбинациями мономов можно сколько угодно близко по норме \(  L_2 ^h (a,b ) \)  приблизиться к произвольной функции \( f \in  L_2 ^h (a,b ) \) , поэтому мономы образуют полную систему в \(  L_2 ^h (a,b ) \) . 
+
+-Мы будем использовать некоторые бесконечные \( (a,b) \)  и весовые функции \( h(x) \) , для этих частных случаев полнота мономов тоже доказана. 
+
+Процесс ортогонализации Грамма-Шмидта переводит полную систему в полную, поэтому система многочленов \(  q_0,q_1, \ldots, q_n, \ldots, \)  полна в \(  L_2 ^h (a,b ) \) , т.е. является гильбертовым базисом в \(  L_2 ^h (a,b ) \) . Можно ввести коэффициенты Фурье относительно этого базиса и разлагать функции в ряды по ортогональным многочленам.
+
+-Ортогональные многочлены многочлены определяются весом \( h(x ) \) и промежутком \( (a,b) \) однозначно (при сделанных предположений)
+
+- Если \( P(x ) \) - произвольный многочлен степени \( n \), то его можно представить как \( P(x ) = \displaystyle  \sum_{k=0 }^ m c_k q_k \)  
+
+- Если \( P_m(x ) \)  - произвольный многочлен степени \( m , \) и \( n>m \), то \( q_n \perp  q_m \) 
+
+\[ \displaystyle  \int_{a }^{b } P_m(x ) q_n (x )h(x )dx = \int_{a }^{b      } \left( \sum_{k =0 }^m c_k q_k(x ) \right) q_n(x ) h(x ) dx = 0 \] 
+
+- Если вес \( h: (-a , a ) \to  \mathbb{R} \) - четная функция, то \( q_n(x ) =(-1 )^n q_n (x ) \)
+
+Сделаем замену: \( x \to  -x \text{ в }  \displaystyle  \int_{-a }^ a q_m (x )q_n(x )h(x )dx = \delta_{{mn}} \)
+
+\[ \int_{-a }^{a } q_m (-x )q_n (-x )h(x )dx = \delta_{mn}  \]
+
+\[ \int_{-a }^{a } \tilde{q }_m (x )\tilde{q }_n (x )h(x )dx = \delta_{mn} \] 
+
+, где \( \tilde{q }_n =(-1 )^n q_n(x ), \text{ } \tilde{ q}_m = (-1 )^m q_m(x ) \). Тогда по первому свойству \( q_n = \tilde{q }_n = (-1 )^n q_n(x ) \)  
+
+
+
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi
