@@ -53,7 +53,7 @@
 
 \[ \vec{B } _{\perp  }(\vec{r } ,t ) = \vec{B } (x,y )e^{ i k_z z - \omega t}   \] 
 
-\[ \left( \mathrm{rot }   \vec{E }  \right)_{z }  = \frac{ i \omega }{c } (\vec{B } )_z = 0 \Rightarrow \frac{\partial  E_x } {\partial  x } - \frac{ \partial  E_x }{\partial  y} = 0 , \text{  ищем решение в таком виде:  } \vec{E} = - \nabla_{ \perp }  \varphi     \] 
+\[ \left( \mathrm{rot }   \vec{E }  \right)_{z }  = \frac{ i \omega }{c } (\vec{B } )_z = 0 \Rightarrow \frac{\partial  E_y } {\partial  x } - \frac{ \partial  E_x }{\partial  y} = 0 , \text{  ищем решение в таком виде:  } \vec{E} = - \nabla_{ \perp }  \varphi     \] 
 
 \[ E_x = - \frac{\partial  \varphi }{\partial x }, \text{  } E_y = - \frac{\partial  \varphi}{\partial  y } \Rightarrow \frac{ \partial  }{\partial  x }\left( - \frac{\partial  \varphi }{\partial  y }  \right)    - \frac{ \partial  }{\partial y  }\left( - \frac{\partial  \varphi }{\partial  x }  \right) = 0 \] 
 
@@ -101,7 +101,7 @@
 
 Рассмотрим только монохроматические электромагнитные волны \( \varepsilon ( \omega , \vec{r } ) , \text{ }  \mu (\omega ,\vec{r} ) \), будем рассматривать частный случай при заданной \( \omega \Rightarrow \varepsilon (\vec{r } ), \mu ( \vec{r } ) \). 
 
-Малый параметр \(\displaystyle  \varepsilon \sim  \frac{ \lambda\text{ - характерная длина волны} \ll 1  }{L \text{  - масштаб неоднородности среды}}   \).
+Малый параметр \(\displaystyle  \varepsilon \sim  \frac{ \lambda\text{ - характерная длина волны} }{L \text{  - масштаб неоднородности среды}}  \ll 1   \).
 
 Решение уравнений Максвелла для однородной системы: \( \begin{aligned}
 \vec{E } (\vec{r },t     ) = \vec{E }_0  e^{i (\vec{k } ,\vec{r}) - i \omega t  }  , \text{  }  \vec{E }_0 \perp \vec{k } \\
@@ -117,11 +117,11 @@
     \includegraphics[width=0.3\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/63.png}
 \end{center}
 
-\[ \Delta \varphi (\text{сдвиг в сред} ) = k_1 \Delta r_1 + k_2 \Delta r_2 +... + \sum  k_i \Delta r_i = k_0 \sum n_i \Delta r_i = k_0 \underset{\text{оптический путь} }{\int_{1 }^{2 } n(\vec{r } )ds }= \psi (\vec{r} ) -\] 
+\[ \Delta \varphi (\text{сдвиг по фазе} ) = k_1 \Delta r_1 + k_2 \Delta r_2 +... + \sum  k_i \Delta r_i = k_0 \sum n_i \Delta r_i = k_0 \underset{\text{оптический путь} }{\int_{1 }^{2 } n(\vec{r } )ds }= \psi (\vec{r} ) -\] 
 
-- скалярная функция \( \vec{r}  \) - эйконал\dots
+- скалярная функция \( \vec{r}  \) - эйконал.
 
-Пусть \( \vec{E } ( \vec{r } ,t ) = \underset{\text{медленная функция от  } \vec{r } , \text{ изменяется на масштабе } L  }{\vec{E } _0 } \cdot e^{ i k_0 \psi (\vec{r } ) - i \omega t}  \to  \text{ в уравнение Максвелла} \) 
+Пусть \( \vec{E } ( \vec{r } ,t ) = \vec{E } _0  \cdot e^{ i k_0 \psi (\vec{r } ) - i \omega t}  \to  \text{ в уравнение Максвелла} \), где \( \vec{E } _0\text { медленная функция от  } \vec{r }   \),  изменяется на масштабе \( L  \).
 
 \[ \mathrm{rot } \left[ \vec{E_0 }(\vec{r } ) e^{i k_0 \psi (\vec{r } )- i \omega t }   \right] = -\frac{1}{c} \frac{\partial  }{\partial  t } \left[ \vec{B }_0 e^{i k_0 \psi (\vec{r } )- i \omega t}   \right]   \] 
 
@@ -129,17 +129,17 @@
 
 \[ = e^{i k_0 \psi (\vec{r } )} \mathrm{rot } \vec{E } _0 (\vec{r } ) + e^{i k_0 \psi (\vec{r } )} i k_0 \left[ \nabla \psi (\vec{r } ) \times  \vec{E } _0 (\vec{r } ) \right] = \frac{i \omega }{c } \vec{B } _0 (\vec{r } ) e^{i k_0 \psi (\vec{r } )}    \] 
 
-\[ \underset{\sim \frac{\vec{E } _0 (\vec{r } )}{L} }{\mathrm{rot } \vec{E } _0 (\vec{r} )} + \underset{= \frac{2\pi}{\lambda_0} }{i k_0 }\underset{\sim 1  \vec{E } _0 (\vec{r} )}{\left[ \nabla \psi (\vec{r } ) \times \vec{E } _0 (\vec{r} ) \right] } = \frac{ i \omega }{c }\vec{B } _ 0  (\vec{r } ) \] 
+\[ \underbrace{\underset{\sim \frac{\vec{E } _0 (\vec{r } )}{L} }{\cancelto{0}{\mathrm{rot } \vec{E } _0 (\vec{r} )}} }_{E/1 \text{ см} }+ \underbrace{\underset{= \frac{2\pi}{\lambda_0} }{i k_0 }\underset{\sim 1  \vec{E } _0 (\vec{r} )}{\left[ \nabla \psi (\vec{r } ) \times \vec{E } _0 (\vec{r} ) \right] }}_{E_0/10^{-4 } \text{ см} } = \frac{ i \omega }{c }\vec{B } _ 0  (\vec{r } ) \] 
 
 \[ \Rightarrow \left[ \nabla \psi (\vec{r } ) \times  \vec{E } _0 (\vec{r } ) \right] = \vec{B } _0 (\vec{r } ) ,\quad \mu(\vec{r } ) \mathrm{rot } \vec{H }  = - \frac{ i \omega }{c } \varepsilon (\vec{r } ) \mu (\vec{r } ) \vec{E }  \mu ( \vec{r } )  \] 
 
-\[ \left[ \nabla \psi (\vec{r } ) \times \vec{E } _ 0 (\vec{r } )\right] = -  \varepsilon (\vec{r } ) \mu (\vec{r } ) \vec{E } _ 0 (\vec{r } ) = - n ^2 (\vec{r } ) \vec{E } _ 0 (\vec{r } ) \] 
+\[ \left[ \nabla \psi (\vec{r } ) \times \vec{B } _ 0 (\vec{r } )\right] = -  \varepsilon (\vec{r } ) \mu (\vec{r } ) \vec{E } _ 0 (\vec{r } ) = - n ^2 (\vec{r } ) \vec{E } _ 0 (\vec{r } ) \] 
 
-1. \( \vec{E } _0 (\vec{r } ), \text{ } \vec{B } _0 (\vec{r } ) , \text{ }  \psi (\vec{r } ) \)  - взаимно \( \perp  \) вектора
+1. \( \vec{E } _0 (\vec{r } ), \text{ } \vec{B } _0 (\vec{r } ) , \text{ }  \nabla \psi (\vec{r } ) \)  - взаимно \( \perp  \) вектора
 
 \[ \left[ \nabla \psi \times \left[ \nabla \psi \times  \vec{E } _0 \right] \right] = - n ^2 \vec{E } _0 \] 
 
-\[ \nabla \psi (\nabla \psi ,\vec{E } _0)- \vec{E } _0 (\nabla \psi ) ^2 = - n ^2 \vec{E } _0 \] 
+\[ \nabla \psi \cancelto{0}{ (\nabla \psi ,\vec{E } _0)}- \vec{E } _0 (\nabla \psi ) ^2 = - n ^2 \vec{E } _0 \] 
 
 \[ \Rightarrow (\nabla \psi (\vec{r } )) ^2  = n ^2 (\vec{r } ) \text{ - уравнений эйконала} \] 
 
@@ -159,9 +159,9 @@
 
 \[  <[\mathrm{Re } \vec{E } \times  \mathrm{Re } \vec{H }   ]> = <[(\vec{E } (\vec{r } )e^{ -i \omega t}  + \vec{E } ^{* } (\vec{r } )e^{ i \omega t } )] \times [\vec{H }  (\vec{r } ) e^{- i \omega t } + \vec{H } ^{* } e^{ i \omega t }  ]> = \] 
 
-\[ \frac{ [ \vec{E } (\vec{r } ) \times  \vec{H } ( \vec{r } ) ]+ [ \vec{E } ^{* } (\vec{r } )\times  \vec{H } (\vec{r } )]}{4} = \frac{1}{2 }  \mathrm{Re } [\vec{E } (\vec{r } ) \times  \vec{H } ^{ * } (\vec{r} )]   \] 
+\[ \frac{ [ \vec{E } (\vec{r } ) \times  \vec{H }^* ( \vec{r } ) ]+ [ \vec{E } ^{* } (\vec{r } )\times  \vec{H } (\vec{r } )]}{4} = \frac{1}{2 }  \mathrm{Re } [\vec{E } (\vec{r } ) \times  \vec{H } ^{ * } (\vec{r} )]   \] 
 
-\[ \vec{\mathbb{S}} = \frac{c}{8 \pi \mu } \mathrm{Re } [\vec{E } _0 (\vec{r } ) e^{i k_0 \psi (\vec{r } )}\times \vec{B } ^{* } (\vec{r } ) e^{- i k_0 \psi (\vec{r} )}  ]    \] 
+\[ \vec{\mathbb{S}} = \frac{c}{8 \pi \mu } \mathrm{Re } [\vec{E } _0 (\vec{r } )\cancel{e^{ i k_0 \psi (\vec{r} )} }\times \vec{B }_0 ^{* } (\vec{r } ) \cancel{e^{- i k_0 \psi (\vec{r} )} } ]    \] 
 
 %%-------------------------------%%
 
