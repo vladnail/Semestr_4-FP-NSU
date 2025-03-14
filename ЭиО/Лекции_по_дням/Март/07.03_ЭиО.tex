@@ -12,19 +12,21 @@
 
 \textbf{Второе уравнение Максвелла:}
 
-\[ \mathrm{rot } (\vec{H_0 }(\vec{r } ) e^{ i k_0 \psi (\vec{r } )- i \omega t } = -\frac{i \omega  \varepsilon}{c } \vec{E } _0 e^{ i k_0 \psi - i \omega t }      )   \] 
+\[ \mathrm{rot } (\vec{H_0 }(\vec{r } ) e^{ i k_0 \psi (\vec{r } )- i \omega t }) = -\frac{i \omega  \varepsilon}{c } \vec{E } _0 e^{ i k_0 \psi - i \omega t }         \] 
 
 \[ \mathrm{rot } \vec{H } _0 e^{i k_0 \psi(\vec{r} ) - i \omega t    }  + i k_0 [\nabla \psi (\vec{r } \times  \vec{H}  _0 )]e^{i k_0 \psi(\vec{r } )- i \omega t} = - \frac{i \omega \varepsilon(\vec{r } )}{c } \vec{E } _0 (\vec{r } ) e^{ i k_0 \psi(\vec{r } )- i \omega t }    \] 
 
 \[ \Rightarrow [\nabla \psi (\vec{r } )\times  \vec{H } _0 (\vec{r } )] = - \varepsilon (\vec{r } ) \vec{E } _0 (\vec{r } ) \Rightarrow [\nabla \psi (\vec{r } ) \times  \vec{B } _0 (\vec{r } )] = - \varepsilon(\vec{r } ) \mu(\vec{r} ) \vec{E } _0 (\vec{r} )\] 
 
+\textbf{Продолжение вектора Умова-Пойтинга}: 
+
 \[ <\vec{\mathbb{S}}> = \frac{c}{8 \pi } [ \vec{E } \times  \vec{H }^*   ]   = \frac{c}{8 \pi } \mathrm{Re } [ \vec{E } _0 (\vec{r } )e^{ i k_0 \psi( \vec{r } )- i \omega t }\times  \vec{H } _0 ^* e^{ -i k_0 \psi(\vec{r } ) + i\omega t }  ]  \] 
 
-\[ \nabla \psi(\vec{r }  \times  \vec{E } _0 (\vec{r } )) = \vec{B } _0 (\vec{r } ) \] 
+\[ \text{Подставим: } \nabla \psi(\vec{r }  \times  \vec{E } _0 (\vec{r } )) = \vec{B } _0 (\vec{r } ) \] 
 
 \[ <\vec{\mathbb{S} } > = \frac{c}{\mu(\vec{r } ) 8 \pi } [\vec{E } _0 (\vec{r }  )\times  [ \nabla \psi(\vec{r } ) \times  \vec{E } _0 ^ * (\vec{r } )]] = \frac{c}{\mu(\vec{r } )8 \pi } \mathrm{Re } \{ \nabla \psi (\vec{E } _0 (\vec{r }) , \vec{E} _0 ^* ) - ( \nabla\psi , \vec{E } _0 ^ * (\vec{r } )) \vec{E } _0 ^* (\vec{r } ) \} =  \] 
 
-\[ = \frac{c}{\sqrt{\varepsilon (\vec{r }  )\mu (\vec{r } )}} \underbrace{\frac{\nabla \psi }{\sqrt{\varepsilon (\vec{r } )\mu (\vec{ r } )} } }_{|\nabla  \psi | = \sqrt{\varepsilon \mu } = n \text{ } (1)}\underbrace{\frac{ \varepsilon \left\lvert \vec{E } _0    \right\rvert ^2 }{ 8 \pi }}_{2W_E = W_E + W_B}  = \frac{c}{\sqrt{\varepsilon \mu }}\vec{u } (W_E + W_B)   \] 
+\[ = \underbrace{\frac{c}{\sqrt{\varepsilon (\vec{r }  )\mu (\vec{r } )}}}_{v_{\Phi} } \underbrace{\frac{\nabla \psi }{\sqrt{\varepsilon (\vec{r } )\mu (\vec{ r } )} } }_{|\nabla  \psi | = \sqrt{\varepsilon \mu } = n \text{ } (1)}\underbrace{\frac{ \varepsilon \left\lvert \vec{E } _0    \right\rvert ^2 }{ 8 \pi }}_{2W_E = W_E + W_B}  = \frac{c}{\sqrt{\varepsilon \mu }}\vec{u } (W_E + W_B)   \] 
 
 (1) - единичный вектор вдоль \( \nabla \psi   \), вдоль луча \( \vec{u}  \)
 
@@ -40,7 +42,7 @@
 
 \[ \frac{d}{ds }  ( \nabla \psi ) = (\vec{u } , \nabla ) \nabla \psi = \frac{1}{n (\vec{r } ) } (\nabla \psi , \nabla )\nabla\psi \] 
 
-\[ [ \vec{a }  \times  \mathrm{rot } \vec{b } ] = [ \vec{a }  \times  [ \nwarrow \times  \vec{b} ]]   = \nabla (\vec{a }  , \vec{ b } )  - (\vec{a }  , \nabla ) \vec{b }  \to  [ \nabla \psi \times  \mathrm{rot } (\nabla \psi ) ] = \nabla \frac{ (\nabla \psi ) ^2 }{2 } - (\nabla \psi, \nabla      )  \nabla \psi\] 
+\[ [ \vec{a }  \times  \mathrm{rot } \vec{b } ] = [ \vec{a }  \times  [ \nabla \times  \vec{b} ]]   = \nabla (\vec{a }  , \overset{\downarrow}{\vec{ b }} )  - (\vec{a }  , \nabla ) \overset{\downarrow}{\vec{b }}  \to  [ \nabla \psi \times  \mathrm{rot } (\nabla \psi ) ] = \nabla \frac{ (\nabla \psi ) ^2 }{2 } - (\nabla \psi, \nabla      )  \nabla \psi\] 
 
 Если \( \vec{ a }  =\vec{b }     \), то \(\displaystyle  \nabla (\vec{a } , \vec{a } ) = \nabla \left( \frac{a ^2 }{2 }   \right) \):
 
@@ -62,7 +64,7 @@
 
 \[ n (\vec{r } )\frac{d}{ds } \left(  n (\vec{r } ) \frac{d \vec{r } }{ds}  \right) = \nabla n \cdot n (\vec{r } ) \] 
 
-\[ d \tau = \frac{ds}{d n(\vec{r } )} \Rightarrow \frac{d}{d \tau } \bigg( m , \kern-2cm \underbrace{\frac{d \vec{r } }{d \tau}}_{\text{скорость частице, двигающиеся вдоль луча } }  \kern-2cm \bigg)   =\nabla \frac{ n (\vec{r } )}{2 }  \] 
+\[ d \tau = \frac{ds}{d n(\vec{r } )} \Rightarrow \frac{d}{d \tau } \bigg( m , \kern-2cm \underbrace{\frac{d \vec{r } }{d \tau}}_{\text{скорость частице, двигающиеся вдоль луча } }  \kern-2cm \bigg)   =\nabla \frac{ n ^2  (\vec{r } )}{2 }  \] 
 
 \[ \begin{cases}
     \displaystyle m \frac{d \vec{r } }{d \tau }  = \vec{ p } , \quad  \frac{ d \vec{ p } }{d \tau } =\vec{F } = - \nabla U = \nabla \frac{ n ^2 (\vec{r } )}{2 }  \\
@@ -71,7 +73,7 @@
 
 \[ \frac{ p ^2 }{ 2 m } + U = \mathrm{const}    \]
 
-\[ \frac{(\nabla \psi ) ^2 }{2 } -\frac{ n ^2 (\vec{r } )}{2 } =0   \] 
+\[ \frac{(\nabla \psi ) ^2 }{2 } -\frac{ n ^2 (\vec{r } )}{2 } =0 \text{ - уравнение эйконала}   \] 
 
 \section{Вариационный принцип - принцип Ферма} 
 
@@ -84,16 +86,16 @@
 \[ \int_{ p_1 }^{p_2 } n (\vec{r } )d s = \int_{ p_1 }^{ p_2} \underbrace{ n (\vec{r } ) \sqrt{ \left( \frac{dx}{dt }     \right) ^2 + \left( \frac{dy}{dt }     \right) ^2  +\left( \frac{dz}{dt }     \right) ^2  }}_{\mathbb{L}(\vec{r }  ,\dot{ \vec{r}}  )} dt = \min  \] 
 
 \[ \begin{aligned}
-    \frac{d }{dt } \left(  \frac{\partial  L }{\dot{x } }  \right) =  - \frac{\partial  L }{x}  \to \frac{d}{dt } \left(  \frac{ 2 \dot{ x }  n (\vec{r } )}{ 2 \sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2 } }   \right) = -\sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2}  \frac{\partial  n ( \vec{r } )}{\partial  x} \\ 
-    \frac{d }{dt } \left(  \frac{\partial  L }{\dot{y } }  \right) =  - \frac{\partial  L }{y} \\
-    \frac{d }{dt } \left(  \frac{\partial  L }{\dot{z } }  \right) =  - \frac{\partial  L }{z} 
+    \frac{d }{dt } \left(  \frac{\partial  L }{\dot{x } }  \right) &=   \frac{\partial  L }{x}  \to \frac{d}{dt } \left(  \frac{ 2 \dot{ x }  n (\vec{r } )}{ 2 \sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2 } }   \right) = \sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2}  \frac{\partial  n ( \vec{r } )}{\partial  x} \\ 
+    \frac{d }{dt } \left(  \frac{\partial  L }{\dot{y } }  \right) &=  \frac{\partial  L }{y} \\
+    \frac{d }{dt } \left(  \frac{\partial  L }{\dot{z } }  \right) &=   \frac{\partial  L }{z} 
 \end{aligned} \] 
 
-\[     \frac{d}{\sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2 }} \left(  \frac{\vec{e } _x \dot{ x }  n(\vec{r } )}{\sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2 }}  \right) = - \vec{e } _x \frac{ \partial  n (\vec{r } )}{\partial  x } 
+\[     \frac{d}{\sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2 }} \left(  \frac{\vec{e } _x \dot{ x }  n(\vec{r } )}{\sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2 }}  \right) = \vec{e } _x \frac{ \partial  n (\vec{r } )}{\partial  x } 
 \] 
 
 \[ \begin{array}{l|}
-    \frac{d}{\sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2 }} \left(  \frac{\vec{e } _x \dot{ x }  n(\vec{r } )}{\sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2 }}  \right) = - \vec{e } _x \frac{ \partial  n (\vec{r } )}{\partial  x } \\
+    \displaystyle \frac{d}{\sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2 }} \left(  \frac{\vec{e } _x \dot{ x }  n(\vec{r } )}{\sqrt{\dot{ x } ^2 + \dot{ y } ^2 + \dot{ z } ^2 }}  \right) =  \vec{e } _x \frac{ \partial  n (\vec{r } )}{\partial  x } \\
 \end{array}   \] 
 
 Примеры решений уравнений луча: 
@@ -103,6 +105,10 @@
 \[ \frac{d}{ds } \left( n_0 \frac{ d \vec{r } }{d s }     \right) = 0 \Rightarrow n_0 \frac{d \vec{r } }{ds} = \vec{a } \text{ - постоянные вектор}  \] 
 
 \[ \vec{r } = \frac{ \vec{a } }{ n_0 }s + \vec{b }   \] 
+
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/90.png}
+\end{center}
 
 2) Движение луча в сферически симметричном распределении \( n(\vec{r } ) = n (r ) \) 
 
@@ -142,7 +148,7 @@
 
 Используем приближение малых углов (параксиальное приближение)
 
-\[ \theta_1 = \widehat{\vec{U } _1 \vec{e } _z }  \quad  \theta_2 = \widehat{\vec{U } _2 \vec{e } _z }     \] 
+\[ \theta_1 = \widehat{\vec{u } _1 \vec{e } _z }  \quad  \theta_2 = \widehat{\vec{u } _2 \vec{e } _z }     \] 
 
 Правила:
 
