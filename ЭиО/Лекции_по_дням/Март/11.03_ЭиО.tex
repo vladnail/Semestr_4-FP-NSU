@@ -47,7 +47,7 @@
     \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/73.png}
 \end{center} 
 
-\[ \text{ Если } z_1< 0 \Rightarrow (n_1 -n_2 )R < 0   \] 
+\[ \text{ Если } z_1< 0 \Rightarrow (n_2 -n_1 )R < 0   \] 
 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/74.png}
@@ -63,9 +63,9 @@
 
 \[ (x_1 , \theta_1 ) \text{ и  } (x_2 , \theta_2 )  \] 
 
-\[ x_2 = x_1 + \theta_1 (z_2 -z_1 ) \Rightarrow x_2 = x_1 + x_1 ' (z_2 -z_1  ) (x_2 ' = x_1 ') \] 
+\[ x_2 = x_1 + \theta_1 (z_2 -z_1 ) \Rightarrow x_2 = x_1 + x_1 ' (z_2 -z_1  ) \quad  (x_2 ' = x_1 ') \] 
 
-\[ \theta \approx th \theta = \frac{dx}{dz } = x ' \] 
+\[ \theta \approx \mathrm{tg}   \theta = \frac{dx}{dz } = x ' \] 
 
 \[ \frac{1}{F_{12} } = \left(  1 - \frac{n_1}{n_2 }  \right) \frac{1}{R}   \] 
 
@@ -111,7 +111,7 @@ V_1
 x_2     \\
 V_2
 \end{pmatrix} = \begin{pmatrix}
-1  & \frac{z_2 - z_1 }{-n }  \\
+1  & \frac{z_2 - z_1 }{n }  \\
 0  & 1 
 \end{pmatrix} \begin{pmatrix}
 x_1     \\
@@ -134,9 +134,10 @@ V_1
     \end{pmatrix} = \begin{pmatrix}
         1  & 0  \\
        - p    & 1 
-    \end{pmatrix} ; \text{ }  p_1 = - \frac{n_2}{F_{02} } - \frac{n_2}{F_{10}}   \] 
+\end{pmatrix} ; \text{ }  -p = - \frac{n_2}{F_{02} } - \frac{n_2}{F_{10}}   \] 
+, где \( p  \) - оптическая сила.
 
-Реальный случай \( n_1 = n_2 , \text{ } n_0 = n \) 
+Реальный случай \( n_1 = n_2 =1, \text{ } n_0 = n \) 
 
 \[  p = (1 - n ) \frac{1}{R_2} + n \left( 1 - \frac{1}{n }  \right) \frac{1}{R_1} =   (n -1 ) \left(  \frac{1}{R_1 } - \frac{1}{R_2 }   \right) = \frac{1}{F_{\text{линзы} } }  \] 
 
@@ -186,7 +187,7 @@ V_2
 \end{pmatrix}=
 \begin{pmatrix}
     1- \frac{z_2}{F }   & -z_1 + z_2   \left( 1 + \frac{z_1}{F}  \right)\\
-    - \frac{1}{F }  & 1+ \frac{z_2}{F}  
+    - \frac{1}{F }  & 1+ \frac{z_1}{F}  
 \end{pmatrix}
 \begin{pmatrix}
     x_1 \\
@@ -211,7 +212,7 @@ V_2
 \end{pmatrix}
 \begin{pmatrix}
     x_1 \\
-    V_1
+    0
 \end{pmatrix}
 \) 
 
@@ -249,9 +250,9 @@ V_2
 \] 
 
 
-\[ \frac{1}{F_0 } = - \frac{1}{F_{02} }+ \frac{d}{F_{02} F_{10} } - \frac{n}{F_{10}}     \] 
+\[ -\frac{1}{F_0 } = - \frac{1}{F_{02} }+ \frac{d}{F_{02} F_{10} } - \frac{n}{F_{10}}     \] 
 
-\[ \frac{1}{F_0 } = (n -1 ) \left(  \frac{1}{R_1 } - \frac{1}{R_2 }    \right)  - d \frac{ 1 - n }{R_2 } \frac{1 - \frac{1}{n } }{R_1  } = (n -1 ) \left( \frac{1}{R_1 } - \frac{1}{R_2 }      \right) + \frac{d (n-1 ) ^2 }{b R_1 R_2 }     \] 
+\[ \frac{1}{F_0 } = (n -1 ) \left(  \frac{1}{R_1 } - \frac{1}{R_2 }    \right)  - d \frac{ 1 - n }{R_2 } \frac{1 - \frac{1}{n } }{R_1  } = (n -1 ) \left( \frac{1}{R_1 } - \frac{1}{R_2 }      \right) + \frac{d (n-1 ) ^2 }{n R_1 R_2 }     \] 
 
 Пусть \( M = \begin{pmatrix}
 m_{11}   & m_{12}\\
@@ -267,12 +268,12 @@ m_{21} & m_{22}
     V_2 
     \end{pmatrix}
     \begin{pmatrix}
-        1- \frac{z_2}{F }   & 0\\
-        - \frac{1}{F }  & 1+ \frac{z_2}{F}  
+        m_{11}   & m_{12}\\
+        m_{21}  & m_{22}  
     \end{pmatrix}
     \begin{pmatrix}
         x_1 \\
-        V_1
+        0
     \end{pmatrix}
 \Rightarrow \begin{aligned}
 x_2 &= m_{11} x_1 \\
