@@ -137,29 +137,30 @@ y ' = f(t,y , \mu ) \\
 y (t_0 )= y_0 
 \end{cases}
 \quad \Rightarrow \quad  
-y(t, \mu) \, \text{ Хотим }: \exists  \frac{\partial  f }{\partial  y } 
+y(t, \mu) \, \text{ Хотим }: \exists  \frac{\partial  y }{\partial  \mu } 
 \end{aligned} \] 
 
 Пусть  \( \exists  \frac{\partial  y }{\partial \mu }  \) - непрерывна. Тогда по формуле Тейлора: 
 
-\[ y(t, \mu ) = y(t, \mu^* ) + \frac{\partial  }{\partial  \mu } y(t,\mu ^* ) (\mu - \mu^* ) +\underbrace{ g (t, \mu )}_{o(\mu - \mu^*)} , \quad  \lim_{\mu  \to \mu^ * } \frac{ g(t, \mu )}{\mu - \mu^* } = 0   \] 
+\[ y(t, \mu ) = y(t, \mu^* ) + \frac{\partial  }{\partial  \mu } y(t,\mu ^* ) (\mu - \mu^* ) +\underbrace{ g (t, \mu )}_{o(\mu - \mu^*)} , \quad  \underbrace{\lim_{\mu  \to \mu^ * } \frac{ g(t, \mu )}{\mu - \mu^* } = 0}_{\text{определено мало} }   \] 
 
 \[ f: B \to  \mathbb{R} , \text{ }  B \subset \mathbb{R}    ^3  , \text{ }  B \text{ - непустое открытое множество}  \] 
 
-\begin{theorem} [Теорема 3.]
-    Пусть \(  f \in  C (B ) , \text{ }  \exists  \frac{\partial  f }{\partial  y } \in  C (B ) , \text{  } \exists  \frac{\partial  f }{\partial  \mu } \in  C (B )     \). Пусть \( (t_0 , y_0 , \mu^* ) \in  B   , y(t, \mu ^* )   \)  определено на \( (\alpha , \omega ) \). Возьмем \( [t_1,t_2 ] \in (\alpha , \omega ) \). Тогда: 
+\begin{flushleft}
+    \textbf{Теорема 3.}  Пусть \(  f \in  C (B ) , \text{ }  \exists  \frac{\partial  f }{\partial  y } \in  C (B ) , \text{  } \exists  \frac{\partial  f }{\partial  \mu } \in  C (B )     \). Пусть \( (t_0 , y_0 , \mu^* ) \in  B   , y(t, \mu ^* )   \)  определено на \( (\alpha , \omega ) \). Возьмем \( [t_1,t_2 ] \in (\alpha , \omega ) \). Тогда: 
     
     0) \( \displaystyle  \exists  \Delta > 0 , \text{ }  \forall  \mu : |\mu - \mu^*    |  < \Delta \Rightarrow y( t, \mu )\) определено на \( [ t_1,t_2 ] \) 
 
     1) \(\displaystyle  \exists  \frac{\partial  y }{\partial  \mu } (t, \mu) \in  C (P) ,  \) где \( P= \{(t,\mu ): t \in  [t_1, t_2 ] , \text{ } |\mu - \mu^* | < \Delta \} \) 
 
-    2) \( \displaystyle  \exists  \frac{\partial  ^2 y } {\partial  \mu \partial  t } \in  C ( P)  \) 
+    2) \( \displaystyle  \exists  \frac{\partial  ^2 y } {\partial  \mu \partial  t } = \frac{ \partial  ^2 y }{\partial  t \partial  \mu } \in  C(P)   \) 
 
-    3) \( \underbrace{v ( t ,\mu )}_{\frac{\partial  y }{\partial  \mu }(t,\mu ) } \) - решение задачи Коши: \( \begin{cases}
-    \displaystyle \frac{\partial  }{\partial  t } v = \frac{\partial  f } {\partial  y } + \frac{\partial  f }{\partial  \mu } \xleftarrow{ }  \text{ уравнение в вариациях Пуанкаре}  \\ 
-    v(t_0 )  = 0   
-    \end{cases} \) 
-\end{theorem}
+    3) \( \underbrace{v ( t ,\mu )}_{\frac{\partial  y }{\partial  \mu }(t,\mu ) } \) - решение задачи Коши: 
+    \[ \begin{cases}
+        \displaystyle \frac{\partial  }{\partial  t } v = \frac{\partial  f } {\partial  y }v + \frac{\partial  f }{\partial  \mu } \xleftarrow{ }  \text{ уравнение в вариациях Пуанкаре}  \\ 
+        v(t_0 )  = 0   
+        \end{cases}  \]  
+\end{flushleft}
 
 Пример 3: 
 
@@ -219,7 +220,7 @@ y(t, \mu) \, \text{ Хотим }: \exists  \frac{\partial  f }{\partial  y }
 
 \[\begin{aligned}
     \begin{cases}
-        \displaystyle \frac{\partial  }{\partial  t }w (t ) = 4 t - 2 y (t, 0 ) w (t ) \\ 
+        \displaystyle \frac{\partial  }{\partial  t }w (t ) = 4 t - \underbrace{2 y (t, 0 )}_{\frac{1}{t} } w (t ) \\ 
         w(t ) |_{t =1} = 0  
     \end{cases}
     \begin{cases}
@@ -256,8 +257,8 @@ y(t, \mu) \, \text{ Хотим }: \exists  \frac{\partial  f }{\partial  y }
 
 \[ f: \mathbb{D} \to  \mathbb{R} , \text{ }  \mathbb{D} \subset \mathbb{R} ^2 , \text{ }  \mathbb{D} \text{  - непустое открытое множество}  \] 
 
-\begin{theorem}(Теорема 4.)
-    Пусть \( f \in  C (\mathbb{D} ) , \text{ } \exists \frac{\partial  f }{\partial  y } \in  C(\mathbb{D} )   \). Пусть \( (t_0 , y_0 ^* ) \in  \mathbb{D} , \text{  } y(t ,y_0^* ) \) определено на \( (\alpha , \omega ) \). Возьмем \( [t_1,t_2 ] \subset (\alpha \omega ) \). Тогда: 
+\begin{flushleft}
+    \textbf{Теорема 4.} Пусть \( f \in  C (\mathbb{D} ) , \text{ } \exists \frac{\partial  f }{\partial  y } \in  C(\mathbb{D} )   \). Пусть \( (t_0 , y_0 ^* ) \in  \mathbb{D} , \text{  } y(t ,y_0^* ) \) определено на \( (\alpha , \omega ) \). Возьмем \( [t_1,t_2 ] \subset (\alpha \omega ) \). Тогда: 
     
     0) \( \exists  \Delta > 0 , \text{ } \forall  y_0 : |y_0 - y_0 ^* | < \Delta \Rightarrow y(t, y_0 )  \)  определено на \( (\alpha , \omega) \) 
 
@@ -265,11 +266,11 @@ y(t, \mu) \, \text{ Хотим }: \exists  \frac{\partial  f }{\partial  y }
 
     2) \( \exists  \frac{\partial  ^2 y }{\partial  \mu \partial  t }  = \frac{\partial  ^2 y }{\partial  y_0 \partial  t_0 } \in C(P) \) 
 
-    3) \( v(t, y_0 ) = \frac{\partial  y }{\partial  y_0 } (t,y_0 )   \)  -решение задачи Коши \( \begin{cases}
+    3) \( v(t, y_0 ) = \frac{\partial  y }{\partial  y_0 } (t,y_0 )   \)  -решение задачи Коши: \( \begin{cases}
     \displaystyle \frac{\partial  }{\partial  t }v = \frac{\partial  f }{\partial  y } v  \\ 
     v (t_0 ) =1   
-    \end{cases} \) 
-\end{theorem}
+    \end{cases} \)
+\end{flushleft}
 
 
 
