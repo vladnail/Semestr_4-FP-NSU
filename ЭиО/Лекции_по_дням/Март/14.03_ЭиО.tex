@@ -40,7 +40,7 @@ m_{22} & -m_{12}\\
 
 \[ F_{\text{п} } = \frac{x_2}{x_1 '} = -\frac{x_2 }{m_{21}x_2 } = - \frac{1}{m_{21} } = F_{\text{Л} }    \] 
 
-\[ h_1 = z_1 + F_{\text{п} } = \frac{m_{22}}{m_{21}} - \frac{1}{m_{21} } = \frac{m_{21} - 1 }{m_{21}}     \] 
+\[ h_1 = z_1 + F_{\text{п} } = \frac{m_{22}}{m_{21}} - \frac{1}{m_{21} } = \frac{m_{22} - 1 }{m_{21}}     \] 
 
 , где \( h_1      \) - координата относительно \( O_1 \) первой главной плоскости.
 
@@ -51,13 +51,13 @@ m_{22} & -m_{12}\\
 \end{center} 
 \[ P_1,P_2 \text{ - узловые точки}  \] 
 
-\textbf{Матричный формализм} 
+\textbf{Матричный формализм для немеридиальнных лучей  } 
 
 \begin{center}
     \includegraphics[width=0.6\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/84.png}
 \end{center}  
 
-Точка \( P (x,y,z) \), нормаль в точке \( P \text{ } \vec{n }  = \displaystyle (x,y,z )\frac{1}{R}  \). В параксиальном приближении \( \displaystyle  |x| |y| \ll |R| \Rightarrow \vec{n }  = (\frac{x}{R } , \frac{y}{R } , - 1 )\).
+Точка \( P (x,y,z) \), нормаль в точке \( P \text{ } \vec{n }  = \displaystyle (x,y,z )\frac{1}{|R|}  \). В параксиальном приближении \( \displaystyle  |x| |y| \ll |R| \Rightarrow \vec{n }  = (\frac{x}{R } , \frac{y}{R } , - 1 )\).
 
 Граничное условие на границе раздела \( \vec{k } _{1_{\perp}  } = \vec{k}_{1_{\perp} }    \) 
 
@@ -71,12 +71,13 @@ m_{22} & -m_{12}\\
 \begin{center}
     \includegraphics[width=0.25\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/86.png}
 \end{center}  
+\[ \vec{a} _{||} = (\vec{a } , \vec{n } )\vec{n } ,\quad  \vec{a } _{\perp } = \vec{a }  - \vec{n } (\vec{n } , \vec{a }  ) = [\vec{n } \times  [\vec{ a } \times  \vec{n} ]]   \] 
 \[ \vec{k }  _{1_{\perp } } = \vec{k }  _{2_{\perp } } \Rightarrow \vec{k}_{1_{\perp } } = k_0 n_1 \bigg[ (x_1 ' , y_1 ' , 1 ) - \left( \frac{x}{R } , \frac{y}{R } , 1  \right) \bigg(\underbrace{ x_1 ' \frac{x}{R }  + y_1 ' \frac{y}{R} }_{\text{2-го порядка малости}}- 1  \bigg)\bigg]   \] 
 В нашем определении \( x = x_1 = x_2 , \text{ }  y = y_1 = y_2 ; \) 
 \[ \vec{k }  _{1_{\perp } } = k_0 n_1 \left( x_1 ' + \frac{x_1}{R }  , y_1 ' + \frac{y_1}{R },0  \right)  \] 
 
 \[\vec{k}_{2_{\perp } } = k_0 n_2 \bigg[ (x_2 ' , y_2 ' , 1 ) - \left( \frac{x}{R } , \frac{y}{R } , 1  \right) \bigg(\underbrace{ x_2 ' \frac{x}{R }  + y_2 ' \frac{y}{R} }_{\text{2-го порядка малости}}- 1  \bigg)\bigg]   \] 
-\[ \vec{k }  _{1_{\perp } } = k_0 n_2 \left( x_2 ' + \frac{x_1}{R }  , y_2 ' + \frac{y_1}{R },0  \right)  \] 
+\[ \vec{k }  _{2_{\perp } } = k_0 n_2 \left( x_2 ' + \frac{x_1}{R }  , y_2 ' + \frac{y_1}{R },0  \right)  \] 
 
 \[ \Rightarrow \begin{aligned}
     n_1 \left( x_1' + \frac{x_1}{R }  \right) = n_2 \left(  x_2 ' + \frac{x_2}{R}  \right) \\
@@ -162,23 +163,23 @@ y_2'
 
 Минимальная угловая расходимость (у современных "хороших") лазеров: 
 
-\[ \Delta \theta \sim \frac{\Delta k_x}{k } \sim  \frac{\pi}{2 \Delta x } \sim  \frac{ \lambda }{2 \Delta x } \sim \frac{\lambda }{\Delta x } = \frac{\lambda }{2 x_1 }      \] 
+\[ \Delta \theta \sim \frac{\Delta k_x}{k } \sim  \frac{\pi}{k \Delta x } \sim  \frac{ \lambda }{2 \Delta x } \sim \frac{\lambda }{\Delta x } = \frac{\lambda }{2 x_1 }      \] 
 , где \( \Delta k_x \)  разброс поля.
 
 \section{Интерференция волн}
 
 В оптическом диапазоне \( (f \sim  10 ^{15 }  - 10 ^{16 } \text{ Гц} ) \) большинство приборов, с которыми регистрируют электромагнитное излучение, измеряют \( <\vec{E } ^2 (t)> = I \) - интенсивность света\dots
 
-\[ I(t ) = \frac{1}{\theta_0 } \int_{t - \frac{\tau_0}{2 } }^{t + \frac{\tau_0 }{2 } } E ^2 (t ) d t '    \] 
+\[ I(t ) = \frac{1}{\tau_0 } \int_{t - \frac{\tau_0}{2 } }^{t + \frac{\tau_0 }{2 } } E ^2 (t ) d t '    \] 
 
 Если \( I  \)  не зависит от \( t  \), то \(\displaystyle  I = \frac{1}{\tau_0 } \int_{0 }^{\tau_0 } E ^2 (t ) dt '    \)  
-, где \( \tau_0  \) - временное разрешение прибора (у глаза \( \tau_0   \sim 0,01 \))
+, где \( \tau_0  \) - временное разрешение прибора (у глаза \( \tau_0   \sim 0,01 \text{ сек} \))
 
 \textbf{Интерференция двух монохроматических волн}: 
 
 \[ \vec{E }_1 (\vec{r },t    ) = \vec{E }  _1 (\vec{r } ) e^{ - i \omega t } , \text{ } \vec{E } _2 (\vec{r }  ,t ) = \vec{E }  _2 (\vec{r }  ) e ^{ - i \omega t }   \] 
 
-\[ \vec{E } _{\Sigma } (\vec{r } ,t ) = (\vec{E }  _1 (\vec{r }  + \vec{E }  _2 (\vec{r } )) e^{ - i \omega t } ,  \] 
+\[ \vec{E } _{\Sigma } (\vec{r } ,t ) = (\vec{E }  _1 (\vec{r } ) + \vec{E }  _2 (\vec{r } )) e^{ - i \omega t } ,  \] 
 \[ \kern-1 cm I = <(\mathrm{Re }  \vec{E } _{\Sigma } , \mathrm{Re } \vec{E } _{\Sigma}    )>  = \bigg<\left( \frac{(\vec{E } _1 + \vec{E }  _2 )e^{ -i \omega t } + (\vec{E } _1 ^ * + \vec{E }  _2 ^ * ) e^{ + i \omega t }  }{2} ,\frac{(\vec{E } _1 + \vec{E }  _2 )e^{ -i \omega t } + (\vec{E } _1 ^ * + \vec{E }  _2 ^ * ) e^{ + i \omega t }  }{2} \right) \bigg> =\] 
 \[ = \frac{1}{4 }  \bigg < \bigg ( [(\vec{E } _1 + \vec{E }  _2  ) , (\vec{E } _1 ^ * + \vec{E } _2 ^ *)] + [(\vec{E } _1 + \vec{E }  _2  ), (\vec{E } _1 ^ * + \vec{E } _2 ^ *)] \bigg) \bigg > =\]  
 \[= \frac{1}{2 }  \left[  |  \vec{E } _1       | ^2 + |  \vec{E } _2  | ^2 ) + 2 \mathrm{Re }  (\vec{E } _1 , \vec{E }  _2 ) \right] = I_1 + I_2 + I_{12} \] 
