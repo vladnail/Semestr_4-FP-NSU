@@ -23,7 +23,7 @@ y_n(t)
 \end{pmatrix}  ,\quad  A(t ) = ( a_{ij }(t)  ) - (n \times  n) , \quad \vec{f} (t ) =\begin{pmatrix}
     f_1(t)\\
     \vdots\\
-    fs_n(t)
+    f_n(t)
 \end{pmatrix}  \] 
 \[ a_{ij } (t ) \in C(\mathbb{R}) , \text{ } f_j (t ) \in  C(\mathbb{R} ) \Rightarrow \exists ! \text{ решение задачи Коши }  \begin{cases}
 \displaystyle  \frac{d}{dt }  y = A (t ) y + f(t  ) \\
@@ -32,9 +32,9 @@ y(t_0 ) = t_0
 \[ y(t )  \text{ - определенно при } t \in  \mathbb{R}\]   
 
 \[ a_{ij }  (t+T      ) = a_{ij }  (t ) , \text{ }  \forall  t \in  \mathbb{R} , \text{ }  T > 0 \text{ - период}  \] 
-\[ f_j (t + T ) = f(t)  \] 
+\[ f_j (t + T ) = f_j(t)  \] 
 
-Хотим узнать, существуют ли у системы (1 ) периодические решения, то есть \( \vec{y } (t+ T) = \vec{y } (t ) \).
+Хотим узнать, существуют ли у системы (1) периодические решения, то есть \( \vec{y } (t+ T) = \vec{y } (t ) \).
 
 \begin{theorem}
     Вектор функция \( \vec{y } (t ) \)  является \( T \)-периодическии решением системы (1) \( \Leftrightarrow  \vec{y } (0 ) = \vec{y }  (T)  \) 
@@ -66,7 +66,7 @@ y(t_0 ) = t_0
         \vec{z } (0) = \vec{y } (T ) = \vec{y } _0 
     \end{cases}\]  
 
-\[     \Rightarrow \vec{z } (t ) = \vec{y } (t ) \Rightarrow \vec{y } (t+T ) = \vec{y } (t)\] 
+\[  \text{, получим такую же задачу Коши}    \Rightarrow \vec{z } (t ) = \vec{y } (t ) \Rightarrow \vec{y } (t+T ) = \vec{y } (t)\] 
 \end{proof}
 
 \[ y ' = a(t ) y + f(t )\] 
@@ -87,6 +87,8 @@ y(t_0 ) = t_0
     \end{flushleft}
 
     По теореме 1. : \( \vec{y } (0) = \vec{y } (T )  \):
+
+    \[\Phi(0 ) \vec{c }  + \Phi(0 ) \int_{0 }^{0 } \Phi^{-1 } (s ) \vec{f } (s ) ds = \Phi(T ) \vec{c }  +\Phi(T ) \int_{0}^{T } \Phi^{-1 }  (s) \vec{f } (s ) ds  \] 
 
     \[\Phi ( 0) \vec{c } = \Phi (T ) \vec{c }  + \Phi (T ) \int_{0 }^{T }  \Phi^{-1 }  (s ) \vec{f } (s ) ds   \] 
     \[ (\Phi(0 )- \Phi(T ))\vec{c }  = \Phi(T ) \int_{0 }^{T } \Phi^{-1 } (s )\vec{f } (s )ds \Leftrightarrow  B \vec{c }  = \vec{\psi}  \]  
@@ -170,7 +172,7 @@ y_n = y^{(n-1)}
 
 \[ \frac{d}{dt} \begin{pmatrix}
 y_1 \\
-2\\
+y_2\\
 \vdots\\
 y_n
 \end{pmatrix} = \underbrace{\begin{pmatrix}
@@ -181,7 +183,7 @@ y_n
     -a_0  & -a_1  & ... & ... & -a_{n-1} 
     \end{pmatrix}}_{A_n(t)}\begin{pmatrix}
     y_1 \\
-    2\\
+    y_2\\
     \vdots\\
     y_n
 \end{pmatrix} + \begin{pmatrix}
