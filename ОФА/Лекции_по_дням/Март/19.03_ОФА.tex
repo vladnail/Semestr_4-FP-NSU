@@ -17,6 +17,7 @@
 \[ (1 - 2xt + t ^2   ) \sum_{n =0 }^{\infty  } n P_n (x ) t^{ n -1 } + (t -x ) \sum_{n =0} ^{\infty  } P_n (x ) t^n =0   \] 
 \[t^{n } : \text{ }   (n+1 ) P_{n+1 } (x )- 2 x nP_n(x ) + (n-\cancel{1} )P_{n-1 } ( x )+ \cancel{P_{n-1 } (x )} - x P_n( x )= 0 ,\text{ }  n \ge 1 \]  
 \[ (n +1 )P_{n+1 } (x ) - (2 n +1 ) x P_n( x ) + n P_{n-1 } (x ) = 0 , \text{ } n =1,2, \ldots  \quad \quad (*)\] 
+, это рекуррентная формула.
 
 \begin{lemma}
     \( \forall  n  \) функция \( P_n(x ) \) является многочленом степени \( n \) с положительным старшим коэффициентом.
@@ -45,17 +46,17 @@
 \[ (1 - 2 xt +t ^2  ) \frac{\partial  w}{\partial  x } - t w = 0   \] 
 \[ (1 - 2 xt  +t ^2  ) \sum_{n =0 }^{ \infty  } P_n ' (x ) t ^{ n }  - t \sum_{n =0 }^{\infty  } P_n(x ) t^n = 0  \] 
 
-\[ (A) : \text{ }  P_n '(x ) -2 x P_{n+1 } ' (x ) + P_{n-2 } ' (x ) - P_{n-1 } (x ) =0 ,\text{ } \forall  n \ge 2 \quad \left( \frac{d }{dx }(*)  \right)  \] 
+\[ (A) : \text{ }  P_n '(x ) -2 x P_{n-1 } ' (x ) + P_{n-2 } ' (x ) - P_{n-1 } (x ) =0 ,\text{ } \forall  n \ge 2 \quad \left( \frac{d }{dx }(*)  \right)  \] 
 
 \[ n \to  n+1 : \text{ }P_{n +1 } '(x ) -2 x P_{n+2  } ' (x ) + P_{n-1 } ' (x ) - P_{n} (x ) =0   \] 
 
-\[ (B) : (n+1 ) P_{n+1 } ' (x ) - (2 n - 1 ) P_n (x ) - (2n + 1 ) xP_n '(x ) + n P_{n-1 }  ' (x ) = 0 \] 
+\[ (B) : (n+1 ) P_{n+1 } ' (x ) - (2 n + 1 ) P_n (x ) - (2n + 1 ) xP_n '(x ) + n P_{n-1 }  ' (x ) = 0 \] 
 
 \[ (B ) - (n +1 )(A ) : \text{ }   [- (2n +1 )+ (n+1 )] P_n(x ) - x [(2 n +1 )-2 ( n+1 )]P_n '(x ) + [n - (n+1 )]P_{n-1 } '(x) = 0\] 
 
 \[ (V): \text{ } - n P_n(x ) + x P_n '( x ) - P_{n-1 }  '(x ) = 0 \] 
 
-\[ (B ) - n (A ) : \text{ }  P_{n +1 }  ' ( x ) - [ ( 2 n+ 1 ) - n ] P_n ' ( x ) - x [(2 n +1 ) - 2n ] P_n ' (x ) = 0 \] 
+\[ (B ) - n (A ) : \text{ }  P_{n +1 }  ' ( x ) - [ ( 2 n+ 1 ) - n ] P_n  ( x ) - x [(2 n +1 ) - 2n ] P_n ' (x ) = 0 \] 
 
 \[ (G): \text{ }  P_{n+1 }  '( x )  -(n +1 ) P_n (x ) - x P_n ' (x ) =0 \] 
 
@@ -65,29 +66,30 @@
 
 \section{Дифференциальное уравнения. Соотношения ортогональностей }
 
-\[  - (V )  :\text{ } n P_n(x ) - x P_n ' (x ) + P_{n-1 } '(x )  \] 
+\[  - (V )  :\text{ } n P_n(x ) - x P_n ' (x ) + P_{n-1 } '(x )= 0 \text{ } | \cdot x   \] 
 
 \[ (G ) \text{ }  n+1 \to  n : \text{ }  P_n '(x ) - n P_{n -1 } (x ) - x P_{n-1 }  '(x ) =0  \] 
 
 Суммируем наши фигни: 
 
-\[ xn P_n(x ) - x P_n ' + x P_{n-1 } ' (x ) + P_{n }  ' (x ) - n P_{n-1 }  (x) - x P_{n-1 } ' (x )=0\] 
+\[ xn P_n(x ) - x  ^2 P_n ' +\cancel{ x P_{n-1 } ' (x )} + P_{n }  ' (x ) - n P_{n-1 }  (x) - \cancel{ x P_{n-1 } ' (x )} =0\] 
 \[ (1- x ^2 ) P_n' (x ) + n x P_n (x )- n P_{n-1 }  (x ) =0 \bigg| \cdot \frac{d}{dx} \] 
 
-\[ [(1 + x ^2 )P_n ' ]' + n P_n(x ) + n x P_n '(x ) \underbrace{- n P_{n-1 } ' (x )}_{n ^2 P_n - nx P_n} =0  \] 
+\[ [(1 + x ^2 )P_n ' ]' + n P_n +\cancel{nx P_n '} \underbrace{- n P_{n-1 } ' }_{n ^2 P_n ' - \cancel{nx P_n '}} =0  \] 
 
 То есть многочлен Лежандра является частным решением линейного дифференциального уравнения второго порядка: 
 
-\[ [(1 - x ^2 y ' ) ] ' + n (n+1 ) y = 0 \] 
+\[ [(1 - x ^2 )y '  ] ' + n (n+1 ) y = 0 \] 
 
 \[ L_2 ^ h (-1 ,1 ) , \text{ }  h=1 : \text{ }  (f, g ) = \int_{-1 }^{1 }  fg dx  \]  
 
 \[ ((1 -x ^2 )P_n ') ' + n (n+1 ) P_n =0  \text{ } | \cdot P_m  \] 
-\[ ((1- x ^2 ) P_m ' ) ' m (m +1 ) P_m = 0 \text{ } | \cdot P_n  \] 
+\[ ((1- x ^2 ) P_m ' ) ' +m (m +1 ) P_m = 0 \text{ } | \cdot P_n  \] 
 
 \[ \underbrace{[(1 -x ^2 ) (P_m P_n ' - P_n P_m ' )]'}_{(1)} + (n (n +1 ) - m(m+1 )) P_m P_n =0 \] 
 
-\[  \int_{-1 }^{1 }  (1) dx \to 0 , \quad  \int_{-1 }^{1 }  P_n P_m = 0 , \text{ при } n \neq m    \] 
+\[  \int_{-1 }^{1 }  (1) dx \overset{(\$)}{=} 0 \Rightarrow   \int_{-1 }^{1 }  P_n P_m = 0 , \text{ при } n \neq m    \] 
+(\$): за счет \( \displaystyle  (1 -x ^2 ) |_{-1 }  ^1 =0 \) 
 
 , ортогональность доказана.
 
@@ -97,13 +99,13 @@
 
 \[ (\tilde{*}): \text{ } n P_n - (2 n -1 ) x P_{n-1 }  +(n-1 ) P_{n-2 }  =0\] 
 
-\( (* ) (2n-1 ) P_{n-1 } +  (\tilde{ * } ) (2n +1 ) P_n: \) 
-
-\[ (2n -1 )(n+1 ) P_{n+1 }  P_{n-1 }  + (2n -1 ) n P_{n-1  }  ^2 - (2n +1 ) (n+1 ) P_{n-2 } P_n =0  \] 
+\( (* ) (2n-1 ) P_{n-1 } -  (\tilde{ * } ) (2n +1 ) P_n: \) 
+\[ \scriptstyle (n+1 )(2n -1 ) P_{n+1 }P_{n-1} - x (2n -1 ) (2n +1) P_n P_{n -1 } +(2n + 1 )  n P_{n-1 } ^2   - (2 n -1 ) n P_n ^2 + (2n +1 )(2n-1 ) x P_{n-1 }     - (2n+ 1 )(n-1 ) P_n P_{n-2}= 0    \]  
+\[ (2n -1 )(n+1 ) P_{n+1 }  P_{n-1 }  + (2n -1 ) n P_{n-1  }  ^2 - (2n +1 ) (n-1 ) P_{n-2 } P_n =0  \] 
 
 \[ (2n -1 ) \int_{-1 }^{1 }  P_{n-1 }  ^2 ( x ) dx = (2 n +1 ) \int_{-1 }^{1 }  P_n  ^2 (x ) dx , \text{ }  \forall  n \ge 2 \]  
 \[ \int_{-1 }^{1 }  P_n ^2 dx = \frac{ 2n -1 }{2n +1 } \int_{-1 }^{1 } P_{n-1  }  ^2 dx = \frac{2n -1 }{2n +1 } \frac{ 2n -3 }{2n -1 } \int_{-1 }^{1 }  P_{n-2 }  ^2 dx = ...    \] 
-\[ ... =\frac{\cancel{2n -1} }{2 n+1 } \frac{ 2n-3 }{\cancel{2n -1} } \ldots \frac{3}{5 }  \underbrace{\int_{-1 }^{1 }  P_n ^2 (x ) d x}_{\frac{2}{3} } = \frac{2}{2n +1 }     \] 
+\[ ... =\frac{\cancel{2n -1} }{2 n+1 } \frac{ 2n-3 }{\cancel{2n -1} } \ldots \frac{3}{5 }  \underbrace{\int_{-1 }^{1 }  P_1^2 (x ) d x}_{\frac{2}{3} } = \frac{2}{2n +1 }     \] 
 
 \[ \left\lVert P_n  \right\rVert ^2 = \frac{2}{2n +1 }  , \text{ }  n \ge 2  \] 
 
