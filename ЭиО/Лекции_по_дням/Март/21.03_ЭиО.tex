@@ -14,7 +14,7 @@
 
 
 
-Рассмотрим эволюцию поля \( E_{\Sigma }  \) после выключения источника появления новы излучающих атомов. 
+Рассмотрим эволюцию поля \( E_{\Sigma }  \) после выключения источника появления новых излучающих атомов. 
 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/99.png}
@@ -29,12 +29,12 @@
 
 %img
 
-\[ \vec{E }  _0 = E_{0x }  \vec{e}_x + E_{0 y }  \vec{e }  _y , \quad  E_{0 x }  \text{ и } E_{0 y}  \in \mathbb{C}    \] 
+\[ \text{В точке P: } \vec{E }  _0 = E_{0x }  \vec{e}_x + E_{0 y }  \vec{e }  _y , \quad  E_{0 x }  \text{ и } E_{0 y}  \in \mathbb{C}    \] 
 
 Так как \( \displaystyle  I_{12} = \mathrm{Re }  (\vec{E }  _1 (\vec{r } ), \vec{E }  _2^* (\vec{r } )) = 0 , \text{ при } \vec{E }_1 \perp \vec{E } _2   \), то \( I_x \text{  и } I_y  \)  не интерферируют и могут быть вычислены отдельно: 
 
 \[ I = I_x + I_y = <(\mathrm{Re}  \vec{E }  _{\Sigma x } (t )  ) ^2> + <(\mathrm{Re}  \vec{E }  _{\Sigma y } (t )  ) ^2 > = \] 
-\[\kern-1cm =\bigg< \left( \sum_{m=1} |E_{0x} | \cos [\omega_0 (t - t_m ) - \varphi_x]e^{ - \gamma (t -t_n )},  \sum_{n=1} |E_{0x} | \cos [\omega_0 (t - t_n) - \varphi_x]e^{ - \gamma (t -t_n )}\right)\bigg> +<\mathrm{Re }  \vec{E } _{\Sigma y}  >=\] 
+\[\kern-1cm =\bigg< \left( \sum_{m=1} |E_{0x} | \cos [\omega_0 (t - t_m ) - \varphi_x]e^{ - \gamma (t -t_n )},  \sum_{n=1} |E_{0x} | \cos [\omega_0 (t - t_n) - \varphi_x]e^{ - \gamma (t -t_n )}\right) ^2 \bigg> +<(\mathrm{Re }  \vec{E } _{\Sigma y} ) ^2  >=\] 
 
 \[ I_x = \sum_{n =m } |E_{0x}  | ^2 <\cos  ^2 (\omega_0 (t -t_m ) - \varphi_x )> e^{-2 \gamma (t -t_m )} +   \] 
 \[ + \bigg< \sum_{n}\sum_{m} \frac{ |E_{0x } | ^2 }{2 }\left\{ \cos (\omega_0 (2t - t_m -t_n ) - 2 \varphi_x) + \cos \omega_0 (t_m - t_n) \right\} e^{-\gamma (2t - t_m - t_n)}\bigg> \] 
@@ -47,7 +47,7 @@
 \[ E_{\Sigma x } (t ) = \varepsilon_x(t ) e^{ - i \omega_0 t }   \] 
 , где \( \varepsilon(t ) \) - амплитуда \( \in \mathbb{C} \).
 
-\[ <(\mathrm{Re }  E_{\Sigma x }      ) ^2 > = |\varepsilon_{x} (t)|<\cos  ^2 (\omega_0 t - \mathrm{arg }  \varepsilon _x (t ) )> = \frac{ <|\varepsilon_x (t)|>}{2 } = \frac{|E_{0x} | ^2 }{2} \overline{N } _{\text{ эф} }   \] 
+\[ <(\mathrm{Re }  E_{\Sigma x }      ) ^2 > = <|\varepsilon_{x} (t)| ^2 ><\cos  ^2 (\omega_0 t - \mathrm{arg }  \varepsilon _x (t ) )> = \frac{ <|\varepsilon_x (t)| ^2 >}{2 } = \frac{|E_{0x} | ^2 }{2} \overline{N } _{\text{ эф} }   \] 
 \[ <|\varepsilon_x |> = \sqrt{N_{\text{эф} } } |E_{0x } | , \quad  \frac{ \Delta |\varepsilon_{x} |}{|\varepsilon_x|} \approx \frac{|E_{0x} |}{\sqrt{N_{\text{эф} } }|E_{0x} |}  \sim \frac{1}{\sqrt{N_{\text{эф} } }}  \] 
 
 \begin{center}
@@ -57,10 +57,10 @@
 
 В момент времени \( t_m = t_{m_0} + \frac{ r_m }{c}   \) начал излучать m-ый атом.
 
-\[ \frac{\sin (\delta \varphi_x ) }{|E_{0x} |} =\frac{\sin \delta}{|\varepsilon_x(t)|}, \text{ т.к } \delta \varphi_x \le 1 \Rightarrow \delta + \pi - (\alpha - \varphi_x ) \approx \pi    \] 
+\[ \frac{\sin (\delta \varphi_x ) }{|E_{0x} |} =\frac{\sin \delta}{|\varepsilon_x(t)|}, \text{ т.к } \delta \varphi_x \ll 1 \Rightarrow \delta + \pi - (\alpha - \varphi_x ) \approx \pi    \] 
 \[ \delta \varphi_x = \frac{ |E_{0x} |}{|\varepsilon_x(t)|} \sin (\alpha - \varphi_x ) = \frac{|E_{ox } |}{|\varepsilon_x(t     )|} \mathrm{ sin }    (\alpha - \omega_0 t_m - \underbrace{\mathrm{arg } \varepsilon_{x } (t )}_{\approx \mathrm{const}  }  )   \] 
 
-\[ <\delta \varphi_x > = 0 , \quad  <\delta \varphi _ x ^2 > = \frac{|E_{0x } | ^2 }{|\varepsilon_x (t )| ^2 } \frac{1}{2 } = \frac{1}{2 N_{\text{эф} } }    \] 
+\[ <\delta \varphi_x > \overset{\text{по } t_m }{=} 0 , \quad  <\delta \varphi _ x ^2 > = \frac{|E_{0x } | ^2 }{|\varepsilon_x (t )| ^2 } \frac{1}{2 } = \frac{1}{2 N_{\text{эф} } }    \] 
 
 Коэффициент диффузии по \( \varphi_x \) (аналогично броуновскому движению) вычисляется так: 
 
@@ -71,9 +71,11 @@
     \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/101.png}
 \end{center} 
 
-Изменение \( \delta \varphi_x  \) на  \( \Delta t < \Delta t_0 = \frac{1}{\gamma }   \) мало (фаза почти постоянная), а на \( \Delta t  > \Delta t_0  \) фаза \( \varphi _x (t )  \) - случайная величина \( [0, 2\pi ] \)  
+Изменение \( \delta \varphi_x  \) на  \( \displaystyle \Delta t < \Delta t_0 = \frac{1}{\gamma }   \) мало (фаза почти постоянная), а на \( \Delta t  > \Delta t_0  \) фаза \( \varphi _x (t )  \) - случайная величина \( [0, 2\pi ] \)  
 
 Вывод: в стационарном случайном процессе излучения скопления атомов амплитуда суммарной волны почти постоянная  \( \left( \text{флуктуации }  \displaystyle  \frac{\Delta \varepsilon }{\varepsilon }\sim \frac{1}{\sqrt{N_{\text{эф} } }} \right)   \), а фаза этой волн почти постоянна на промежутках \( \displaystyle  \Delta t < \frac{1}{\gamma }  \) и случайно меняющаяся величина на \( \displaystyle  \Delta t > \frac{1}{\gamma }  \). 
+
+\[ \gamma \text{ - дескремент затухания от одного атома}  \] 
 
 \begin{center}
     \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/102.png}
@@ -83,12 +85,12 @@
 
 Вычислим спектр суммарного поля: 
 
-\[ \vec{E } _{\Sigma } (t ) = \sum   \vec{E }  _ 0 e^{ - i \omega_0 (t -t_m )- \gamma(t- t_m)}   \] 
+\[ \vec{E } _{\Sigma } (\omega ) = \sum   \vec{E }  _ 0 e^{ - i \omega_0 (t -t_m )- \gamma(t- t_m)}   \] 
 
 \[ \hat{\vec{E } } _{\Sigma } (t ) = \sum_{m }\hat{\vec{E }}   _ a(\omega ) e^{i \omega t_m}     \] 
 
 Спектральная плотность энергии: \(  \displaystyle  |\vec{E } _{\Sigma } ( \omega ) | ^2 = \left( \sum_{m }\hat{\vec{E } }_a (\omega ) e^{i \omega t_m } , \sum_{n}\hat{\vec{E } }_a ^{*} (\omega ) e^{-i \omega t_n }   \right) = \) 
-\[ |\vec{E } _a ( \omega)    | ^2 \left\{  \sum_{n =m  =1 } ^{N_{\text{эф} } } 1 \sum  ^{N_{\text{эф} }  } _{n }  \sum_{m} ^{N_{\text{эф} } } e^{ i \omega (t_m - t_n)}   \right\}  \Rightarrow |\vec{E }  _{\Sigma } ( \omega ) | ^2  = |\hat{ \vec{E } } _a ( \omega ) | ^2 N_{\text{эф} }\] 
+\[ |\vec{E } _a ( \omega)    | ^2 \left\{  \sum_{n =m  =1 } ^{N_{\text{эф} } } + \sum  ^{N_{\text{эф} }  } _{n \neq }  \kern-3pt\sum_{m} ^{N_{\text{эф} } } e^{ i \omega (t_m - t_n)}   \right\}  \Rightarrow |\vec{E }  _{\Sigma } ( \omega ) | ^2  = |\hat{ \vec{E } } _a ( \omega ) | ^2 N_{\text{эф} }\] 
 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/103.png}
