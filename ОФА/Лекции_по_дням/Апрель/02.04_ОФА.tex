@@ -1,0 +1,182 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+
+\section{Операторы в Гильбертовых пространствах}
+
+\begin{definition}
+    \( E, \text{ }  F  \) - линейные пространства. \( A: E \to  F  \) - линейный оператор, если \( \mathbb{D} (A )\subset E  \) и \( A (\alpha x + \beta y )= \alpha A(x ) + \beta A(y ) \), где \( \alpha, \text{ }  \beta \) - числа, \( x, y \in  \mathbb{D} (A) \) 
+
+    \[ A(x )= Ax \quad  (\text{оператор = линейный оператор} ) \] 
+\end{definition}
+
+Пусть \( E , \text{  }  F  \) - нормированные пространства. 
+
+\begin{definition}
+     \( A: E \to  F  \) непрерывно в точке \( x_0 \in  E \), если \( \forall  \varepsilon > 0 \text{ }  \exists  \delta >0 \text{ }  \forall  x: \left\lVert  x - x_0  \right\rVert_{E }  < \delta  \) 
+     \[ \left\lVert Ax - A x_0  \right\rVert _F < \varepsilon  \] 
+\end{definition}
+
+Непрерывность в 0 : \( \forall  \varepsilon > 0 \text{ }  \exists  \delta > 0  : \left\lVert  x  \right\rVert < \delta  \) 
+\[ \left\lVert Ax  \right\rVert< \varepsilon \] 
+
+Непрерывность в \( x_0  \Leftrightarrow  \) непрерывность в \( 0 \Leftrightarrow   \)  непрерывность в \( x_1 \in  \mathbb{D}(A) \) 
+
+\[ \forall  x : \left\lVert x - y         \right\rVert < \delta  \] 
+\[ \left\lVert  Ax - Ay  \right\rVert < \varepsilon \] 
+
+\[ \left\lVert  x - x_0 \pm y  \right\rVert = \left\lVert x+ y - x_0 - y  \right\rVert = \left\lVert x_1 - y  \right\rVert< \delta \] 
+, где \( x_1 = x+ y - x_0 \).
+\[ \underset{= \left\lVert A(x_1 - y ) \right\rVert < \varepsilon}{\left\lVert A (x + y - x_0 ) - A y  \right\rVert}= \left\lVert  A(x - x_0 )  \right\rVert < \varepsilon  \] 
+
+\textbf{Примеры линейных операторов: } \\
+
+1. \( I : E \to  E  \) по формуле: \( I x = x  \), называется тождественным (единичным).
+
+\[ x, y \in  E ,\text{ }   I (\alpha x + \beta y ) = \alpha x + \beta y = \alpha I x + \beta I y \] 
+
+2. \( 0 : E \to  F  \) по формуле: \( 0 x = 0 \in  F  \), называется нулевым. 
+
+\[ x,y \in  E, \text{ }  0 (\alpha x  + \beta y ) = 0 = \alpha 0 + \beta 0 = \alpha 0 x + \beta 0 y \] 
+
+3. \( P : H \to  S  \) - оператор проектирования на замкнутое подпространство, где \( H  \) - гильбертово пространство, \( H = S \oplus  S ^{ \perp  }  \). \( \forall  x \in  H \text{ }  \exists  ! \text{ }  y \in  S , \text{ } \exists  !\text{ }   z \in  S ^{ \perp } : x = y +z   \). 
+
+\( P \) действует по формуле \( Px = y  \) 
+
+\[ \alpha x_1 + \beta x_2 = \alpha ( y_1 + z_1 ) + \beta ( y_2 + z_2 ) = (\alpha y_1 + \beta y_2 ) + (\alpha z_1 + \beta z_2 ) \] 
+\[ P(\alpha x_1 + \beta x_2 ) = \alpha y_1 + \beta y_2 =  \alpha P x_1 + \beta P x_2 \] 
+
+4. \( A : L_2 (0,1 ) \to  L_2 (0,1 ) \). \( A(f (t )) = t f(t ) \)    
+
+\[ \left\lVert t f(t ) \right\rVert _{L_2(0,1)}   ^2 = \int_{0}^{1 }  t ^2 f ^2 (t ) dt \le \int_{0 }^{1 }  f ^2 (t ) dt < \infty \] 
+
+\[ f (t), g (t)\in  L_2 (0,1 ), \text{ }  A(\alpha f + \beta g ) = t ( \alpha f + \beta g )  = \alpha t f (t )+ \beta t g (t ) = \alpha A f + \beta A g \] 
+
+5. \( d: L_2 (0,1  ) \to  L_2 (0,1  )  \) - оператор дифференцирования. По формуле: \( d f = f'(t) \), \( \mathbb{D} (d ) \subset L_2 (0,1) \) 
+
+Линейность основана на линейности \( L_2  \) и на линейности дифференцирования. 
+
+\begin{definition}
+    Множество \( M \subset E  \)  ограничено, если \( \exists   \)  шар с центром в точке 0 в котором содержится \( M \): \( B(0 , R ) = \{ x \in  E \,| \left\lVert  x  \right\rVert < R  \} \)  
+\end{definition}
+
+\begin{definition}
+    \( A: E \to  F  \) называется ограниченным, если \( \left\lVert  x \right\rVert < R  \),  \( \exists R_1 :  \left\lVert  A x \right\rVert < R_1  \)  (переводит ограниченное множество в ограниченное)
+\end{definition}
+
+\begin{theorem}
+    Линейный оператор ограничен \( \Leftrightarrow  \)  непрерывен.
+\end{theorem}
+
+\begin{proof} \(  \) 
+
+\begin{flushleft}
+    \( (\Leftarrow ):  \) 
+\end{flushleft}
+
+\( A  \) - ограниченное, то есть переводит ограниченное множество в ограниченное. 
+
+\[ \left\lVert  x  \right\rVert \le 1 \Rightarrow \left\lVert Ax  \right\rVert \le R  \tag{\(* \) }\] 
+
+\[ \forall  \varepsilon \text{ }  \exists \delta =  \frac{\varepsilon}{R } , \text{  тогда  } \left\lVert x  \right\rVert \le \frac{\varepsilon}{R}   \] 
+\[ \left\lVert  x \frac{R}{\varepsilon }  \right\rVert \le 1 , \text{ тогда по } (* ) :    \] 
+\[ \left\lVert A x \frac{R}{\varepsilon }  \right\rVert  \le R \Rightarrow  \left\lVert Ax  \right\rVert \le \varepsilon - \text{ непрерывность в } 0 \Rightarrow \text{ непрерывен}  \] 
+
+\begin{flushleft}
+    \( (\Rightarrow ):  \) 
+\end{flushleft}
+
+\( A  \) - непрерывен в частности, \( A  \) непрерывен в 0. 
+
+\[ \varepsilon = 1\text{ } \exists  \delta > 0 : \left\lVert  x  \right\rVert< \delta \Rightarrow \left\lVert  Ax  \right\rVert < 1 \tag{\( ** \)}   \] 
+
+Фиксируем \( X = \{ x \in  E \, | \left\lVert  x  \right\rVert  \le R \} \). 
+
+\[ \left\lVert  A x  \right\rVert = \left\lVert  \frac{R}{ \delta }  A \left(  \frac{\delta}{R }  x  \right)  \right\rVert = \frac{R}{\delta } \left\lVert  A \frac{\delta}{R }  x  \right\rVert   \] 
+
+\[ \text{ Воспользуемся: } \left\lVert  x \frac{ \delta }{R }  \right\rVert \le \delta \xrightarrow { (** )} \left\lVert  A x \frac{ \delta }{R }  \right\rVert \le 1 \text{ тогда: }   \] 
+
+\[ \frac{R}{\delta } \left\lVert  A \frac{\delta}{R }  x  \right\rVert  \le \frac{R}{\delta } = R_1   \] 
+
+\[ \left\lVert  AX  \right\rVert \le R_1 \Rightarrow A \text{ - ограничено}  \] 
+\end{proof}
+
+\( A , \text{ }  B  \) - линейные операторы, \( \alpha , \text{ }  \beta  \) - числа: 
+
+1) \( (\alpha A + \alpha B ) x = \alpha A x - \beta B x \text{ - линейное отображение}  \) 
+
+2) \( A : E \to  E_1 , \text{ }  B : E_1 \to  F \Rightarrow   BA : E \to  F  \). \( (BA )x = B (A x ) \) 
+
+Пространство линейных операторов - нормированные. 
+
+\section{Норма линейного оператора}
+
+\begin{definition}
+     Нормой линейного оператора называется выражение: 
+
+     \[ \left\lVert A  \right\rVert = \sup_{x \neq 0 } \frac{\left\lVert A x  \right\rVert _E }{\left\lVert  x  \right\rVert _ E }  \] 
+\end{definition}
+
+\begin{theorem}
+    Линейный оператор \( A \) ограничен \( \Leftrightarrow   \) его норма конечна.
+\end{theorem}
+
+\begin{proof} \(  \) 
+
+    \begin{flushleft}
+        \( (\Rightarrow ):  \) 
+    \end{flushleft}
+
+    \( A  \) - ограничено. 
+
+    \[ \left\lVert  A  \right\rVert = \sup _{x \neq 0 } \frac{\left\lVert  A x  \right\rVert}{\left\lVert  x  \right\rVert} = \sup _{x \neq 0 } \left\lVert A \frac{x }{\left\lVert  x  \right\rVert}  \right\rVert = \sup _{\left\lVert y  \right\rVert = 1 } \left\lVert  A y  \right\rVert < \infty      \] 
+
+    \begin{flushleft}
+        \( (\Leftarrow ):  \) 
+    \end{flushleft}
+
+    Дано \( \left\lVert  A  \right\rVert  < \infty \) 
+
+    \[ \left\lVert  A  \right\rVert = \sup _{\left\lVert  y  \right\rVert = 1 } \left\lVert  A y  \right\rVert \le  \sup_{0 < \left\lVert y  \right\rVert \le 1         } \left\lVert  A y  \right\rVert \le \sup _{0 \le \left\lVert  y  \right\rVert \le 1 } \frac{\left\lVert  A y  \right\rVert}{\left\lVert  y  \right\rVert} \le \sup _{y \neq 0 }  \frac{ \left\lVert  A y  \right\rVert}{\left\lVert y \right\rVert}       \]  
+\end{proof}
+
+1) \( \left\lVert A y  \right\rVert \le \left\lVert A  \right\rVert \left\lVert  y \right\rVert \) из определения нормы \( (\left\lVert A \right\rVert) \) .
+    
+Пусть \( \left\lVert  y  \right\rVert \le R : \left\lVert  A y  \right\rVert \le R_1 \text{ } (\left\lVert A  \right\rVert , R)  \)
+
+2) \( \left\lVert  A  \right\rVert = \sup _{\left\lVert x  \right\rVert =1 } \left\lVert A x  \right\rVert  = \sup _{\left\lVert  x  \right\rVert \le 1 } \left\lVert A x  \right\rVert   \) - эквивалентное определение нормы. 
+
+\[ \left\lVert  (AB )x  \right\rVert  = \left\lVert  A (B x ) \right\rVert\overset{1)}{ \le}  \left\lVert  A  \right\rVert \left\lVert B x  \right\rVert \le \left\lVert  A  \right\rVert \left\lVert  B \right\rVert \left\lVert x  \right\rVert \] 
+
+4. \( A : L_2 (0,1 ) \to  L_2 (0,1 )  \), по формуле \( A f = r f (t ) \) 
+
+\[ \left\lVert  A  \right\rVert = \sup _{f\neq 0} \frac{ \left\lVert  A f  \right\rVert}{\left\lVert f  \right\rVert} = \sup _{f \neq 0 } \frac{ \left\lVert  t f(t) \right\rVert}{\left\lVert  f  \right\rVert}    = \sup _{f \neq 0} \frac{\displaystyle  \sqrt{\int_{0 }^{1 }  \left\lvert  t f (t ) \right\rvert ^2 dt }}{\displaystyle  \sqrt{\int_{0 }^{1 }  \left\lvert f(t ) \right\rvert ^2 dt }} \le 1 \] 
+\( \Rightarrow  A  \)  - ограничен.
+
+Норма может достигаться на последовательности функций. 
+
+5. \( d : L_2(0,1 ) \to  L_2 (0,1 ) \text{ }  \mathbb{D} (d ) = C^1 (0,1 )\). Неограниченный оператор! \\
+
+Рассмотрим \( \sin  (nt ) \): 
+
+\[ \left\lVert  \sin (n t ) \right\rVert _{L_2 (0,1 )} ^2 \le 1  \] 
+
+\newpage
+
+Я устал босс. Вот вам страница чтобы меня осудить
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi
