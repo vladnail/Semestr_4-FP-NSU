@@ -50,7 +50,7 @@
 \[ dI = d I_1 + d I_2 + \sqrt{d I_1 d I_2 } 2 \cos (k \Delta r ) = 2 d I_0 \left( 1 + \cos \left( \frac{\omega}{c }  \Delta r \right) \right) \] 
 
 \[ I = \int d I = \int_{\omega_0- \frac{\Delta \omega }{2 } }^{\omega_0+ \frac{\Delta \omega }{2 }  } 2 \frac{d I_0 }{d \omega } \left( 1 + \cos \left( \frac{ \omega }{c } \Delta r   \right) \right) d \omega = 2 \frac{ I_0 }{\Delta \omega } \left( \Delta \omega + \frac{ \sin \left( \frac{\omega}{c }  \Delta r \right)}{\frac{\Delta r}{c} } \bigg | ^{\omega_0 + \frac{\Delta \omega }{2 }  }_{\omega_0 - \frac{\Delta \omega }{2} }   \right) = \] 
-\[= 2 I_0 \frac{ 1  + 2 \cos \left( \frac{\Delta r}{c} \omega_0  \right) \sin \left( \frac{\Delta r}{c } \frac{\Delta \omega }{2 }   \right) }{\frac{ \Delta r \Delta \omega}{ 2 c } }  = 2 I_0 \bigg( 1 + \underbrace{\mathrm{sinc }  \left( \frac{\Delta r }{c } \Delta \omega   \right)}_{\text{огибающая} } \underbrace{\cos \left( \frac{\Delta r }{c } \omega_0  \right)}_{\text{наполнение} }  \bigg)\] 
+\[= 2 I_0 \left( 1+\frac{  2 \cos \left( \frac{\Delta r}{c} \omega_0  \right) \sin \left( \frac{\Delta r}{c } \frac{\Delta \omega }{2 }   \right) }{\frac{ \Delta r \Delta \omega}{ 2 c } } \right)  = 2 I_0 \bigg( 1 + \underbrace{\mathrm{sinc }  \left( \frac{\Delta r }{c } \Delta \omega   \right)}_{\text{огибающая} } \underbrace{\cos \left( \frac{\Delta r }{c } \omega_0  \right)}_{\text{наполнение} }  \bigg)\] 
 
 \[  \text{Видность: } I_{\max  } = 2 I_0 (1 + |\mathrm{sinc }   |) , \quad  I_{ \min  } = 2 I_0 (1 - |\mathrm{sinc}  |) \]
 \[ V = \frac{2 I_0 2 |\mathrm{sinc}  |}{4 I_0 } = \left\lvert \mathrm{sinc }  \left( \frac{\Delta \omega \Delta r }{2 c }  \right)  \right\rvert  \]  
@@ -75,7 +75,7 @@
 Размер интерференционной картины \( \displaystyle  l_{\parallel} = \Delta r = \frac{x_{ \max  } d }{L }   \) 
 
 \[ \Rightarrow  x_{ \max  } = \frac{L}{d } l_{ \parallel} = \frac{L}{d }  \frac{\pi c }{\Delta \omega }    \] 
-\[ 2 x_{ \max  } = \frac{L}{d }  \frac{ 2 \pi c }{\Delta \omega } , \text{ число полное: }    \] 
+\[ 2 x_{ \max  } = \frac{L}{d }  \frac{ 2 \pi c }{\Delta \omega } , \text{ число полос: }    \] 
 \[ \frac{x _{ \max  } }{\Delta x_m }= \frac{d}{ \lambda L } \frac{L }{d} \frac{ 2 \pi c \omega_0 }{\Delta \omega \omega_0} = \frac{\omega_0}{\Delta \omega}      \] 
 
 Влияние размера источника на интерференционную картину: 
@@ -89,13 +89,13 @@
 \[ \Delta r_m = \Delta_1 + \Delta_2 = \frac{h}{L_s } d + \frac{x}{L }  d = m' \lambda   \]
 , где \( m '  \) - порядок второго источника. 
 
-\[ \frac{n}{L_s } + \frac{x_0 }{L } = 0   \] 
+\[ \frac{h}{L_s } + \frac{x_0 }{L } = 0   \] 
 
-Первый ряд когда исчезает \( m  \) при увеличении \( h \) интерференционная картина при:
+Первый раз когда исчезнет (при увеличении \( h \)) интерференционная картина:
 
 \[ \displaystyle  \left( \frac{h^* }{L_s } + \frac{0}{L }   \right)d = \frac{\lambda}{2 }  , \quad  h^* = \frac{\lambda L_s}{2d}  \] 
 
-но потом периодически появляется и исчезает.
+но потом периодически появляется и исчезает, так как интерференционные картины двух источников,то синфазны, то наблюдаются в противофазе.
 
 Каждый участок источника является скоплением случайно излучающих атомов и не интерферирует с соседним участком \( \Rightarrow \)  складываем интерференционные картины от разных участков.
 
@@ -113,7 +113,7 @@
     \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/110.png}
 \end{center} 
 
-\[ D I = 2 d I_0 (1 + \cos \omega_0 k \Delta r ) = \frac{2 d I_0 }{dh      } dh \left( 1 + \cos \left( k d \left( \frac{x}{L }  + \frac{h}{L_s}  \right) \right) \right)   \] 
+\[ d I = 2 d I_0 (1 + \cos \omega_0 k \Delta r ) = \frac{2 d I_0 }{dh      } dh \left( 1 + \cos \left[ k d \left( \frac{x}{L }  + \frac{h}{L_s}  \right) \right] \right)\text{ }  \bigg |\cdot \int _{-\frac{a_s}{2 }  } ^{\frac{a_s}{2 } }     \] 
 \[ I = \frac{2 I_0 }{a_s } \left( a_s +\frac{\sin \left( kd \left( \frac{x}{L } + \frac{h}{L_s }  \right) \right)}{k \frac{d}{L_s} }\bigg |_{-\frac{a_s}{2} }^{\frac{a_s}{2} }    \right)   \] 
 %%-------------------------------%%
 
