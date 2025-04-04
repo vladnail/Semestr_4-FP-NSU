@@ -13,7 +13,7 @@
 \section{Связь комплексной степени когерентности и спектральной плотности энергии волнового поля} 
 
 \[\kern-1cm G_{11}^{(0)} = \lim_{T  \to \infty} \frac{1}{T }  \int_{-\frac{T}{2 } }^{\frac{T}{2 }  } E_1(t ) E_1 ^{* }  (t +\Delta t ) dt = \frac{1}{T }  \int_{-\frac{T}{2 } }^{\frac{T}{2 } } dt \frac{1}{\sqrt{2 \pi } } \int_{-\infty}^{\infty} E_1 (\omega ) e^{ - i \omega t } d \omega    \frac{1}{\sqrt{2 \pi } } \int_{-\infty}^{\infty} E_1 ^{* }  (\omega ' ) e^{i \omega (t + \Delta t )} d \omega ' =        \] 
-\[ = \frac{1}{2 \pi T } \int  d \omega \int d \omega ' E_1 ( \omega ) E_1 ^{* }  (\omega ' ) e^{i \omega ' \Delta t } \int_{-\infty}^{\infty} dt e^{- i (\omega - \omega'  )t} = \frac{1}{T }  \int_{-\infty}^{\infty} d \omega' |E_1 (\omega' )| ^2 e^{ i \omega ' \Delta t } = \left[ \omega' = -\omega \right]    = \] 
+\[ = \frac{1}{2 \pi T } \int_{-\infty}^{\infty}   d \omega \int_{-\infty}^{\infty}  d \omega ' E_1 ( \omega ) E_1 ^{* }  (\omega ' ) e^{i \omega ' \Delta t }\underbrace{ \int_{-\infty}^{\infty} dt e^{- i (\omega - \omega'  )t}}_{2 \pi \delta (\omega - \omega')} = \frac{1}{T }  \int_{-\infty}^{\infty} d \omega' |E_1 (\omega' )| ^2 e^{ i \omega ' \Delta t } = \left[ \omega' = -\omega \right]    = \] 
 \[  =\frac{\sqrt{2 \pi } } {T } \frac{1}{\sqrt{2 \pi } } \underbrace{\int_{-\infty}^{\infty} |E_1(\omega )| ^2 e^{ - i \omega \Delta t } d \omega}_{(*)}   \] 
 , где \( (*) \)  - обратное преобразование Фурье-преобразования от спектральной плотности энергии.
 
@@ -26,15 +26,17 @@
 
 \[ \int_{-\infty}^{\infty} \frac{A e^{ - i \omega \Delta t }d \omega         }{(\omega - \omega_0 ) ^2 + \gamma ^2 }  \] 
 
+При \( \Delta E > 0: \) 
+
 \begin{center}
     \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/111.png}
 \end{center}
 
-В верхней полуплоскости \( \omega = \omega '+ i \omega '' \text{ }  (\omega '' > 0 ) \). Интегрируем в нижней полуплоскости \( (\Delta t > 0) \): 
+В верхней полуплоскости \( \omega = \omega '+ i \omega '' \text{ }  (\omega '' > 0 ) \). То есть получится экспоненциальный рост, это не годится. Значит интегрируем в нижней полуплоскости: 
 
 \[ e^{- i \omega \Delta t + \omega '' \Delta t } ( \omega'' < 0)  \] 
 
-\[ Int = - A \frac{ 2 \pi i }{- 2 \omega \gamma } e^{ - i (\omega_0 - i \gamma ) \Delta t } = \frac{\pi A }{\gamma } e^{ - i \omega_0 \Delta t } e^{ - \gamma \Delta t }      \] 
+\[ Int = - A \frac{ 2 \pi i }{- 2 i \gamma } e^{ - i (\omega_0 - i \gamma ) \Delta t } = \frac{\pi A }{\gamma } e^{ - i \omega_0 \Delta t } e^{ - \gamma \Delta t }      \] 
 
 Схема Юнга с одинаковыми щелями  (точечный источник) \( I_1 = I_2 = I_0 \Rightarrow  \) 
 
@@ -53,9 +55,7 @@
 \end{center}
 Интерферируют поля разных частей волнового фронта. 
 
-\begin{center}
-    \includegraphics[width=0.3\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/114.png}
-\end{center}
+
 Схема деления амплитуды волны: 
 
 \[ d < l_1 = \frac{\lambda}{2 \theta_s } = \frac{\lambda}{\displaystyle \frac{2a_s}{L_s} }  \left( V>\frac{1}{2}  \right) \] 
@@ -63,7 +63,7 @@
 Перепишем это соотношение в ином виде, пригодном и для схем деления амплитуды волны: 
 
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/115.png}
+    \includegraphics[width=0.3\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/114.png}
 \end{center}
 , где \( 2 w  \) - апертура интерференции. В параксиальном приближении \( (a_s , d ,x ,y ) \ll L, L_s : \text{ }  2 w \approx 2 w ' \) 
 
@@ -75,27 +75,29 @@
 Плоскопараллельная пластина. Локализация полос на \( \infty  \). 
 
 \begin{center}
-    \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/116.png}
+    \includegraphics[width=0.7\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/115.png}
 \end{center}
 \( A \) и \( B \) - сопряженные точки.
 
 \( \int n d S  \) вдоль всех лучей из точки \( A \) в точку \( B \)  (сопряженную к \( A \)) \( = \mathrm{cosnt}   \) 
 
-\( \Delta r  \)  - разница оптических путей пучков. 
+\( \Delta r  \)  - разница оптических путей пучков (1) и (2) \( = \) 
 
-(1) и (2) = 2 \( |AB|n - \displaystyle  |AD| + \frac{\lambda_0}{2}  \) (отражение от более плотной оптической среды)
+\( = 2 |AB|n - \displaystyle  |AD| + \frac{\lambda_0}{2}  \) (отражение от более плотной оптической среды)
 
 \[ |AB | = \frac{h}{\cos \theta' } \quad  |AD| = 2 h \text{ } \mathrm{ tg}   \theta ' \sin  \theta_0 \]  
 
 \[  n \sin \theta ' = \sin \theta_0  \] 
-\[ \Delta r = \frac{2hn}{\cos \theta ' }- 2h \frac{\sin  \theta ' n \sin \theta ' }{\cos \theta ' } \frac{\lambda_0}{2 }  = \frac{2hn}{\cos  \theta' } (1 - \sin  ^2 \theta ' ) \frac{\lambda_0}{2 }  = 2hn \cos \theta ' + \frac{\lambda_0}{2 }  = 2hn \sqrt{1 - \sin  ^2 \theta ' }   + \frac{\lambda_0}{2 }   \] 
+\[ \Delta r = \frac{2hn}{\cos \theta ' }- 2h \frac{\sin  \theta ' n \sin \theta ' }{\cos \theta ' }+ \frac{\lambda_0}{2 }  = \frac{2hn}{\cos  \theta' } (1 - \sin  ^2 \theta ' ) \frac{\lambda_0}{2 }  = 2hn \cos \theta ' + \frac{\lambda_0}{2 }  = 2hn \sqrt{1 - \sin  ^2 \theta ' }   + \frac{\lambda_0}{2 }   \] 
 \[ \Delta r = 2 h \sqrt{n ^2 - \sin  ^2 \theta_0 } + \frac{\lambda_0}{2 }  \] 
 
 Пусть ось линзы \( \perp   \) пластине: 
 
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/117.png}
+    \includegraphics[width=0.5\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/116.png}
 \end{center}
+
+
 
 \[ 2 h \sqrt{n ^2 - \sin  ^2 \theta_{0m }  } + \frac{\lambda_0}{2 }  = m \lambda_0 , \text{ }  m \text{ - целое}  \] 
 \[ R_m = F \theta_{0m}  \] 
@@ -104,16 +106,18 @@
 
 \textbf{Опыт Поля} 
 
-%img
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/117.png}
+\end{center}
 
-\[ \Delta r = n \left( |AB| + |BC| \right) - |O D_1     |- |O D_2   | + \frac{\lambda_0}{2 }  \] 
+\[ \Delta r = n \left( |AB| + |BC| \right) - (|O D_1     |- |O D_2   |) + \frac{\lambda_0}{2 }  \] 
 
 \[ \sin (\theta_0 - \delta \theta  )  = n \sin \theta' \text{ при }  \Delta \theta \ll \theta_0 \Rightarrow \sin \theta_0 \approx n \sin \theta'  \] 
 
 \[ |x_1 x_2 | = z_s \mathrm{tg }  \theta_0 + z_p \mathrm{tg }   \theta_0 = (z_s + z_p ) \mathrm{tg }  (\theta_0 - \delta \theta ) + h \mathrm{tg }  \theta ' 2     \] 
 \[ \Rightarrow (z_s + z_p )(\mathrm{tg }  \theta_0 - \mathrm{tg }  (\theta_0 - \delta \theta )  ) = 2h \frac{\sin \theta_0 }{n \sqrt{\displaystyle  1 - \frac{\sin  ^2 \theta_0 }{n ^2 } }} \] 
 
-\[ \delta \theta = \frac{2h}{(z_s +z_p )} \frac{\sin  \theta_0 \cos  ^2 \theta_0 }{\sqrt{n ^2 - \sin  ^2 \theta_0 }} \ll 1    \] 
+\[ \delta \theta = \frac{2h}{(z_s +z_p )} \frac{\sin  \theta_0 \cos  ^2 \theta_0 }{\sqrt{n ^2 - \sin  ^2 \theta_0 }} \ll 1  \Rightarrow \delta \theta \ll \theta_0  \] 
 , где \( \delta \theta  = 2w \)  - апертура интерференции.
 
 
