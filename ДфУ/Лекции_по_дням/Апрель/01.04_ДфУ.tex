@@ -21,12 +21,6 @@
     \varphi (0 ) = 0  \kern +2cm  \Rightarrow \varphi ^{* }  (t ) = 0\\ 
     \dot{ \varphi } (0 ) = 0 
 \end{cases} \] 
-\[ \begin{cases}
-l \ddot{\varphi } + g \sin  \varphi = 0 \\ 
-\varphi (0 )= \varphi_0 \kern+2cm \Rightarrow \varphi(t, \varphi_0 , \omega_0 ) \text{ - решение} \\
-\dot{ \varphi } (0 ) = \omega_0 
-\end{cases} \] 
-
 Частный случай: 
 
 \[ \begin{cases}
@@ -34,6 +28,14 @@ l \ddot{\varphi } + g \sin  \varphi = 0 \\
 \varphi( 0 ) = \pi \kern+2cm \Rightarrow \varphi^{** } (t ) = \pi \\ 
 \dot{\varphi } (0 )  = 0  
 \end{cases} \] 
+
+\[ \begin{cases}
+l \ddot{\varphi } + g \sin  \varphi = 0 \\ 
+\varphi (0 )= \varphi_0 \kern+2cm \Rightarrow \varphi(t, \varphi_0 , \omega_0 ) \text{ - решение} \\
+\dot{ \varphi } (0 ) = \omega_0 
+\end{cases} \] 
+
+
 
 \[ \begin{cases}
 l \ddot{\varphi } + g \sin  \varphi = 0 \\ 
@@ -125,9 +127,10 @@ y(0) = 0
     \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ДфУ/Лекции_по_дням/image/35.png}
 \end{center}
 
-3) Надо доказать: 
+3) Надо показать: 
 
 \[ \forall  \varepsilon > 0 \text{ }  \exists  \delta > 0 : \forall  y_0 : \left\lvert y_0  \right\rvert < \delta \Rightarrow\underbrace{ \left\lvert  y(t) - y^* (t )  \right\rvert}_{|y_0|} < \varepsilon \text{ } \forall  t \ge 0 \] 
+\[ \delta = \varepsilon \Rightarrow \left\lvert y(t ) - y^ * (t )  \right\rvert = \left\lvert y_0 \right\rvert \] 
 
 \begin{center}
     \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ДфУ/Лекции_по_дням/image/36.png}
@@ -179,7 +182,7 @@ y(0 )=  0
 
 Если \( \left\lvert y_0      \right\rvert < \delta = \varepsilon \Rightarrow \left\lvert y(t ) \right\rvert = \left\lvert y_0 e^{ - t }  \right\rvert = \left\lvert y_0  \right\rvert e^{ -t } < \varepsilon  \Rightarrow \) нулевое решение \( y^* (t )   = 0\) устойчиво по Ляпунову
 
-4) \( \displaystyle  \lim_{t  \to \infty} \left\lvert y(t) - y^* (t )  \right\rvert = \lim_{t  \to \infty}  \left\lvert y_0 e^{- t }  \right\rvert - 0\) 
+4) \( \displaystyle  \lim_{t  \to \infty} \left\lvert y(t) - y^* (t )  \right\rvert = \lim_{t  \to \infty}  \left\lvert y_0 e^{- t }  \right\rvert = 0\) 
 
 \( \rho \) - любое \( \Rightarrow y^* (t ) =0\)   асимптотическим устойчиво. 
 
@@ -195,7 +198,7 @@ y(0 )=  0
 
 Не выполняется пункт 3: 
 
-\( \exists \varepsilon > 0 \text{ }  \forall  \delta > 0 \text{ }  \exists  \vec{y } _0 : \left\lVert  \vec{y }  _0 - \vec{y } _ 0 ^*  \right\rVert < \delta , \text{ }  \exists  \hat{t }  \ge t_0 : \left\lVert \vec{y } (\hat{ t } )- \vec{y } ^*    (\hat{ t } )  \right\rVert \ge \varepsilon  \) 
+\( \exists \varepsilon > 0 \text{ }  \forall  \delta > 0 \text{ }  \exists  \vec{y } _0 : \left\lVert  \vec{y }  _0 - \vec{y } _ 0 ^*  \right\rVert < \delta \Rightarrow   \exists  \hat{t }  \ge t_0 : \left\lVert \vec{y } (\hat{ t } )- \vec{y } ^*    (\hat{ t } )  \right\rVert \ge \varepsilon  \) 
 
 №3: 
 
@@ -229,9 +232,7 @@ y(0 )=  0
 
 1) (+) \\
 
-\begin{center}
-    \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ДфУ/Лекции_по_дням/image/42.png}
-\end{center}
+
 
 2) \( \begin{aligned}
 \begin{cases}
@@ -261,7 +262,11 @@ y ' = y \\
 y(0 ) = y_0 
 \end{cases}
 \Rightarrow y(t ) = y_0 e^{t } 
-\end{aligned} \] 
+\end{aligned} \]
+
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ДфУ/Лекции_по_дням/image/42.png}
+\end{center}
 
 \[ y(t) \text{ определено от } 0 \text{ до }  + \infty  \quad  (+)  \] 
 
