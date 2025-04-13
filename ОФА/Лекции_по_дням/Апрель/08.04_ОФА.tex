@@ -1,0 +1,175 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+
+Вспомним: 
+
+\[ 1) \left\lVert  A y \right\rVert = \left\lVert A  \right\rVert \left\lvert y \right\rvert \] 
+\[ 2) \left\lvert \left\lVert AB  \right\rVert \right\rvert  \le  \left\lVert AB \right\rVert\] 
+\[ 3) \left\lVert AB  \right\rVert \le \left\lVert  A  \right\rVert \left\lVert B \right\rVert \] 
+
+
+\[ d: L_2 (0,1 ) \to  L_2 (0,1 ) \text{ - неограниченный оператор} \] 
+\[ d : C^1 [0,1 ] \to  \underbrace{C [0,1]}_{(*)} \text{ - ограниченный оператор} \] 
+, где \((*) = \left\lVert f \right\rVert _C = \max _{t \in  [0,1 ]} \left\lvert f(t) \right\rvert  \)
+
+\[ \left\lVert d  \right\rVert = \sup _{g \neq 0} \frac{ \left\lVert dg  \right\rVert _C}{\left\lVert g  \right\rVert _{C '} } = \sup _{g \neq 0} \frac{ \left\lVert g'  \right\rVert _C}{\left\lVert g \right\rVert _{C '} } = \sup _{g \neq 0} \frac{\displaystyle \max _{t \in [0,1 ]} \left\lvert  g ' (t) \right\rvert}{\displaystyle  \max _{[0,1 ]} \left\lvert g '(t) \right\rvert + \max _{[0,1 ]}  \left\lvert g(t) \right\rvert}    \overset{(**)}{=} 1\] 
+
+\[ \left\lVert g  \right\rVert _C = \max _{t \in  [0,1 ] } \left\lvert g' (t ) \right\rvert + \max _{t \in  [0,1 ]} \left\lvert g(t) \right\rvert   \] 
+
+\[ g_n(t ) = \frac{\sin  (nt )}{n +1}   \]  
+
+\[ \left\lVert d  \right\rVert |_{\frac{\sin (nt)}{n+1} } = \frac{\displaystyle  \max _{[0,1]} \left\lvert \frac{n \cos (nt )}{n+1}  \right\rvert}{\displaystyle  \max _{[0,1]} \left\lvert \frac{n \cos (nt )}{n+1}  \right\rvert + \max _{[0,1]} \left\lvert \frac{\sin (nt)}{n+1}  \right\rvert  } = \frac{\displaystyle  \frac{n}{n+1} }{\displaystyle \frac{n}{n+1 }  +\frac{1}{n+1} }  =\frac{n}{n+1 } \xrightarrow{n \to  \infty } 1     \] 
+, так как тут достигается единица \( \Rightarrow (**)\) - является равенством, так достигается на последовательности. 
+
+\[ \left\lVert g_n \right\rVert _{C^{ \perp } } < \infty  \] 
+
+\section{Сходимость операторов и операторные ряды}
+
+\begin{definition}
+    Последовательность операторов (линейные) \( A_n : E \to  F \) сходятся к оператору \( A : E \to  F \), если \( \left\lVert A_n -A \right\rVert \xrightarrow{n \to  \infty  } 0    \) (обозначаем \( A_n \xrightarrow{ n \to  \infty } A \text{ или }  A \displaystyle \lim_{n \to  \infty  }A_n    \))
+\end{definition}
+
+\[ \left\lVert A_n x  - A x  \right\rVert \le \kern -0.7cm\underbrace{\left\lVert A_n - A \right\rVert}_{ \to  0 \scriptsize{\text{(слабее поточечной)} }} \kern -0.7cm\left\lVert x \right\rVert \to  0 \] 
+\[ A_n x \xrightarrow{n \to  \infty } A x    \] 
+
+Из поточечной не следует сходимость по норме. Пример: \( P_n \) в \( l_2 \) 
+
+\[ P_n x \xrightarrow{ n \to  \infty } Ix \quad  P_n \to  I \text{ }  (\text{поточечная})   \] 
+
+\[ \left\lVert P_n - P_{n+m }  \right\rVert = \sup _{x \neq 0} \frac{ \left\lVert (P_n -P_{n+m} ) \right\rVert _{l_2} }{\left\lVert x \right\rVert _{l_2} }   \le 1\] 
+
+Свойства \( A_n \xrightarrow{ n \to  \infty } A  , \text{ }  B_n \xrightarrow{ n \to  \infty } B   \) 
+
+1) Линейность операций \( \forall  \alpha , \beta \) - числа: 
+
+\[ \alpha A_n + \beta B_n  \to  \alpha A + \beta B \]  
+\[ \left\lVert (\alpha A_n + \beta B_n ) - (\alpha A + \beta B_n) \right\rVert \xrightarrow{ n \to  \infty  } 0  \] 
+
+2) Линейность \( A \): 
+
+\[ A(\alpha x + \beta y  ) = \lim_{n  \to \infty} A_n (\alpha + \beta y ) = \lim_{n  \to \infty} (\alpha A_n x + \beta A_n y) = \alpha \lim_{n  \to \infty}     A_n x + \beta \lim_{n  \to \infty} A_ny = \alpha Ax + \beta A y   \] 
+
+3) Если \( \left\lVert A_n  \right\rVert < \infty  \text{ }  \forall  n  \), то \( \left\lVert  A  \right\rVert < +\infty   \) и \( \left\lVert A_n \right\rVert \to  \left\lVert A \right\rVert \) 
+
+\[ \exists  n_0 \text{ }  \left\lVert A_{n_0} -A   \right\rVert \le 1 \] 
+\[ \left\lVert A \right\rVert = \left\lVert A - A_m + A_{n_0}  \right\rVert \le \underbrace{\left\lVert A- A_{n _0}  \right\rVert}_{\le 1} + \underbrace{\left\lVert A_{n _0 }  \right\rVert}_{< \infty } < + \infty \] 
+
+\[ \left\lvert \left\lVert A_n  \right\rVert - \left\lVert A \right\rVert \right\rvert \le \left\lVert A_n - A \right\rVert \xrightarrow{ n \to  \infty  } 0 \Rightarrow \left\lVert A \right\rVert  =\lim_{n \to  \infty  }  \left\lVert A_n \right\rVert \] 
+
+\begin{theorem}
+    Если \( H  \) и \( H_1 \) - гильбертовы пространства, то пространство ограниченных линейных операторов \( A : H \to  H_1 \)  с операторной нормой: 
+
+    \( \left\lVert A \right\rVert = \displaystyle  \sup _{\left\lVert x \right\rVert \le 1} \left\lVert Ax \right\rVert  \) является полным. 
+\end{theorem}
+
+\begin{proof} \(  \) 
+
+    \( A_n \) - фундаментальна \( \left\lVert A_{m} - A_n  \right\rVert \le \varepsilon \) 
+
+    \[ \left\lVert A_m x -A_m x \right\rVert \le \left\lVert A_m -A_n \right\rVert \left\lVert x \right\rVert \le \varepsilon \left\lVert x \right\rVert \to   \tag{\(*  \) }\] 
+    \[ \to  A_n x - \text{ фундаментальная последовательность в }  H_1 \]
+
+    \[ Ax = \lim_{n  \to \infty} A_n x \text{ для каждого } x \in H   \]  
+
+    \[ \exists ! \text{ }  A : H \to  H_1  \] 
+
+    1) Линейность \( A :  \text{ } A(\alpha x + \beta y ) = \displaystyle \lim_{n \to \infty} A_n (\alpha x + \beta y) = \alpha A x + \beta B y  \text{ }  , \forall  \alpha , \beta , \text{ }  \forall  x, y \in H \) 
+
+    2) Ограниченность \( A :\text{ } \left\lvert  \left\lVert A_m  \right\rVert - \left\lVert A_n \right\rVert \right\rvert \le \left\lVert A_m -A_n \right\rVert < \varepsilon   \) 
+
+    Численная последовательность \( \left\lVert A_n \right\rVert \) - последовательность Коши \( \exists  C \text{ }  \left\lVert A_n \right\rVert \le C \text{ }  \forall  n \in \mathbb{N} \)
+    
+    \[ \left\lVert A_n x  \right\rVert \le \left\lVert A_n  \right\rVert \left\lVert x \right\rVert \le C \left\lVert x \right\rVert \] 
+
+    \[ \left\lvert \left\lVert A_n x  \right\rVert - \left\lVert A x \right\rVert \right\rvert \le \left\lVert A_n x - Ax  \right\rVert \le \varepsilon  \]
+    \[ \lim_{n  \to \infty} \left\lVert A_n x  \right\rVert = \left\lVert Ax  \right\rVert \]  
+
+    \[ \lim  \Rightarrow \left\lVert Ax  \right\rVert \le C \left\lVert x  \right\rVert \] 
+
+    \[ \left\lVert A \right\rVert = \sup _{x \neq 0}  \frac{\left\lVert A x \right\rVert}{\left\lVert x \right\rVert} \le C \text{ }  A\text{ - ограничен}  \] 
+
+    3) \( A_n \xrightarrow{n \to  \infty } A    \), то есть \( \left\lVert A_n -A \right\rVert \xrightarrow{ n \to  \infty }  0 \) 
+
+    \[ \lim (x) \text{ по } m \Rightarrow \left\lVert Ax - A_n x \right\rVert \le \varepsilon \left\lVert x \right\rVert  \] 
+
+    \[ \left\lVert A_n -A  \right\rVert = \sup  \frac{\left\lVert A_n x - Ax  \right\rVert}{\left\lVert x \right\rVert} \le  \varepsilon  \] 
+
+\end{proof}
+
+\begin{flushleft}   
+    \textbf{Замечание: } \( H_1  \)  - не полное, могут ситуации: фундаментальная последовательность 1) не имеет предел; 2) предел ограниченного оператора неограничен
+\end{flushleft} 
+
+\begin{definition}
+    \( A_n \) - линейная ограниченная \( \forall  n \in \mathbb{N} \) \( A_n : H \to  H_1 \), где  \( H_1, H   \)  - гильбертовы пространства \( \displaystyle  \sum_{n =1} ^{\infty  }A_n  \)  - называется операторным рядом: 
+    \[ S_N = \sum_{n =1}^N A_n \text{ - частичная сумма ряда сходится, если сходится ряд: } \sum_{n =1}^{ \infty  } A_n = \lim_{N \to \infty}  S_N    \] 
+\end{definition}
+
+Свойства сходящихся рядов операторов: 
+
+1) \( \displaystyle \sum_{n =1}^{\infty  } A_n = A , \text{ }  \sum_{n =1}^{ \infty  } B_n =B   \) 
+
+\[ \sum_{n =1}^{ \infty  } (\alpha A_n + \beta B_n ) \text{ - сходится и сумма оператор } \alpha A \beta B   \] 
+
+2) \(\displaystyle  \sum_{n =1} ^{\infty  } \left\lVert A_n \right\rVert   \) сходится, то \( \displaystyle  \sum_{n =1}^{ \infty   }   \) сходится  и \( \displaystyle  \left\lVert  \sum_{ n =1} ^{ \infty  } A_n    \right\rVert \le \sum_{n =1}^{\infty  }\left\lVert A_n \right\rVert  \) 
+
+\begin{proof} \(  \) 
+
+    1) Линейность оператора \( \forall  \alpha , \beta \) - числа: 
+
+    \[ \sum_{n =1}^{ \infty  } (\alpha A_n + \beta B_n ) = \lim_{N  \to \infty} \sum_{n =1}^{ N }  (\alpha A+ \beta B_n ) = \alpha \lim_{N  \to \infty} \sum_{n =1}^{N } A_n + \beta \lim_{N  \to \infty} \sum_{n =1}^{N } B_n = \alpha A + \beta B    \] 
+
+    2) \(\displaystyle  \left\lVert  S_m - S_{m + p }  \right\rVert = \left\lVert \sum_{n =1}^{m }  A_n + \sum_{n =1}^{ m+ p} A_n   \right\rVert  = \left\lVert - \sum_{n =m +1 } ^{ m + p }  A_n  \right\rVert \le \sum_{n =m+p } ^{m+ p }  \left\lVert A_n \right\rVert < \varepsilon\) 
+    , где \( S_1, S_2 \) - фундаментальны, а \( A_n : \text{г.п} \to  \text{г.п}  \Rightarrow S_n\) сходятся по Теореме 1. \(  \Rightarrow \displaystyle  \sum_{n =1}^{ \infty } A_n \) - сходится. 
+
+    При этом \(\displaystyle  \left\lVert \sum_{n =1}^{\infty  }   A_n\right\rVert = \left\lVert \lim_{N  \to \infty}  \sum_{n =1}^{N } A_n  \right\rVert  \lim_{n       \to \infty} \left\lVert \sum_{n =1}^{N } A_n   \right\rVert \le \lim_{n  \to \infty} \sum_{n =1}^N \left\lVert A_n \right\rVert = \sum_{n =1}^{\infty  } \left\lVert A_n \right\rVert   \) 
+
+\end{proof}
+
+\section{Обратимость операторов}
+
+\begin{definition}
+    Оператор \( A: H \to  H_1 \)  называется обратимым, если уравнение \( Ax =y \) имеет не более одного решения \( x \in  H \) 
+\end{definition}
+
+\begin{definition}
+    Если \( A  \) - обратим, тогда каждому \( y \in im A  \)  поставим  в соответствии \( x \in  H \), при котором \( Ax =y \). Этот оператор называется обратным к \( A \) и обозначается \( A^{-1}  \) 
+\end{definition}
+
+Свойства обратного оператора: 
+
+1) \( dom_{(home)} A ^{-1} = im A  \) 
+
+2) Если \( A: H \to  H_1 \) линеен и обратим, то \( A^{-1}  \) линеен (ограниченность \( A \) не влечет ограниченность \( A^{-1}  \))
+
+\( \alpha , \beta  \) - числа, \( y_1, y_2 \in  imA  \) 
+
+Нужно доказать: \( A^{-1 }  (\alpha y_1 + \beta y_2 ) = \alpha A^{-1 }  y_1 + \beta A^{-1 } y_2 \) 
+
+\begin{proof} \(  \) 
+
+    Имеем: \( \exists  ! \text{ }  x_j \in  H \text{ } A x_j = y_j, \text{ где } j=1,2, \ldots \) 
+
+\[ A (\alpha x_1  + \beta x_2 ) = \alpha A x_1 + \beta A x_2 = \alpha y_1 + \beta y_2  \] 
+\[ \alpha x_1 \beta x_2 = A^{-1 }  (\alpha y_1 + \beta y_2 ) \] 
+, где \( x_1 = A^{-1 }  y_1 , \text{ }  x_2 = A^{-1 }  y_2  \) 
+
+\end{proof}
+
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi
