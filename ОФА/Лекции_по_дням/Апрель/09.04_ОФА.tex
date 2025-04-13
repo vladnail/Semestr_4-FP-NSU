@@ -1,0 +1,236 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \usepackage{forest}
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+
+
+
+Свойства обратного оператора: 
+
+1. \( dom (A^{-1 }  ) = im A  \) 
+
+2. \( A \) - линейный и обратимый, то \( A^{-1 }  \) линейный 
+
+3. \( \begin{aligned}
+    \begin{aligned}
+        Aч: H \to  H_1 \\ 
+        B: H_1 \to  H_2 
+    \end{aligned}
+    \xleftarrow{}  
+\end{aligned} \) линейно обратимые операторы 
+
+Тогда \( BA : H \to  H_2  \)  обратим и \( (BA )^{-1 }  = A^{-1 }B^{-1 }   \) 
+
+\begin{proof} \(  \) \\
+
+    1) \( BA  \) - линейный 
+
+    Проверим \( (BA) x = z  \)  - имеет не более одного решения \( x \in  H \), \( \forall  z \int  H_2  \) 
+
+    \( B (A x ) =z  \text{ }  \forall  z \) имеет не более одного решения \( y = B^{-1 }  z  \) (так как \( B \)- обратим)\\
+
+    2) \( Ax = B^{-1 }  z  \)  имеет не более одного решения \( x = A^{-1 }  (B^{-1 }  z ) \) (так как \( A \) - обратим)
+
+    \[  x = (A^{-1 }  B^{-1 }  )z \] 
+    \[ (AB ) ^{-1 }  = A^{-1 } B^{-1 } \]
+\end{proof}
+
+4. Линейные операторы: 
+
+\[ A : H \to  H_1 \quad  B : H_1 \to  H  \] 
+
+\[ AB  = I_{\text{н} } \quad  BA = I_{\text{н} }   \] 
+
+Тогда оператор \( A \) обратим и \( A^{-1 } =B  \) 
+
+\begin{proof} \(  \) \\
+
+    Пусть \( A  \) не обратим
+
+    \[ \exists  x_1 , x_2 \in H (x_1 \neq x_2 ) : \quad  \begin{aligned}
+        A x_1 = y  \\
+     A x_2 = y 
+    \end{aligned}\] 
+
+    \[ B(A x_1 ) = By = B(A x_2 ) \text{ , где  } BA = I_{\text{н} }   \Rightarrow I_{\text{н} }x_1 = x_1 = B y = I_{\text{н} } x_2 = x_2    \]  
+
+    Получил, что \( x_1 = x_2 \) - противоречие \( \Rightarrow  A\) - обратим
+
+    \[ AB = I_{\text{н}_1 } \Rightarrow A(B y ) = y \] 
+    \[ B y = A ^{-1 }  y \Rightarrow B = A^{-1 }  \] 
+
+
+\end{proof}
+
+\begin{theorem}[Теорема Неймана]
+    \( H \) - гильбертово пространство, \( A: H \to  H  \) - линейно ограниченный оператор, причем \( \left\lVert  A  \right\rVert <1 , \text{ }  dom (A ) = H \). 
+    
+    Тогда:  
+    
+    \[ (I -A ) \text{ - обратим}  \] 
+
+    \[ (I -A )^{-1}  \text{ - ограничен} \] 
+
+    \[ dom (I - A )^{-1 } = H  \] 
+
+    \[ (I -A )^{-1 }  = \sum_{n =0 } ^{ \infty  } A^{n }  \text{ , где }  A^{0 }  = I , \text{ }  A^{n+1 }  = A A ^{n }  \text{ }  \forall  n \ge 0\]  
+\end{theorem}
+
+\begin{proof} \(  \) \\
+
+    \[ \left\lVert A  ^{n} \right\rVert  = \left\lVert A A ^{n-1 }  \right\rVert \le \left\lVert A  \right\rVert \left\lVert A^{n-1 }  \right\rVert \le  ... \le \left\lVert A  \right\rVert^{n } \underbrace{ \left\lVert I  \right\rVert }_{=1}= \left\lVert A  \right\rVert ^{n }  \xrightarrow{n \to  \infty  }0   \] 
+
+    Тогда: 
+
+    1) \( A^ n \xrightarrow{ n \to  \infty  } 0   \) 
+
+    2) \( \displaystyle  \sum_{n =0 }^{ \infty  } \left\lVert  A ^{n }  \right\rVert \le  \sum_{n =0 }^{ \infty  } \left\lVert A  \right\rVert^n = \frac{1}{1 - \left\lVert A  \right\rVert}  < \infty \) 
+    , где \( \left\lVert A \right\rVert <1\) 
+
+    По свойству операторных рядов: 
+
+    \[ \sum_{n =0 } ^{ \infty  } A^n \text{ - сходится }   \] 
+
+    \[ (I -A ) \sum_{n =0 }^{ \infty  } A^{ n }  = \sum_{n =0 } ^{ \infty  } A^ n - \sum_{n =0 }^{ \infty  } A^{n +1 }  = I - A^{N +1 } \xrightarrow{ N \to  \infty  } I      \]  
+
+    \[ \begin{aligned}
+        \begin{aligned}
+            (I -A ) \sum_{n = 0 } ^{\infty  } A^{n }  = I \\
+            \sum_{n =0 } ^{ \infty  } (I -A ) = I  
+        \end{aligned}
+         \xleftarrow{}  
+        \text{ по свойству обратимости операторов} 
+    \end{aligned}     \]  
+    
+    \[ (I-A ) \text{ обратим  и } (I-A ) ^{-1 }  = \sum_{n =0 } ^{\infty  } A^n   \] 
+
+    Ограниченность \( (I- A ) ^{-1} \)
+
+    \[ \sum_{n =0 }^{ \infty } A^n \text{ - ограничен по теореме о полноте пространства операторов или можно  }   \] 
+    убедиться следующим образом: \( \displaystyle \left\lVert \sum_{n =0 } ^{ \infty }   \right\rVert \le  \sum_{n =0 }^{ \infty  } \left\lVert A  \right\rVert ^n = \frac{1}{  1 - \left\lVert A  \right\rVert}  \) - конечные числа.
+
+    \[ dom ( I -A ) ^{-1 }   = dom \left( \sum_{n =0 } ^{ \infty  } A^{n }   \right) = H  \] 
+\end{proof}
+
+\begin{theorem}[Теорема Банаха]
+    Если \( B: H \to  H_1  \) - линейный ограниченный  обратимый и \( dom B ^{-1 }  = H_1  \), то \( B^{-1}  \) - ограничен.
+\end{theorem}
+
+\section{Спектр оператора}
+
+\( A : H \to  H  \) - линейный оператор, где \( H \)  - гильбертово пространство над \( \mathbb{C} \) 
+
+Тут красивейшая схема можно использовать: 
+
+\begin{center}
+    \begin{forest}
+        for tree={circle, draw, l sep=20pt}
+        [ \( A - \lambda I \) 
+          [1, edge label={node[midway, left]{обратим}}
+            [a]
+            [b]
+            [c]
+          ]
+          [2, edge label={node[midway, right]{необратим}}]
+        ]
+      \end{forest}
+\end{center}
+
+\textbf{1) } \( dom (A - \lambda I) ^{-1 }  = ?  \) \\
+
+\textit{1a)}  \( dom (A - \lambda I )^{-1 }  \) плотно в \( H \), \( dom (A - \lambda I )^{-1 }  \neq H  \) 
+
+Замыкание: \( \overline{dom (A - \lambda I )^{-1 }  } =H   \) 
+
+\[ \lambda \in  \sigma_{C }  (A ) = \{\lambda \in  \mathbb{C} | \overline{dom (A - \lambda I )^{-1 }  } =H\} \] 
+
+\textit{2b)}  \( dom (A - \lambda I )^{-1 }  =H \) 
+
+
+\( \rho (A) \) - резольвентное множество (совокупность всех  регулярных значений)
+
+\( R_{\lambda } = (A  - \lambda I )^{-1 }   \) резольвентный оператор. 
+
+Уравнение \( (A - \lambda I ) x =  y \Leftrightarrow  x = (A - \lambda I ) ^{-1 }  y = R_{\lambda } y   \) по теореме Банаха \( R_{\lambda }  \)  - ограниченный оператор. 
+
+\textit{3c)}  \( dom (A - \lambda I )^{-1 }   \) не плотно в \( H \)  , \( \lambda \in  \sigma_{r}(A)  \) - остаточный спектр (r - residual)
+
+\textbf{2)} \( (A - \lambda I ) x = y \) 
+
+\[ \exists  y \in  H , \text{ }  x_1 ,x_2 \in  H , \text{ }  x_1 \neq x_2   \] 
+\[ A x_1 - \lambda x_1 = y = A x_2 - \lambda x_2 \Leftrightarrow  \exists  x \in H \text{ }  x\neq 0 A x = \lambda x  \] 
+, где \( \lambda  \) - собственное число, \( x \) - вектор
+
+\[ \sigma_p(A ) = \{\lambda \in  \mathbb{C} | (A - \lambda I ) \text{ необратим }  \} \] 
+Дискретный точечный спектр.
+
+\[ (A - \lambda I ) x = y , \text{ }  \exists  y \in  H , \text{ }  x_1, x_2 \in  H \text{ } (x_1 \neq x_2 ) \] 
+\[ A x_1 - \lambda x_1 = y = A x_2 = \lambda x_2  \] 
+
+Возьмем \( x = x_1 = x_2  \):
+
+\[  (A - \lambda I )(x_1 - x_2 ) = 0\] 
+\[ A x = \lambda x \text{ , то  } : \exists  x \in  H \text{ }  x \neq \text{ }  Ax = \lambda x   ,\text{ верно} \] 
+
+Обратно: 
+
+\[ A x - \lambda x = 0  \quad  y = 0 \] 
+\[ A 0  - \lambda 0 = 0 \] 
+
+\( \exists   \)  2 решения \( x \neq 0 , \text{ }  x =0 \) 
+
+\begin{definition}
+    Спектр \( A : \sigma (A ) = \mathbb{C} \backslash \rho (A ) \) 
+
+    1) \( \sigma (A ) = \sigma _{c }  (A ) \cup  \sigma_{\rho } (A ) \cup \sigma _r (A )  \) 
+
+    2) \( \sigma _{\rho } \cap \sigma _c = \sigma _c \cap  \sigma _r = \sigma_r \cap \sigma _{\rho } = \phi    \) 
+
+    3) конечномерный случай \( \Rightarrow \sigma_r = \sigma_c = \phi \) 
+\end{definition}
+
+Свойства спектра: 
+
+1) \( \sigma (A ) \subset \{ \lambda \in  \mathbb{C} | \left\lvert  \lambda \right\rvert \le  \left\lvert A \right\rvert\} \) 
+
+\begin{proof} \(   \)  \\
+
+    Докажем, что если \( \left\lvert \lambda \right\rvert > \left\lVert A  \right\rVert \), то \( \lambda  \)  - регулярное значение, то есть \( \lambda \in  \theta (A) \) 
+
+    \[ (A - \lambda I )^{-1 }  = \left( - \lambda \left( I - \frac{1}{\lambda }  A  \right) \right) ^{-1 }  = \bigg [\underbrace{ (- \lambda I )}_{\text{обратим и  } dom(... )^{-1 }  = H }\underbrace{ \bigg (I - \overbrace{\frac{1}{\lambda } A}^{\left\lVert ... \right\rVert <1} \bigg  )}_{\text{обратим и  } dom(... )^{-1 }  = H } \bigg ] ^{-1}=  \] 
+    \[ = \underbrace{\bigg(  I -\frac{1}{\lambda } A      \bigg) ^{-1 }  \bigg(- \frac{1}{\lambda }I  \bigg) ^{-1 }}_{dom(... )= H}  \Rightarrow \lambda \in  \rho (A)\] 
+\end{proof}
+
+2) \( \sigma (A) \) - замкнутое множество (\(  \rho (A)\) - открытое множество)
+
+\begin{proof} \(  \) 
+
+    Докажем, что \( \rho (A) \) - открытое. Фиксируем \( \lambda_0 \in  \rho(A) \), открытое: \( \exists  \varepsilon \text{ }  \left\lvert \lambda - \lambda_0      \right\rvert < \varepsilon \Rightarrow \lambda \in  \rho(A)\) 
+
+    \[ (A - \lambda I )^{-1 }  \overset{\pm \lambda_0 I}{=} (((A - \lambda_0 I ))ubr- (\lambda - \lambda_0 )I )^{-1} = [\underbrace{(A - \lambda_0 I )}_{(1)} \underbrace{(I - (\lambda - \lambda_0 ) (A - \lambda_0 I) ^{-1} )}_{(2)}]^{-1}  \]
+    
+    (1): обратим \( dom (... ) = H  \), так как \( \lambda_0 \in  \rho(A ) \) 
+
+    (2): обратим и \( dom(... )^{-1 }  = H  \) по теореме Неймана
+
+    \[ \left\lVert (\lambda- \lambda_0  ) ( A - \lambda_0 I )^{-1}  \right\rVert <1 \text{ если }  \left\lvert \lambda  -\lambda_0  \right\rvert < \varepsilon \] 
+    , где \( \varepsilon = \displaystyle \frac{1}{ \left\lVert (A -\lambda_0 I )^{-1}  \right\rVert}  \) 
+
+\end{proof}
+
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi
