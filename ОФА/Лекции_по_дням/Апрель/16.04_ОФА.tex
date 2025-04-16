@@ -1,0 +1,168 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \usepackage{forest}
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+
+\section{Линейные функционалы. Сопряженное пространство}
+
+\begin{definition}
+    Линейный функционал это линейный оператор \( f: H \to  \mathbb{R}(\mathbb{C}) \) 
+\end{definition}
+
+Пример:
+\[ f(x )= ( x, x_0), \text{ }  x, x_0 \in H \]  
+\[ f: H \to  \mathbb{C} \] 
+
+\begin{definition}
+    Множество всех линейных непрерывных функционалов заданных на \( H \)  называется пространством, сопряженным к \( H \)  и обозначается \( H^* \).
+\end{definition}
+
+\[ \left\lVert f(x) \right\rVert = \sup _{\left\lVert x  \right\rVert =1} \left\lvert f(x ) \right\rvert  \] 
+
+\begin{definition}
+    Множество  \( \{x \in  H | f(x )= 0\} \) называется ядром \( f \)  и обозначается \( \ker f \).
+\end{definition}
+
+\textit{Свойства ядра линейного функционала:} 
+
+1) \( \forall  f :  H \to  \mathbb{C}  \text{ }  \ker f \) является подпространством в \( H \);
+
+\begin{proof} \(  \) 
+
+    \( 0 \in \ker   f \): предположим, что \( f(0 ) \neq 0 \) 
+    \[ f(x_1 ) = y  \]  
+    \[ f(0 ) = f(x_1 -x_1 ) = y_1 - y_1 = 0  \] 
+
+    \(x,y \in  \ker  f , \text{ }  \alpha , \beta  \text{ - числа }   \):
+
+    \[  f(\alpha x + \beta y )= \alpha f (x ) + \beta f( y ) = \alpha 0 + \beta 0 = 0 \Rightarrow \alpha x + \beta y \in  \ker f\] 
+
+\end{proof}
+
+2) \( f : H \to C  \)  непрерывный линейный функционал, то \( \ker  f \)  замкнутое подпространство в \( H \).
+
+\begin{proof} \(  \) 
+
+    \( x_0 \) - предельная точка \( \ker f \). \( x 2 \to  x_0 \text{ }  \forall  n \text{ }  x_0 \in  \ker f \) 
+
+    \[ f(x_0) = f \left( \lim_{n \to \infty}  x_n \right) = \lim_{n  \to \infty} f(x_n ) = \lim_{n         \to \infty} 0 = 0 \quad   x_0 \in \ker   f \] 
+
+\end{proof}
+
+3) \( f: H \to \mathbb{C}  \) ненулевой непрерывный линейный функционал, то \( 1=\dim (\ker f )^{ \perp } = \mathrm{codim } (\ker f)    \) - размерность ортогонального дополнения к ядру = коразмерность
+
+\begin{proof} \(  \) 
+
+    \( f  \) - непрерывный \( \overset{1) \text{ и } 2) }{\Rightarrow} \ker f  \) - замкнутое подпространство в \( H \) (гильбертово пространство)  \( \Rightarrow H = \ker f \oplus (\ker f)^{\perp }  \) 
+
+    \( f \) - ненулевой \( \ker  f\neq H \Rightarrow (\ker f )^{\perp } \neq  \{0 \} \Rightarrow \exists  x_0 \in  (\ker f )^{ \perp } , \text{ }  x_0 \neq 0   \) 
+
+    Докажем, что \( x_0 \) базис в \( (\ker  f)^{\perp }  \), то \( \forall  x \in  (\ker  f )^{\perp }  \). 
+
+    \[ \exists \alpha : x_1 = \alpha x_0  \] 
+
+    Положим \( \alpha = \displaystyle  \frac{ f(x_1 )}{ f(x_0 )}   \) и \( y = (\alpha x_0 - x_1 ) \in  (\ker f)^{\perp }  \) 
+
+    \[ f(y )  = f(\alpha x_0 - x_1  ) = \alpha f(x_0 ) - f(x_1 ) = \frac{f(x_1 )}{f(x_0 )} f(x_0 ) -f(x_1) = 0  \] 
+    \[ \Rightarrow y \in  \ker f \Rightarrow y = 0  \] 
+
+    Так как \( y = 0  \), то: \( y = (\alpha x_0 - x_1 ) \Rightarrow \alpha x_0 = x_1 \) 
+
+\end{proof}
+
+\begin{theorem}[Теорема Рисса об общем линейном непрерывном функционале] \(  \) 
+
+    \( H \) - гильбертово пространство, тогда: 
+
+    1) \( \forall  f \in  H^* \text{ }  \exists  ! x_0 \in  H : f(x ) = (x, x_0 )  \text{ }  \forall  x \in  H\), при этом \( \left\lVert f  \right\rVert = \left\lVert x_0  \right\rVert \) 
+
+    2) \( \forall  x_0 \in  H  \) формула \( f(x ) = (x, x_0)\) задает линейный непрерывный функционал на \( H \) (то есть \( f \in H^* \)), при этом \( \left\lVert f \right\rVert = \left\lVert x_0 \right\rVert \) 
+\end{theorem}
+
+\begin{proof}  \(  \) 
+
+    Для пункта 2): \\
+
+    \( f(x ) = (x, x_0 )\) - линейность по первому аргументу скалярного произведения влечет линейность \( f \). 
+
+    \[ \left\lVert f  \right\rVert  = \sup _{\left\lVert x  \right\rVert = 1 } \left\lvert  f(x ) \right\rvert = \sup _{\left\lVert x  \right\rVert = 1 } \left\lvert (x, x_0) \right\rvert \overset{(*)}{\le}  \left[ \sup _{\left\lVert x  \right\rVert =1 }    \left\lVert x \right\rVert \right] \left\lVert x_0 \right\rVert = \left\lVert x_0 \right\rVert < \infty  \] 
+    , где \( (*) \) - неравенство Коши-Буняковскго
+
+    \[ \left\lVert f  \right\rVert = \sup _{\left\lVert x  \right\rVert =1 } \left\lvert f(x) \right\rvert = \sup _{\left\lVert x  \right\rVert =1 } \left\lvert (x, x_0) \right\rvert \ge  \left\lvert \left( \frac{x_0}{\left\lVert x_0  \right\rVert} , x_0 \right)  \right\rvert = \frac{1}{\left\lVert x_0 \right\rVert} (x_0, x_0 ) = \frac{1}{\left\lVert x_0  \right\rVert }\underbrace{ \left\lVert x_0 \right\rVert^{2}}_{(**)} \Rightarrow \left\lVert f  \right\rVert = \left\lVert x_0 \right\rVert   \] 
+    , где \( (**) \): в гильбертовом пространстве \( \left\lVert x_0 \right\rVert  = \sqrt{x_0,x_0}\) (если \( x_0    =0 \), то \( \left\lVert f  \right\rVert = 0 \)) \\
+
+    Для пункта 1): \\
+
+    Докажем, что \( \exists  x_0 \in  H \text{ }  f(x)= (x, x_0) \text{ } \forall  x \in  H \), если \( f = 0 \), то \( x_0 = 0 \Rightarrow \left\lVert f  \right\rVert = \left\lVert x_0 \right\rVert \)  
+
+    \( f \) - ненулевой  линейный непрерывный функционал \( \overset{1) \text{ и }  2)}{\Rightarrow} \ker f \) - замкнутое подпространство (в гильбертовом пространстве)
+
+    \[ H = (\ker f ) \oplus (\ker  f )^{\perp } \text{ }  \forall  x \in  H \text{ }  \exists  ! x = x_1 +x_2   \] 
+    , где \( x_1\in  \ker f ,\text{ }  x_2 \in (\ker  f )^{\perp }    \) 
+
+    По свойству  3)  \( \exists x 3 \in  (\ker  f )^{\perp } \text{ }  \left\lVert x_3   \right\rVert =1 \text{ }  \forall  x_2 \in  (\ker  f )^{\perp  } \text{ }  \exists \alpha \in  \mathbb{C} : x_2  = \alpha x_3    \)  \( \Rightarrow \forall  x \in  H: x = x_1 + \alpha x_3  \)
+
+    \[ f(x ) = f (x_1 + \alpha x_3 ) =\underbrace{ f(x_1 )}_{=0} + \alpha f(x_3 ) = \alpha f(x_3 ) = f(x_3 ) \underset{x_1 \perp x_3 }{(x_1 ,x_3 )} + \alpha f(x_3 ) (x_3 ,x_3 )  = \] 
+    \[ = (x_1 , \overline{f(x_3 ) } x_3   ) + (\alpha x_3 , \overline{f(x_3 ) } x_3  ) = (x_1 + \alpha x_3 , \overline{f(x_3 )} x_3       ) = (x,\underbrace{ \overline{f(x_3 )} x_3}_{x_0}   ) = (x, x_0) \] 
+
+    \( \Rightarrow \) существование \( x_0 \) доказано.
+
+    Проверим единственность: Пусть \( \exists  \tilde{x } _0 \in  H \text{ }  f(x ) = (x, \tilde{ x }_ 0).  \) Покажем, что \( (x, x_0 ) = f(x ) = (x, \tilde{ x}_0) \): 
+
+    \[ (x_0 - \tilde{x } _0 , x_0 ) = (x, \tilde{x } _0) \] 
+    \[ \left\lVert x_0 - \tilde{ x  } _0  \right\rVert =0 \Rightarrow x_0 = \tilde{x }_0 \] 
+
+    По второму пункту: \( \left\lVert f  \right\rVert = \left\lVert x_0 \right\rVert \) 
+
+\end{proof}
+
+\section{Бра- и кет- векторы }
+
+\( (x, y ) = <y | x> = \{<y |\} \{| x>\} \), где \( <y| \) - бра-вектор (отождествляют с вектором из \( H^* \)), \( |x> \) - кет-вектор (отождествляют с вектором \( x \in  H \) - исходное пространство)
+
+\[ f(x )  = <y|x > : \left\lVert  f  \right\rVert = \left\lVert y   \right\rVert \text{ }   (\text{ Теорема Рисса.} )\]  
+
+1) \( H \) - гильбертово пространство, \( \dim H = n , \text{ }  x_1, \ldots, x_n \)  - ортонормированный базис в \( H \) 
+
+\[ \begin{array}{l|l}
+    \displaystyle x = \sum_{ 1} ^{n } \alpha_k x_k, \text{ }  \alpha_k = (x_1 , x_k)&\displaystyle  |x> = \sum_{1} ^{n }  |x_k > \alpha_k   , \text{ }  \alpha_k = <x_k | x>\\ 
+    \displaystyle x= \sum_{1} ^{n }  (x_1 , x_k)x_k &\displaystyle  |x> = \sum_{1} ^{n }  |x_k > <x_k | x> = \left[ \sum_{1} ^{n }  |x_k > <x_k | \right] |x> \\[15pt] 
+    & \displaystyle I |x> = \left[ \sum_{1}^n |x_k> <x_k |  \right] |x> \Rightarrow I = \sum_{1}^n |x_k> <x_k |\\
+    &\text{Удобная запись для } I\\
+\end{array} \] 
+
+2) \( \dim H = n \), где \( H \) - гильбертово пространство. Тогда: 
+
+\[ A : H \to  H \text{ - линейный оператор}  \] 
+
+векторы \( x_1, \ldots, x_n \) образуют базис в \( H  \) 
+
+\[ A x_n = \lambda_k x_n ,x_n \neq 0 \] 
+\[ Ax - \lambda x = y \text{ относительно } x  \] 
+\[ (A - \lambda I )^{-1} \text{  резольвента, если } \lambda \in \rho (A)   \] 
+
+\[ \begin{array}{l|l}
+x = (A - \lambda I )^{-1 }  y & \displaystyle  (A - \lambda I )^{-1 }  = \sum_{j =1} ^n \frac{ |x_j > < x_j |}{x_j - \lambda}  \\ 
+x= ... & \displaystyle  |x > = \sum_{j =1}^{n } |x_j > \alpha_j , \text{ }  \alpha_j = <x_j |x > \\
+\displaystyle  y= \sum_{j =1}^n \beta_j x_j , \text{ }  \beta_j = (y , x_j ) & \displaystyle | y > = \sum_{j =1}^ n |x_j > \beta_j , \text{ }  \beta_j = <x_j | y> \\
+A x_j = \lambda_j x_j & |x_j > A = |x_j > \lambda_j \\
+Ax  - \lambda x = y & | x > A | x> \lambda = |y > \\
+\displaystyle  A \left( \sum_{j =1}^n \alpha_j x_j  \right) - \lambda \left( \sum_{j =1}^n \alpha_j x_j \right) = \sum_{j =1}^n \beta_j x_j & \\ 
+A x_j = \lambda_j x_j \quad  \alpha_j \lambda_j - \lambda_j \alpha_j = \beta_j &\\
+\end{array} \] 
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi
