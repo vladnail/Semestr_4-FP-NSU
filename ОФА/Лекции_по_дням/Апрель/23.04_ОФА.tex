@@ -1,0 +1,196 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \usepackage{forest}
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+
+\[ \sum_{j=1}^{ n } |x_j >\lambda_j \alpha_j  - \sum_{j=1}^n |x_j > \alpha_j \lambda = \sum_{j=1}^n |x_j > \beta_j  \] 
+\[ \alpha_j \lambda_j - \alpha_j \lambda = \beta_j  \] 
+
+\[ \kern-1.7cm\alpha_j = \frac{\beta_j }{\lambda_j - \lambda}  \] 
+\vspace{-10pt}
+\[ \begin{array}{l|l}
+    \displaystyle  x = \sum_{j=1}^n \frac{\beta_j }{\lambda_j - \lambda} x_j &\displaystyle  |x> = \sum_{j=1}^n |x_j > \frac{\beta_j }{\lambda_j - \lambda}\\  
+    x = \displaystyle  \sum_{j=1}^n \frac{(y_j ,x_j ) }{ \lambda_j - \lambda }x_j & \displaystyle |x> = \sum_{j =1}^n |x_j > \frac{<x_j |y_j >}{\lambda_j - \lambda}  \\
+     \displaystyle  & \displaystyle  |x > = \underbrace{\left\{  \sum_{j =1}^n \frac{|x_j > <x_j | }{\lambda_j - \lambda } \right\}}_{(A - \lambda I )^{-1 }   = \sum_{j=1}^n\frac{|x_j > < x_j | }{\lambda_j -\lambda}  } |y>
+\end{array} \]  
+
+\section{Оператор, сопряженный и ограниченный, и его свойства}
+
+Пусть \( H \) и \( H_1 \)  - гильбертовы пространства, \( A : H \to  H_1\)  - линейный ограниченный оператор. 
+
+Фиксируем \( x_1 \in  H_1  \)  и построим функционал \( f : H \to  \mathbb{C} \) по правилу: 
+
+\[ f(x  ) = (A x , x_1 ) _{H_1 } , \text{ }  x \in  H  \]  
+
+Линейность \( A \) + линейность скалярного произведения по , \( f \) - линейный функционал. 
+
+\[ \left\lVert f  \right\rVert = \sup _{x \neq 0 }  \frac{ \left\lvert f(x ) \right\rvert}{\left\lVert x  \right\rVert} = \sup _{x \neq 0 }  \frac{ \left\lvert (Ax , x_1 ) \right\rvert}{\left\lVert x  \right\rVert}  \overset{\text{н. К-Б} }{\le } \sup _{x \neq 0 } \frac{ \left\lVert A x  \right\rVert \left\lVert x_1  \right\rVert}{ \left\lVert x  \right\rVert} = \left\lVert A  \right\rVert \left\lVert x_1  \right\rVert      < \infty \] 
+\[ \left\lVert f  \right\rVert \text{ ограниченна } \Rightarrow f \text{ непрерывный. } \Rightarrow f \in H^*    \] 
+Тогда по Теореме Риса \( \exists  ! x_0 \in  H : f (x ) = (x , x_0)  \text{ }  \forall  x \in  H \) 
+
+\[ f(x )  = (A x , x_1 ) = (x, x_0 ) \text{ }  \forall  x \in  H \]  
+, по \( x_1  \) находим \( x_0 \), то есть возникло правило \( x_1 \in  H_1 \to  x_0 \in  H \). По этому правилу строю \( A^* \) - сопряженный оператор. 
+
+\[ x_0 = A ^* x_1 \] 
+
+\( A^* \) задается равенством: \( \displaystyle (A x , x_1 ) = (x , A^* x_1) \) \\
+
+\textit{Свойства сопряженных операторов:} \( H_1, H  \)  - гильбертовы пространства, \( A,B : H \to  H_1  \) - линейные ограниченные, \( \alpha , \beta \in  \mathbb{C} \) 
+
+1) \( A^*  \)   - линейный оператор и \( \left\lVert A ^*  \right\rVert = \left\lVert A \right\rVert \) 
+
+\begin{proof} \(  \) 
+
+\[ x \in  H , \text{ }  y_1 , y_2 \in  H_1  \] 
+
+\[ (x , A ^* ( \alpha y_1 + \beta y_2 )) = (A x , \alpha y_1 + \beta y_2 ) = \overline{\alpha } (A x , y_1 ) + \overline{\beta  } (A x , y_2 ) = \overline{ \alpha } ( x , A ^* y_1 ) +  \overline{ \beta } (x , A ^* y_2 ) =        \] 
+\[  = (x , \alpha A ^* y_1 + \beta A ^* y_2 ) \Rightarrow A ^* \text{ - линейный по Лемме 1. так как  }  x \text{ - любой}   \] 
+
+\begin{lemma}
+    \( \forall  z \in  H \text{ }  (x, z ) = (y ,z ) \Rightarrow y =x \) 
+\end{lemma}
+
+\begin{proof} \(  \) 
+    
+    \[ (x - y , z )  = 0 \] 
+    Подставим \( z = x - y  \) 
+
+    \[  ( x- y, x - y  ) = 0 \Rightarrow x =y  \] 
+
+    Аналогично для \( \forall  z \in  H  : (z, x ) = (z, y ) \Rightarrow x = y\) 
+
+\end{proof}
+
+\[ ( x , A ^* y  ) = (A x , y ) \overset{\text{н. К-Б} }{\le} \left\lVert A x  \right\rVert \left\lVert y  \right\rVert \le  \left\lVert A  \right\rVert \left\lVert x  \right\rVert \left\lVert  y  \right\rVert \]  
+
+Подставим \( x = A ^* y  \): 
+
+\[ \left\lVert A ^* y  \right\rVert \le  \left\lVert A  \right\rVert \left\lVert  A ^* y  \right\rVert \left\lVert y  \right\rVert  \] 
+\[ \left\lVert A ^ * y  \right\rVert \le  \left\lVert A  \right\rVert \left\lVert  y \right\rVert \] 
+
+\[ \frac{ \left\lVert  A^ * y  \right\rVert}{\left\lVert y  \right\rVert} \le  \left\lVert  A  \right\rVert \text{ } \forall  y \in  H_1 , \text{  }  y\neq 0     \] 
+
+\[ \left\lVert A ^* \right\rVert = \sup _{y \neq 0 }  \frac{\left\lVert  A y  \right\rVert}{\left\lVert y \right\rVert} \le  \left\lVert  A  \right\rVert \Rightarrow \text{ограниченность } A ^* \text{ }  (\text{норма конечна} )   \] 
+
+\[ \left\lVert  A ^*  \right\rVert \le  \left\lVert  A  \right\rVert  \] 
+
+\end{proof}
+
+2) \( (A ^* )^ * = A , \text{ }  (A ) ^* : H \to  H_1 \)  
+
+\begin{proof} \(  \) 
+
+    \[ \forall  x \in  H_1 , \text{ }  \forall  y \in H \] 
+
+    \[ (x , (A ^* ) ^* y ) = (A ^* x , y ) = \overline{(y , A ^* x ) } = \overline{ (A y , x )}  = (x , A y)  \]  
+
+    , тогда по Лемме 1. \( \Rightarrow  (A ^* )^* = A \) 
+
+\end{proof}
+
+3) \( (\alpha A + \beta B ) ^ * = \overline{ \alpha } A ^* + \overline{\beta } B^*      \) 
+
+\begin{proof} \(  \) 
+
+    \[ (x, (\alpha A + \beta B )^* ) =  (( \alpha A , \beta B ) x , y ) = \alpha (x , A^* y ) + \beta ( x , B^* y ) \] 
+
+\end{proof}
+
+4) \( I^*  =I  \) 
+
+\begin{proof} \(  \) 
+
+    \[ (x ,I^* y ) = ( I x , y ) = ( x, y ) = (x , I y) \] 
+
+\end{proof}
+
+5) \( (A B ) ^* = B^* A ^*  \)  
+
+\begin{proof} \(  \) 
+
+    \[ ( x, (A B ) ^ * y ) = ((A B )x , y ) = ( A (B x ) , y ) = (Bx , A ^* y ) = (x , A ^* B ^* y) \]  
+
+\end{proof}
+
+\textbf{Применение сопряженного оператора при нахождении спектра}
+
+\begin{theorem}
+    \( A : H \to H  \)  линейный ограниченный и \(  \lambda \in  \mathbb{C} \) не является собственным значением A \( (\lambda \cancel{\in  } \sigma_p (A )) \). Тогда \(  \lambda \in  \sigma_p (A ) \Leftrightarrow  \overline{\lambda } \in  \sigma_p ( A ) ^* .  \) 
+\end{theorem}
+
+\begin{proof} \(  \) 
+
+    \( (\Rightarrow ) :  \lambda \in  \sigma_r (A ) \) 
+
+    \[ \underbrace{dom (A - \lambda I ) ^{-1 }}_{im (A - \lambda I ) \text{ подпространство }  H}  \text{ не плотна в } H   \] 
+
+    \[ S = \overline{dom (A - \lambda I )^{-1 } }   \text{ замкнутое подпространство в  }  H \] 
+
+    Гильбертово пространство и замкнутое \( S \Rightarrow H = S \oplus S ^{\perp  }  \). 
+
+    \( S ^{\perp  } \neq \{0 \}  \), так как \( S \neq H  \text{ }  \exists  y \in S^{\perp  } , \text{ }  y \neq 0  \text{ }  \forall  x \in  H \) 
+
+    \[ (x , ( A - \lambda I ) ^* y ) = ( (A - \lambda I ) x , y) =  0 = (x , 0 ) \] 
+
+    \( (A - \lambda I ) x \in  im (A - \lambda I )  = dom (A - \lambda I )^{-1 }  \subset S \Rightarrow (A - \lambda I ) x \in  S   \) 
+
+    \[ (A - \lambda I ) ^* y = 0 \text{ по лемме}  \] 
+
+    \[ (A ^* - \overline{ \lambda } I         ) y = 0 (\text{по свойствам} )\] 
+
+    \[ A ^* y = \overline{\lambda } y + y \neq 0 , \text{ }  \overline{ \lambda } \in  \sigma_p (A ^*)     \] 
+
+    \( (\Leftarrow): \overline{\lambda } \in  \sigma_p (A ^* )     \), то есть \( \overline{ \lambda }   \)   - собственное число. 
+
+    \[ \exists  y \in  H , y \neq 0 - \text{ собственный вектор} : A ^{*  }  y = \overline{\lambda } y \Leftrightarrow ( A ^* \overline{\lambda } I   )y = 0     \] 
+    \[ \underbrace{(A  - \lambda I ) ^*}_{\text{нулевой вектор} }    y = 0 \] 
+
+    \[ \forall  x \in  H     : ( x , 0) = (x, (A - \lambda I )^* y ) = ( \underbrace{(A - \lambda I )x}_{\in  Im (A - \lambda I)} , y ) \] 
+    
+    \[ y \perp im (A - \lambda I ) \quad  y \perp \overline{im (A - \lambda I )}   \] 
+    \[ \overline{im (A - \lambda I )}  = \overline{dom ( A - \lambda I ) ^{-1 }  }M = M \cup \{\text{пред-т.} \}   \]
+    \[ \text{так как } \lambda \cancel{\in  } \sigma_p (A ) \text{ }  \exists  x_n \to  x_0  \text{ } x_n \in  M    \]  
+
+    \[ (x_0, y ) = (\lim_{n \to \infty} x_n , y  ) = \lim_{n  \to \infty} (x_n , y) \] 
+
+    \[ H = S \oplus S^{\perp } , \text{ }  y \in  S^{\perp}   \] 
+
+    \( y \neq 0  \) то есть \( S ^{ \perp  } \cancel{\in  } \{0\}  \), а это значит, что \( S \neq  H  \), а это означает, что \( dom ( A - \lambda I ) ^{-1 }   \) не плотна в \( H. \) 
+
+
+\end{proof}
+
+\section{Ограниченные самосопряженные операторы}
+
+\begin{definition}
+    \( H  \) - гильбертово пространство \( A : H \to  H  \) линейный ограниченный оператор является самосопряженным, если \( A = A^*  \), то есть \( \forall  x ,y   \in  H  \) \( (A x , y ) = (x, A y ) \)  
+\end{definition}
+
+\begin{theorem}[о точечном спектре оператора]
+    Все собственные числа самосопряженные ограниченный НЕ ПОНЯЛ, а собственные векторы, отвечают различным собственным значениям ортогональны друг другу.
+\end{theorem}
+
+\begin{proof} \(  \) 
+    \( \lambda  \) - собственные значения \( A \Rightarrow \exists  x \in  H : A x = \lambda H  \) 
+
+    \[ \lambda \left\lVert x  \right\rVert ^2 = \lambda( x,x ) = (\lambda x , x ) = (A x , x ) = (x ,A x ) = \overline{\lambda } (x,x ) = \overline{\lambda } \left\lVert x  \right\rVert ^2 \Rightarrow \lambda = \overline{ \lambda }         \] 
+    \[ Re \lambda + i Im \lambda = Re - i Im \lambda \Rightarrow Im \lambda = 0 \] 
+    \[ Im \lambda = - Im \lambda \Rightarrow \lambda \text{ - вещественное }  \] 
+\end{proof}
+
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi
