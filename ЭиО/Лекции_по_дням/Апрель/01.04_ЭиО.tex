@@ -12,7 +12,7 @@
 
 \section{Связь комплексной степени когерентности и спектральной плотности энергии волнового поля} 
 
-\[\kern-1cm G_{11}^{(0)} = \lim_{T  \to \infty} \frac{1}{T }  \int_{-\frac{T}{2 } }^{\frac{T}{2 }  } E_1(t ) E_1 ^{* }  (t +\Delta t ) dt = \frac{1}{T }  \int_{-\frac{T}{2 } }^{\frac{T}{2 } } dt \frac{1}{\sqrt{2 \pi } } \int_{-\infty}^{\infty} E_1 (\omega ) e^{ - i \omega t } d \omega    \frac{1}{\sqrt{2 \pi } } \int_{-\infty}^{\infty} E_1 ^{* }  (\omega ' ) e^{i \omega (t + \Delta t )} d \omega ' =        \] 
+\[\kern-1.3cm G_{11}^{(0)}(\Delta t) = \lim_{T  \to \infty} \frac{1}{T }  \int_{-\frac{T}{2 } }^{\frac{T}{2 }  } E_1(t ) E_1 ^{* }  (t +\Delta t ) dt = \frac{1}{T }  \int_{-\frac{T}{2 } }^{\frac{T}{2 } } dt \frac{1}{\sqrt{2 \pi } } \int_{-\infty}^{\infty} E_1 (\omega ) e^{ - i \omega t } d \omega    \frac{1}{\sqrt{2 \pi } } \int_{-\infty}^{\infty} E_1 ^{* }  (\omega ' ) e^{i \omega ' (t + \Delta t )} d \omega ' =        \] 
 \[ = \frac{1}{2 \pi T } \int_{-\infty}^{\infty}   d \omega \int_{-\infty}^{\infty}  d \omega ' E_1 ( \omega ) E_1 ^{* }  (\omega ' ) e^{i \omega ' \Delta t }\underbrace{ \int_{-\infty}^{\infty} dt e^{- i (\omega - \omega'  )t}}_{2 \pi \delta (\omega - \omega')} = \frac{1}{T }  \int_{-\infty}^{\infty} d \omega' |E_1 (\omega' )| ^2 e^{ i \omega ' \Delta t } = \left[ \omega' = -\omega \right]    = \] 
 \[  =\frac{\sqrt{2 \pi } } {T } \frac{1}{\sqrt{2 \pi } } \underbrace{\int_{-\infty}^{\infty} |E_1(\omega )| ^2 e^{ - i \omega \Delta t } d \omega}_{(*)}   \] 
 , где \( (*) \)  - обратное преобразование Фурье-преобразования от спектральной плотности энергии.
@@ -58,17 +58,18 @@
 
 Схема деления амплитуды волны: 
 
-\[ d < l_1 = \frac{\lambda}{2 \theta_s } = \frac{\lambda}{\displaystyle \frac{2a_s}{L_s} }  \left( V>\frac{1}{2}  \right) \] 
+\[ d < l_{ \perp }  = \frac{\lambda}{2 \theta_s } = \frac{\lambda}{\displaystyle \frac{2a_s}{L_s} }  \left( V>\frac{1}{2}  \right) \] 
 
 Перепишем это соотношение в ином виде, пригодном и для схем деления амплитуды волны: 
 
 \begin{center}
     \includegraphics[width=0.3\textwidth]{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/ЭиО/Лекции_по_дням/image/114.png}
 \end{center}
-, где \( 2 w  \) - апертура интерференции. В параксиальном приближении \( (a_s , d ,x ,y ) \ll L, L_s : \text{ }  2 w \approx 2 w ' \) 
+, где \( 2 \text{w} \) - апертура интерференции. В параксиальном приближении \( (a_s , d ,x ,y ) \ll L, L_s : \text{ }  2 \text{w}\approx 2 \text{w} ' \) 
 
-\[ 2 w = \frac{d}{L_s } \quad  d \le \frac{\lambda L_s}{2 a_{s} } \quad  w a_{s_{\perp } }  <    \frac{\lambda}{4} \] 
+\[ 2 \text{w} = \frac{d}{L_s } \quad  d \le \frac{\lambda L_s}{2 a_{s} } \quad  \text{w} a_{s_{\perp } }  <    \frac{\lambda}{4} \] 
 , где \( a_{s_{ \perp } }  \) - поперечный размер протяженного источника по отношению к направлению на щели. 
+
 
 \section{Интерференция в тонких пленках}
 
@@ -88,7 +89,7 @@
 \[ |AB | = \frac{h}{\cos \theta' } \quad  |AD| = 2 h \text{ } \mathrm{ tg}   \theta ' \sin  \theta_0 \]  
 
 \[  n \sin \theta ' = \sin \theta_0  \] 
-\[ \Delta r = \frac{2hn}{\cos \theta ' }- 2h \frac{\sin  \theta ' n \sin \theta ' }{\cos \theta ' }+ \frac{\lambda_0}{2 }  = \frac{2hn}{\cos  \theta' } (1 - \sin  ^2 \theta ' ) \frac{\lambda_0}{2 }  = 2hn \cos \theta ' + \frac{\lambda_0}{2 }  = 2hn \sqrt{1 - \sin  ^2 \theta ' }   + \frac{\lambda_0}{2 }   \] 
+\[ \Delta r = \frac{2hn}{\cos \theta ' }- 2h \frac{\sin  \theta ' n \sin \theta ' }{\cos \theta ' }+ \frac{\lambda_0}{2 }  = \frac{2hn}{\cos  \theta' } (1 - \sin  ^2 \theta ' ) +\frac{\lambda_0}{2 }  = 2hn \cos \theta ' + \frac{\lambda_0}{2 }  = 2hn \sqrt{1 - \sin  ^2 \theta ' }   + \frac{\lambda_0}{2 }   \] 
 \[ \Delta r = 2 h \sqrt{n ^2 - \sin  ^2 \theta_0 } + \frac{\lambda_0}{2 }  \] 
 
 Пусть ось линзы \( \perp   \) пластине: 
@@ -102,7 +103,7 @@
 \[ 2 h \sqrt{n ^2 - \sin  ^2 \theta_{0m }  } + \frac{\lambda_0}{2 }  = m \lambda_0 , \text{ }  m \text{ - целое}  \] 
 \[ R_m = F \theta_{0m}  \] 
 
-Это интерференционная картина локализована на бесконечности, может наблюдаться в фокальной плоскости линзы или аккомодированным на \( \infty  \) глазом. \( w a_{s_{\perp } } < \displaystyle \frac{\lambda}{4}   \). В нашем случае интерферируют параллельные лучи \( \Rightarrow w = 0 \Rightarrow a_{s _{\perp  } }   \) может быть очень большим.
+Это интерференционная картина локализована на бесконечности, может наблюдаться в фокальной плоскости линзы или аккомодированным на \( \infty  \) глазом. \( \text{w} a_{s_{\perp } } < \displaystyle \frac{\lambda}{4}   \). В нашем случае интерферируют параллельные лучи \( \Rightarrow \text{w}= 0 \Rightarrow a_{s _{\perp  } }   \) может быть очень большим.
 
 \textbf{Опыт Поля} 
 
@@ -118,7 +119,7 @@
 \[ \Rightarrow (z_s + z_p )(\mathrm{tg }  \theta_0 - \mathrm{tg }  (\theta_0 - \delta \theta )  ) = 2h \frac{\sin \theta_0 }{n \sqrt{\displaystyle  1 - \frac{\sin  ^2 \theta_0 }{n ^2 } }} \] 
 
 \[ \delta \theta = \frac{2h}{(z_s +z_p )} \frac{\sin  \theta_0 \cos  ^2 \theta_0 }{\sqrt{n ^2 - \sin  ^2 \theta_0 }} \ll 1  \Rightarrow \delta \theta \ll \theta_0  \] 
-, где \( \delta \theta  = 2w \)  - апертура интерференции.
+, где \( \delta \theta  = 2 \text{w} \)  - апертура интерференции.
 
 
 
