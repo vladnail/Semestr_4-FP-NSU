@@ -1,0 +1,228 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \usepackage{forest}
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+
+\begin{proof} \(  \) 
+
+    \[ \lambda \neq \mu , \text{ }  x \neq   0 , y \neq  0 \] 
+
+    \[ A x = \lambda x ,\text{ } y \text{ скалярно справа}   \] 
+    \[ Ay = \mu y ,\text{ }  x \text{скалярно слева}  \] 
+
+    \[ 0 = (A x , y ) - (x ,A y )  = \lambda(x ,y ) - ( x, \mu y ) = \lambda (x,y ) - \overline{\mu }(x, y) = \underbrace{(\lambda - \mu )}_{\neq  0}(x- y ) \Rightarrow     \]  
+    \[ \Rightarrow (x, y ) = 0 \Rightarrow x \perp  y\]  
+
+\end{proof}
+
+\section{Инвариантное подпространство}
+
+\begin{definition}
+ \( H  \) - гильбертово подпространство \( A : H \to  H  \) линейный оператор, \( S \in  H  \) подпространство \( S \) является инвариантным подпространством \( A \), если \( \forall  x \in  S \text{ }  Ax \in  S  \) 
+\end{definition}
+
+Тривиальные примеры:  \( \{ 0 \} ,H  \) 
+
+Нетривиальные примеры:  \( A : H \to  H , \text{ }  \lambda \in  \sigma_p (A ) \) 
+
+\[ S_{\lambda } = \{0 , \text{ все собственные векторы отвечающие собственным } \lambda \}  \] 
+
+\[ x \in  S_{ \lambda } \xrightarrow{? }  A x \in S_{\lambda}    \] 
+
+1) \(  x = 0 \quad  A 0  = 0 \in  S_{\lambda}  \) 
+
+2) \( A x = \lambda x  \) 
+
+\[ A (\lambda x ) = \lambda \lambda x \Rightarrow A y = \lambda y , \text{ }  y \in  S_{\lambda}  \] 
+
+\begin{theorem}
+\( A  \) - линейный ограниченные оператор, \( S \) - инвариантное подпространство \( A \). Тогда \( S ^{ \perp  }  \) - инвариантное подпространство в \( A ^{ \perp }  \) 
+\end{theorem}
+
+\begin{proof} \(  \) 
+
+    \( x \in  S , \text{ }  A \in   S \)
+    
+    \[ (x, y) =0  \quad  (A x , y ) = 0 \quad  (x , A ^* y ) = 0 , \text{ }  x \perp  A^* y \Rightarrow A ^* y \in  S^{ \perp } \]  
+
+    \[ S ^{\perp  } \text{ - инвариантное подпространство } A ^*   \] 
+
+    \[\text{Если }  A = A ^* , \text{  }  A \text{ действует инвариантно в } S , \text{ }  S^{ \perp } : H = S \oplus S^{ \perp }    \] 
+
+\end{proof}
+
+\section{Компактное множество. Компактные операторы}
+
+\begin{definition}
+    Множество \( K \subset H \) - гильбертово подпространство  называется компактным, если из любой его бесконечной последовательности можно выделить последовательность сходящуюся к некоторому вектору \( K \)  
+\end{definition}
+
+\textbf{Свойства:} 1) В конечном подпространстве \( (\dim  H = + \infty  ) \)   \( K \) компактно \( \Leftrightarrow  \) замкнуто и ограничено (ранее было доказано в Математическом анализе)
+
+2) Общий случай: \( K  \) - компактно \( \Leftrightarrow  \)  замкнуто и ограничено. 
+
+\begin{proof} \(  \) 
+
+    1) \( K \overset{?}{=} \overline{K }   \) рассмотрим предельную точку \( x_0 \Rightarrow x_n \to  x_0 \) 
+
+    \[ x_{n_k } \to  x_1 \in  K \text{ в силу ! предела } x_0 = x ,\text{ }  x \in  K  \] 
+ 
+    Тогда \( K \) содержит точку \( x_0 \Rightarrow  \)  замкнуто. 
+
+    2) Докажем ограниченность \( K \) от противного. Пусть \( K \) не является ограниченным множеством. Тогда \( \forall  \alpha \text{ } \exists  x \in  K \left\lVert x  \right\rVert > \alpha  \) 
+
+    Построим последовательность \( x_1, \ldots, x_n  \) из \( K \) 
+
+    \[ \begin{aligned}
+    \left\lVert x_1 \right\rVert >& 1 \\
+    &\vdots \\ 
+    \left\lVert x_n \right\rVert >& \left\lVert x_{n-1}  \right\rVert+1
+    \end{aligned} \] 
+
+    \[ \left\lVert x_n - x_m  \right\rVert  \ge  \left\lvert \left\lVert x_n     \right\rVert - \left\lVert x_m \right\rVert \right\rvert \ge  \left\lvert n - m  \right\rvert >1 \] 
+
+    \( \{x_n\} \) не является фундаментальной последовательностью \( \Rightarrow  \) не является сходящейся \( \Rightarrow K  \) - не компактно.
+
+\end{proof}
+
+3) Контрпример: замкнутое + ограниченное \( \neq  \) компактное. 
+
+Орты в \( l_2 \): 
+
+\[ e_1 = (1,0,0, \ldots, ) \] 
+\[ e_2 = (0,1,0, \ldots, ) \] 
+\[ \vdots  \]
+\[ e_n = (0,0, 0,\ldots,1,0 ,..., ) \]  
+
+1. \( \{e_i \}  \subset \{\left\lVert x  \right\rVert \le  1 \}\) - множество ограничено. 
+
+2. Предельных точек нет 
+
+Не компактно \( \left\lVert e_n - e_m \right\rVert ^2 = 2 \Rightarrow  \) не фунд. \( \Rightarrow  \) не сход. \( \Rightarrow \) не комп. 
+
+4) Если замкнутый единичный шар в гильбертовом подпространстве \( H \) компактен, то \( dim H < + \infty  \) 
+
+Пусть \(  dim H = + \infty \overset{\text{Г-Ш} }{\Rightarrow } \) ортонормированная система \( x_1, \ldots, x_n \) счетный линейный независимый набор 
+
+\[ \left\lVert x_n - x_{m }  \right\rVert  =2 \Rightarrow M \text{ - не комп. } \] 
+
+\begin{definition}
+    \( H , H_1 \) - гильбертовы подпространства \( A : H \to  H_1 \) линейный оператор \( A \) является компактным, если \( \exists   \) последовательность \( A_1, \ldots, A_n\) - линейных операторов: 
+
+    1) \( A_n : H \to  H_1 \) - ограниченность операторов \( \forall n \) 
+
+    2) \( \forall  n \text{ }  dim(im A_n ) < + \infty \text{ }  \{A_n x \}  \) - конечномерно.
+
+    3) \( A_n \xrightarrow{n \to  \infty  } A \text{ }  (\left\lVert A_n -A  \right\rVert \xrightarrow{ n \to  \infty } 0  )   \) 
+\end{definition}
+
+\begin{definition}
+    \( A : H \to  H_1 \) компактен, если любое ограниченное множество \( X \subset H  \) переводит \( \overline{A X }  \subset H_1  \) - компактно. 
+\end{definition}
+
+\textbf{Свойства компактных операторов: } 
+
+1. \( \begin{aligned}
+\begin{aligned}
+A : H \to H_1 \\
+B : H \to  H_1 
+\end{aligned}
+\Rightarrow \text{комп. , } \alpha , \beta \text{ числа}  
+\end{aligned} \) 
+Тогда \( \alpha  A + \beta B  \) - комп. 
+
+2. \( A : H \to H_1  \) - комп. Тогда \( A  \) - ограниченный оператор. 
+
+3. \( A : H \to  H_1  \) - ограниченный линейный оператор \( dim H_1 < + \infty  \). Тогда \( A \) комп-н 
+
+4. \( I : H \to  H  \) - комп \( \Leftrightarrow  dim H < +\infty   \) 
+
+5. \( A : H \to  H_1 \) - комп 
+
+\[ \begin{aligned}
+\begin{aligned}
+B : H_1 \to  H_2 \\ 
+C: H_3 \to  H
+\end{aligned}
+\Rightarrow \text{огр.}  
+\end{aligned} \] 
+
+\( BA , AC \) - комп. 
+
+6. \( dim H_1 = + \infty  \) , \( A : H \to H_1 \) - комп. обратим \( \Rightarrow A^{-1}  \) не огр. 
+
+\begin{proof} \(  \) 
+
+    1) Из комп \( A , B  \Rightarrow \exists  A_n , B_n \) со свойствами из определения компактных операторов 1)-3). Рассмотрим последовательность \( \alpha A_1 + \beta B_1 , \alpha A_2 + \beta B_2  ,..., \alpha A_n + \beta B_n  \) 
+
+    Проверим свойства компактных операторов: 
+
+    \[ \forall  n \text{ }  \alpha A_n + \beta B_n  \text{ - лин. последов. операторов} \] 
+    \[ \left\lVert \alpha A_n   - \beta B_n\right\rVert \le  \left\lvert \alpha  \right\rvert \left\lVert A_n \right\rVert + \left\lvert \beta \right\rvert \left\lVert B_n \right\rVert  \] 
+
+    2) \( dim (im (\alpha A_n + \beta B_n )) < + \infty  \) в силу: 
+
+    \[  im (\alpha A_n + \beta B_n )  = \{\alpha A_n x + \beta B_n x | x \in  H \} \subset \{\alpha A_n x | x \in  H \} \cup \{\beta B_n y | y \in  H\}  = im (\alpha AN n) + im (\beta B_n)\] 
+
+    \[ dim (\alpha A_n + \beta B_n ) \le  dim (im (\alpha A_n)) + dim( im (\beta B_n ))  < + \infty  \text{ по 2 } \] 
+
+    3) \( \alpha A_n+ \beta B_n \xrightarrow{ n \to  \infty }    \alpha + \beta B  \) 
+
+    \[ \lim (\alpha A_n + \beta B_n ) = \alpha \lim  A_n+ \beta \lim B_n = \alpha A + \beta B   \] 
+
+\end{proof}
+
+5. Упр. Взять что то там. 
+
+2. \( A \) - является \( \overset{3)}{\text{пред.}}  \) \(\overset{1)}{\text{ огр.}}  \)  \( \Rightarrow  \) огр. 
+
+3. \( A : H \to  H_1 \) - огр. \( \Rightarrow 1) \) 
+
+\( dim H_1  = + \infty  \Rightarrow 2) \) 
+
+4. \( Ix = x  \) 
+
+1) \( dim H < \infty   \). Докажем компактность \( I \). I огр \( (\left\lVert I  \right\rVert =1 ) \)  по свойству 3) компактен. 
+
+2) \( I \)  компактен. Докажем \( dim H < \infty  \) 
+
+Пусть это не так \( dim H = + \infty  \) . \( \exists  \) последовательность \( A_1 ,..., A_n \) соот 1), 2) \( A_n \xrightarrow{ n \to  \infty  } I   \) 
+
+\[ \begin{aligned}
+\begin{aligned}
+dim H = \infty  \\ 
+dim (im A_n ) < \infty 
+\end{aligned}
+\Rightarrow тогда
+\end{aligned} \] 
+\( \exists  x \in  H : \left\lVert x \right\rVert =1 \text{ }  x \perp  im A_n\) 
+
+\( \left\lVert x - A_n x  \right\rVert > \left\lVert x  \right\rVert = 1  \) 
+
+\[ \forall  n \text{ }  \left\lVert  I - A_n  \right\rVert = \sup _{\left\lVert y  \right\rVert < 1} \left\lVert I y - A_n y  \right\rVert \ge  \left\lVert I x - A_n x  \right\rVert \ge  1  \] 
+
+\( \forall  n  \) поэтому 3) не выполн \( \Rightarrow  \) противоречие \( \Rightarrow  dim H < + \infty \) 
+
+6) Докажем что \( A^{ \perp }  \) не огр. Пусть это не так \( A^{-1}  \) огр оператор \( A \) - комп, тогда по свойству 5 \( A A^{-1} = I  \), где \( A  \) - комп, \( A^{-1}  \) - огр 
+
+по 4 \( I : H_1 \to  H  \) не комп \( \Rightarrow  A^{-1 }  \) - не огр
+
+
+
+
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi
