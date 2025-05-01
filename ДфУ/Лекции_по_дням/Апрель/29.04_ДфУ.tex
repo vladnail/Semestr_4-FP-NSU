@@ -1,0 +1,228 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+
+\[  = 2n a y_1 ^{ 2n -1 }  y_2 + \underbrace{\alpha 2 n a y_1 ^{2n + 2 }}_{(*)}  +\underbrace{ \alpha 2 m b y_2 ^{ 2m + 2 }}_{(*)}  - 2m b y_1 y_2^{2m -1 }  \] 
+, где \( (*): \begin{aligned}
+>0 , \text{ }  \alpha > 0 \\ 
+< 0 , \text{ }  \alpha < 0
+\end{aligned} \) 
+
+Занулим член с без явного знака: \( \begin{aligned}
+m =n =1 \\ 
+a = b  =1 
+\end{aligned} \) 
+
+\[ \Rightarrow V( y_1 , y_2 ) =  y_1 ^2 + y_2 ^2  \] 
+\[ (\nabla V , f ) = 2 \alpha y_1 ^4 + 2 \alpha y_2^4  \] 
+
+Рассмотрим случаи: 
+
+- \(\alpha > 0 \Rightarrow  \) по Теореме 3 нулевое решение не устойчиво.
+
+- \( \alpha < 0 \Rightarrow  \) по Теореме 2 нулевое решение асимптотически устойчиво.
+
+- \( \alpha = 0 \Rightarrow \) по Теореме 1 нулевое решение устойчиво по Ляпунову. 
+
+\[ \alpha = 0 : \begin{aligned}
+    \begin{cases}
+        \dot{y } _1 = y_1 \\ 
+        \dot{ y } _2 = y_2
+    \end{cases} 
+    \quad  A \begin{pmatrix}
+    0 & 1\\
+    -1 & 0
+    \end{pmatrix}
+    , \lambda_{1,2}  = \pm  i 
+\end{aligned}\] 
+
+\section{Функция Ляпунова для линейных систем. Матричное уравнение Ляпунова}
+
+\[ \frac{d}{dt }  \vec{y }  = A \vec{y }  \tag{1} \] 
+, где \( A - (n \times  n ) \) постоянная. \( \vec{y } ^* (t ) = 0  \) - решение. 
+
+\textbf{Матричное уравнение Ляпунова:} 
+
+\[ HA + A^{ * }  H = -C \tag{2} \] 
+, где \( A, H , C  \) - матрицы \( (n \times  n) \) постоянные. \\
+
+Дано: \( A, C \) 
+
+Найти: \( H - ? \) \\
+
+Пример: \( \begin{pmatrix}
+-1 & 1 \\
+0 & -1
+\end{pmatrix} , \text{ }  C = \begin{pmatrix}
+1  & 0\\
+0  & 1
+\end{pmatrix} , \text{ }  H - ? \) 
+
+\[ H = \begin{pmatrix}
+h_{11}   & h_{12}\\ h_{21} & h_{22}
+\end{pmatrix} \] 
+
+\[ \begin{pmatrix}
+- h_{11} & h_{11} - h_{12}\\
+- h_{21} & h_{21} - h_{22}
+\end{pmatrix} - \begin{pmatrix}
+-1 & 0 \\
+1  & -1
+\end{pmatrix} \begin{pmatrix}
+h_{11} & h_{12}\\
+h_{21} & h_{22}
+\end{pmatrix} = \begin{pmatrix}
+-1 & 0 \\
+0 & -1
+\end{pmatrix}\] 
+
+\[ \begin{pmatrix}
+- 2 h_{11} & h_{11} - 2 h_{12}\\
+h_{11} - 2 h_{21} & h_{12} - 2 h_{22} + h_{12}
+\end{pmatrix} = \begin{pmatrix}
+-1  & 0 \\
+0 & -1
+\end{pmatrix} \] 
+
+\[ h_{11} = 2h_{12} = 2h_{21}  \] 
+\[ h_{11} = \frac{1}{2 }  \Rightarrow h_{12} = h_{21} = \frac{1}{4}  \] 
+\[ 2 h_{22} = h_{12} + h_{21} + 1 = \frac{3}{2}  \] 
+\[ h_{22} = \frac{3}{4}  \] 
+
+\[ H = \begin{pmatrix}
+\frac{1}{2 }  & \frac{1}{4} \\
+\frac{1}{4}  & \frac{3}{4} 
+\end{pmatrix} \] 
+
+\begin{theorem}
+    Пусть дано \( C = C^* > 0\), то есть \( \forall  \vec{v }  \neq  0 : (C \vec{v }  , \vec{v  }  ) > 0   \). Пусть \( \exists H : H = H ^* > 0  \) - решение матрицы уравнения Ляпунова (2). Тогда: нулевое решение \( y^* (t) = 0 \) системы (1) асимптотически устойчиво.
+\end{theorem}
+
+\begin{proof} \(  \) 
+
+    Рассмотрим функцию \( V(\vec{y} )  = (H  \vec{y }  , \vec{y  })  \text{ }  \vec{ y }  \in  \mathbb{R} ^2  \) 
+
+    1) \( V (\vec{y } )  \in  C^* (\mathbb{R} ^n )  \) 
+
+    \[ V (\vec{ y }  ) = \sum_{i, j =1} ^n h_{i j } y_i y_j \in  C^1 (\mathbb{R}^n) \] 
+
+    2) \(  V(\vec{0 }  ) = ( H \vec{0 }  , \vec{0 }  ) = 0  \) 
+
+    \[ V (\vec{ y}  ) = (H \vec{ y}  , \vec{y} ) > 0 \text{ при } \vec{y }  \neq  \vec{0 }  \text{ так как }  H = H^* > 0    \] 
+
+    \[ \frac{d}{dt } \vec{y }  = A \vec{y }  \text{ }  A \text{ - постоянная} \tag{1 } \] 
+
+    \[ HA + A ^* H   =  -C \text{ - матричное уравнение Ляпунова} \tag{2} \] 
+
+    3) Проверим, что \( (\nabla V (\vec{ y}  ) , A \vec{ y}  ) < 0  \) при \( \vec{ y }  \neq  \vec{ 0 }  \) 
+
+    Пусть \( \vec{ y} ( t) \) - решение задачи Коши: \( \displaystyle  \begin{cases}
+    \displaystyle \frac{d}{dt }  \vec{y }  =A \vec{ y}  \\ 
+    \displaystyle  \vec{ y} (0 ) = \vec{ y }  _0 
+    \end{cases} \) 
+
+    Возьмем \( V (\vec{ y}  (t)) \): 
+
+    \[ \frac{d}{dt }  V(\vec{ y}  (t))  = \frac{d}{dt }  V(y_1(t ) ,..., y_n(t))  = \frac{\partial}{\partial  y_1 } V(y_1 ,...,y_n ) \frac{d y_1 }{dt } + ... + \frac{\partial  }{\partial  y_n } V(y_2 , ... ,y_n ) \frac{\partial  y_n }{\partial  t} = (\nabla V , A \vec{ y} )    \] 
+
+    С другой стороны, 
+
+    \[ \frac{d}{dt }  V (\vec{ y}  (t ) ) = \frac{d}{dt }  (H \vec{ y} (t ) , \vec{ y}  (t ))  = \left( H \frac{d}{dt }  \vec{ y}  (t ) ,\vec{ y}  (t ) \right)+ \left( H \vec{ y}  (t ) ,\frac{d}{dt }  \vec{ y}  (t ) \right) = (HA \vec{ y}, \vec{ y}  ) + (H \vec{ y}  , A \vec{ y}  ) = \] 
+    \[ = (H A \vec{y } , \vec{ y}   ) + (A ^* H \vec{ y}  , \vec{ y}  ) = (\underbrace{(H A + A ^* H )}_{= -C} \vec{ y }  , \vec{y}       )= - (C \vec{ y}   , \vec{ y} )\] 
+
+    \[ \Rightarrow (\nabla V, A \vec{ y}  (t ) ) = - ( C \vec{ y } (t) , \vec{ y} (t )) , \text{ }  \forall  t \in  \mathbb{R}^2  \] 
+    \[ t = 0 : (\nabla V , A \vec{ y}  _0 ) = -(C \vec{ y}  _0 , \vec{ y } _0 )  , \text{ }  \forall  y_0 \in  \mathbb{R}^{n }  , \text{ }  \vec{ y_0  } \neq  \vec{ 0 }    \] 
+
+    Так как \( C = C^* > 0  \), то \( (\nabla V (\vec{ y } _ 0 ) , \vec{f }  (\vec{ y }  _0 )) < 0  \) при \( \vec{ y } _ 0 \neq  \vec{ 0}  \Rightarrow \vec{ y } ^* (t ) = 0 \) - асимптотически устойчиво. 
+
+\end{proof}
+
+\begin{theorem}
+    Пусть \( \lambda_1(A ) , ..., \lambda_n (A )  \) - собственные значения матрицы \( A \). Пусть \( \forall  \lambda_j (A ) \text{ } Re \lambda_j (A ) < 0  \). Тогда: 
+
+    1) \( \forall   \) матрицы \(  \subset \exists ! H  \) - решение матр. уравнения (2)
+
+    2) если \( C = C^*  \), то \( H = H^* \) 
+
+    3) если \( C = C^*  \), то \( H =H^* > 0 \) 
+\end{theorem}
+
+\begin{proof} \(  \) 
+
+    \[ e^{ t A ^* }  \cdot   | \text{ }  H A + A ^* H = -C \text{ }  | \cdot e^{tA }   \] 
+    \[ e^{t A ^* }  H \underbrace{A e^{tA }}_{\frac{d}{dt }  e^{tA }= }  + \underbrace{e^{t A ^* }  A ^* }_{=\frac{d}{dt } e^{rA ^*}  }H e^{t A }  = - e^{r A ^* }   C e^{t A }  \] 
+    \[ \frac{d}{dt } (e^{ t A^* } H e^{tA }   ) = -e^{t A^* } C e^{ tA }  \text{ } |\cdot \int_{0 }^{s} , s>0    \] 
+    \[ \int_{0}^{s }  \frac{d}{dt } (e^{ t A^* } H e^{tA }   ) dt = - \int e^{t A^* } C e^{ tA } dt    \] 
+    \[ e^{s A ^* }  H e^{ s A }  - H = \int_{- }^{s }  e^{t A ^* }  C e^{t A }  dt  \] 
+    \[ A = T I T^{-1 }  \] 
+    \[ e^{tA }  = T e^{ t I }  T^{-1 }  \] 
+    \[ e^{t I }  = \begin{pmatrix}
+    e^{\lambda_1 t }  &  & \\
+    \vdots & \ddots & \frac{ t^ k e^{ \lambda_i t } }{ k!}  \\[10pt]
+    0 & \cdots   & e^{ \lambda_n t } 
+    \end{pmatrix}  \xrightarrow{t \to  + \infty  } 0   \] 
+
+    При \( s \to  + \infty  \): 
+
+    \[ H = \int_{0}^{\infty}  e^{ t A ^* }  C e^{tA }  d t \text{ - интеграл Ляпунова} \tag{3} \]
+    
+    2) Пусть \( C = C^* :  \) 
+
+    \[ H^* = \left( \int_{0}^{\infty} e^{ t A ^* }  C e^{t A }  dt  \right) ^* = \int_{0 }^{\infty}\underbrace{     (e^{t A } )^*}_{e^{t A ^*} }\underbrace{ C ^* }_{C}\underbrace{ (e^{t A ^* } )^*}_{e^{tA } } dt = H\] 
+
+    3) Пусть \( C = C^* > 0  \), то есть \(  \forall  \vec{v }  \neq  \vec{ 0}  : (C \vec{v } , \vec{v }         ) >0  \): 
+
+    \[ (H \vec{ v }  ,\vec{ v }  ) = \left( \int_{0}^{\infty} e^{t A ^* }  C e^{tA }  dt \vec{v }  ,\vec{v }   \right) = \left( \int_{0}^{\infty} e^{tA^* }  C e^{tA } \vec{ v }  dt , \vec{ v }   \right) = \int_{0}^{\infty} (e^{tA ^* }  C e^{tA }  \vec{v } ,\vec{ v } ) = \] 
+    \[ = \int_{0}^{\infty} ( C \underbrace{e^{tA }  \vec{v }}_{ w(t ) \neq  0 }   ,\underbrace{e^{tA }  \vec{ v }}_{w (t ) \neq  0}   ) dt > 0  \] 
+
+\end{proof}
+
+\begin{theorem}
+    Следующие условия эквиваленты: 
+    
+    1) \( \vec{ y } ^* (t ) = 0  \) - решение системы (1) \( \displaystyle  \frac{d}{dt }  \vec{ y}  = A \vec{ y}   \) асимптотически устойчиво; 
+
+    2) \( \forall  \lambda_j (A ) \text{ }  Re \lambda_j (A )< 0  \); 
+
+    3) \( \forall   \) матрицы \( C = C^* >0 \text{ }  \exists  ! \text{ }  H = H^* > 0  \) - решение матричного уравнения (2) \( HA + A^* H = - C  \) 
+
+    \[ \begin{aligned}
+    1) & \Leftrightarrow 2) \text{ - было } \\
+    2) &\Rightarrow  3) \text{ - следует из Теоремы 2 } \\
+    3) &\Rightarrow 1) \text{ - следует из Теоремы 1} 
+    \end{aligned} \] 
+\end{theorem}
+
+\section{Исследование решений на устойчивость по первому приближению}
+
+\[ \frac{d}{dt }  \vec{ y}  = \vec{ f }  (\vec{ y} ) \] 
+, где \( \vec{ f }  \in  C ^1 (\mathbb{D} ) ,\) \( \vec{  y} ^{* }  (t ) = 0  \) - решение \( \Rightarrow   \vec{ f }  (\vec{ 0 } ) = \vec{0 } \) 
+
+\[ \frac{d}{dt }  \vec{ y}  = \vec{ f }  (\vec{ 0}  ) + \underbrace{\frac{ \partial  \vec{ f } }{\partial  \vec{ y}  } }_{(*)}(0 ) \vec{ y } + o(\left\lVert \vec{ y}  \right\rVert)   \] 
+, где \( (*) \) - матрица \( n \times  n  = A  \) 
+
+\[ \frac{d}{dt } \vec{ y}  = A \vec{ y}  + o (\left\lVert  \vec{ y }  \right\rVert) \] 
+
+\begin{theorem}[Теорема Ляпунова об устойчивости по первому приближению] \(  \) 
+
+    1) Если \( \forall  \lambda_j (A ): Re \lambda_j (A ) < 0 \Rightarrow \vec{ y} ^* (t ) = 0  \)  асимптотически устойчиво. 
+
+    2) \( \exists  \lambda_k (A ) : Re \lambda_k >0 \Rightarrow \vec{ y } ^* (t ) = 0  \) - неустойчиво.
+\end{theorem}
+
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi
