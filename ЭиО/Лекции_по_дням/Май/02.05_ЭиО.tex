@@ -1,0 +1,220 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+\section{Виды калибровок потенциалов} \(  \) 
+
+1. \( \displaystyle \varphi ^{\text{н} } = 0 \Rightarrow f (\vec{r }  , t )  = - c \int_{-\infty}^{t }  \varphi (\vec{ r }  , t ' ) d t '  \) 
+
+\[ \vec{A }  ^{\text{н }  } = \vec{A }  - \nabla f (\vec{r }  , t ) , \quad \varphi ^{\text{н } }    = \varphi + \frac{1}{c }  \frac{\partial  f } {\partial  t } (\vec{ r }  , t ) \] 
+\[ \vec{B } = \mathrm{rot } \vec{ A }  = \mathrm{rot }  \vec{ A } ^{\text{н} }      \] 
+\[ \vec{E }  = -\frac{1}{c }  \frac{\partial  \vec{A } }{\partial  t } - \nabla \varphi = - \frac{1}{c }  \frac{\partial \vec{ A } ^{\text{н} } }{\partial  t } - \nabla \varphi ^{\text{н} }   \] 
+
+2. Кулоновская калибровка: \( \displaystyle  \mathrm{div} \vec{ A }  ^{\text{н} } = 0 \Rightarrow \mathrm{ div } \vec{ A }  ^{\text{н} } = \mathrm{div }  \vec{ A }  - \mathrm{div }  \nabla f = 0 \Rightarrow         \) 
+\[ \Rightarrow \Delta f (\vec{ r } , t ) = \mathrm{div} \vec{ A }  \text{ - уравнение Пуассона}  \] 
+, с граничными условиями \( f (\vec{ r }  ,t ) \xrightarrow{ r \to  \infty  } 0   \) \\
+
+3. Калибровка Лоренца: \( \displaystyle  \frac{1}{c } \frac{ \partial  \varphi ^{\text{н} } }{\partial  t } + \mathrm{ div } \vec{ A }  ^{\text{н} }  = 0 \Rightarrow      \) 
+\[ \Rightarrow \frac{1}{c }  \frac{\partial}{\partial  t } \left( \varphi + \frac{1}{c }  \frac{\partial  f }{\partial  t }  \right) + \mathrm{ div }    (\vec{ A }  - \nabla f ) = 0 \Rightarrow\underbrace{ \Delta  f - \frac{1}{c ^2 } \frac{\partial  ^2 f }{\partial  t ^2 }}_{\text{волновое уравнение} } = \underbrace{\frac{1}{c }  \frac{\partial  \varphi }{\partial  t } + \mathrm{ div } \vec{ A } }_{(*)}     \] 
+, где \( (*):  \)  с источником и граничными условиями \( f (\vec{ r }  ,t ) \xrightarrow{ r \to  \infty  } 0   \) \\ 
+
+\textbf{Уравнения на потенциалы (произвольные)}
+
+\[ \mathrm{div } \vec{E }  = 4 \pi \rho \Rightarrow \mathrm{div }  \left( -\frac{1}{c }  \frac{\partial  \vec{ A } }{\partial  t } - \nabla \varphi        \right) = -\frac{1}{c }  \frac{\partial  }{\partial  t } \left( \mathrm{div }  \vec{A }  +\frac{1}{c }  \frac{\partial  \varphi }{ \partial  t }   \right) + \frac{1}{c ^2 }\frac{\partial  ^2 \varphi  }{\partial  t ^2 } - \Delta \varphi = \frac{4\pi}{c }  (\rho c )       \] 
+\[ \boxed{\frac{1}{c ^2 } \frac{\partial  ^2 \varphi }{\partial  t  ^2 } -\Delta \varphi -\frac{1}{c }  \frac{\partial  }{\partial  t } \left(  \mathrm{div }  \vec{ A }  + \frac{1}{c }  \frac{\partial  \varphi }{\partial  t }    \right) = \frac{4\pi}{c }  j^0  }  \] 
+
+\[ \mathrm{rot }  \vec{B }  = \mathrm{rot }  (\mathrm{rot } \vec{A }  ) = \nabla (\mathrm{ div } \vec{A }   ) - \Delta \vec{ A }  = \frac{4\pi}{c }  \vec{ j}  +\frac{1}{c }  \frac{\partial  }{\partial  t } \left( -\frac{1}{c }  \frac{\partial  \vec{ A } }{\partial  t } \nabla \varphi   \right)   \] 
+\[ \boxed{\frac{1}{c ^2 } \frac{\partial   ^2 \vec{ A } }{\partial  t ^2 } - \Delta \vec{A }  + \nabla \left( \mathrm{ div } \vec{A }  + \frac{1}{c }  \frac{\partial  \varphi }{\partial  t }    \right)   = \frac{4\pi}{c }  \vec{ j}} \] 
+
+\[ \frac{1}{c ^2 } \frac{\partial  ^2 }{\partial  t ^2 } - \Delta = \frac{\partial  ^2 }{( \partial  x ^0 ) ^2 } - \frac{\partial  ^2 }{(\partial  x ^1 ) ^2 } - \frac{\partial  ^2  }{( \partial  x^2) ^2 } - \frac{\partial ^2 }{( \partial  x ^3 ) ^2 } = \left( \frac{\partial  }{ \partial  x ^0 }, \frac{\partial}{ \partial  x ^1 } , \frac{\partial  }{\partial  x^2 } , \frac{\partial  }{\partial  x^3 }     \right)   \begin{pmatrix}
+\frac{\partial  }{\partial  x ^0 } \\[5pt]
+-\frac{\partial  }{\partial  x^1} \\[5pt]
+-\frac{\partial  }{\partial  x^2} \\[5pt]
+-\frac{\partial  }{\partial  x^3} 
+\end{pmatrix}  = \partial_i \partial ^{i}   \] 
+- четырех скалярный оператор.
+
+\[ \partial _i \partial ^i 
+\underbrace{\begin{pmatrix}
+    \varphi\\
+    A_x\\
+    A_y\\
+    A_z
+\end{pmatrix}}_{A^k}
+-
+\begin{pmatrix}
+    \frac{\partial  }{\partial  x ^0 } \\[5pt]
+    -\frac{\partial  }{\partial  x^1} \\[5pt]
+    -\frac{\partial  }{\partial  x^2} \\[5pt]
+    -\frac{\partial  }{\partial  x^3} 
+\end{pmatrix} 
+\left( \frac{\partial  }{ \partial  x ^0 }, \frac{\partial}{ \partial  x ^1 } , \frac{\partial  }{\partial  x^2 } , \frac{\partial  }{\partial  x^3 }     \right)
+\begin{pmatrix}
+        \varphi\\
+        A_x\\
+        A_y\\
+        A_z
+\end{pmatrix} = \frac{4\pi}{c }  
+\underbrace{\begin{pmatrix}
+    j_0\\
+    j_x\\
+    j_y\\
+    j_z
+\end{pmatrix} }_{j^k} \] 
+\[ \partial_i \partial ^i A^k - \partial ^k \partial_i A^i = \frac{4 \pi}{c} j^k \Rightarrow \partial _i \underbrace{(\partial  ^i A ^k - \partial ^k A^i )}_{F^{ik } } = \frac{4\pi}{c }   j^k \Rightarrow \partial _i F^{ik }  = \frac{4\pi}{c }  j^k  \tag{\(*  \) }\]  \\
+
+\textbf{Четырех вектор потенциала \( A^i \)} \\
+
+В Лоренцевской калибровке \( \displaystyle  \frac{1}{c }  \frac{\partial  \varphi ^{\text{н} } }{\partial  t } + \mathrm{div }  \vec{A } ^{\text{н} } = 0   \) 
+
+\[ \left( \frac{\partial  }{ \partial  x ^0 }, \frac{\partial}{ \partial  x ^1 } , \frac{\partial  }{\partial  x^2 } , \frac{\partial  }{\partial  x^3 }     \right) 
+\begin{pmatrix}
+\varphi^{\text{н} }\\
+A_x ^{\text{н} }\\
+A_y^{\text{н} }\\
+A_z ^{\text{н} }
+\end{pmatrix} = 0 \Rightarrow \partial _i A ^{\text{н } i } = 0 \Rightarrow \] 
+\( \Rightarrow \) четырех вектор потенциала = \( (\varphi , \vec{A } ) \), где \( \varphi  \) и \( \vec{ A }  \) удовлетворяют Лоренцевской калибровке. В этом случае уравнение \( (*) \) упрощается: \( \displaystyle  \partial _i \partial ^i A^k = \frac{4 \pi }{c } j^k \oplus \partial _i A^i =0  \) 
+
+\section{Уравнения Максвелла в ковариантном виде}
+
+\[ \begin{array}{l|l}
+    \displaystyle \mathrm{div }  \vec{E }  = \frac{4\pi}{c }  \rho c = \frac{4\pi}{c }  j^0 & \displaystyle  \frac{\partial  0 }{\partial  x ^0 } + \frac{\partial E_x }{\partial  x^1 }+ \frac{\partial E_y}{ \partial  x ^2 } + \frac{\partial  E_z } {\partial  x^3 } = \frac{4\pi}{c }  j^0 \\[10pt]
+    \displaystyle \mathrm{rot } \vec{B } -\frac{1}{c }  \frac{\partial  \vec{E } }{\partial  t } = \frac{4\pi}{c }  \vec{ j}  & \displaystyle  \frac{\partial (- E_x)}{\partial  x^0 } \frac{\partial  0 }{\partial  x^2 } + \frac{\partial  B_z }{\partial  x^2 } - \frac{\partial  B_y }{\partial  x^3 } = \frac{4\pi}{c }  j^1 \\[10pt]
+    \displaystyle  \left( \frac{\partial  }{ \partial  x ^0 }, \frac{\partial}{ \partial  x ^1 } , \frac{\partial  }{\partial  x^2 } , \frac{\partial  }{\partial  x^3 }     \right)  \begin{pmatrix}
+    0  & - E_x  & - E_y  & -E_z\\
+    E_x  & 0  & - B_z  & B_y \\
+    E_y  & B_z  & 0  & - B_x \\
+    E_z  & -B_y  & B_x  & 0
+    \end{pmatrix} \leftarrow&\displaystyle \frac{\partial  (-E_y )}{\partial  x^0 } + \frac{\partial  (- B_z )}{\partial  x^1 } + \frac{\partial  0 } {\partial  x^2 } + \frac{\partial  B_x }{\partial  x^3 } = \frac{4\pi}{c }  j^2  \\[10pt]
+    \kern+2cm\displaystyle \overset{||}{\frac{4\pi}{c } (j^0 , j^1 , j^2 , j^3) }& \displaystyle \frac{\partial (- E_z )}{\partial  x^0 } + \frac{\partial  B_y }{\partial  x^1 } + \frac{\partial  (- B_x )}{\partial  x^2 } + \frac{\partial  0 }{\partial  x^3 } = \frac{4\pi}{c }  j^3              
+\end{array} \] 
+
+Получаем: \( \displaystyle  \boxed{\partial _i F^{ik }  = \frac{4\pi}{c }  j^k} \) - два уравнения  уравнения Максвелла с источниками. \\
+
+Почему \( F^{ik }  \) - тензор второго ранга: 
+
+1) Состоит из 16 величин; 
+
+2) При свертке с компонентами четырех вектора образуется четырех вектор.
+
+\[ \mathrm{div } \vec{ E }   =4 \pi \rho  \quad  \mathrm{ rot } \vec{B }  - \frac{1}{c }  \frac{\partial  \vec{ E } }{\partial  t } = \frac{4\pi}{c }  \vec{ j}       \] 
+\[ \mathrm{div }  \vec{B }  = 0 \quad  \mathrm{rot }  \vec{ E }  + \frac{1}{c }  \frac{\partial  \vec{B } }{\partial  t } = 0    \] 
+
+Замена \( \vec{E }  \to  \vec{ B }   \), а \( \vec{ B } \to  -\vec{ E }:  \) 
+
+\[ \left( \frac{\partial  }{ \partial  x ^0 }, \frac{\partial}{ \partial  x ^1 } , \frac{\partial  }{\partial  x^2 } , \frac{\partial  }{\partial  x^3 }     \right)  
+\underbrace{\begin{pmatrix}
+    0  & - B_x  & - B_y  & -B_z\\
+    B_x  & 0  & E_z  & -E_y \\
+    B_y  & -E_z  & 0  &  E_x \\
+    B_z  & E_y  & -E_x  & 0
+\end{pmatrix}}_{\tilde{F }^{ik} }  = (0,0,0,0)\] 
+
+\[ \tilde{ F } ^{ik }  = \frac{e^{ik lm } F_{lm } }{2!}  \quad  \boxed{\partial_i \tilde{ F }^{ ik }  = 0} \text{- вторая пара уравнений Максвелла}  \] 
+
+\( \forall   \) антисимметричный тензор второго ранга содержит только 6 независимых величин и хорошо подходит для описания компонент \( \vec{E}  \) и \( \vec{B}  \) 
+
+\[ F^{ik }  = \partial ^i A^k - \partial ^k A^i  \] 
+
+Преобразование \( \vec{ E }  \) и \( \vec{B}  \) из \( K  \) в \( K'  \) (ИСО) \( \vec{ v }  \parallel 0_x \) 
+
+1 способ: \( F^{ik }  = L^i _{\cdot m }  L^k _{\cdot n }   \) в матричной записи: 
+
+\[ \acute{F}^{ik }  =\displaystyle  \begin{pmatrix}
+    \gamma  & - \beta   \gamma & 0 & 0\\
+    - \beta \gamma  & \gamma &0 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 0 & 0 & 1
+    \end{pmatrix} \left( F^{mn }  \right) \begin{pmatrix}
+        \gamma  & - \beta   \gamma & 0 & 0\\
+        - \beta \gamma  & \gamma &0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1
+        \end{pmatrix} \] 
+
+2 способ: \( \acute{F}^{k 3 }  = \left[ \acute{a } ^k \acute{b }^3 = L_{\cdot n}^ k a^n b^3    \right] = L_{\cdot n } ^k F^{ n 3 }   \) 
+
+\[ \acute{F } ^{k 3 } = \begin{pmatrix}
+-E_z ' \\
+B_y ' \\
+- B_x ' \\
+0
+\end{pmatrix}
+\begin{pmatrix}
+    \gamma  & - \beta   \gamma & 0 & 0\\
+    - \beta \gamma  & \gamma &0 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 0 & 0 & 1
+\end{pmatrix} 
+\begin{pmatrix}
+    -E_z  \\
+    B_y  \\
+    - B_x  \\
+    0
+\end{pmatrix} \Rightarrow \begin{cases}
+E_z ' = \gamma (E_z + \beta B_y )\\ 
+B_y ' = \gamma(B_y +\beta E_z ) \\ 
+B_x ' = B_x 
+\end{cases}\]  
+
+\[ \acute{F } ^{k 2 } = \begin{pmatrix}
+-E_y ' \\
+B_z ' \\
+0 \\
+B_x '
+\end{pmatrix}
+\begin{pmatrix}
+    \gamma  & - \beta   \gamma & 0 & 0\\
+    - \beta \gamma  & \gamma &0 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 0 & 0 & 1
+\end{pmatrix} 
+\begin{pmatrix}
+    -E_y  \\
+    B_z  \\
+    0 \\
+    B_x 
+\end{pmatrix}\Rightarrow \begin{cases}
+    E_y ' = \gamma (E_y - \beta B_z )\\ 
+    B_z ' = \gamma(B_z -\beta E_y ) \\ 
+    B_x ' = B_x 
+    \end{cases}\] 
+
+    Вывод: продольные компоненты \( E_{ \parallel } '  =E _{ \parallel }, \text{ }  B_{ \parallel }'  = B_{ \parallel }  \), 
+    
+    а поперечные компоненты \( \vec{E } _{\perp  }' = \gamma( \vec{ E }  _{ \perp } + [\vec{ \beta } \times  \vec{B}  ] ) , \text{ } \vec{B } _{\perp  }' = \gamma( \vec{ B }  _{ \perp } - [\vec{ \beta } \times  \vec{E}  ] )  \) \\
+
+    \textbf{Инварианты Пуанкаре: } 
+
+    1. \( F_{ik }  F^{ik }  =  \) четырех скаляр \( - inv \)  = \( - 2 E ^2 + 2 B ^2 = 2 (B ^2 - E ^2 ) = inv \)
+
+    \[ \begin{pmatrix}
+        0  & - E_x  & - E_y  & -E_z\\
+        E_x  & 0  & - B_z  & B_y \\
+        E_y  & B_z  & 0  & - B_x \\
+        E_z  & -B_y  & B_x  & 0
+        \end{pmatrix}  \to  
+        \begin{pmatrix}
+            0  &  E_x  &  E_y  & E_z\\
+            -E_x  & 0  & - B_z  & B_y \\
+            -E_y  & B_z  & 0  & - B_x \\
+            -E_z  & -B_y  & B_x  & 0
+            \end{pmatrix}  \] 
+
+2. \( F_{ik }  \tilde{ F } ^{ ik }  = - (\vec{ E }  , \vec{ B } ) - ( \vec{ E }  , \vec{ B } ) - 2 (\vec{ E }  ,\vec{ B } ) = - 4 (\vec{ E } , \vec{ B } ) = inv \) 
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi 
