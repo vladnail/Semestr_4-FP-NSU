@@ -148,7 +148,7 @@ h_{11} - 2 h_{21} & h_{12} - 2 h_{22} + h_{12}
 \begin{theorem}
     Пусть \( \lambda_1(A ) , ..., \lambda_n (A )  \) - собственные значения матрицы \( A \). Пусть \( \forall  \lambda_j (A ) \text{ } Re \lambda_j (A ) < 0  \). Тогда: 
 
-    1) \( \forall   \) матрицы \(  \subset \exists ! H  \) - решение матр. уравнения (2)
+    1) \( \forall   \) матрицы \(  C \text{ }  \exists ! H  \) - решение матр. уравнения (2)
 
     2) если \( C = C^*  \), то \( H = H^* \) 
 
@@ -185,6 +185,7 @@ h_{11} - 2 h_{21} & h_{12} - 2 h_{22} + h_{12}
 
 \end{proof}
 
+
 \begin{theorem}
     Следующие условия эквиваленты: 
     
@@ -203,11 +204,13 @@ h_{11} - 2 h_{21} & h_{12} - 2 h_{22} + h_{12}
 
 \section{Исследование решений на устойчивость по первому приближению}
 
-\[ \frac{d}{dt }  \vec{ y}  = \vec{ f }  (\vec{ y} ) \] 
+\[ \frac{d}{dt }  \vec{ y}  = \vec{ f }  (\vec{ y} ) \tag{1} \] 
 , где \( \vec{ f }  \in  C ^1 (\mathbb{D} ) ,\) \( \vec{  y} ^{* }  (t ) = 0  \) - решение \( \Rightarrow   \vec{ f }  (\vec{ 0 } ) = \vec{0 } \) 
 
+Разложим правую часть уравнения \( (1) \) в ряд Тейлора: 
+
 \[ \frac{d}{dt }  \vec{ y}  = \vec{ f }  (\vec{ 0}  ) + \underbrace{\frac{ \partial  \vec{ f } }{\partial  \vec{ y}  } }_{(*)}(0 ) \vec{ y } + o(\left\lVert \vec{ y}  \right\rVert)   \] 
-, где \( (*) \) - матрица \( n \times  n  = A  \) 
+, где \( (*) \) - матрица \( n \times  n  = A  \). \( o(\left\lVert  \vec{ y}  \right\rVert)  \), то есть \( \displaystyle \lim_{\left\lVert  \vec{y }  \right\rVert \to 0 } \frac{o \left\lVert \vec{y }  \right\rVert}{\left\lVert  \vec{ y }  \right\rVert } = 0   \quad  (2)\) 
 
 \[ \frac{d}{dt } \vec{ y}  = A \vec{ y}  + o (\left\lVert  \vec{ y }  \right\rVert) \] 
 
