@@ -1,0 +1,153 @@
+% Условная компиляция для самостоятельной работы
+\ifdefined\mainfile
+    % Если это часть основного файла, не добавляем начало и конец документа
+\else
+    \documentclass[12pt, a4paper]{report}
+    \usepackage{/Users/vladbelousov/Desktop/Semestr_4-FP-NSU/Настройка/library}
+    \usepackage[utf8]{inputenc} % Подключение поддержки UTF-8
+    \begin{document}
+\fi
+
+%%-------------------------------%%
+
+\section{Интегральный оператор Гильберта-Шмидта}
+
+\begin{theorem}[теорема о компактности оператора Гильберта-Шмидта]
+
+    Интегральный оператор Гильберта-Шмидта \( A \) с ядром \( K \) является линейным, компактным, переводящим \( L_2 [a,b] \) в себя. При этом \( \left\lVert A  \right\rVert \le  \displaystyle \left( \int_{a}^{b} \int_{a }^{b } \left\lvert K(t ,s )  \right\rvert ^2 dt ds  \right)^{\frac{1}{2}  } = \left\lVert K \right\rVert _{L_2 [a, b ]\times  L_2 [a,b]}   \) 
+
+\end{theorem}
+
+\begin{theorem}[об операоторе, сопряженому оператору Гильберта-Шмидта ]
+
+    Пусть \( A  \) - оператор Гильберта-Шмидта с ядром \( K(t, c) \). Тогда \( A^* \) - оператор Гильберта-Шмидта с ядром \( K^* (t,s ) = \overline{K(s,t)}   \) 
+
+\end{theorem}
+
+\begin{proof} \(  \) 
+
+    Пусть \( \displaystyle (By ) (t ) = \int_{a }^{b }  \overline{K(s,t)} y(s ) ds    \)  
+
+    \[ \left\lVert \overline{K(s,t )}   \right\rVert ^2 = \int_{a }^{b }  \int_{a }^{b } \left\lvert \overline{ K (s, t )}   \right\rvert dx dt = \int_{a }^{b } \int_{a }^{b }  \left\lvert K (s,t ) \right\rvert ds dt  = \left\lVert K \right\rVert ^2 < \infty  \] 
+    \[ \Rightarrow B \text{ - оператор Гильберта-Шмидта}  \] 
+
+    Нужно доказать, что: \( B = A^* \) 
+
+    \[ (Ax, y ) = (x, By ) \text{, с учетом Леммы } (x,y ) = 0 , \text{ }  \forall  y , x =0  \] 
+
+    \[(A x , y ) = \int_{a }^{b }  \left[ \int_{a }^{b }  K (t, s ) x(s ) ds  \right] \overline{y (t )}  dt = \int_{a }^{b }  \left[ \int_{a }^{b }  K (t,s ) \overline{y (t )}  dt  \right] x (s ) ds = \left\{  \begin{aligned}
+    s = \tau \\ 
+    t = \sigma
+    \end{aligned}\right\} = \] 
+    \[ = \int_{a }^{b }  \overline{\overline{\left[ \int_{a }^{b }  K (\sigma , \tau ) \overline{y (\sigma )}  d \sigma  \right]}} x (\tau ) d \tau  = \left\{ \begin{aligned}
+    \tau = t \\ 
+    \sigma = s 
+    \end{aligned} \right\}     = \int_{a }^{ b }  \overline{\left[  \int_{a }^{ b }  \overline{K (s, t )} y (s )  ds  \right]} x (t ) dt  = (x , B y ) \Rightarrow A ^* = B  \] 
+
+\end{proof}
+
+\section{Решение уравнений с вырожденным ядром }
+
+\[ x(t ) = \int_{a }^{ b }  K (t, s ) x (s  ) ds + f(t ) \text{  - уравнение Фредгольма 2-го порядка}   \]  
+
+Пусть ядро имеет следующий вид: 
+
+\[ K(t, s ) = \sum_{j =1}^n  P_j (t ) Q_j(s ) \text{} (\text{сумма конечна переменные раздельны} ) \] 
+
+\[ \begin{aligned}
+\begin{aligned}
+P_j[a,b ] \to  \mathbb{C} \\ 
+Q_j [a, b ] \to  \mathbb{C} 
+\end{aligned}
+j = 1, \ldots, n \quad  P_j, Q_j \in  L_2 [ a, b ]
+\end{aligned} \] 
+
+Такое ядро называется \textbf{вырожденным}.
+
+Можем считать, что \( P_1(t) ,..., P_n(t ) \) - линейно независимые функции. 
+
+\[ \hat{x }  (t ) = \int_{a }^{b }  \left[ \sum_{j =1}^n P_j (t ) Q_j (t )  \right] x(s ) ds +f (t ) = \sum_{j =1}^n P_j (t ) \underbrace{\int_{a }^{ b }  Q_j (s  ) x (s ) d s}_{q_j \text{ - число} } +f (t ) \] 
+\[ x(t ) = \kern-2cm\underbrace{\sum_{j =1}^n P_j (t ) q_j}_{\text{представим через неопределенные коэф-ты} }\kern-2cm + f (t ) \]  
+
+\[ \sum_{j =1}^n P_j(t ) q_j +F (t ) = \int_{a }^{b }   \left[ \sum_{j =1}^n P_j(t ) Q_j (t )  \right] \left( \sum_{k =1}^n     P_k (s ) q_k + f(s ) \right) ds + f(t ) \] 
+\[ \sum_{j =1}^n q_j P_j(t ) = \sum_{j =1}^n P_j (t ) \bigg[ \sum_{k =1}^n q_k \underbrace{\int_{a }^{b }  Q_j (s ) P_k (s ) ds }_{a_{jk} }  +\underbrace{ \int_{a }^{ b }  Q_j (s ) f(s ) d s}_{b_j}\bigg] \] 
+
+Введем коэффициенты \( a_{ j k }  \) и \( b_j  \), которые вычисляются в задаче по \( P_j ,Q_j  \) и \( f  \), так как \( P_j (t ) \) - линейно независимые функции. 
+
+\[ q_i = \sum_{k =1}^n  q_k a_{ j k } + b_j , j = 1, ..., n \text{ - СЛАУ (система линейных алгебраических уравнений)}    \] 
+, для определения \( q_j  \) через которые определяются решения \( x (t ) \) 
+
+\begin{theorem} [интегральное уравнение сводящиеся к решению алгебраического уравнения] 
+
+    Пусть \( A  \) - оператор Гильберта-Шмидта с ядром \( K ( t, s ) \), которое не является вырожденным 
+
+    \[ K (t, s ) = \sum_{n,m =1}^N a_{n m  } x_n (t ) \overline{x_m (s )}  \]  
+
+    Рассматривая \( K_N (t,s ) = \displaystyle  \sum_{n , m =1} ^N a_{ nm }  x_n (t ) \overline{x_m (s)}   \), можно решить уравнение указанным способом (решение уравнения с вырожденным ядром)
+
+    \[ x_N (t ) = \int_{a }^{ b }  K_N (t, s ) x(s ) ds +f(t )  \]  
+    , так как \( K_N \xleftarrow{ N \to  \infty  } K    \), поэтому \( x_{N } (t ) \xrightarrow{ N \to  \infty  } x(t )   \) 
+    
+    Это приближенный метод решения интегрального уравнения.
+
+\end{theorem}
+
+\section{Альтернатива Фредгольма}
+
+Пусть \( H \) - гильбертово пространство, \( A : H \to  H  \) - компактный оператор, \( A^*  \) - сопряженный оператор. 
+
+Разрешимость неоднородного уравнения: 
+
+\[  x - Ax = f \tag{н} \] 
+
+устанавливаются с помощью однородных уравнений: 
+
+\[ x - A x = 0 \tag{о} \] 
+
+и сопряженного однородного уравнения: 
+
+\[ y - A ^* y = 0 \tag{со} \] 
+
+следующей теоремой: 
+
+\begin{theorem}[Альтернатива Фредгольма] \(  \) 
+
+    1. Однородное уравнение (о) имеет только нулевое решение. Тогда  сопряженное однородное (со) также имеет  только нулевое решение, а неоднородное уравнение (н) имеет ! решение \( \forall  f(t) \) 
+
+    2. Однородное уравнение (о) имеет n линейно независимых решений \( x, \ldots, x_n \). При этом (со) имеет ровно n линейно независимых решений \( y_1 ,..., y_n \), а для разрешимости (н) необходимо и достаточно: \( (y_k ,f ) _{\text{н} }  = 0 , k = 1, \ldots, n\) 
+
+    При выполнении \( (y_n ,f ) = 0 \text{ }  \forall  k  \) общее решение (н) имеет вид: 
+
+    \[ x = x_0 + c_1 x_1 +... + c_n x_n \] 
+    , где \( x_0  \)  - частное решение (н), а \( c_1, \ldots, c_n \) - произвольные числа. 
+
+\end{theorem}
+
+\textbf{Замечание.} Альтернатива Фредгольма (0): либо нулевое, либо конечное число решений; 
+
+1) Разрешимость пространства решений  конечна и совпадает с размерностью пространства (со)
+
+2) Оператор Гильберта-Шмидта компактен, поэтому альтернатива Фредгольма применяется для решения интегрального уравнения.
+
+\section{Уравнения с малым параметром. Ряд Неймана. Метод последовательных приближений}
+
+Рассмотрим интегральное уравнений Фредгольма 2-го рода с параметром \( \mu \) 
+
+\[ x(t ) = \mu \int_{a }^{b }  K (t,s ) x(s ) ds +f (t ) \Leftrightarrow  x = \underbrace{\mu A}_{\left\lVert \mu A  \right\rVert < 1} x +f \]  
+
+\( A \)  - оператор Гильберта-Шмидта с ядром \( K(t,s) \) 
+
+Если \( \mu = 0 : x(t ) = f(t )  \) решение \( \exists !  \) 
+
+Рассмотрим малые \( \mu  \). По Теореме Неймана сможем найти решения: 
+
+
+
+%%-------------------------------%%
+
+% Закрытие документа, если файл компилируется отдельно
+\ifdefined\mainfile
+    % Если это основной файл, не нужно заканчивать документ
+\else
+    \end{document}
+\fi
